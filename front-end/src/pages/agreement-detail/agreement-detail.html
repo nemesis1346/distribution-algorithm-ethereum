@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agreement Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <b>Trader Emiter Name: </b>{{traderEmiter.name}}
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item>
+        <b>Royalty Percentage: </b>{{percentageEmiter}}
+      </ion-item>
+
+      <ion-item>
+        <b>Balance: </b>{{traderEmiter.balance}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceEnabled: </b>{{tokenAccountEmiter.balanceEnabled}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceDisabled: </b>{{tokenAccountEmiter.balanceDisabled}}
+      </ion-item>
+
+      <ion-item>
+        <b>TraderType: </b>{{traderEmiter.traderType}}
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <b>Trader Receiver Name: </b>{{traderReceiver.name}}
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item>
+        <b>Royalty Percenge: </b>{{percentageReceiver}}
+      </ion-item>
+
+      <ion-item>
+        <b>Balance: </b> {{traderReceiver.balance}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceEnabled: </b>{{tokenAccountReceiver.balanceEnabled}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceDisabled: </b>{{tokenAccountReceiver.balanceDisabled}}
+      </ion-item>
+
+      <ion-item>
+        <b>TraderType: </b>{{traderReceiver.traderType}}
+      </ion-item>
+
+      <ion-item>
+        <b>TraderHierarchy: </b>{{traderReceiver.traderHierarchy}}
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

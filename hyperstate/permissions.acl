@@ -1,0 +1,37 @@
+//These are the rules for the superuser
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+//These are the rules for the rest of the participants
+
+//Trader just can read the rest of the resources
+rule TraderAccessRead{
+	description: "Trader can just read what is happening"
+    participant: "org.membran.hyperstate.Trader"
+    operation: READ
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+//TODO: keep working in the access BECAUSE IT NEEDS TO BE DONE WHEN WE USE THE MULTIUSER MODE IN THE REST SERVER
+
+// rule TraderExchangeTrackPermission{
+//   description: "This rules dictates that the trader can execute transactrion of track exchange"
+//   participant(m): "org.membran.hyperstate.Trader"
+//   operation: READ,UPDATE,CREATE
+//   resource(v): "org.membran.hyperstate.Track"
+//   transaction(tx): "org.membran.hyperstate.TxTrader_Track"
+//   condition: (v.trader.getIdentifier()==m.getIdentifier())
+//   action: ALLOW
+// }

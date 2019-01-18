@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="credentialsForm">
+    <ion-item>
+      <ion-input formControlName="name" placeholder="Name"></ion-input>
+    </ion-item>
+    <div *ngIf="!credentialsForm.controls.name.valid&&credentialsForm.controls.name.dirty" class="validator-error">
+      Please enter valid name
+    </div>
+
+    <ion-item>
+      <ion-input formControlName="email" name="email" placeholder="Email"></ion-input>
+    </ion-item>
+    <div *ngIf="!credentialsForm.controls.email.valid&&credentialsForm.controls.email.dirty" class="validator-error">
+      Please enter valid email
+    </div>
+
+    <ion-item>
+      <ion-input type="password" formControlName="password" name="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <div *ngIf="!credentialsForm.controls.password.valid&&credentialsForm.controls.password.dirty" class="validator-error">
+      Please enter valid password
+    </div>
+
+    <ion-item>
+      <ion-select [(ngModel)]="traderType" placeholder="Type" [ngModelOptions]="{standalone: true}" (ngModelChange)="getSelection(traderType)">
+        <div *ngFor="let item of traderOptions">
+          <ion-option value="{{item.traderType}}">{{item.traderType}}
+          </ion-option>
+        </div>
+      </ion-select>
+    </ion-item>
+    <button ion-button type="submit" block round (click)="submit()">Create</button>
+  </form>
+</ion-content>

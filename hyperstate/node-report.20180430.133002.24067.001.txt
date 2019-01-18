@@ -1,0 +1,210 @@
+================================================================================
+==== Node Report ===============================================================
+
+Event: exception, location: "OnUncaughtException"
+Filename: node-report.20180430.133002.24067.001.txt
+Dump event time:  2018/04/30 13:30:02
+Module load time: 2018/04/30 13:30:02
+Process ID: 24067
+Command line: node /Users/nemesis1346/.nvm/versions/node/v8.10.0/bin/composer generator create --archiveFile hyperstateTypescript.bna --format Typescript --outputDir .
+
+Node.js version: v8.10.0
+(http_parser: 2.7.0, v8: 6.2.414.50, uv: 1.19.1, zlib: 1.2.11, ares: 1.10.1-DEV,
+ modules: 57, nghttp2: 1.25.0, openssl: 1.0.2n, icu: 60.1, unicode: 10.0,
+ cldr: 32.0, tz: 2017c)
+
+node-report version: 2.2.1 (built against Node.js v8.10.0, 64 bit)
+
+OS version: Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64
+
+Machine: tonys-MacBook-Pro.local x86_64
+
+================================================================================
+==== JavaScript Stack Trace ====================================================
+
+Object.parseArgs [as _parseArgs] (/Users/nemesis1346/.nvm/versions/node/v8.10.0/lib/node_modules/composer-cli/node_modules/yargs/yargs.js:1:1)
+Object.get [as argv] (/Users/nemesis1346/.nvm/versions/node/v8.10.0/lib/node_modules/composer-cli/node_modules/yargs/yargs.js:1:1)
+Object.<anonymous> (/Users/nemesis1346/.nvm/versions/node/v8.10.0/lib/node_modules/composer-cli/cli.js:1:1)
+Module._compile (module.js:1:1)
+Object.Module._extensions..js (module.js:1:1)
+Module.load (module.js:1:1)
+tryModuleLoad (module.js:1:1)
+Function.Module._load (module.js:1:1)
+Function.Module.runMain (module.js:1:1)
+startup (bootstrap_node.js:1:1)
+bootstrap_node.js:1:1
+
+================================================================================
+==== Native Stack Trace ========================================================
+
+ 0: [pc=0x1027ec397] nodereport::OnUncaughtException(v8::Isolate*) [/Users/nemesis1346/.nvm/versions/node/v8.10.0/lib/node_modules/composer-cli/node_modules/node-report/api.node]
+ 1: [pc=0x10062d563] v8::internal::Isolate::Throw(v8::internal::Object*, v8::internal::MessageLocation*) [/Users/nemesis1346/.nvm/versions/node/v8.10.0/bin/node]
+ 2: [pc=0x1007d467b] v8::internal::Runtime_Throw(int, v8::internal::Object**, v8::internal::Isolate*) [/Users/nemesis1346/.nvm/versions/node/v8.10.0/bin/node]
+ 3: [pc=0x5cbef6842fd] 
+ 4: [pc=0x5cbef787a7a] 
+ 5: [pc=0x5cbef73d196] 
+ 6: [pc=0x5cbef68535f] 
+ 7: [pc=0x5cbef73d196] 
+
+================================================================================
+==== JavaScript Heap and Garbage Collector =====================================
+
+Heap space name: new_space
+    Memory size: 33,554,432 bytes, committed memory: 15,463,856 bytes
+    Capacity: 16,498,688 bytes, used: 7,223,344 bytes, available: 9,275,344 bytes
+Heap space name: old_space
+    Memory size: 21,295,104 bytes, committed memory: 21,175,656 bytes
+    Capacity: 20,686,160 bytes, used: 19,029,808 bytes, available: 1,656,352 bytes
+Heap space name: code_space
+    Memory size: 2,097,152 bytes, committed memory: 1,400,288 bytes
+    Capacity: 2,014,528 bytes, used: 1,323,648 bytes, available: 690,880 bytes
+Heap space name: map_space
+    Memory size: 1,593,344 bytes, committed memory: 1,385,352 bytes
+    Capacity: 1,554,040 bytes, used: 1,215,192 bytes, available: 338,848 bytes
+Heap space name: large_object_space
+    Memory size: 2,834,432 bytes, committed memory: 2,834,432 bytes
+    Capacity: 1,440,869,592 bytes, used: 2,789,080 bytes, available: 1,438,080,512 bytes
+
+Total heap memory size: 61,374,464 bytes
+Total heap committed memory: 42,259,584 bytes
+Total used heap memory: 31,581,072 bytes
+Total available heap memory: 1,450,041,936 bytes
+
+Heap memory limit: 1,501,560,832
+
+================================================================================
+==== Resource Usage ============================================================
+
+Process total resource usage:
+  User mode CPU: 0.591407 secs
+  Kernel mode CPU: 0.073907 secs
+  Average CPU Consumption : 66.5314%
+  Maximum resident set size: 71,739,375,616 bytes
+  Page faults: 11 (I/O required) 18061 (no I/O required)
+  Filesystem activity: 0 reads 0 writes
+
+================================================================================
+==== Node.js libuv Handle Summary ==============================================
+
+(Flags: R=Ref, A=Active)
+Flags  Type      Address             Details
+[-A]   async     0x0000000102207370  
+[--]   check     0x00007ffeefbfe7e0  
+[R-]   idle      0x00007ffeefbfe858  
+[--]   prepare   0x00007ffeefbfe8d0  
+[--]   check     0x00007ffeefbfe948  
+[-A]   async     0x000000010157a450  
+[-A]   async     0x0000000102405450  
+[-A]   async     0x0000000102404a70  
+[R-]   timer     0x00000001024003f0  repeat: 0, timeout expired: 125864387 ms ago
+[R-]   tty       0x0000000102218cb8  width: 165, height: 20, file descriptor: 10, write queue size: 0, writable
+[-A]   signal    0x00000001022187d0  signum: 28 (SIGWINCH)
+[R-]   tty       0x0000000102218538  width: 165, height: 20, file descriptor: 12, write queue size: 0, writable
+[-A]   async     0x0000000102408e70  
+[-A]   async     0x0000000102405a00  
+[-A]   async     0x00000001022173a0  
+[-A]   async     0x00000001025000b0  
+[-A]   async     0x0000000102218690  
+[-A]   async     0x0000000102422430  
+[-A]   async     0x000000010221e690  
+[-A]   async     0x0000000102219700  
+[-A]   async     0x000000010221a2e0  
+[-A]   async     0x00000001027f3f78  
+[-A]   async     0x0000000102409950  
+[-A]   async     0x0000000102421a60  
+[-A]   async     0x0000000102225df0  
+
+================================================================================
+==== System Information ========================================================
+
+Environment variables
+  MANPATH=/Users/nemesis1346/.nvm/versions/node/v8.10.0/share/man:/usr/share/man:/usr/local/share/man:/Applications/Xcode.app/Contents/Developer/usr/share/man:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man
+  TERM_PROGRAM=vscode
+  NVM_CD_FLAGS=
+  TERM=xterm-256color
+  SHELL=/bin/bash
+  TMPDIR=/var/folders/lg/4f5nj77d365_370vqcmynghw0000gn/T/
+  Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.4idgzy6YNH/Render
+  TERM_PROGRAM_VERSION=1.22.1
+  NVM_DIR=/Users/nemesis1346/.nvm
+  USER=nemesis1346
+  SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.bk0azkcRzo/Listeners
+  __CF_USER_TEXT_ENCODING=0x1F5:0x0:0x52
+  PATH=/Users/nemesis1346/.nvm/versions/node/v8.10.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist
+  VSCODE_NODE_CACHED_DATA_DIR_11019=/Users/nemesis1346/Library/Application Support/Code/CachedData/950b8b0d37a9b7061b6f0d291837ccc4015f5ecd
+  PWD=/Users/nemesis1346/Documents/University Projects/hyperledger-statements/hyperstate
+  LANG=en_US.UTF-8
+  XPC_FLAGS=0x0
+  XPC_SERVICE_NAME=0
+  SHLVL=2
+  HOME=/Users/nemesis1346
+  VSCODE_NLS_CONFIG={"locale":"en-us","availableLanguages":{}}
+  LOGNAME=nemesis1346
+  VSCODE_IPC_HOOK=/Users/nemesis1346/Library/Application Support/Code/1.22.1-main.sock
+  NVM_BIN=/Users/nemesis1346/.nvm/versions/node/v8.10.0/bin
+  NVM_IOJS_ORG_MIRROR=https://iojs.org/dist
+  VSCODE_PID=11019
+  OLDPWD=/Users/nemesis1346/Documents/University Projects/hyperledger-statements
+  _=/Users/nemesis1346/.nvm/versions/node/v8.10.0/bin/composer
+
+Resource limits                        soft limit      hard limit
+  core file size (blocks)                       0       unlimited
+  data seg size (kbytes)                unlimited       unlimited
+  file size (blocks)                    unlimited       unlimited
+  max locked memory (bytes)             unlimited       unlimited
+  max memory size (kbytes)              unlimited       unlimited
+  open files                                10240       unlimited
+  stack size (bytes)                      8388608        67104768
+  cpu time (seconds)                    unlimited       unlimited
+  max user processes                          709            1064
+  virtual memory (kbytes)               unlimited       unlimited
+
+Loaded libraries
+  /Users/nemesis1346/.nvm/versions/node/v8.10.0/bin/node
+  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  /usr/lib/libSystem.B.dylib
+  /usr/lib/libc++.1.dylib
+  /usr/lib/libDiagnosticMessagesClient.dylib
+  /usr/lib/libicucore.A.dylib
+  /usr/lib/libobjc.A.dylib
+  /usr/lib/libz.1.dylib
+  /usr/lib/system/libcache.dylib
+  /usr/lib/system/libcommonCrypto.dylib
+  /usr/lib/system/libcompiler_rt.dylib
+  /usr/lib/system/libcopyfile.dylib
+  /usr/lib/system/libcorecrypto.dylib
+  /usr/lib/system/libdispatch.dylib
+  /usr/lib/system/libdyld.dylib
+  /usr/lib/system/libkeymgr.dylib
+  /usr/lib/system/liblaunch.dylib
+  /usr/lib/system/libmacho.dylib
+  /usr/lib/system/libquarantine.dylib
+  /usr/lib/system/libremovefile.dylib
+  /usr/lib/system/libsystem_asl.dylib
+  /usr/lib/system/libsystem_blocks.dylib
+  /usr/lib/system/libsystem_c.dylib
+  /usr/lib/system/libsystem_configuration.dylib
+  /usr/lib/system/libsystem_coreservices.dylib
+  /usr/lib/system/libsystem_darwin.dylib
+  /usr/lib/system/libsystem_dnssd.dylib
+  /usr/lib/system/libsystem_info.dylib
+  /usr/lib/system/libsystem_m.dylib
+  /usr/lib/system/libsystem_malloc.dylib
+  /usr/lib/system/libsystem_network.dylib
+  /usr/lib/system/libsystem_networkextension.dylib
+  /usr/lib/system/libsystem_notify.dylib
+  /usr/lib/system/libsystem_sandbox.dylib
+  /usr/lib/system/libsystem_secinit.dylib
+  /usr/lib/system/libsystem_kernel.dylib
+  /usr/lib/system/libsystem_platform.dylib
+  /usr/lib/system/libsystem_pthread.dylib
+  /usr/lib/system/libsystem_symptoms.dylib
+  /usr/lib/system/libsystem_trace.dylib
+  /usr/lib/system/libunwind.dylib
+  /usr/lib/system/libxpc.dylib
+  /usr/lib/closure/libclosured.dylib
+  /usr/lib/libc++abi.dylib
+  /Users/nemesis1346/.nvm/versions/node/v8.10.0/lib/node_modules/composer-cli/node_modules/node-report/api.node
+
+================================================================================

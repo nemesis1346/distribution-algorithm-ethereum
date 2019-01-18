@@ -1,0 +1,6 @@
+query selectUserByEmailAndPwd {
+  description: "select a user by email"
+  statement:
+  SELECT org.membran.hyperstate.Organization
+   WHERE (email==_$email AND pwd==_$pwd)
+}

@@ -1,0 +1,115 @@
+namespace org.membran.hyperstate
+
+
+/**The Organization represents a user that can login. 
+Several Traders can be attached to a single organization but one Trader cannot
+be have more than one Organization
+ */
+participant Organization identified by organizationId {
+  o String organizationId
+  o String email
+  o String pwd
+  o String name
+  o OrganizationType organizationType// This user type
+  o String traderId optional //this is the trader representation that belongs to an specific user
+}
+/**These are just tags, could be useful for future roles in the front end.
+So far just the ADMIN is different from other Organization Types
+ */
+enum OrganizationType{
+  o ADMIN 
+  o DISTRIBUTOR 
+  o LABEL
+  o ARTIST
+}
+participant Trader identified by traderId{
+  o String traderId
+  o String name 
+  o String email 
+  o Double balance default=0.00//summarize of current Enabled Balance- Disabled Balance
+  o TraderType traderType
+  o String tokenAccountId //Currentlythe Trader just have one Token Account and is the same Id as the TraderId
+}
+
+enum TraderType {
+  o DISTRIBUTOR
+  o LABEL
+  o ARTIST
+  o ADMIN
+}
+asset Track identified by isrc {
+  o String isrc //Main identifier
+  o String title
+  o Double revenueTotal default=0.00
+  o String vendorIdentifier
+  o String label
+  o String author 
+  o OwnerType ownerType
+  o String uploaderId optional// the participant that created a new track
+}
+
+//These tags are additional but could be useful in the future.
+enum OwnerType{
+  o COMPOSER
+  o PRODUCER
+  o SONG_WRITER
+  o MUSICIAN
+}
+asset Agreement identified by agreementId{
+  o String agreementId
+  o String traderEmiterId
+  o String traderReceiverId 
+  o Double percentage default=0.00 //Percentage of Receiver
+  o AgreementStatus status
+  o String isrc //TrackId
+  o String traderEmiterName optional
+  o String traderReceiverName optional
+  o String trackTitle optional
+}
+
+/**
+This asset represents the balance of a trader. The Id of Token Account has beend setup to be the same Id as the Trader
+ */
+asset TokenAccount identified by tokenAccountId{
+  o String tokenAccountId
+  o Double balanceEnabled default=0.00
+  o Double balanceDisabled default=0.00
+}
+
+//This event will triger a notification on the front end waiting for approval
+event NotifyNewTrackRevenue{
+  o Double oldValue
+  o Double newValue
+  o String isrc  //TrackId
+}
+//APPROVED 
+enum AgreementStatus{
+  o APPROVED
+  o PENDING
+}
+
+//This represents the payment receipt of any user that receives some share(Either Emitter or Receiver)!!!!
+asset PaymentReceipt identified by paymentReceiptId{
+  o String paymentReceiptId
+  o String isrc//within the track I have the track share
+  o Double ammount // it represent what ammount of payment that must be distributed
+  o String traderEmiterId 
+  o String traderReceiverId 
+  o PaymentReceiptType paymentReceiptType 
+  o String agreementId
+  o PaymentReceiptStatus paymentReceiptStatus
+  o String traderEmiterName optional
+  o String traderReceiverName optional
+  o String datetime optional
+  o String uploaderId optional
+  o Double percentageReceiver optional
+}
+enum PaymentReceiptStatus{
+  o EARNED
+  o SPENT
+}
+
+enum PaymentReceiptType{
+  o DISTRIBUTION //This is the distribution that the trader actually receiver(Enabled Balance)
+  o TRACK_UPLOAD //this is the share that was just uploaded by some trader but there warent any agree(Disabled Balance)
+}

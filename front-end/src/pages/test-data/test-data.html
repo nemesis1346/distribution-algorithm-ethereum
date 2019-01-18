@@ -1,0 +1,15 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Data Input</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button *ngIf="role=='ADMIN'" type="submit" block (click)="updateTrackRevenue()" round>Update Track Revenue</button>
+  <button ion-button *ngIf="role!='ADMIN'" type="submit" block (click)="uploadNewTrack()" round>Upload New Track</button>
+
+</ion-content>

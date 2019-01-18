@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <b>Trader: </b> {{traderModel.name}}
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item>
+        <b>Email: </b>{{traderModel.email}}
+      </ion-item>
+
+      <ion-item>
+        <b>Balance: </b>{{traderModel.balance}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceEnabled: </b>{{tokenAccountModel.balanceEnabled}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceDisabled: </b>{{tokenAccountModel.balanceDisabled}}
+      </ion-item>
+
+      <ion-item>
+        <b> TraderType: </b>{{traderModel.traderType}}
+      </ion-item>
+
+      <!-- <button *ngIf="role!='ADMIN'" ion-button (click)="withdraw()" color="secondary">Withdraw</button> -->
+
+      <ion-item>
+        <b>List Receipts the user Owes:</b>
+      </ion-item>
+
+      <ion-item>
+        <ion-list>
+          <ion-item *ngFor="let debtTx of debtListTx;let i=index">
+            <ion-label>
+              <b>Trader Receiver: </b>{{debtTx.traderReceiverName}}
+              <b>Total Debt Ammount: </b>{{debtTx.total}}
+              <button ion-button (click)="detailDebtTx(debtTx)">Detail</button>
+              <!-- <button ion-button (click)="withdrawalByTraderDebtTx(debtTx)">Withdrawal</button> -->
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+
+      <ion-item>
+        <b>List Receipts the user Earned:</b>
+      </ion-item>
+
+      <ion-item>
+        <ion-list>
+          <ion-item *ngFor="let earnedTx of earnedListTx;let i=index">
+            <ion-label>
+              <b>Trader Emiter: </b>{{earnedTx.traderEmiterName}}
+              <b>Total Earned Ammount: </b>{{earnedTx.total}}
+              <button ion-button (click)="detailEarnedTx(earnedTx)">Detail</button>
+              <button ion-button (click)="withdrawalByTraderEranedTx(earnedTx)">Withdrawal</button>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

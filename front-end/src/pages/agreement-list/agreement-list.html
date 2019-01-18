@@ -1,0 +1,34 @@
+<!-- This is a page that can be used by ADMIN and DISTRIBUTOR to see all the available tracks -->
+<ion-header>
+
+  <ion-navbar>
+    <ion-searchbar placeholder="Search Agreement" [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="row header">
+    <div class="col">AgreementId</div>
+    <div class="col">Emiter Name</div>
+    <div class="col">Receiver Name</div>
+    <div class="col">Percentage Receiver</div>
+    <div class="col">ISRC</div>
+    <div class="col">Detail</div>
+  </div>
+  <div class="row" *ngFor="let agreement of listAgreementModel;let i=index">
+    <div class="col">{{agreement.agreementId}}</div>
+    <div class="col">{{agreement.traderEmiterName}}</div>
+    <div class="col">{{agreement.traderReceiverName}}</div>
+    <div class="col">{{agreement.percentage}}</div>
+    <div class="col">{{agreement.isrc}}</div>
+    <div class="col"> <button ion-button (click)="selectAgreement(agreement.agreementId)">Detail</button></div>
+
+  </div>
+
+  <div *ngIf="flagNoResults" class="item-custom">No Results</div>
+</ion-content>

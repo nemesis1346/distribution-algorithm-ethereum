@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Update Track</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      New Track Revenue
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input type="number" [(ngModel)]="updatedQuantity" name="updatedQuantity" placeholder="New Quantity"></ion-input>
+      <button ion-button type="submit" block (click)="updateTrackRevenue()" round>Update Track Revenue</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        <b>Tracks for to Update</b>
+      </ion-card-header>
+      <div class="row header">
+        <div class="col">Track Title</div>
+        <div class="col">Artist</div>
+        <div class="col">ISRC</div>
+        <div class="col">Revenue</div>
+      </div>
+      <div class="row" *ngFor="let track of listTrackModel;let i=index">
+        <div class="col">{{track.title}}</div>
+        <div class="col">{{track.author}}</div>
+        <div class="col">{{track.isrc}}</div>
+        <div class="col">{{track.revenueTotal}}</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

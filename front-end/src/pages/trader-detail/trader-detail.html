@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Trader Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-card>
+    <ion-card-header>
+      <b>Trader: </b> {{traderModel.name}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <b>Email: </b>{{traderModel.email}}
+      </ion-item>
+
+      <ion-item>
+        <b>Balance: </b>{{traderModel.balance}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceEnabled: </b>{{tokenAccountModel.balanceEnabled}}
+      </ion-item>
+
+      <ion-item>
+        <b>BalanceDisabled: </b>{{tokenAccountModel.balanceDisabled}}
+      </ion-item>
+
+      <ion-item>
+        <b> TraderType: </b>{{traderModel.traderType}}
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

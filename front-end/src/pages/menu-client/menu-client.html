@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <ion-title>Main Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          <b>Trader: </b> {{traderModel.name}}
+        </ion-card-header>
+      </ion-card>
+  <div class="content-menu">
+    <!-- <h1>{{userModel.firstName}}</h1> -->
+
+    <!-- LOAD TRACK FOR THE SINGLE PARTICIPANT -->
+    <button *ngIf="role!='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="dataInput(role)">
+      Data Input
+    </button>
+    <!-- LOAD SEVERAL TESTING TRACKS AS AN ADMIN -->
+    <!-- <button *ngIf="role=='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="loadFile(role)">
+      Load from File
+    </button> -->
+    <button class="button-login" full ion-button round color="secondary" (click)="createTrader()">
+      Create Trader
+    </button>
+    <button *ngIf="role=='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="createOrganizationAccount()">
+      Create Organization Account
+    </button>
+
+    <!-- TODO: Think about change the availability of create product button for trader -->
+    <!-- <button *ngIf="role=='admin'" class="button-login" full ion-button round color="secondary" (click)="createTrack()">
+      Create Track
+    </button> -->
+    <!-- List of Traders is just to see details of the trader like the company they belong -->
+    <button *ngIf="role=='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="listTraders()">
+      List Traders
+    </button>
+    <!-- Product have a status as well -->
+    <button class="button-login" full ion-button round color="secondary" (click)="listTracks()">
+      List Tracks
+    </button>
+    <button class="button-login" full ion-button round color="secondary" (click)="listTransactions()">
+      List Transactions
+    </button>
+    <button *ngIf="role=='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="listAgreements()">
+      List Agreements
+    </button>
+    <button  class="button-login" full ion-button round color="secondary" (click)="showDiagram()">
+      Show Diagram
+    </button>
+    <!-- TODO: is pending functionality -->
+    <!-- <button *ngIf="role!='ARTIST'" class="button-login" full ion-button round color="secondary" (click)="listArtists()">
+      List of Artists
+    </button> -->
+    <!-- Just the list of Clients to support-->
+    <!-- <button *ngIf="role!='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="listArtists()">
+      List Artists
+    </button> -->
+    <button *ngIf="role!='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="createAgreement()">
+      Create Agreement
+    </button>
+    <button *ngIf="role!='ADMIN'" class="button-login" full ion-button round color="secondary" (click)="manualPayment()">
+      Manual Payment 
+    </button>
+    <button class="button-login" full ion-button round color="secondary" (click)="goClientDetail()">
+      Profile and Balance
+    </button>
+    <button class="button-login" full ion-button round color="secondary" (click)="logout()">
+      LogOut
+    </button>
+  </div>
+</ion-content>
