@@ -2,17 +2,17 @@
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
 const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;
 const winston = require('winston');
-const UserModel = require('../models/userModel.js');
+const UserModel = require('../../models/userModel.js');
 const cardname = 'admin@hyperstate';
 const networkNamespace = 'org.membran.hyperstate';
 const LOG = winston.loggers.get('application');
 const UUID = require('uuid/v1');
-const DataModel = require('../models/dataModel.js');
-const AgreementModel = require('../models/agreementModel.js');
+const DataModel = require('../../models/dataModel.js');
+const AgreementModel = require('../../models/agreementModel.js');
 const Async = require('async');
-const TraderModel = require('../models/traderModel.js');
-const PaymentReceiptModel = require('../models/paymentReceiptModel.js');
-const TrackModel = require('../models/trackModel.js');
+const TraderModel = require('../../models/traderModel.js');
+const PaymentReceiptModel = require('../../models/paymentReceiptModel.js');
+const TrackModel = require('../../models/trackModel.js');
 
 class TransactionChaincode {
 

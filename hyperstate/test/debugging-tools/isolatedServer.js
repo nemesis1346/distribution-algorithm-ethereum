@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const IsolatedChaincode = require('./isolatedChaincode.js');
-const DataModel = require('../models/dataModel.js');
+const DataModel = require('../../models/dataModel.js');
 
 const app = express();
 
