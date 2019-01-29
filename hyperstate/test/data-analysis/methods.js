@@ -1,7 +1,6 @@
 'use strict';
 const http = require('http');
 const superagent = require('superagent');
-const UUID = require('uuid/v1');
 const TokenAccountModel = require('../../models/tokenAccountModel.js');
 const UserModel = require('../../models/userModel.js');
 const DistributionRequest = require('../../models/distributionRequest.js');
@@ -12,58 +11,50 @@ const PORT = '3011';
 const HOST = 'localhost';
 const Timeout = require('await-timeout');
 const AppleTrackData = require('../../data/processedData/Apple_Streams_S1_80032046_1117_AU_for_201710_exampleJSON');
-const Async = require('async');
 const OnHoldDistributionRequest = require('../../models/onHoldDistributionRequest.js');
 
-async function getTxByTrackForDiagram(isrc){
+exports.getTxByTrackForDiagram = async function (isrc) {
     try {
         await requestPost('/getTxByTrackForDiagram', JSON.stringify(isrc), 'GetTxByTrackForDiagram');
     } catch (error) {
-        console.log('THIS IS SOMETHING DIFFERENT');
+        console.log('/getTxByTrackForDiagram ERROR');
         console.error(error);
         return new Error(error);
     }
 }
 
-async function getTxByEmiterForBalance(traderId) {
+exports.getTxByEmiterForBalance = async function (traderId) {
     try {
-
         await requestPost('/getTxByEmiterForBalance', JSON.stringify(traderId), 'GetTxByEmiterForBalance');
-
     } catch (error) {
-        console.log('THIS IS SOMETHING DIFFERENT');
+        console.log('/getTxByEmiterForBalance ERROR');
         console.error(error);
         return new Error(error);
     }
 }
 
-async function getTxByReceiverForBalance(traderId) {
+exports.getTxByReceiverForBalance = async function (traderId) {
     try {
-
         await requestPost('/getTxByReceiverForBalance', JSON.stringify(traderId), 'GetTxByReceiverForBalance');
-
     } catch (error) {
-        console.log('THIS IS SOMETHING DIFFERENT');
+        console.log('/getTxByReceiverForBalance ERROR');
         console.error(error);
         return new Error(error);
     }
 }
 
-
-async function distribution(isrc, uploaderId, date) {
+exports.distribution = async function (isrc, uploaderId, date) {
     try {
         let distributionRequest = new DistributionRequest(isrc, uploaderId, date);
-
         await requestPost('/distributionAlgorithm', JSON.stringify(distributionRequest), 'DISTRIBUTION');
-
     } catch (error) {
-        console.log('THIS IS SOMETHING DIFFERENT');
+        console.log('/distributionAlgorithm ERROR');
         console.error(error);
         return new Error(error);
     }
 }
 
-async function cascadeDistribution(agreementId, emiterId, receiverId, ammount, isrc) {
+exports.cascadeDistribution = async function (agreementId, emiterId, receiverId, ammount, isrc) {
     try {
         var cascadeDistributionRequest = JSON.stringify({
             "traderReceiverId": receiverId,
@@ -73,22 +64,14 @@ async function cascadeDistribution(agreementId, emiterId, receiverId, ammount, i
             "agreementId": agreementId
         });
         await requestPost('/cascadeDistribution', JSON.stringify(cascadeDistributionRequest), 'CASCADE DISTRIBUTION');
-
     } catch (error) {
-        console.log('THIS IS SOMETHING DIFFERENT');
+        console.log('/cascadeDistribution ERROR');
         console.error(error);
         return new Error(error);
     }
 }
-/**
- * @description This is a generic method for creating a generic user
- * @param {string} name 
- * @param {string} email 
- * @param {string} pwd 
- * @param {string} organizationType 
- * @param {string} traderId 
- */
-async function createUser(name, email, pwd, organizationType, traderId) {
+
+exports.createUser= async function(name, email, pwd, organizationType, traderId) {
     //DATA FOR CREATING AN ADMIN UER
     var adminModel = new UserModel(
         name,
@@ -101,22 +84,13 @@ async function createUser(name, email, pwd, organizationType, traderId) {
     try {
         await requestPost('/createOrganization', JSON.stringify(adminModel), 'ADMIN');
     } catch (error) {
+        console.log('/createOrganization ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
-/**
- * @description This is a method for creating a generic single track
- * @param {string} trackId 
- * @param {string} title 
- * @param {string} revenue 
- * @param {string} vendorIdentifier 
- * @param {string} label 
- * @param {string} author 
- * @param {string} authorType 
- * @param {string} callback 
- */
-async function createTrack(trackId, title, revenue, vendorIdentifier, label, author, authorType) {
+
+exports.createTrack = async function (trackId, title, revenue, vendorIdentifier, label, author, authorType) {
     //DATA FOR CREATING TRACK
     var trackModel = new TrackModel(
         trackId,
@@ -130,23 +104,14 @@ async function createTrack(trackId, title, revenue, vendorIdentifier, label, aut
     try {
         await requestPost('/createTrack', JSON.stringify(trackModel), 'TRACK');
     } catch (error) {
+        console.log('/createTrack ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
 
-/**
- * @description This method is to load the single track but with custom post 
- * @param {string} trackId 
- * @param {string} title 
- * @param {string} revenue 
- * @param {string} vendorIdentifier 
- * @param {string} label 
- * @param {string} author 
- * @param {string} authorType 
- * @param {string} callback 
- */
-async function createTrackForArray(trackId, title, revenue, vendorIdentifier, label, author, authorType, uploaderId) {
+
+exports.createTrackForArray=async function(trackId, title, revenue, vendorIdentifier, label, author, authorType, uploaderId) {
     //DATA FOR CREATING TRACK
     var trackModel = new TrackModel(
         trackId,
@@ -159,18 +124,15 @@ async function createTrackForArray(trackId, title, revenue, vendorIdentifier, la
         uploaderId
     );
     try {
-        await requestPost('/createTrack', JSON.stringify(trackModel), 'TRACK');
+        await requestPost('/createTrackForArray', JSON.stringify(trackModel), 'TRACK');
     } catch (error) {
+        console.log('/createTrackForArray ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
 
-/**
- * @description This method is to load the data of the songs we have with Membran
- * @param {uploaderId} uploaderId 
- */
-async function createAllTracksFromFile(uploaderId) {
+exports.createAllTracksFromFile= async function(uploaderId) {
     try {
         let listTracks = [];
         AppleTrackData.forEach((element) => {
@@ -216,6 +178,7 @@ async function createAllTracksFromFile(uploaderId) {
         // }
 
     } catch (error) {
+        console.log('/createAllTracksFromFile ERROR');
         console.error(error);
         throw new Error(error);
     }
@@ -224,7 +187,7 @@ async function createAllTracksFromFile(uploaderId) {
 /**
  * @description This is very customizable, must be improved
  */
-async function uploadPaymentForArray(uploaderId) {
+exports.uploadPaymentForArray=async function (uploaderId) {
     let listTracks = [];
 
     //We make the transaction related with the upload   
@@ -249,18 +212,7 @@ async function uploadPaymentForArray(uploaderId) {
     }
 }
 
-/**
- * @description This method is for creating a generic method for creating agreements
- * @param {string} agreementId 
- * @param {string} traderEmiterId 
- * @param {string} traderReceiverId 
- * @param {string} percentage 
- * @param {string} status 
- * @param {string} isrc 
- * @param {string} traderEmiterName 
- * @param {string} traderReceiverName 
- */
-async function createAgreement(agreementId, traderEmiterId, traderReceiverId, percentage, status, isrc, traderEmiterName, traderReceiverName) {
+exports.createAgreement=async function (agreementId, traderEmiterId, traderReceiverId, percentage, status, isrc, traderEmiterName, traderReceiverName) {
     //DATA FOR TX CREATE GENERIC AGREEMENT
     var agreementModel = new AgreementModel(
         agreementId,
@@ -276,12 +228,13 @@ async function createAgreement(agreementId, traderEmiterId, traderReceiverId, pe
     try {
         await requestPost('/createAgreement', JSON.stringify(agreementModel), 'CREATE AGREEMENT');
     } catch (error) {
+        console.log('/createAgreement ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
 
-async function manualPayment(isrc, traderId) {
+exports.manualPayment=async function (isrc, traderId) {
     var manualPaymentRequest = JSON.stringify({
         "isrc": isrc,
         "traderId": traderId
@@ -289,13 +242,14 @@ async function manualPayment(isrc, traderId) {
     try {
         await requestPost('/manualPayment', manualPaymentRequest, 'MANUAL PAYMENT');
     } catch (error) {
+        console.log('/manualPayment ERROR');
         console.error(error);
         throw new Error(error);
     }
 
 }
 
-async function updateTrack(isrc, revenueTotal) {
+exports.updateTrack=async function (isrc, revenueTotal) {
     var updateRequest = JSON.stringify({
         "isrc": isrc,
         "revenueTotal": revenueTotal
@@ -303,6 +257,7 @@ async function updateTrack(isrc, revenueTotal) {
     try {
         await requestPost('/updateTrack', updateRequest, 'UPDATE TRACK');
     } catch (error) {
+        console.log('/updateTrack ERROR');
         console.error(error);
         throw new Error(error);
     }
@@ -314,7 +269,7 @@ async function updateTrack(isrc, revenueTotal) {
  * @param {string} isrc 
  * @param {string} uploader 
  */
-async function paymentDist(isrc, uploader) {
+exports.paymentDist=async function (isrc, uploader) {
     //DATA FOR TX DISTRIBUTION
     var dataPaymentDistAuto = JSON.stringify({
         "isrc": isrc,
@@ -323,20 +278,13 @@ async function paymentDist(isrc, uploader) {
     try {
         await requestPost('/paymentDistributionAutomatic', dataPaymentDistAuto, 'PAYMENT DISTRIBUTION');
     } catch (error) {
+        console.log('/paymentDistributionAutomatic ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
-/**
- * @description This is a generic method for creating participant in testing mode
- * @param {string} participantId 
- * @param {string} name 
- * @param {string} email 
- * @param {string} balance 
- * @param {string} traderType 
- * @param {string} tokenAccountId 
- */
-async function createParticipant(participantId, name, email, balance, traderType, tokenAccountId) {
+
+exports.createParticipant = async function (participantId, name, email, balance, traderType, tokenAccountId) {
     //DATA FOR CREATE A GENERIC PARTICIPANT
     let participantModel = new TraderModel(
         participantId,
@@ -351,37 +299,37 @@ async function createParticipant(participantId, name, email, balance, traderType
         await requestPost('/createTrader', JSON.stringify(participantModel), 'PARTICIPANT ' + name);
         await requestPost('/createNewTokenAccount', JSON.stringify(tokenAccountId), 'TOKEN ACCOUNT ' + name);
     } catch (error) {
-        console.log('THIS IS SOMETHING NEW');
+        console.log('/createParticipant ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
-async function onHoldDistribution(isrc, uploaderId) {
+exports.onHoldDistribution=async function (isrc, uploaderId) {
     try {
 
         let onHoldDistributionRequest = new OnHoldDistributionRequest(isrc, uploaderId);
         await requestPost('/onHoldDistribution', JSON.stringify(onHoldDistributionRequest), 'HOLD DISTRIBUTION');
 
     } catch (error) {
-        console.log('THIS IS SOMETHING NEW');
+        console.log('/onHoldDistribution ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
 
-async function getTraderDetail(traderId) {
+exports.getTraderDetail = async function (traderId) {
     try {
         let result = await requestPost('/getTraderDetail', JSON.stringify(traderId), 'GET TRADER DETAIL');
 
         return result;
     } catch (error) {
-        console.log('THIS IS SOMETHING NEW');
+        console.log('/getTraderDetail ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
 
-async function evaluateEmiters(isrc, uploaderId) {
+exports.evaluateEmiters =async function(isrc, uploaderId) {
     try {
         var evaluateEmitersRequest = JSON.stringify({
             "isrc": isrc,
@@ -391,18 +339,18 @@ async function evaluateEmiters(isrc, uploaderId) {
 
         return result;
     } catch (error) {
-        console.log('THIS IS SOMETHING NEW');
+        console.log('/evaluateEmiters ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
 
-async function getTokenAccount(tokenAccountId) {
+exports.getTokenAccount=async function (tokenAccountId) {
     try {
         await requestPost('/getTokenAccountDetail', JSON.stringify(tokenAccountId), 'TOKEN ACCOUNT ID' + tokenAccountId);
 
     } catch (error) {
-        console.log('THIS IS SOMETHING NEW');
+        console.log('/getTokenAccountDetail ERROR');
         console.error(error);
         throw new Error(error);
     }
@@ -463,7 +411,4 @@ async function requestGet(endpoint, extraInfo) {
     });
     await get_req.end()
 }
-
-mainDataInputProcess();
-
 
