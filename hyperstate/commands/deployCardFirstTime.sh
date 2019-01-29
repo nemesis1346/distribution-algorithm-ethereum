@@ -30,5 +30,5 @@ sudo composer network ping --card admin@hyperstate
 
 cd ../middleware
 
-sudo node gate.js
+sudo node server.js
 

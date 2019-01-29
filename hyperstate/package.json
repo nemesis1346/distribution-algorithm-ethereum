@@ -1,6 +1,6 @@
 {
   "name": "hyperstate",
-	"version": "1.0.0",
+  "version": "1.0.0",
   "description": "Exploring the application of Hyperledger to process multiple in-series accounting/statement processes simultaneously across a trustless network, while maintaining privacy for users",
   "scripts": {
     "test": "mocha --recursive"
@@ -26,10 +26,10 @@
     "composer-cli": "^0.20.4",
     "composer-connector-hlfv1": "^0.20.0",
     "composer-rest-server": "^0.20.4",
-    "cors": "^2.8.4",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "method-override": "^2.3.10",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "node-gyp": "^3.6.2",
     "node-sass": "^4.9.3",
     "perm": "^0.1.1",
