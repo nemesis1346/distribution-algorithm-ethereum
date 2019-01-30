@@ -1,7 +1,6 @@
 
 'use strict';
 const UUID = require('uuid/v1');
-
 const methods = require('./methods.js')
 
 exports.initData=async function(){
