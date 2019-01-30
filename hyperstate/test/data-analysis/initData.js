@@ -4,9 +4,8 @@ const UUID = require('uuid/v1');
 
 const methods = require('./methods.js')
 
-async function initData(){
-    console.log(methods)
-      //INIT DATA////////////////////////////////////////////////////////////// 
+exports.initData=async function(){
+      //INIT DATA////////////////////////////////////////////////////////////// (THIS IS THE DATA OF MEMBRAN)
       let trackId = UUID();
       await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
       let track2Id = UUID();
@@ -44,4 +43,3 @@ async function initData(){
       //////////////////////////////////////////////////////////////////////////
 }
 
-initData();

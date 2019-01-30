@@ -1,5 +1,5 @@
 //Here i m saving all the data
-async function example5() {
+async function example6() {
     try {
 
       //Example 6-------------------------------------------------------------
