@@ -1,51 +1,59 @@
-//Here i m saving all the data
+'use strict';
+const UUID = require('uuid/v1');
+const methods = require('./methods.js');
+
+//must be seend in the distribution analysis in react app 
 async function example6() {
-    try {
 
-      //Example 6-------------------------------------------------------------
-      let agreement21Id = UUID();
-      await createAgreement(agreement21Id, orchardId, membranId, 0.9, 'PENDING', trackId, 'Orchard', 'Membran');
-      let agreement22Id = UUID();
-      await createAgreement(agreement22Id, membranId, artist1Id, 0.05, 'PENDING', trackId, 'Membran', 'Artist1');
-      let agreement23Id = UUID();
-      await createAgreement(agreement23Id, membranId, labelId, 0.05, 'PENDING', trackId, 'Membran', 'Label');
-      let agreement24Id = UUID();
-      await createAgreement(agreement24Id, membranId, artist2Id, 0.05, 'PENDING', trackId, 'Membran', 'Artist2');
-      let agreement25Id = UUID();
-      await createAgreement(agreement25Id, labelId, artist3Id, 0.4444, 'PENDING', trackId, 'Label', 'Artist3');
-      let agreement26Id = UUID();
-      await createAgreement(agreement26Id, labelId, artist4Id, 0.4444, 'PENDING', trackId, 'Label', 'Artist4');
+    //INIT DATA////////////////////////////////////////////////////////////// 
+    let trackId = UUID();
+    await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'trader4', 'author', 'MUSICIAN');
 
-      await updateTrack(trackId, 1000);
-      await distribution(trackId, orchardId, String(new Date().toISOString()));
-      
-      console.log('TOKEN MEMBRAN');
-      await getTokenAccount(membranId);
-      console.log('TOKEN ARTIST 1');
-      await getTokenAccount(artist1Id);
-      console.log('TOKEN ARTIST 2');
-      await getTokenAccount(artist2Id);
-      console.log('TOKEN ARTIST 3');
-      await getTokenAccount(artist3Id);
-      console.log('TOKEN ARTIST 4');
-      await getTokenAccount(artist4Id);
-      console.log('TOKEN ORCHARD');
-      await getTokenAccount(orchardId);
-      console.log('TOKEN LABEL')
-      await getTokenAccount(labelId)
+    let trader1 = UUID();
+    await methods.createParticipant(trader1, 'trader1', 'trader1', 0.00, 'DISTRIBUTOR', trader1);
+    let trader2 = UUID();
+    await methods.createParticipant(trader2, 'trader2', 'trader2', 0.00, 'DISTRIBUTOR', trader2);
+    let trader3 = UUID();
+    await methods.createParticipant(trader3, 'trader3', 'trader3', 0.00, 'ARTIST', trader3);
+    let trader4 = UUID();
+    await methods.createParticipant(trader4, 'trader4', 'trader4', 0.00, 'ARTIST', trader4);
+    let trader5 = UUID();
+    await methods.createParticipant(trader5, 'trader5', 'trader5', 0.00, 'DISTRIBUTOR', trader5);
+    let trader6 = UUID();
+    await methods.createParticipant(trader6, 'trader6', 'trader6', 0.00, 'ARTIST', trader6);
+    let trader7 = UUID();
+    await methods.createParticipant(trader7, 'trader7', 'trader7', 0.00, 'ARTIST', trader7);
 
-      // await getTxByReceiverForBalance(artist3Id);
-      // await getTxByEmiterForBalance(artist1Id);
+    //Example 6-------------------------------------------------------------
+    let agreement21Id = UUID();
+    await methods.createAgreement(agreement21Id, trader1, trader2, 0.9, 'PENDING', trackId, 'trader1', 'trader2');
+    let agreement22Id = UUID();
+    await methods.createAgreement(agreement22Id, trader2, trader3, 0.05, 'PENDING', trackId, 'trader2', 'trader3');
+    let agreement23Id = UUID();
+    await methods.createAgreement(agreement23Id, trader2, trader4, 0.05, 'PENDING', trackId, 'trader2', 'trader4');
+    let agreement24Id = UUID();
+    await methods.createAgreement(agreement24Id, trader2, trader5, 0.05, 'PENDING', trackId, 'trader2', 'trader5');
+    let agreement25Id = UUID();
+    await methods.createAgreement(agreement25Id, trader4, trader6, 0.4444, 'PENDING', trackId, 'trader4', 'trader6');
+    let agreement26Id = UUID();
+    await methods.createAgreement(agreement26Id, trader4, trader7, 0.4444, 'PENDING', trackId, 'trader4', 'trader7');
 
-        //Test create agreements
-        // let agreement1Ex5Id = UUID();
-        // await createAgreement(agreement1Ex5Id, membranId, artist1Id, 0.88, 'PENDING', trackId, 'Membran', 'Artist1');
-        // let agreement2Ex5Id = UUID();
-        // await createAgreement(agreement2Ex5Id, membranId, artist2Id, 0.25, 'PENDING', trackId, 'Membran', 'Artist2');
+    await methods.updateTrack(trackId, 1000);
+    await methods.distribution(trackId, trader1, String(new Date().toISOString()));
 
-    } catch (error) {
-        console.log('THIS IS SOMETHING DIFFERENT');
-        console.error(error);
-        return new Error(error);
-    }
+    console.log('TOKEN TRADER 1');
+    await methods.getTokenAccount(trader1);
+    console.log('TOKEN TRADER 2');
+    await methods.getTokenAccount(trader2);
+    console.log('TOKEN TRADER 3');
+    await methods.getTokenAccount(trader3);
+    console.log('TOKEN TRADER 4');
+    await methods.getTokenAccount(trader4);
+    console.log('TOKEN TRADER 5');
+    await methods.getTokenAccount(trader5);
+    console.log('TOKEN TRADER 6')
+    await methods.getTokenAccount(trader6);
+    console.log('TOKEN TRADER 7')
+    await methods.getTokenAccount(trader7);
 }
+example6();
