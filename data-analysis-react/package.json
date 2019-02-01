@@ -5,6 +5,7 @@
   "dependencies": {
     "d3": "^5.8.0",
     "react": "^16.7.0",
+    "react-d3-tree": "^1.12.2",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
   },
