@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <input type="text" ame="isrc" placeholder="Track ISRC" />
         <button ion-button type="submit">
-          Submit
+          Submit5
         </button>
         <BarChart />
       </div>
