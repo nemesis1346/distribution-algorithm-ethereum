@@ -4,14 +4,19 @@ import { connect } from 'react-redux';
 import { getDiagramData } from '../../actions/diagramActions';
 
 class DiagramPage extends React.Component {
+
     state = {
 
     }
+    componentWillMount() {
+        //Here we can call to the props
+        this.props.getDiagramData();
+      }
     render() {
         return (
             <div className="App">
                 <input type="text" name="isrc" placeholder="Track ISRC" />
-                <button ion-button type="submit">
+                <button type="submit">
                     Submit5
         </button>
                 <BarChart />
@@ -20,4 +25,12 @@ class DiagramPage extends React.Component {
     }
 }
 
-export default connect(null, { getDiagramData })(DiagramPage);
+const mapStateToPropsDiagramPage = state => {
+    //In this case objects is gonna be applied to the props of the component
+    return {
+        diagramData: state.diagramReducer.diagramData,
+    };
+  };
+  
+
+export default connect(mapStateToPropsDiagramPage, { getDiagramData })(DiagramPage);
