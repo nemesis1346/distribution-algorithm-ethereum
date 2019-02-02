@@ -10,7 +10,7 @@ class DiagramPage extends React.Component {
     }
     componentWillMount() {
         //Here we can call to the props
-        this.props.getDiagramData();
+        this.props.getDiagramData(JSON.stringify('example1'));
       }
     render() {
         return (
