@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-import * as d3 from "d3";
-import Tree from "react-d3-tree";
-import BarChart from "./BarChart";
-
+import { BrowserRouter,Route } from 'react-router-dom';
+import DiagramPage from '../src/components/pages/DiagramPage';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <input type="text" ame="isrc" placeholder="Track ISRC" />
-        <button ion-button type="submit">
-          Submit5
-        </button>
-        <BarChart />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Route path="/" exact component={DiagramPage}></Route>
+        </div>
+      </BrowserRouter>
     );
   }
 }
 
 export default App;
+
+
+ 
