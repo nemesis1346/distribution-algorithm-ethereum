@@ -21,7 +21,7 @@ class DiagramPage extends React.Component {
                 <input type="text" name="isrc" placeholder="Track ISRC" />
                 <button type="submit">
                     Submit5
-        </button>
+                </button>
                 <BarChart diagramData = {diagramData}/>
             </div>
         );

@@ -79,6 +79,7 @@ export class FlowDiagramPage {
             finalResult = JSON.stringify(finalResult).replace(/"ammount":/g, '"value":');
             finalResult = JSON.parse(finalResult);
 
+            console.log('FINAL RESULT');
             console.log(finalResult);
 
             TREE_OPTION.series[0].data = [finalResult];
@@ -104,12 +105,7 @@ export class FlowDiagramPage {
         var children = this.getNestedChildren(arr, arr[i].traderReceiverId)
         if (children.length) {
           arr[i].children = children
-          // console.log(arr[i].percentageReceiver);
-          // arr[i].name = arr[i].traderEmiterName + " "+arr[i].percentageReceiver;
-          // arr[i].value = Math.round(arr[i].ammount * 100) / 100;
         }
-       
-        //  arr[i].tooltip={formatter: 'my custom text and {a}, {b}, {c}, {d} and {e}'};
         out.push(arr[i]);
       }
     }

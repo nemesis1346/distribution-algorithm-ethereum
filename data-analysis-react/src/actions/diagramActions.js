@@ -9,10 +9,11 @@ export const getDiagramData = isrc => {
       .then(res => {
         let result = parseResponse(res.data.body);
         let parseResult = JSON.parse(result.data);
-        let receiptList =JSON.parse(parseResult.receiptList);
+        let receiptList = JSON.parse(parseResult.receiptList);
         let finalResult;
         let firstEmiterId = receiptList[0].uploaderId;
-
+        console.log("FIRST EMITTER");
+        console.log(firstEmiterId);
         receiptList.forEach(element => {
           if (element.traderReceiverId == firstEmiterId) {
             //We extract the Id of the first trader
@@ -20,19 +21,24 @@ export const getDiagramData = isrc => {
           }
         });
 
-        let subResult = this.getNestedChildren(receiptList, firstEmiterId);
+        let subResult = getNestedChildren(receiptList, firstEmiterId);
         finalResult.children = subResult;
 
-
-        finalResult = JSON.stringify(finalResult).replace(/"traderReceiverName":/g, '"name":');
+        finalResult = JSON.stringify(finalResult).replace(
+          /"traderReceiverName":/g,
+          '"name":'
+        );
         finalResult = JSON.parse(finalResult);
-        finalResult = JSON.stringify(finalResult).replace(/"ammount":/g, '"value":');
+        finalResult = JSON.stringify(finalResult).replace(
+          /"ammount":/g,
+          '"value":'
+        );
         finalResult = JSON.parse(finalResult);
 
-        console.log('ACTIONS');
+        console.log("ACTIONS");
         console.log(finalResult);
 
-         console.log(receiptList);
+        console.log(receiptList);
         dispatch(getDiagramDataSuccess(receiptList));
       })
       .catch(err => {
@@ -40,6 +46,20 @@ export const getDiagramData = isrc => {
         dispatch(handleError(err.message));
       });
   };
+};
+
+const getNestedChildren = (arr, traderEmiterId) => {
+  var out = [];
+  for (var i in arr) {
+    if (arr[i].traderEmiterId == traderEmiterId) {
+      var children = getNestedChildren(arr, arr[i].traderReceiverId);
+      if (children.length) {
+        arr[i].children = children;
+      }
+      out.push(arr[i]);
+    }
+  }
+  return out;
 };
 
 const getDiagramDataSuccess = diagramData => {
