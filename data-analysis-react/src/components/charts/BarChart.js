@@ -8,10 +8,13 @@ class BarChart extends Component {
       };
       
   render() {
+    console.log('PROPS BARCHART');
     console.log(this.props);
+    const  {diagramData}=this.props 
+    console.log();
     return (
       <div id="treeWrapper" style={{ height: "600px" }}>
-        {this.props.data ? <Tree data={this.props.data} /> : <div />}
+        {diagramData ? <Tree data={diagramData} /> : <div />}
       </div>
     );
   }

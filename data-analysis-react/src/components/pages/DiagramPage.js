@@ -13,13 +13,16 @@ class DiagramPage extends React.Component {
         this.props.getDiagramData(JSON.stringify('example1'));
       }
     render() {
+        console.log("PROPS");
+        console.log(this.props);
+        const {diagramData} = this.props;
         return (
             <div className="App">
                 <input type="text" name="isrc" placeholder="Track ISRC" />
                 <button type="submit">
                     Submit5
         </button>
-                <BarChart />
+                <BarChart diagramData = {diagramData}/>
             </div>
         );
     }

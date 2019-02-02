@@ -10,6 +10,28 @@ export const getDiagramData = isrc => {
         let result = parseResponse(res.data.body);
         let parseResult = JSON.parse(result.data);
         let receiptList =JSON.parse(parseResult.receiptList);
+        let finalResult;
+        let firstEmiterId = receiptList[0].uploaderId;
+
+        receiptList.forEach(element => {
+          if (element.traderReceiverId == firstEmiterId) {
+            //We extract the Id of the first trader
+            finalResult = element;
+          }
+        });
+
+        let subResult = this.getNestedChildren(receiptList, firstEmiterId);
+        finalResult.children = subResult;
+
+
+        finalResult = JSON.stringify(finalResult).replace(/"traderReceiverName":/g, '"name":');
+        finalResult = JSON.parse(finalResult);
+        finalResult = JSON.stringify(finalResult).replace(/"ammount":/g, '"value":');
+        finalResult = JSON.parse(finalResult);
+
+        console.log('ACTIONS');
+        console.log(finalResult);
+
          console.log(receiptList);
         dispatch(getDiagramDataSuccess(receiptList));
       })
