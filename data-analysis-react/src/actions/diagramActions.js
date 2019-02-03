@@ -39,7 +39,7 @@ export const getDiagramData = isrc => {
         console.log(finalResult);
 
         console.log(receiptList);
-        dispatch(getDiagramDataSuccess(receiptList));
+        dispatch(getDiagramDataSuccess(finalResult));
       })
       .catch(err => {
         console.log(err);

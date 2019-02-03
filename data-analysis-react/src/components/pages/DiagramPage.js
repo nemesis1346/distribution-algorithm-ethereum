@@ -6,23 +6,29 @@ import { getDiagramData } from '../../actions/diagramActions';
 class DiagramPage extends React.Component {
 
     state = {
+        isrc: ""
+    }
+    onClick = (e) => {
+        e.preventDefault();
+        this.props.getDiagramData(JSON.stringify(this.state.isrc));
+    }
+    handleChange = (e) => {
+        this.setState({ isrc: e.target.value });
 
     }
-    componentWillMount() {
-        //Here we can call to the props
-        this.props.getDiagramData(JSON.stringify('example1'));
-      }
     render() {
         console.log("PROPS");
         console.log(this.props);
-        const {diagramData} = this.props;
+        const { diagramData } = this.props;
         return (
             <div className="App">
-                <input type="text" name="isrc" placeholder="Track ISRC" />
-                <button type="submit">
-                    Submit5
+                <form >
+                    <input type="text" name="isrc" placeholder="Track ISRC" value={this.state.isrc} onChange={this.handleChange} />
+                    <button type="submit" onClick={this.onClick}>
+                        Submit
                 </button>
-                <BarChart diagramData = {diagramData}/>
+                    <BarChart diagramData={diagramData} />
+                </form>
             </div>
         );
     }
@@ -33,7 +39,7 @@ const mapStateToPropsDiagramPage = state => {
     return {
         diagramData: state.diagramReducer.diagramData,
     };
-  };
-  
+};
+
 
 export default connect(mapStateToPropsDiagramPage, { getDiagramData })(DiagramPage);

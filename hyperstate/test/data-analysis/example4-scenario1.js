@@ -4,7 +4,7 @@ const methods = require('./methods.js');
 
 async function example4() {
     //INIT DATA////////////////////////////////////////////////////////////// 
-    let trackId = UUID();
+    let trackId = 'example4';
     await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
     let track2Id = UUID();
     await methods.createTrack(track2Id, 'track2', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
