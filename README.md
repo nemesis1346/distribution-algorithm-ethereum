@@ -1,6 +1,4 @@
-#Hyperstate ReadMe for documenting bullet points of the system
-
-#Originally developed By Marco Maigua (Contact: marco.maigua1346@gmail.com). Version 0.0.1 Completion Date: 14/11/2018
+# Distribution Algorithm for Digital Assets 
 
 This project has as main goal exploring the application of Hyperledger to execute multiple in-series accounting/statement processes simultaneously across a trustless network, while maintaining privacy for users. The system is conceived as a ledger of transactions to retrieve payments distributed by agreements. For more information about the features of the system in the business side, look for the reference in the official documentation.
 
@@ -19,7 +17,7 @@ For developer guidance, the project has the main following development important
 
 
  
-#Tutorial for the Initial Setup of Hyperstate
+# Tutorial for the Initial Setup of Hyperstate
 
 This tutorial Is for the purpose of the developers to show the steps to set the system up and running. We assume that a virtual machine either on Google Cloud or Amazon Services or any other provider was created. The specifications of the machine are fixed. It means that according with Hyperledger Composer Framework there are some version dependencies we must acknowledge. 
 
@@ -54,15 +52,15 @@ screen -R name_screen
 
 Additionally, if we want to detached from the screen without killing the process in windows the shortcut is Ctrl + A + D
 
-#First Step: Clone Hyperstate project in the virtual machine with linux commands assuming we all the specifications mentioned previously were met. The following command would do the job, is up to the developer choose the location of the download:
+# First Step: Clone Hyperstate project in the virtual machine with linux commands assuming we all the specifications mentioned previously were met. The following command would do the job, is up to the developer choose the location of the download:
 
 git clone https://gitlab.com/membran-canada/hyperledger-statements.git
 
-#Second Step: Go to the folder of the project and then to the following folder: 
+# Second Step: Go to the folder of the project and then to the following folder: 
 
 cd hyperledger-statements/hyperstate/commands
 
-#Third Step: ‘commands’ folder has several bash script that can be executed in one single commands. This folder has most of the commands of the set up of the system. First of all we need to install the dependencies of third party software Hyperledger Composer needs. The following commands in the same folder  would do it(execute the next one when the previous is done):
+# Third Step: ‘commands’ folder has several bash script that can be executed in one single commands. This folder has most of the commands of the set up of the system. First of all we need to install the dependencies of third party software Hyperledger Composer needs. The following commands in the same folder  would do it(execute the next one when the previous is done):
  
 sudo sh installExtraSoftware.sh
 sudo ./prereqs-ubuntu.sh
@@ -76,7 +74,7 @@ sudo apt-get install -y nodejs
 
 Although it implies that the prereqs-ubuntu.sh must be improved because currently it installs the latest nodejs version. Will be details to be updated in the future. 
 
-#Fourth Step: We must be sure there is a session of the terminal of the virtual machines. Usually when we disconnect of the terminal when we close it, all the processes stop or are being destroyed. To prevent this from happening we must to start a terminal session with the command:
+# Fourth Step: We must be sure there is a session of the terminal of the virtual machines. Usually when we disconnect of the terminal when we close it, all the processes stop or are being destroyed. To prevent this from happening we must to start a terminal session with the command:
 
 screen -S ‘name_session’
 
@@ -86,24 +84,24 @@ This command will keep the processes running even if the terminal is closed.
 (*Warning: In case something fail, just kill the session, more information here https://stackoverflow.com/questions/1509677/kill-detached-screen-session).
 
 
-#Fifth Step: Now that all the dependencies are installed we can initialize the Fabric and then the server. Some of the processes specified in this file are the reset and initialization of the network, the installation of our private Business Network Definition(Data Model) and finally the execution of the server developed by us. 
+# Fifth Step: Now that all the dependencies are installed we can initialize the Fabric and then the server. Some of the processes specified in this file are the reset and initialization of the network, the installation of our private Business Network Definition(Data Model) and finally the execution of the server developed by us. 
 
 sudo ./deployCardFirstTime.sh
 
 *Special note: In case the server suffers a timeout, or some error, its possible that the problem could be fixed by restarting the server in the folder /hyperstate/middleware, with the command node gate.js
 
-#Sixth Step(Optional): Run unit test to store some data.
+# Sixth Step(Optional): Run unit test to store some data.
 
 At the beginning we need at least and Administrator account and a couple of traders(optional). 
 In the hyperstate/middleware/ we can use ‘node serverUnitTest.js’ to run some requests directly by inserting an admin user with admin password. This step should be executed when the server is already listening.
 
 If all the steps were followed successfully, the blockchain should be listening through the nodejs server we created and we can make requests from the client(user interface in Ionic Framework). 
 
-#Seventh Step: is important to mention that is recommended to open another terminal in the Google Console because the first one is already running the server, a second terminal is suggested to be opened. Also, we must be sure that this new terminal will be working after the user closes it. Therefore, as in the fourth step, we execute a new session:
+# Seventh Step: is important to mention that is recommended to open another terminal in the Google Console because the first one is already running the server, a second terminal is suggested to be opened. Also, we must be sure that this new terminal will be working after the user closes it. Therefore, as in the fourth step, we execute a new session:
 
 screen -S ‘front_end’
 
-#Eighth Step: Run the Front End Interface 
+# Eighth Step: Run the Front End Interface 
 The user interface is on the folder:
 
 cd hyperledger-statements/front-end
@@ -136,9 +134,9 @@ sudo n 8           *This command is to change the current version to a previous 
 -Use yarn instead of npm(installation: https://yarnpkg.com/lang/en/docs/install/#debian-stable) for installing node packages:
 sudo yarn install 
 
-#Error Handling(This is specified in the report as well)
+# Error Handling(This is specified in the report as well)
 
-#Control of stable versions
+# Control of stable versions
 Always be aware that some of the versions of the libraries must match as is showed because Hyperledger Project is in its realy stages and there are some problems when they not match because some of the Hyperledger Composer frameworks depend of specific library versions of the environment. 
 
 Fabric Version hlfv12
