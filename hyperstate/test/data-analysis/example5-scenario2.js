@@ -3,8 +3,10 @@ const UUID = require('uuid/v1');
 const methods = require('./methods.js');
 
 async function example5() {
+    var startDate = new Date();
+
     //INIT DATA////////////////////////////////////////////////////////////// 
-    let trackId = 'example51';
+    let trackId =UUID();
     await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
 
     let trader1 = UUID();
@@ -54,6 +56,11 @@ async function example5() {
     await methods.getTokenAccount(trader5);
     console.log('TOKEN TRADER 6');
     await methods.getTokenAccount(trader6);
+
+    // Do your operations
+    var endDate   = new Date();
+    var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
+    console.log(seconds);
 }
 
 example5();
