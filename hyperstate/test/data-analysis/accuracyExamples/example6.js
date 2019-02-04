@@ -1,6 +1,6 @@
 'use strict';
 const UUID = require('uuid/v1');
-const methods = require('./methods.js');
+const methods = require('../methods.js');
 
 //must be seend in the distribution analysis in react app 
 async function example6() {

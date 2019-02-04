@@ -1,7 +1,7 @@
 
 'use strict';
 const UUID = require('uuid/v1');
-const methods = require('./methods.js');
+const methods = require('../methods.js');
 
 async function example1() {
 
