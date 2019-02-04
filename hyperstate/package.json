@@ -29,6 +29,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "method-override": "^2.3.10",
+    "mongodb": "^3.1.13",
     "morgan": "^1.9.1",
     "node-gyp": "^3.6.2",
     "node-sass": "^4.9.3",
