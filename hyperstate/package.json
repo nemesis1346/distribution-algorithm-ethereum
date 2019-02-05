@@ -34,6 +34,7 @@
     "node-gyp": "^3.6.2",
     "node-sass": "^4.9.3",
     "perm": "^0.1.1",
+    "promisify-child-process": "^3.1.0",
     "superagent": "^4.0.0-beta.5",
     "uuid": "^3.2.1",
     "winston": "^2.4.2",
