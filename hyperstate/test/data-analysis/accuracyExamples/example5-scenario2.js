@@ -1,6 +1,6 @@
 'use strict';
 const UUID = require('uuid/v1');
-const methods = require('../methods.js');
+const methods = require('../../methods.js');
 
 async function example5() {
     var startDate = new Date();
