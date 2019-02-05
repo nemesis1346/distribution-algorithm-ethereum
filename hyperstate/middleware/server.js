@@ -14,6 +14,7 @@ const DataModel = require('../models/dataModel.js');
 const DistributionAlgorithmChaincode = require('../chaincode/distributionAlgorithmChaincode.js');
 const UserChaincode = require('../chaincode/userChaincode.js');
 const ManualPaymentChaincode = require('../chaincode/manualPaymentChaincode.js');
+const { exec, spawn, fork, execFile } = require('promisify-child-process')
 
 const app = express();
 
@@ -26,7 +27,6 @@ const handler = async (request, response) => {
         buffer.push(chunk);
     }).on('end', async () => {
         let bufferContent = Buffer.concat(buffer).toString();
-        console.log(bufferContent);
 
         //Set response
         response.statusCode = 200;
@@ -153,6 +153,12 @@ const handler = async (request, response) => {
 
             //Executing the promise , maybe need POST and GET
             if (promise != null) {
+                //TODO: Here I must change it to promisify
+                let promisifyChildProcess = fork(promise);
+                //                 fork.on('message',function(result){
+                //     console.log(result);
+                // });
+
                 promise.then(function (result) {
                     console.log(result);
                     //This is status 200 , everything ok
@@ -238,7 +244,7 @@ app.post('/withdrawalByTrader', handler);
 app.post('/getTxByEmiterForBalance', handler);
 app.post('/distributionAlgorithm', handler);
 app.post('/getAgreements', handler);
-app.post('/getTxByTrackForDiagram',handler);
+app.post('/getTxByTrackForDiagram', handler);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
