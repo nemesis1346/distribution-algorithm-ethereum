@@ -14,7 +14,8 @@ const DataModel = require('../models/dataModel.js');
 const DistributionAlgorithmChaincode = require('../chaincode/distributionAlgorithmChaincode.js');
 const UserChaincode = require('../chaincode/userChaincode.js');
 const ManualPaymentChaincode = require('../chaincode/manualPaymentChaincode.js');
-const { exec, spawn, fork, execFile } = require('promisify-child-process')
+//const { exec, spawn, fork, execFile } = require('promisify-child-process')
+const { fork } = require('child_process');
 
 const app = express();
 
@@ -154,10 +155,13 @@ const handler = async (request, response) => {
             //Executing the promise , maybe need POST and GET
             if (promise != null) {
                 //TODO: Here I must change it to promisify
-                let promisifyChildProcess = fork(promise);
+                //let promisifyChildProcess = fork(promise);
                 //                 fork.on('message',function(result){
                 //     console.log(result);
                 // });
+                // promisifyChildProcess.on('message', (m) => {
+                //     console.log('PARENT got message:', m);
+                //   });
 
                 promise.then(function (result) {
                     console.log(result);
