@@ -7,13 +7,19 @@ const DistributionRequest = require('../models/distributionRequest.js');
 const TrackModel = require('../models/trackModel.js');
 const TraderModel = require('../models/traderModel.js');
 const AgreementModel = require('../models/agreementModel.js');
-const PORT = '3011';
+var PORT = '3011';
 //const PORT = '3019';
-const HOST = 'localhost';
+var HOST = 'localhost';
 //const HOST = '104.196.55.102';
-const Timeout = require('await-timeout');
 const AppleTrackData = require('../data/processedData/Apple_Streams_S1_80032046_1117_AU_for_201710_exampleJSON');
 const OnHoldDistributionRequest = require('../models/onHoldDistributionRequest.js');
+
+exports.getPort=()=>{
+    return PORT;
+}
+exports.setPort=(port)=>{
+    PORT = port;
+}
 
 exports.getTxByTrackForDiagram = async function (isrc) {
     try {
@@ -166,18 +172,6 @@ exports.createAllTracksFromFile= async function(uploaderId) {
                 uploaderId
             );
         });
-        // for (const element of newlistTracks) {
-        //     await createTrackForArray(
-        //         element.isrc,
-        //         element.title,
-        //         element.revenueTotal,
-        //         "vendorIdentifier",
-        //         element.label,
-        //         element.author,
-        //         element.ownerType,
-        //         uploaderId
-        //     );
-        // }
 
     } catch (error) {
         console.log('/createAllTracksFromFile ERROR');

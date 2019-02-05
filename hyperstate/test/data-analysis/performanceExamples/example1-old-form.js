@@ -9,8 +9,8 @@ async function example1() {
     let trackId = 'example1';
     await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
 
-    let trader1 = UUID();
-    await methods.createParticipant(trader1, 'tarder1', 'trader1', 0.00, 'DISTRIBUTOR', trader1);
+    // let trader1 = UUID();
+    // await methods.createParticipant(trader1, 'tarder1', 'trader1', 0.00, 'DISTRIBUTOR', trader1);
     // let trader2 = UUID();
     // await methods.createParticipant(trader2, 'trader2', 'trader2', 0.00, 'DISTRIBUTOR', trader2);
     // let trader3 = UUID();
@@ -39,7 +39,7 @@ async function example1() {
     // await methods.getTokenAccount(trader4);
 
 }
-
+methods.setPort('3019');
 example1();
 
 
