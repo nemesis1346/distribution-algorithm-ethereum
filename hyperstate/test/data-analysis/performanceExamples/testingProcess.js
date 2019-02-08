@@ -14,7 +14,10 @@ fork.send('this is an input');
 fork.send('this is an input');
 fork.send('this is an input');
 fork.send('this is an input');
-
+fork.send('this is an input');
+fork.send('this is an input');
+fork.send('this is an input');
+fork.send('this is an input');
 fork.on('message',function(result){
     console.log();
     console.log(result);

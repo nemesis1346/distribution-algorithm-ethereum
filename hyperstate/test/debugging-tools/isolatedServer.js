@@ -6,8 +6,7 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const cp = require("child_process");
-const { exec, spawn, fork, execFile } = require('promisify-child-process')
-const { promisifyChildProcess } = require('promisify-child-process');
+const { fork } = require('promisify-child-process')
 
 const app = express();
 
@@ -40,13 +39,19 @@ const handler = async (request, response) => {
                 console.error(err);
             });
             await fork('./promiseProcessHandler.js', ['message'], { encoding: 'utf8' })
-                .on("message", (result) => {
-                    console.log(result);
-                    response.statusCode = 405;
-                    response.write(result);
+                .on("message", (body) => {
+                    const responseBody = { headers, method, url, body };
+                    response.statusCode = 200;
+                    response.write(JSON.stringify(responseBody));
                     response.end();
                 })
-                .send(JSON.parse(bufferContent));
+                .on('error', (error) => {
+                    const responseBody = { headers, method, url, error };
+                    response.statusCode = 300;
+                    response.write(JSON.stringify(responseBody));
+                    response.end();
+                })
+                .send({ data: JSON.stringify(bufferContent), url: url });
         });
 };
 

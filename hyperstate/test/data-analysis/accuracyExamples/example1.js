@@ -8,10 +8,10 @@ async function example1() {
     //INIT DATA////////////////////////////////////////////////////////////// 
     //let trackId = UUID();
 
-    let trackId = 'example1'
+    let trackId = 'example111'
     await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
 
-    let trader1 = UUID();
+    let trader1 = 'trader111';
     await methods.createParticipant(trader1, 'tarder1', 'trader1', 0.00, 'DISTRIBUTOR', trader1);
     let trader2 = UUID();
     await methods.createParticipant(trader2, 'trader2', 'trader2', 0.00, 'DISTRIBUTOR', trader2);
@@ -28,17 +28,17 @@ async function example1() {
     let agreement3Id = UUID();
     await methods.createAgreement(agreement3Id, trader3, trader4, 0.9, 'PENDING', trackId, 'trader3', 'trader4');
     
-    await methods.distribution(trackId, trader1, String(new Date().toISOString()));
-    await methods.distribution(trackId, trader1, String(new Date().toISOString()));
+    // await methods.distribution(trackId, trader1, String(new Date().toISOString()));
+    // await methods.distribution(trackId, trader1, String(new Date().toISOString()));
 
-    console.log('TOKEN TRADER 1');
-    await methods.getTokenAccount(trader1);
-    console.log('TOKEN TRADER 2');
-    await methods.getTokenAccount(trader2);
-    console.log('TOKEN TRADER 2');
-    await methods.getTokenAccount(trader3);
-    console.log('TOKEN TRADER 3');
-    await methods.getTokenAccount(trader4);
+    // console.log('TOKEN TRADER 1');
+    // await methods.getTokenAccount(trader1);
+    // console.log('TOKEN TRADER 2');
+    // await methods.getTokenAccount(trader2);
+    // console.log('TOKEN TRADER 2');
+    // await methods.getTokenAccount(trader3);
+    // console.log('TOKEN TRADER 3');
+    // await methods.getTokenAccount(trader4);
    
 }
 example1();
