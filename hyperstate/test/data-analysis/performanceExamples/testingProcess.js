@@ -1,6 +1,6 @@
 const cp = require('child_process');
 const { promisifyChildProcess } = require('promisify-child-process');
-const Example1 = require('./example1-old-form.js');
+//const Example1 = require('./example1-old-form.js');
 
 const util = require('util');
 //const exec = util.promisify(require('child_process').exec);
@@ -16,8 +16,23 @@ fork.send('this is an input');
 fork.send('this is an input');
 fork.send('this is an input');
 fork.send('this is an input');
-fork.send('this is an input');
-fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+// fork.send('this is an input');
+
 fork.on('message',function(result){
     console.log();
     console.log(result);

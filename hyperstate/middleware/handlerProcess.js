@@ -7,6 +7,7 @@ const AgreementChaincode = require('../chaincode/agreementChaincode.js');
 const DistributionAlgorithmChaincode = require('../chaincode/distributionAlgorithmChaincode.js');
 const UserChaincode = require('../chaincode/userChaincode.js');
 const ManualPaymentChaincode = require('../chaincode/manualPaymentChaincode.js');
+const TestingChaincode = require('../chaincode/testingChaincode.js');
 
 process.on('message', async function (input) {
     //Call method
@@ -19,6 +20,8 @@ process.on('message', async function (input) {
     let transactionChaincode = new TransactionChaincode();
     let manualPaymentChaincode = new ManualPaymentChaincode();
     let distributionAlgorithmChaincode = new DistributionAlgorithmChaincode();
+    let userChaincode = new UserChaincode();
+    let testingChaincode = new TestingChaincode();
     try {
         let bufferContent = JSON.parse(input.data);
         let url = input.url;
@@ -27,7 +30,7 @@ process.on('message', async function (input) {
                 result = await traderChaincode.createTrader(JSON.parse(bufferContent));
                 break;
             case '/login':
-                result = await trackChaincode.login(JSON.parse(bufferContent));
+                result = await userChaincode.login(JSON.parse(bufferContent));
                 break;
             case '/createTrack':
                 result = await trackChaincode.createTrack(JSON.parse(bufferContent));
@@ -115,6 +118,9 @@ process.on('message', async function (input) {
                 break;
             case '/getTxByTrackForDiagram':
                 result = await transactionChaincode.getTxByTrackForDiagram(JSON.parse(bufferContent));
+                break;
+            case '/testing_example1':
+                result = await testingChaincode.example1();
                 break;
             default:
                 dataModel.message = "Method not found";

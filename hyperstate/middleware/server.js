@@ -80,6 +80,7 @@ app.post('/getTxByEmiterForBalance', handler);
 app.post('/distributionAlgorithm', handler);
 app.post('/getAgreements', handler);
 app.post('/getTxByTrackForDiagram', handler);
+app.post('/testing_example1', handler);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

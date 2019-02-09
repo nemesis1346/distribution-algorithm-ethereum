@@ -28,17 +28,17 @@ async function example1() {
     let agreement3Id = UUID();
     await methods.createAgreement(agreement3Id, trader3, trader4, 0.9, 'PENDING', trackId, 'trader3', 'trader4');
     
-    // await methods.distribution(trackId, trader1, String(new Date().toISOString()));
-    // await methods.distribution(trackId, trader1, String(new Date().toISOString()));
+    await methods.distribution(trackId, trader1, String(new Date().toISOString()));
+    await methods.distribution(trackId, trader1, String(new Date().toISOString()));
 
-    // console.log('TOKEN TRADER 1');
-    // await methods.getTokenAccount(trader1);
-    // console.log('TOKEN TRADER 2');
-    // await methods.getTokenAccount(trader2);
-    // console.log('TOKEN TRADER 2');
-    // await methods.getTokenAccount(trader3);
-    // console.log('TOKEN TRADER 3');
-    // await methods.getTokenAccount(trader4);
+    console.log('TOKEN TRADER 1');
+    await methods.getTokenAccount(trader1);
+    console.log('TOKEN TRADER 2');
+    await methods.getTokenAccount(trader2);
+    console.log('TOKEN TRADER 2');
+    await methods.getTokenAccount(trader3);
+    console.log('TOKEN TRADER 3');
+    await methods.getTokenAccount(trader4);
    
 }
 example1();
