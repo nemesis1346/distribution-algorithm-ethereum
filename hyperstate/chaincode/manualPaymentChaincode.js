@@ -1,9 +1,7 @@
 'use strict';
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
-const winston = require('winston');
 const cardname = 'admin@hyperstate';
 const networkNamespace = 'org.membran.hyperstate';
-const LOG = winston.loggers.get('application');
 const UUID = require('uuid/v1');
 const DataModel = require('../models/dataModel.js');
 

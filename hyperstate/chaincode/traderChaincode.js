@@ -1,14 +1,11 @@
 'use strict';
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
-const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;
 const winston = require('winston');
 const TraderModel = require('../models/traderModel.js');
 const TokenAccountModel = require('../models/tokenAccountModel.js');
-const IdCard = require('composer-common').IdCard;
 const cardname = 'admin@hyperstate';
 const networkNamespace = 'org.membran.hyperstate';
 const LOG = winston.loggers.get('application');
-const UUID = require('uuid/v1');
 const DataModel = require('../models/dataModel.js');
 
 class TraderChaincode {

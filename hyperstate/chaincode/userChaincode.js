@@ -1,14 +1,9 @@
 'use strict';
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
-const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;
-const winston = require('winston');
 const UserModel = require('../models/userModel.js');
 const cardname = 'admin@hyperstate';
 const networkNamespace = 'org.membran.hyperstate';
-const LOG = winston.loggers.get('application');
-const UUID = require('uuid/v1');
 const DataModel = require('../models/dataModel.js');
-const Async = require('async');
   
 class UserChaincode {
     constructor() {

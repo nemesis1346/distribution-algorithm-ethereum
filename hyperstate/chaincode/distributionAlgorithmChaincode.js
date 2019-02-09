@@ -12,6 +12,7 @@ const OnHoldDistributionRequest = require('../models/onHoldDistributionRequest.j
 const DistributionProcessRequest = require('../models/distributionProcessRequest.js');
 const EvaluateReceiptRequest = require('../models/evaluateReceiptRequest.js');
 const DistributionLastNodeRequest = require('../models/distributionLastNodeRequest.js');
+
 class DistributionAlgorithmChaincode {
     constructor() {
     }
