@@ -41,7 +41,7 @@ class TestingChaincode {
             await methods.createAgreement(agreement3Id, trader3, trader4, 0.9, 'PENDING', trackId, 'trader3', 'trader4');
 
             await methods.distribution(trackId, trader1, String(new Date().toISOString()));
-            await methods.distribution(trackId, trader1, String(new Date().toISOString()));
+            //await methods.distribution(trackId, trader1, String(new Date().toISOString())); //JUST ONE DISTRIBUTION
 
             console.log('TOKEN TRADER 1');
             await methods.getTokenAccount(trader1);
