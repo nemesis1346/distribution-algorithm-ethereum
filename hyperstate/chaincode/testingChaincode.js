@@ -36,14 +36,14 @@ class TestingChaincode {
             await methods.distribution(trackId, trader1, String(new Date().toISOString()));
             //await methods.distribution(trackId, trader1, String(new Date().toISOString())); //JUST ONE DISTRIBUTION
 
-            console.log('TOKEN TRADER 1');
-            await methods.getTokenAccount(trader1);
-            console.log('TOKEN TRADER 2');
-            await methods.getTokenAccount(trader2);
-            console.log('TOKEN TRADER 2');
-            await methods.getTokenAccount(trader3);
-            console.log('TOKEN TRADER 3');
-            await methods.getTokenAccount(trader4);
+            // console.log('TOKEN TRADER 1');
+            // await methods.getTokenAccount(trader1);
+            // console.log('TOKEN TRADER 2');
+            // await methods.getTokenAccount(trader2);
+            // console.log('TOKEN TRADER 2');
+            // await methods.getTokenAccount(trader3);
+            // console.log('TOKEN TRADER 3');
+            // await methods.getTokenAccount(trader4);
 
             dataModel.data = 'PROCESS TERMINATED';
             dataModel.status = '200';
@@ -94,14 +94,14 @@ class TestingChaincode {
             await methods.distribution(trackId, trader1, String(new Date().toISOString()));
             await methods.distribution(track2Id, trader2, String(new Date().toISOString()));
 
-            console.log('TOKEN TRADER 2');
-            await methods.getTokenAccount(trader2);
-            console.log('TOKEN TRADER 3');
-            await methods.getTokenAccount(trader3);
-            console.log('TOKEN TRADER 4');
-            await methods.getTokenAccount(trader4);
-            console.log('TOKEN TRADER 1');
-            await methods.getTokenAccount(trader1);
+            // console.log('TOKEN TRADER 2');
+            // await methods.getTokenAccount(trader2);
+            // console.log('TOKEN TRADER 3');
+            // await methods.getTokenAccount(trader3);
+            // console.log('TOKEN TRADER 4');
+            // await methods.getTokenAccount(trader4);
+            // console.log('TOKEN TRADER 1');
+            // await methods.getTokenAccount(trader1);
 
             dataModel.data = 'PROCESS TERMINATED';
             dataModel.status = '200';
@@ -142,14 +142,14 @@ class TestingChaincode {
 
             await methods.distribution(trackId, trader2, String(new Date().toISOString()));
 
-            console.log('TOKEN TRADER 1');
-            await methods.getTokenAccount(trader1);
-            console.log('TOKEN TRADER 2');
-            await methods.getTokenAccount(trader2);
-            console.log('TOKEN TRADER 3');
-            await methods.getTokenAccount(trader3);
-            console.log('TOKEN TRADER 4');
-            await methods.getTokenAccount(trader4);
+            // console.log('TOKEN TRADER 1');
+            // await methods.getTokenAccount(trader1);
+            // console.log('TOKEN TRADER 2');
+            // await methods.getTokenAccount(trader2);
+            // console.log('TOKEN TRADER 3');
+            // await methods.getTokenAccount(trader3);
+            // console.log('TOKEN TRADER 4');
+            // await methods.getTokenAccount(trader4);
 
             dataModel.data = 'PROCESS TERMINATED';
             dataModel.status = '200';
@@ -194,16 +194,16 @@ class TestingChaincode {
 
             await methods.distribution(trackId, trader1, String(new Date().toISOString()));
 
-            console.log('TOKEN TRADER 1');
-            await methods.getTokenAccount(trader1);
-            console.log('TOKEN TRADER 2');
-            await methods.getTokenAccount(trader2);
-            console.log('TOKEN TRADER 3');
-            await methods.getTokenAccount(trader3);
-            console.log('TOKEN TRADER 4');
-            await methods.getTokenAccount(trader4);
-            console.log('TOKEN TRADER 5');
-            await methods.getTokenAccount(trader5);
+            // console.log('TOKEN TRADER 1');
+            // await methods.getTokenAccount(trader1);
+            // console.log('TOKEN TRADER 2');
+            // await methods.getTokenAccount(trader2);
+            // console.log('TOKEN TRADER 3');
+            // await methods.getTokenAccount(trader3);
+            // console.log('TOKEN TRADER 4');
+            // await methods.getTokenAccount(trader4);
+            // console.log('TOKEN TRADER 5');
+            // await methods.getTokenAccount(trader5);
 
             dataModel.data = 'PROCESS TERMINATED';
             dataModel.status = '200';
@@ -251,18 +251,18 @@ class TestingChaincode {
 
             await methods.distribution(trackId, trader1, String(new Date().toISOString()));
 
-            console.log('TOKEN TRADER 1');
-            await methods.getTokenAccount(trader1);
-            console.log('TOKEN TRADER 2');
-            await methods.getTokenAccount(trader2);
-            console.log('TOKEN TRADER 3');
-            await methods.getTokenAccount(trader3);
-            console.log('TOKEN TRADER 4');
-            await methods.getTokenAccount(trader4);
-            console.log('TOKEN TRADER 5');
-            await methods.getTokenAccount(trader5);
-            console.log('TOKEN TRADER 6');
-            await methods.getTokenAccount(trader6);
+            // console.log('TOKEN TRADER 1');
+            // await methods.getTokenAccount(trader1);
+            // console.log('TOKEN TRADER 2');
+            // await methods.getTokenAccount(trader2);
+            // console.log('TOKEN TRADER 3');
+            // await methods.getTokenAccount(trader3);
+            // console.log('TOKEN TRADER 4');
+            // await methods.getTokenAccount(trader4);
+            // console.log('TOKEN TRADER 5');
+            // await methods.getTokenAccount(trader5);
+            // console.log('TOKEN TRADER 6');
+            // await methods.getTokenAccount(trader6);
 
             dataModel.data = 'PROCESS TERMINATED';
             dataModel.status = '200';
@@ -312,20 +312,20 @@ class TestingChaincode {
 
             await methods.distribution(trackId, trader1, String(new Date().toISOString()));
 
-            console.log('TOKEN TRADER 1');
-            await methods.getTokenAccount(trader1);
-            console.log('TOKEN TRADER 2');
-            await methods.getTokenAccount(trader2);
-            console.log('TOKEN TRADER 3');
-            await methods.getTokenAccount(trader3);
-            console.log('TOKEN TRADER 4');
-            await methods.getTokenAccount(trader4);
-            console.log('TOKEN TRADER 5');
-            await methods.getTokenAccount(trader5);
-            console.log('TOKEN TRADER 6')
-            await methods.getTokenAccount(trader6);
-            console.log('TOKEN TRADER 7')
-            await methods.getTokenAccount(trader7);
+            // console.log('TOKEN TRADER 1');
+            // await methods.getTokenAccount(trader1);
+            // console.log('TOKEN TRADER 2');
+            // await methods.getTokenAccount(trader2);
+            // console.log('TOKEN TRADER 3');
+            // await methods.getTokenAccount(trader3);
+            // console.log('TOKEN TRADER 4');
+            // await methods.getTokenAccount(trader4);
+            // console.log('TOKEN TRADER 5');
+            // await methods.getTokenAccount(trader5);
+            // console.log('TOKEN TRADER 6')
+            // await methods.getTokenAccount(trader6);
+            // console.log('TOKEN TRADER 7')
+            // await methods.getTokenAccount(trader7);
            
             dataModel.data = 'PROCESS TERMINATED';
             dataModel.status = '200';

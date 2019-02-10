@@ -122,6 +122,21 @@ process.on('message', async function (input) {
             case '/testing_example1':
                 result = await testingChaincode.example1();
                 break;
+            case '/testing_example2':
+                result = await testingChaincode.example2();
+                break;
+            case '/testing_example3':
+                result = await testingChaincode.example3_scenario3();
+                break;
+            case '/testing_example4':
+                result = await testingChaincode.example4_scenario1();
+                break;
+            case '/testing_example5':
+                result = await testingChaincode.example5_scenario2();
+                break;
+            case '/testing_example6':
+                result = await testingChaincode.example6();
+                break;
             default:
                 dataModel.message = "Method not found";
                 dataModel.status = "405";

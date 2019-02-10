@@ -1,0 +1,3 @@
+timeStamp;elapsed;label;responseCode;responseMessage;threadName;dataType;success;failureMessage;bytes;sentBytes;grpThreads;allThreads;URL;Latency;IdleTime;Connect
+17:11:28;120695;HTTP Request;Non HTTP response code: org.apache.http.NoHttpResponseException;Non HTTP response message: localhost:3011 failed to respond;third_sample 2-1;text;false;;2057;0;2;35;http://localhost:3011/testing_example1;0;0;0
+17:11:28;120191;HTTP Request;Non HTTP response code: org.apache.http.NoHttpResponseException;Non HTTP response message: localhost:3011 failed to respond;third_sample 2-2;text;false;;2057;0;2;35;http://localhost:3011/testing_example1;0;0;1
