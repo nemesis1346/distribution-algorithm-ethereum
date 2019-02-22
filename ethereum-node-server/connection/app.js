@@ -5,7 +5,7 @@ var MetaCoin = contract(metacoin_artifact);
 
 module.exports = {
   start: function(callback) {
-    var self = this;
+    var self = this;//? where does this come from?
 
     // Bootstrap the MetaCoin abstraction for Use.
     MetaCoin.setProvider(self.web3.currentProvider);
