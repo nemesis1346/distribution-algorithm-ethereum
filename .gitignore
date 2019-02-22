@@ -76,3 +76,5 @@ hyperstate/package-lock.json
 hyperstate/~
 
 data-analysis-react/yarn.lock
+
+*node_modules

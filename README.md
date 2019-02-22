@@ -16,7 +16,13 @@ For developer guidance, the project has the main following development important
 -The front end developed in Ionic Framework based on Angular2 for hybrid mobile and web development
 
 
- 
+# STRUCTURE OF THE PROJECT
+D3-react: This fodler is a small app in React for showing the distribution tree diagrams with d3 in react environment
+fabric-dev-dev-servers: this folders contains an instance of a hyperledger fabric blokchain to initialize
+ionic-front-end: this folder contains a front end developed for a company that reuqired the system and it uses ionic framework from angular
+hyperledger-composer-node-server-hyperstate: this folder 
+ethereum-node-server: this is the replication of the algorithm of hyperledger composer research but more simple and in ethereum
+
 ## Tutorial for the Initial Setup of Hyperstate
 
 This tutorial Is for the purpose of the developers to show the steps to set the system up and running. We assume that a virtual machine either on Google Cloud or Amazon Services or any other provider was created. The specifications of the machine are fixed. It means that according with Hyperledger Composer Framework there are some version dependencies we must acknowledge. 
