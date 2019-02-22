@@ -1,4 +1,0 @@
-timeStamp;elapsed;label;responseCode;responseMessage;threadName;dataType;success;failureMessage;bytes;sentBytes;grpThreads;allThreads;URL;Latency;IdleTime;Connect
-15:12:33;90660;HTTP Request;200;OK;fourth_sample 1-2;text;true;;696;196;3;3;http://localhost:3011/testing_example4;90660;0;1
-15:12:34;90332;HTTP Request;200;OK;fourth_sample 1-3;text;true;;696;196;2;2;http://localhost:3011/testing_example4;90332;0;0
-15:12:33;91012;HTTP Request;200;OK;fourth_sample 1-1;text;true;;696;196;1;1;http://localhost:3011/testing_example4;91012;0;1

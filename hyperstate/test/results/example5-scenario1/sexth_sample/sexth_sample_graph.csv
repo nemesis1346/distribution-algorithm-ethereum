@@ -1,6 +1,0 @@
-timeStamp;elapsed;label;responseCode;responseMessage;threadName;dataType;success;failureMessage;bytes;sentBytes;grpThreads;allThreads;URL;Latency;IdleTime;Connect
-13:52:38;118361;HTTP Request;200;OK;sexth_sample 1-2;text;true;;696;196;5;5;http://localhost:3011/testing_example5;118361;0;1
-13:52:39;118000;HTTP Request;200;OK;sexth_sample 1-4;text;true;;696;196;4;4;http://localhost:3011/testing_example5;118000;0;0
-13:52:39;117846;HTTP Request;200;OK;sexth_sample 1-5;text;true;;696;196;3;3;http://localhost:3011/testing_example5;117846;0;1
-13:52:39;118247;HTTP Request;200;OK;sexth_sample 1-3;text;true;;696;196;2;2;http://localhost:3011/testing_example5;118247;0;0
-13:52:38;118662;HTTP Request;200;OK;sexth_sample 1-1;text;true;;696;196;1;1;http://localhost:3011/testing_example5;118662;0;1

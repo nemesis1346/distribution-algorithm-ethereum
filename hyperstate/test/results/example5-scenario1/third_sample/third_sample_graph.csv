@@ -1,3 +1,0 @@
-timeStamp;elapsed;label;responseCode;responseMessage;threadName;dataType;success;failureMessage;bytes;sentBytes;grpThreads;allThreads;URL;Latency;IdleTime;Connect
-13:19:15;93094;HTTP Request;200;OK;third_sample 1-1;text;true;;696;196;2;2;http://localhost:3011/testing_example5;93094;0;0
-13:19:16;92602;HTTP Request;200;OK;third_sample 1-2;text;true;;696;196;1;1;http://localhost:3011/testing_example5;92602;0;0
