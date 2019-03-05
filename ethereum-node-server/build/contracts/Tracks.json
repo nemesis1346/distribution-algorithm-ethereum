@@ -1,0 +1,1363 @@
+{
+  "contractName": "Tracks",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "tracksCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tracks",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "isrc",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "revenueTotal",
+          "type": "uint256"
+        },
+        {
+          "name": "uploaderId",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "isrc",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "revenueTotal",
+          "type": "uint256"
+        },
+        {
+          "name": "uploaderId",
+          "type": "string"
+        }
+      ],
+      "name": "createTrack",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610960806100206000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630a0061511461005c578063461a1cff14610087578063a2e345861461031e575b600080fd5b34801561006857600080fd5b5061007161051d565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b5061031c600480360360a08110156100aa57600080fd5b81019080803590602001906401000000008111156100c757600080fd5b8201836020820111156100d957600080fd5b803590602001918460018302840111640100000000831117156100fb57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561015e57600080fd5b82018360208201111561017057600080fd5b8035906020019184600183028401116401000000008311171561019257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001906401000000008111156101f557600080fd5b82018360208201111561020757600080fd5b8035906020019184600183028401116401000000008311171561022957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291908035906020019064010000000081111561029657600080fd5b8201836020820111156102a857600080fd5b803590602001918460018302840111640100000000831117156102ca57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610523565b005b34801561032a57600080fd5b506103576004803603602081101561034157600080fd5b81019080803590602001909291905050506105f9565b604051808060200180602001806020018681526020018060200185810385528a818151815260200191508051906020019080838360005b838110156103a957808201518184015260208101905061038e565b50505050905090810190601f1680156103d65780820380516001836020036101000a031916815260200191505b50858103845289818151815260200191508051906020019080838360005b8381101561040f5780820151818401526020810190506103f4565b50505050905090810190601f16801561043c5780820380516001836020036101000a031916815260200191505b50858103835288818151815260200191508051906020019080838360005b8381101561047557808201518184015260208101905061045a565b50505050905090810190601f1680156104a25780820380516001836020036101000a031916815260200191505b50858103825286818151815260200191508051906020019080838360005b838110156104db5780820151818401526020810190506104c0565b50505050905090810190601f1680156105085780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b60015481565b60016000815480929190600101919050555060a060405190810160405280868152602001858152602001848152602001838152602001828152506000806001548152602001908152602001600020600082015181600001908051906020019061058d92919061088f565b5060208201518160010190805190602001906105aa92919061088f565b5060408201518160020190805190602001906105c792919061088f565b506060820151816003015560808201518160040190805190602001906105ee92919061088f565b509050505050505050565b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106a55780601f1061067a576101008083540402835291602001916106a5565b820191906000526020600020905b81548152906001019060200180831161068857829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107435780601f1061071857610100808354040283529160200191610743565b820191906000526020600020905b81548152906001019060200180831161072657829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107e15780601f106107b6576101008083540402835291602001916107e1565b820191906000526020600020905b8154815290600101906020018083116107c457829003601f168201915b505050505090806003015490806004018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156108855780601f1061085a57610100808354040283529160200191610885565b820191906000526020600020905b81548152906001019060200180831161086857829003601f168201915b5050505050905085565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106108d057805160ff19168380011785556108fe565b828001600101855582156108fe579182015b828111156108fd5782518255916020019190600101906108e2565b5b50905061090b919061090f565b5090565b61093191905b8082111561092d576000816000905550600101610915565b5090565b9056fea165627a7a7230582006a57d236b8f9bbad5b3386b6c09c9ced1a408c29b24f193d50bd835c27950530029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630a0061511461005c578063461a1cff14610087578063a2e345861461031e575b600080fd5b34801561006857600080fd5b5061007161051d565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b5061031c600480360360a08110156100aa57600080fd5b81019080803590602001906401000000008111156100c757600080fd5b8201836020820111156100d957600080fd5b803590602001918460018302840111640100000000831117156100fb57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561015e57600080fd5b82018360208201111561017057600080fd5b8035906020019184600183028401116401000000008311171561019257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001906401000000008111156101f557600080fd5b82018360208201111561020757600080fd5b8035906020019184600183028401116401000000008311171561022957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291908035906020019064010000000081111561029657600080fd5b8201836020820111156102a857600080fd5b803590602001918460018302840111640100000000831117156102ca57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610523565b005b34801561032a57600080fd5b506103576004803603602081101561034157600080fd5b81019080803590602001909291905050506105f9565b604051808060200180602001806020018681526020018060200185810385528a818151815260200191508051906020019080838360005b838110156103a957808201518184015260208101905061038e565b50505050905090810190601f1680156103d65780820380516001836020036101000a031916815260200191505b50858103845289818151815260200191508051906020019080838360005b8381101561040f5780820151818401526020810190506103f4565b50505050905090810190601f16801561043c5780820380516001836020036101000a031916815260200191505b50858103835288818151815260200191508051906020019080838360005b8381101561047557808201518184015260208101905061045a565b50505050905090810190601f1680156104a25780820380516001836020036101000a031916815260200191505b50858103825286818151815260200191508051906020019080838360005b838110156104db5780820151818401526020810190506104c0565b50505050905090810190601f1680156105085780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b60015481565b60016000815480929190600101919050555060a060405190810160405280868152602001858152602001848152602001838152602001828152506000806001548152602001908152602001600020600082015181600001908051906020019061058d92919061088f565b5060208201518160010190805190602001906105aa92919061088f565b5060408201518160020190805190602001906105c792919061088f565b506060820151816003015560808201518160040190805190602001906105ee92919061088f565b509050505050505050565b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106a55780601f1061067a576101008083540402835291602001916106a5565b820191906000526020600020905b81548152906001019060200180831161068857829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107435780601f1061071857610100808354040283529160200191610743565b820191906000526020600020905b81548152906001019060200180831161072657829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107e15780601f106107b6576101008083540402835291602001916107e1565b820191906000526020600020905b8154815290600101906020018083116107c457829003601f168201915b505050505090806003015490806004018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156108855780601f1061085a57610100808354040283529160200191610885565b820191906000526020600020905b81548152906001019060200180831161086857829003601f168201915b5050505050905085565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106108d057805160ff19168380011785556108fe565b828001600101855582156108fe579182015b828111156108fd5782518255916020019190600101906108e2565b5b50905061090b919061090f565b5090565b61093191905b8082111561092d576000816000905550600101610915565b5090565b9056fea165627a7a7230582006a57d236b8f9bbad5b3386b6c09c9ced1a408c29b24f193d50bd835c27950530029",
+  "sourceMap": "25:472:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:472:3;;;;;;;",
+  "deployedSourceMap": "25:472:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;227:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;227:23:3;;;;;;;;;;;;;;;;;;;;;;;257:237;;8:9:-1;5:2;;;30:1;27;20:12;5:2;257:237:3;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;257:237:3;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;257:237:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;257:237:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;257:237:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;257:237:3;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;257:237:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;257:237:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;257:237:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;257:237:3;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;257:237:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;257:237:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;257:237:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;257:237:3;;;;;;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;257:237:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;257:237:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;257:237:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;257:237:3;;;;;;;;;;;;;;;;;;186:34;;8:9:-1;5:2;;;30:1;27;20:12;5:2;186:34:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;186:34:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;186:34:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;186:34:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;186:34:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;186:34:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;227:23;;;;:::o;257:237::-;398:11;;:13;;;;;;;;;;;;;441:46;;;;;;;;;447:2;441:46;;;;450:4;441:46;;;;455:5;441:46;;;;462:12;441:46;;;;476:10;441:46;;;421:6;:19;428:11;;421:19;;;;;;;;;;;:66;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;257:237;;;;;:::o;186:34::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;25:472::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract Tracks{\n    struct Track{\n        string id;\n        string isrc;\n        string title;\n        uint revenueTotal;\n        string uploaderId;\n    }\n    mapping(uint=>Track) public tracks;\n\n    uint public tracksCount;\n\n    function createTrack(string memory id, string memory isrc, string memory title, uint revenueTotal, string memory uploaderId) public{\n        tracksCount++;\n        tracks[tracksCount]=Track(id,isrc,title, revenueTotal, uploaderId);\n    }\n\n}    ",
+  "sourcePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/Tracks.sol",
+  "ast": {
+    "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/Tracks.sol",
+    "exportedSymbols": {
+      "Tracks": [
+        218
+      ]
+    },
+    "id": 219,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 171,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 218,
+        "linearizedBaseContracts": [
+          218
+        ],
+        "name": "Tracks",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Tracks.Track",
+            "id": 182,
+            "members": [
+              {
+                "constant": false,
+                "id": 173,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "68:9:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 172,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "68:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 175,
+                "name": "isrc",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "87:11:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 174,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "87:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 177,
+                "name": "title",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "108:12:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 176,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "108:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 179,
+                "name": "revenueTotal",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "130:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 178,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "130:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 181,
+                "name": "uploaderId",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "157:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 180,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "157:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Track",
+            "nodeType": "StructDefinition",
+            "scope": 218,
+            "src": "46:135:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 186,
+            "name": "tracks",
+            "nodeType": "VariableDeclaration",
+            "scope": 218,
+            "src": "186:34:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Track_$182_storage_$",
+              "typeString": "mapping(uint256 => struct Tracks.Track)"
+            },
+            "typeName": {
+              "id": 185,
+              "keyType": {
+                "id": 183,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "194:4:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "186:20:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Track_$182_storage_$",
+                "typeString": "mapping(uint256 => struct Tracks.Track)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 184,
+                "name": "Track",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 182,
+                "src": "200:5:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Track_$182_storage_ptr",
+                  "typeString": "struct Tracks.Track"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 188,
+            "name": "tracksCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 218,
+            "src": "227:23:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 187,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "227:4:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 216,
+              "nodeType": "Block",
+              "src": "388:106:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 202,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "398:13:3",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 201,
+                      "name": "tracksCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 188,
+                      "src": "398:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 203,
+                  "nodeType": "ExpressionStatement",
+                  "src": "398:13:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 214,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 204,
+                        "name": "tracks",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 186,
+                        "src": "421:6:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Track_$182_storage_$",
+                          "typeString": "mapping(uint256 => struct Tracks.Track storage ref)"
+                        }
+                      },
+                      "id": 206,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 205,
+                        "name": "tracksCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 188,
+                        "src": "428:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "421:19:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Track_$182_storage",
+                        "typeString": "struct Tracks.Track storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 208,
+                          "name": "id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 190,
+                          "src": "447:2:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 209,
+                          "name": "isrc",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 192,
+                          "src": "450:4:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 210,
+                          "name": "title",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 194,
+                          "src": "455:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 211,
+                          "name": "revenueTotal",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 196,
+                          "src": "462:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 212,
+                          "name": "uploaderId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 198,
+                          "src": "476:10:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 207,
+                        "name": "Track",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 182,
+                        "src": "441:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Track_$182_storage_ptr_$",
+                          "typeString": "type(struct Tracks.Track storage pointer)"
+                        }
+                      },
+                      "id": 213,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "441:46:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Track_$182_memory",
+                        "typeString": "struct Tracks.Track memory"
+                      }
+                    },
+                    "src": "421:66:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Track_$182_storage",
+                      "typeString": "struct Tracks.Track storage ref"
+                    }
+                  },
+                  "id": 215,
+                  "nodeType": "ExpressionStatement",
+                  "src": "421:66:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 217,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createTrack",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 199,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 190,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "278:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 189,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "278:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 192,
+                  "name": "isrc",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "296:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 191,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 194,
+                  "name": "title",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "316:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 193,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "316:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 196,
+                  "name": "revenueTotal",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "337:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 195,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "337:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 198,
+                  "name": "uploaderId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "356:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 197,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "356:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "277:104:3"
+            },
+            "returnParameters": {
+              "id": 200,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "388:0:3"
+            },
+            "scope": 218,
+            "src": "257:237:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 219,
+        "src": "25:472:3"
+      }
+    ],
+    "src": "0:501:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/Tracks.sol",
+    "exportedSymbols": {
+      "Tracks": [
+        218
+      ]
+    },
+    "id": 219,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 171,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 218,
+        "linearizedBaseContracts": [
+          218
+        ],
+        "name": "Tracks",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Tracks.Track",
+            "id": 182,
+            "members": [
+              {
+                "constant": false,
+                "id": 173,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "68:9:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 172,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "68:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 175,
+                "name": "isrc",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "87:11:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 174,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "87:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 177,
+                "name": "title",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "108:12:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 176,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "108:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 179,
+                "name": "revenueTotal",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "130:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 178,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "130:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 181,
+                "name": "uploaderId",
+                "nodeType": "VariableDeclaration",
+                "scope": 182,
+                "src": "157:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 180,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "157:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Track",
+            "nodeType": "StructDefinition",
+            "scope": 218,
+            "src": "46:135:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 186,
+            "name": "tracks",
+            "nodeType": "VariableDeclaration",
+            "scope": 218,
+            "src": "186:34:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Track_$182_storage_$",
+              "typeString": "mapping(uint256 => struct Tracks.Track)"
+            },
+            "typeName": {
+              "id": 185,
+              "keyType": {
+                "id": 183,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "194:4:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "186:20:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Track_$182_storage_$",
+                "typeString": "mapping(uint256 => struct Tracks.Track)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 184,
+                "name": "Track",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 182,
+                "src": "200:5:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Track_$182_storage_ptr",
+                  "typeString": "struct Tracks.Track"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 188,
+            "name": "tracksCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 218,
+            "src": "227:23:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 187,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "227:4:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 216,
+              "nodeType": "Block",
+              "src": "388:106:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 202,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "398:13:3",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 201,
+                      "name": "tracksCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 188,
+                      "src": "398:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 203,
+                  "nodeType": "ExpressionStatement",
+                  "src": "398:13:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 214,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 204,
+                        "name": "tracks",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 186,
+                        "src": "421:6:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Track_$182_storage_$",
+                          "typeString": "mapping(uint256 => struct Tracks.Track storage ref)"
+                        }
+                      },
+                      "id": 206,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 205,
+                        "name": "tracksCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 188,
+                        "src": "428:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "421:19:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Track_$182_storage",
+                        "typeString": "struct Tracks.Track storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 208,
+                          "name": "id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 190,
+                          "src": "447:2:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 209,
+                          "name": "isrc",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 192,
+                          "src": "450:4:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 210,
+                          "name": "title",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 194,
+                          "src": "455:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 211,
+                          "name": "revenueTotal",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 196,
+                          "src": "462:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 212,
+                          "name": "uploaderId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 198,
+                          "src": "476:10:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 207,
+                        "name": "Track",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 182,
+                        "src": "441:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Track_$182_storage_ptr_$",
+                          "typeString": "type(struct Tracks.Track storage pointer)"
+                        }
+                      },
+                      "id": 213,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "441:46:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Track_$182_memory",
+                        "typeString": "struct Tracks.Track memory"
+                      }
+                    },
+                    "src": "421:66:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Track_$182_storage",
+                      "typeString": "struct Tracks.Track storage ref"
+                    }
+                  },
+                  "id": 215,
+                  "nodeType": "ExpressionStatement",
+                  "src": "421:66:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 217,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createTrack",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 199,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 190,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "278:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 189,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "278:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 192,
+                  "name": "isrc",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "296:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 191,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 194,
+                  "name": "title",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "316:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 193,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "316:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 196,
+                  "name": "revenueTotal",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "337:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 195,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "337:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 198,
+                  "name": "uploaderId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "356:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 197,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "356:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "277:104:3"
+            },
+            "returnParameters": {
+              "id": 200,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "388:0:3"
+            },
+            "scope": 218,
+            "src": "257:237:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 219,
+        "src": "25:472:3"
+      }
+    ],
+    "src": "0:501:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-05T21:12:20.878Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
