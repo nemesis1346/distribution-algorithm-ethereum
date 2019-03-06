@@ -19,6 +19,11 @@ truffle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.0.7
 #### 1* Step: 
 Be sure that some network either as ganache, 'truffle develop' command, or any local blockchain is up and running.
 Is important to notice the host, port and the network id for the contracts
+IMPORTAT: Better use ganache-gui since truffle develop doesnt give enough gas
+ganache-gui needs:
+-   download from the repo https://github.com/trufflesuite/ganache
+-   yarn install (yarn is better)
+-   yarn start
 
 #### 2* Step:
 Be sure to modify the contract according with the requirements of the application and to modify the 'migrations' folder with the deployment of the solidity contracts

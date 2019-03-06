@@ -1,12 +1,8 @@
 const contract = require('truffle-contract');
 
 const metacoin_artifact = require('../build/contracts/MetaCoin.json');
-const track_artifact = require('../build/contracts/Tracks.json');
 
-const TrackContract = contract(track_artifact);
 const MetaCoin = contract(metacoin_artifact);
-
-const Web3 = require('web3');
 
 module.exports = {
   start: function (callback) {
@@ -69,25 +65,4 @@ module.exports = {
     });
   },
 
-  addTrack: async function () {
-    try {
-      console.log('PROVIDER');
-      //Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
-
-      const web3Provider = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-      //console.log(web3Provider);
-      // Bootstrap the MetaCoin abstraction for Use.
-      // const accounts = await web3Provider.currentProvider.eth;
-      console.log(web3Provider.currentProvider);
-
-      TrackContract.setProvider(web3Provider.currentProvider);
-      const instanceEthInterface = await TrackContract.deployed();
-
-      console.log(instanceEthInterface)
-
-      console.log('PASSED');
-    } catch (error) {
-      console.log(error)
-    }
-  }
 }

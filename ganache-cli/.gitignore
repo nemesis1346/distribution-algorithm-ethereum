@@ -1,7 +1,0 @@
-certs/cert.pfx
-dist
-out
-node_modules
-.DS_Store
-.vscode
-.node_modules_git
