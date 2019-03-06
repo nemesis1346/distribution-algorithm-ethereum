@@ -54,3 +54,4 @@ Contract.setProvider(web3Provider.currentProvider); //we set the network provide
 const instanceEthInterface = await TrackContract.deployed(); //using async/await we create the instance of the contract deployed in the network 
 
 ```
+Important: Be aware of the gas limit that usually the network gives
