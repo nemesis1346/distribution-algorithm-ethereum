@@ -5,7 +5,8 @@
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor"
+      "type": "constructor",
+      "signature": "constructor"
     },
     {
       "anonymous": false,
@@ -27,7 +28,8 @@
         }
       ],
       "name": "Transfer",
-      "type": "event"
+      "type": "event",
+      "signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
     },
     {
       "constant": false,
@@ -50,7 +52,8 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x90b98a11"
     },
     {
       "constant": true,
@@ -69,7 +72,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x7bd703e8"
     },
     {
       "constant": true,
@@ -88,7 +92,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0xf8b2cb4f"
     }
   ],
   "bytecode": "0x608060405234801561001057600080fd5b506127106000803273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610426806100656000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637bd703e81461005c57806390b98a11146100c1578063f8b2cb4f14610134575b600080fd5b34801561006857600080fd5b506100ab6004803603602081101561007f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610199565b6040518082815260200191505060405180910390f35b3480156100cd57600080fd5b5061011a600480360360408110156100e457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610259565b604051808215151515815260200191505060405180910390f35b34801561014057600080fd5b506101836004803603602081101561015757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103b2565b6040518082815260200191505060405180910390f35b600073__ConvertLib____________________________6396e4ee3d6101be846103b2565b60026040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018281526020019250505060206040518083038186803b15801561021757600080fd5b505af415801561022b573d6000803e3d6000fd5b505050506040513d602081101561024157600080fd5b81019080805190602001909291905050509050919050565b6000816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156102aa57600090506103ac565b816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190505b92915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea165627a7a72305820aea0ca4ee7103e509c4f4002e8ff2a7b270a791eac0bad232f0b1958a2085ff50029",
@@ -2491,9 +2496,34 @@
     "name": "solc",
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1551842271563": {
+      "events": {},
+      "links": {
+        "ConvertLib": "0x9782EC6A2da9Bfff03E48f7A070F056A656397B2"
+      },
+      "address": "0x33ae4615C715046C7F4799292A79afbc4f166872",
+      "transactionHash": "0xb315c7e5356dad031a432093ecff04c88ab07360bf237f87041f29185a0a4a3f"
+    },
+    "1551842711820": {
+      "events": {},
+      "links": {
+        "ConvertLib": "0x388AfA744E57C2b0ac542f4d60780EC56B015088"
+      },
+      "address": "0x8411F3f1Ba7Db25983b9acCd256148A7EA44ab56",
+      "transactionHash": "0xd66a174f16a457adc6a7dc65bf8b0c0085889baa99de165c0f8e7b8bb9edcf26"
+    },
+    "1551842861718": {
+      "events": {},
+      "links": {
+        "ConvertLib": "0x1D2A416F6310270B4734Efa26AaFf12314e74F9f"
+      },
+      "address": "0x6A9b2Be126cCaf3b44C4cf18813F6a49e27A7629",
+      "transactionHash": "0x3174ae135692047057b49fc4b33acc13d8a74766a6530945742ff161bcebdfd0"
+    }
+  },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-03-05T21:12:20.878Z",
+  "updatedAt": "2019-03-06T03:35:37.794Z",
   "devdoc": {
     "methods": {}
   },
