@@ -14,3 +14,38 @@ Web3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.20.1
 truffle-contract&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.0.1
 truffle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.0.7
 
+### Contract Deployment with Truffle
+
+#### 1* Step: 
+Be sure that some network either as ganache, 'truffle develop' command, or any local blockchain is up and running.
+Is important to notice the host, port and the network id for the contracts
+
+#### 2* Step:
+Be sure to modify the contract according with the requirements of the application and to modify the 'migrations' folder with the deployment of the solidity contracts
+
+#### 3* Step:
+truffle compile (in application location)
+ 
+#### 4* Step:
+Check that there was a modification on the JSON file of the contract in build folder. Check that the network id of the running blockchain is on the JSON file of that contract
+
+#### 5* Step:
+trufle migrate --reset (This migrate the compile JSON files into the network and if there is no errors, the contract has been deployed in the local network)
+
+#### 6* Step:
+Develop the middleware that gets in contact with the local blockchain. Commonly we will use web3 and some framework for the contracts.
+
+Usually we do something like(NodeJs):
+
+```
+const contractTruffle = require('truffle-contract');  //npm package
+const contract_artifact = require('../build/contracts/Tracks.json'); //we build a JSON artifact
+const Contract = contractTruffle(track_artifact); //we get the contract JSON artifact
+const Web3 = require('web3');  //npm package
+
+const web3Provider = new Web3(new Web3.providers.HttpProvider("http://host:port")); //we create the network provider
+Contract.setProvider(web3Provider.currentProvider); //we set the network provider
+
+const instanceEthInterface = await TrackContract.deployed(); //using async/await we create the instance of the contract deployed in the network 
+
+```

@@ -3,7 +3,7 @@ const contract = require('truffle-contract');
 const metacoin_artifact = require('../build/contracts/MetaCoin.json');
 const track_artifact = require('../build/contracts/Tracks.json');
 
-const Track = contract(track_artifact,'0xe525fcbeb642a553e545ce4ecfff4ccbebdf3082');
+const TrackContract = contract(track_artifact);
 const MetaCoin = contract(metacoin_artifact);
 
 const Web3 = require('web3');
@@ -70,25 +70,24 @@ module.exports = {
   },
 
   addTrack: async function () {
-    console.log('PROVIDER');
-    //Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
+    try {
+      console.log('PROVIDER');
+      //Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
 
-    const web3Provider = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-    //console.log(web3Provider);
-    // Bootstrap the MetaCoin abstraction for Use.
-   // const accounts = await web3Provider.currentProvider.eth;
-    console.log(web3Provider.currentProvider);
+      const web3Provider = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+      //console.log(web3Provider);
+      // Bootstrap the MetaCoin abstraction for Use.
+      // const accounts = await web3Provider.currentProvider.eth;
+      console.log(web3Provider.currentProvider);
 
-    Track.setProvider(web3Provider.currentProvider);
-  
-    console.log('PASSED');
-    Track.at('0xe525fcbeb642a553e545ce4ecfff4ccbebdf3082').then(async function (instance) {
-      console.log(instance);
-      meta = instance;
-     
-      console.log(meta);
-    }).catch(function (e) {
-      console.log(e);
-    });
+      TrackContract.setProvider(web3Provider.currentProvider);
+      const instanceEthInterface = await TrackContract.deployed();
+
+      console.log(instanceEthInterface)
+
+      console.log('PASSED');
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
