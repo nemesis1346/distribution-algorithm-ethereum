@@ -20,8 +20,9 @@ module.exports ={
             const accounts = web3Provider.eth.accounts;
             console.log(accounts)
 
-            await trackInterface.createTrack('test','test','test',100,'test', {from:accounts[1],gasLimit:'6721975'})
-      
+            await trackInterface.createTrack(1004,'test','test',100,'test', {from:accounts[1],gasLimit:'6721975'})
+            const result = await trackInterface.getTrack.call(1004);
+            console.log(result[0])
           } catch (error) {
             console.log(error)
           }
