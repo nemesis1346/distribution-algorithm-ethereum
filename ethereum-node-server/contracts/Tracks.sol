@@ -13,9 +13,10 @@ contract Tracks{
 
     mapping(uint=>Track) public tracks;
 
+
     function createTrack(uint id, string memory isrc, string memory title, uint revenueTotal, string memory uploaderId) public{
         tracks[id]=Track(id,isrc,title, revenueTotal, uploaderId);
-        //emit LogTrack("Track created!!!"); //this is an event 
+        emit LogTrack("Track created!!!"); //this is an event 
 
     }
     
@@ -24,4 +25,5 @@ contract Tracks{
     }
 
     event LogTrack(string);
+
 }    
