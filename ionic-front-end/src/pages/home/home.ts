@@ -1,5 +1,4 @@
 import { AlertComponent } from './../../resources/alertComponent';
-import { OrganizationType } from './../../../../hyperstate/artifacts/org.membran.hyperstate';
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { UserModel } from '../../models/userModel';

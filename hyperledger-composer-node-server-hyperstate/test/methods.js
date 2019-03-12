@@ -118,28 +118,6 @@ exports.createTrack = async function (trackId, title, revenue, vendorIdentifier,
     }
 }
 
-
-exports.createTrackForArray=async function(trackId, title, revenue, vendorIdentifier, label, author, authorType, uploaderId) {
-    //DATA FOR CREATING TRACK
-    var trackModel = new TrackModel(
-        trackId,
-        title,
-        revenue,
-        vendorIdentifier,
-        label,
-        author,
-        authorType,
-        uploaderId
-    );
-    try {
-        await requestPost('/createTrackForArray', JSON.stringify(trackModel), 'TRACK');
-    } catch (error) {
-        console.log('/createTrackForArray ERROR');
-        console.error(error);
-        throw new Error(error);
-    }
-}
-
 exports.createAllTracksFromFile= async function(uploaderId) {
     try {
         let listTracks = [];
@@ -160,16 +138,16 @@ exports.createAllTracksFromFile= async function(uploaderId) {
         let newlistTracks = listTracks.slice(0, 40);
         console.log(newlistTracks);
 
+        //for (const element of newlistTracks) {
         newlistTracks.forEach(async element => {
-            await createTrackForArray(
+            await this.createTrack(
                 element.isrc,
                 element.title,
                 element.revenueTotal,
                 "vendorIdentifier",
                 element.label,
                 element.author,
-                element.ownerType,
-                uploaderId
+                element.ownerType
             );
         });
 

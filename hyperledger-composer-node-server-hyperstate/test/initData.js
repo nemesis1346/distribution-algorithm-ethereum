@@ -3,7 +3,7 @@
 const UUID = require('uuid/v1');
 const methods = require('./methods.js')
 
-exports.initData=async function(){
+async function initData(){
       //INIT DATA////////////////////////////////////////////////////////////// (THIS IS THE DATA OF MEMBRAN)
       let trackId = UUID();
       await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
@@ -15,7 +15,7 @@ exports.initData=async function(){
       await methods.createTrack(track4Id, 'track4', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
 
       await methods.createUser('admin', 'admin', 'admin', 'ADMIN', null);
-      let orchardId = UUID();
+       let orchardId = UUID();
       await methods.createParticipant(orchardId, 'The Orchard', 'orchard@gmail.com', 0.00, 'DISTRIBUTOR', orchardId);
       await methods.createUser('orchard', 'orchard', 'orchard', 'DISTRIBUTOR', orchardId);
       let membranId = UUID();
@@ -38,7 +38,8 @@ exports.initData=async function(){
       await methods.createParticipant(labelId, 'Label', 'Label@gmail.com', 0.00, 'LABEL', labelId)
       await methods.createUser('label','label', 'label', 'LABEL', labelId)
 
-      //await methods.createAllTracksFromFile(orchardId);
+      await methods.createAllTracksFromFile(orchardId);
       //////////////////////////////////////////////////////////////////////////
 }
 
+initData();

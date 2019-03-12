@@ -11,7 +11,7 @@
   "devDependencies": {
     "chai": "latest",
     "composer-admin": "^0.20.0",
-    "composer-client": "^0.20.0",
+    "composer-client": "^0.20.4",
     "composer-common": "^0.20.0",
     "composer-connector-embedded": "^0.20.0",
     "eslint": "latest",
@@ -35,9 +35,9 @@
     "node-sass": "^4.9.3",
     "perm": "^0.1.1",
     "promisify-child-process": "^3.1.0",
-    "superagent": "^4.0.0-beta.5",
+    "superagent": "^4.1.0",
     "uuid": "^3.2.1",
-    "winston": "^2.4.2",
+    "winston": "^2.4.4",
     "yo": "^2.0.5"
   }
 }
