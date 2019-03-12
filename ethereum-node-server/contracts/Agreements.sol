@@ -27,13 +27,29 @@ contract Agreements{
                             string memory traderEmiterName,
                             string memory traderReceiverName
                             ) public{
+      
+
         agreements[id]=Agreement(id,traderEmitterId, traderReceiverId, percentage, status, isrc,traderEmiterName, traderReceiverName);
         emit LogTraderCreation("Agreement created!!!"); //this is an event 
 
     }
+    function existEmitter(uint traderEmitterId) public returns(bool){
+          //We get the other traders                        
+        Traders tradersInterface = new Traders();
+        
+        //We declare the variables of the Emitter
+        //uint idEmitter;
+        //string memory nameEmitter;
+        //string memory emailEmitter;
+        //uint balanceEmitter;
+        //string memory traderTypeEmitter;
+    //    uint tokenAccountIdEmitter;
+        
+         (uint idEmitter,string memory nameEmitter, string memory emailEmitter, uint balanceEmitter,string memory traderTypeEmitter,uint tokenAccountIdEmitter)=tradersInterface.getTrader(traderEmitterId);
+       // require()
+    }
     
     function getAgreement(uint id) public returns(uint,uint, uint, string memory,uint,string memory,string memory) {
-        
         //This is the best way to avoid error stack too deep
         Agreement memory agreement = agreements[id];
         return (
