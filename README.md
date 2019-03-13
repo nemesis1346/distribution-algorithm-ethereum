@@ -172,3 +172,8 @@ Python: 2.7.x
 A code editor of your choice, we recommend VSCode.
 Often there could be problems with broken libraries within nodejs, it's better to uninstall it and reinstall it. Some more info in the following link:
 https://stackoverflow.com/questions/11177954/how-do-i-completely-uninstall-node-js-and-reinstall-from-beginning-mac-os-x
+
+
+#### Fabric docker containers error
+docker image pull hyperledger/fabric-ccenv:1.2.0
+docker image pull hyperledger/fabric-ccenv:latest
