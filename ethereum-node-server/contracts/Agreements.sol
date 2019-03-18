@@ -30,6 +30,8 @@ contract Agreements{
       
 
         agreements[id]=Agreement(id,traderEmitterId, traderReceiverId, percentage, status, isrc,traderEmiterName, traderReceiverName);
+        
+        //require(existEmitter(traderEmitterId));
         emit LogTraderCreation("Agreement created!!!"); //this is an event 
 
     }
@@ -45,8 +47,9 @@ contract Agreements{
         //string memory traderTypeEmitter;
     //    uint tokenAccountIdEmitter;
         
-         (uint idEmitter,string memory nameEmitter, string memory emailEmitter, uint balanceEmitter,string memory traderTypeEmitter,uint tokenAccountIdEmitter)=tradersInterface.getTrader(traderEmitterId);
+        (uint idEmitter,string memory nameEmitter, string memory emailEmitter, uint balanceEmitter,string memory traderTypeEmitter,uint tokenAccountIdEmitter)=tradersInterface.getTrader(traderEmitterId);
        // require()
+        emit LogInfoEmitter(nameEmitter);
     }
     
     function getAgreement(uint id) public returns(uint,uint, uint, string memory,uint,string memory,string memory) {
@@ -62,5 +65,6 @@ contract Agreements{
                 agreement.traderReceiverName);
     }
 
+    event LogInfoEmitter(string);
     event LogTraderCreation(string);
 }    
