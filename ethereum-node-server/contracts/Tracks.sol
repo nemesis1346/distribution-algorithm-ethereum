@@ -25,7 +25,7 @@ contract Tracks{
     function getTrack(uint id) public returns(uint, string memory,string memory, uint, address) {
         return (tracks[id].id, tracks[id].isrc,tracks[id].title,tracks[id].revenueTotal,tracks[id].uploaderEOA);
     }
-
+    
     event LogTrack(string);
 
 }    

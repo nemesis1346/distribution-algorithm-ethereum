@@ -31,25 +31,25 @@ contract Agreements{
 
         agreements[id]=Agreement(id,traderEmitterId, traderReceiverId, percentage, status, isrc,traderEmiterName, traderReceiverName);
         
-        //require(existEmitter(traderEmitterId));
-        emit LogTraderCreation("Agreement created!!!"); //this is an event 
+       // require(existEmitter(traderEmitterId));
+        uint commision = existEmitter(traderEmitterId);
+        emit intLogs(commision);
+        emit stringLogs("Agreement created!!!"); //this is an event 
 
     }
-    function existEmitter(uint traderEmitterId) public returns(bool){
+    function existEmitter(uint traderEmitterId) public payable returns(uint){
           //We get the other traders                        
         Traders tradersInterface = new Traders();
-        
-        //We declare the variables of the Emitter
-        //uint idEmitter;
-        //string memory nameEmitter;
-        //string memory emailEmitter;
-        //uint balanceEmitter;
-        //string memory traderTypeEmitter;
-    //    uint tokenAccountIdEmitter;
-        
-        (uint idEmitter,string memory nameEmitter, string memory emailEmitter, uint balanceEmitter,string memory traderTypeEmitter,uint tokenAccountIdEmitter)=tradersInterface.getTrader(traderEmitterId);
+        //emit commonLogs("IS HERE!!!"); //this is an event 
+
+        uint commission = msg.value; //this is the commission to access another contract
+        emit intLogs(commission);
+       (uint idEmitter,string memory nameEmitter, string memory emailEmitter, uint balanceEmitter,string memory traderTypeEmitter,uint tokenAccountIdEmitter)=tradersInterface.getTrader.value(commission)(traderEmitterId);
        // require()
-        emit LogInfoEmitter(nameEmitter);
+        emit intLogs(traderEmitterId);
+        emit stringLogs(nameEmitter);
+        emit stringLogs(emailEmitter);
+        return commission;
     }
     
     function getAgreement(uint id) public returns(uint,uint, uint, string memory,uint,string memory,string memory) {
@@ -65,6 +65,6 @@ contract Agreements{
                 agreement.traderReceiverName);
     }
 
-    event LogInfoEmitter(string);
-    event LogTraderCreation(string);
+    event stringLogs(string);
+    event intLogs(uint);
 }    

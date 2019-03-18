@@ -1,4 +1,5 @@
 pragma solidity ^0.5.0;
+//pragma experimental 
 
 //This is the best way to structure a digital entity in a contract
 contract Traders{
@@ -20,7 +21,7 @@ contract Traders{
 
     }
     
-    function getTrader(uint id) public returns(uint, string memory,string memory, uint, string memory,uint) {
+    function getTrader(uint id) public payable returns(uint, string memory,string memory, uint, string memory,uint) {
         return (traders[id].id, traders[id].name,traders[id].email,traders[id].balance,traders[id].traderType, traders[id].tokenAccountId);
     }
 
