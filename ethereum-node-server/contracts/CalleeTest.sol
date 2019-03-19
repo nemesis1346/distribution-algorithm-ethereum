@@ -9,7 +9,12 @@ contract CalleeTest{
         uint id;
         string name;
     }
+    struct StructByString{
+        uint intProperty;
+        string stringProperty;
+    }
 
+    //mapping(string=>StructByString[]) public structsByString;
     mapping(uint=>StructTest) public structs;
 
     function getString() public returns(string memory){

@@ -5,8 +5,7 @@ pragma solidity ^0.5.0;
 contract Tracks{
     
     struct Track{
-        uint id;
-        string isrc;
+        uint isrc;
         string title;
         uint revenueTotal;
         address uploaderEOA;
@@ -15,15 +14,15 @@ contract Tracks{
     mapping(uint=>Track) public tracks;
 
 
-    function createTrack(uint id, string memory isrc, string memory title, uint revenueTotal) public{
+    function createTrack(uint isrc, string memory title, uint revenueTotal) public{
         address uploaderEOA = msg.sender; 
-        tracks[id]=Track(id, isrc, title, revenueTotal, uploaderEOA);
+        tracks[isrc]=Track(isrc, title, revenueTotal, uploaderEOA);
         emit LogTrack("Track created!!!"); //this is an event 
 
     }
     
-    function getTrack(uint id) public returns(uint, string memory,string memory, uint, address) {
-        return (tracks[id].id, tracks[id].isrc,tracks[id].title,tracks[id].revenueTotal,tracks[id].uploaderEOA);
+    function getTrack(uint isrc) public returns(uint, string memory, uint, address) {
+        return (tracks[isrc].isrc,tracks[isrc].title,tracks[isrc].revenueTotal,tracks[isrc].uploaderEOA);
     }
     
     event LogTrack(string);

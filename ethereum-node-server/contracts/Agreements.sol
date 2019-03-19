@@ -1,7 +1,11 @@
 pragma solidity ^0.5.0;
-import "./Tracks.sol";
-import "./Traders.sol";
 
+contract Traders{
+    function getTrader(uint id) public returns(uint, string memory,string memory, string memory,uint){}
+}
+contract Tracks{
+    function getTrack(uint id) public returns(uint, string memory, uint, address){}
+}
 //This is the best way to structure a digital entity in a contract
 contract Agreements{
     
@@ -21,38 +25,56 @@ contract Agreements{
     function createAgreement(uint id, 
                             uint traderEmitterId, 
                             uint traderReceiverId, 
-                            uint percentage, 
+                            uint percentageReceiver, 
                             string memory status, 
                             uint isrc,
                             string memory traderEmiterName,
-                            string memory traderReceiverName
+                            string memory traderReceiverName,
+                            address tradersContractAddr,
+                            address tracksContractAddr
                             ) public{
       
-
-        agreements[id]=Agreement(id,traderEmitterId, traderReceiverId, percentage, status, isrc,traderEmiterName, traderReceiverName);
+        percentageReceiver = percentageReceiver/100;
+        agreements[id]=Agreement(id,traderEmitterId, traderReceiverId, percentageReceiver, status, isrc,traderEmiterName, traderReceiverName);
         
-       // require(existEmitter(traderEmitterId));
-        existEmitter(traderEmitterId);
-       // emit intLogs(commision);
-        emit stringLogs("Agreement created!!!"); //this is an event 
+        require(existTrader(traderEmitterId,tradersContractAddr));
+        require(existTrader(traderReceiverId,tradersContractAddr));
+        require(existTrack(isrc, tracksContractAddr));
+        emit stringLogs("Agreement created!!!"); //this is an event
+        //TODO: check the percentage limit 
 
     }
-    function existEmitter(uint traderEmitterId) public payable{
-          //We get the other traders                        
-        Traders tradersInterface = new Traders();
-        //emit commonLogs("IS HERE!!!"); //this is an event 
+    
+    function existTrack(uint isrc, address tracksContractAddr) public returns (bool){
+        Tracks tracksInterface = Tracks(tracksContractAddr);
+        (uint isrc, 
+        string memory title, 
+        uint revenueTotal, 
+        address uploaderEOA)=tracksInterface.getTrack(isrc);
+        
+         if(isrc!=0 && bytes(title).length>0){
+            return true; 
+        } else{
+            return false;
+        }  
+    }
+    
+ 
+    function existTrader(uint traderId,address tradersContractAddr) public returns (bool){
+          //We get the Traders contract with address                        
+        Traders tradersInterface = Traders(tradersContractAddr);
 
-        uint commission = msg.value; //this is the commission to access another contract
-        //emit intLogs(commission);
-       //(uint idEmitter,string memory nameEmitter, string memory emailEmitter, uint balanceEmitter,string memory traderTypeEmitter,uint tokenAccountIdEmitter)=tradersInterface.getTrader.value(commission)(traderEmitterId);
-       (uint idEmitter,string memory nameEmitter, string memory emailEmitter, uint balanceEmitter,string memory traderTypeEmitter,uint tokenAccountIdEmitter)=tradersInterface.getTrader(1);
-
-       // require()
-        //emit intLogs(idEmitter);
-        emit stringLogs(nameEmitter);
-        emit stringLogs(emailEmitter);
-        string memory test = tradersInterface.test("this is a test");
-        emit stringLogs(test);
+        (uint idTrader,
+        string memory nameTrader, 
+        string memory emailTrader, 
+        string memory traderTypeTrader,
+        uint tokenAccountIdTrader)=tradersInterface.getTrader(traderId);
+        
+        if(idTrader!=0 && bytes(nameTrader).length>0){
+            return true; 
+        } else{
+            return false;
+        }  
     }
     
     function getAgreement(uint id) public returns(uint,uint, uint, string memory,uint,string memory,string memory) {
