@@ -25,5 +25,9 @@ contract Traders{
         return (traders[id].id, traders[id].name,traders[id].email,traders[id].balance,traders[id].traderType, traders[id].tokenAccountId);
     }
 
+    function test(string memory message) public returns(string memory){
+        return (message);
+    }
+
     event LogTraderCreation(string);
 }    
