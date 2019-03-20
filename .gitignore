@@ -79,3 +79,5 @@ data-analysis-react/yarn.lock
 
 *node_modules
 *package-lock.json
+
+ethereum-node-server/yarn.lock

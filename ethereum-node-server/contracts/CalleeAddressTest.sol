@@ -11,19 +11,19 @@ contract CalleeTest{
 
 //This is the best way to structure a digital entity in a contract
 contract CallerAddressTest{
-    CalleeTest public calleTestInterface;
+    CalleeTest public calleeTestInterface;
     
     function getTest2(address calleAddress)public{
-        calleTestInterface = CalleeTest(calleAddress); //this CREATES A NEW EMPTY CONTRACT INSTANCE
+        calleeTestInterface = CalleeTest(calleAddress); //this CREATES A NEW EMPTY CONTRACT INSTANCE
         
-        calleTestInterface.setInteger(2);
-        uint test2 = calleTestInterface.getInteger();
+        calleeTestInterface.setInteger(2);
+        uint test2 = calleeTestInterface.getInteger();
         
-        calleTestInterface.setString("MESSAGE INPUT");
-        string memory stringTest2=calleTestInterface.getString();
+        calleeTestInterface.setString("MESSAGE INPUT");
+        string memory stringTest2=calleeTestInterface.getString();
         
-        calleTestInterface.setStruct(44,"this is a testnet");
-        (uint id, string memory name)=calleTestInterface.getStruct(11);
+        calleeTestInterface.setStruct(44,"this is a testnet");
+        (uint id, string memory name)=calleeTestInterface.getStruct(11);
         
         emit stringLogs('TEST 2');
         //emit intLogs(test2);

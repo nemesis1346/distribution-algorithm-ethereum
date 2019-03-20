@@ -1,21 +1,21 @@
 pragma solidity ^0.5.0;
-import './CalleTest.sol';
+import './CalleeTest.sol';
 
 //This is the best way to structure a digital entity in a contract
 contract CallerTest{
-    CallerTest public calleTestInterface;
+    CalleeTest public calleeTestInterface;
     
     function getTest2()public{
-        calleTestInterface = new Traders();
+        calleeTestInterface = new CalleeTest();
         
-        calleTestInterfacecalleTestInterface.setInteger(2);
-        uint test2 = calleTestInterface.getInteger();
+        calleeTestInterface.setInteger(2);
+        uint test2 = calleeTestInterface.getInteger();
         
-        calleTestInterface.setString("MESSAGE INPUT");
-        string memory stringTest2=calleTestInterface.getString();
+        calleeTestInterface.setString("MESSAGE INPUT");
+        string memory stringTest2=calleeTestInterface.getString();
         
-        calleTestInterface.setStruct(44,"this is a testnet");
-        (uint id, string memory name)=calleTestInterface.getStruct(44);
+        calleeTestInterface.setStruct(44,"this is a testnet");
+        (uint id, string memory name)=calleeTestInterface.getStruct(44);
         
         emit stringLogs('TEST 2');
         //emit intLogs(test2);
