@@ -58,3 +58,7 @@ Important: Be aware of the gas limit that usually the network gives
 
 #Error Handling as we find errors
 TypeError: Cannot read property 'constructor' of undefined //When calling a contract with web3, was solved by adding a name of the variable in the event definitions. 
+
+To return values from the web3, we need to return a view. More information in this link:
+
+https://ethereum.stackexchange.com/questions/28898/when-to-use-view-and-pure-in-place-of-constant

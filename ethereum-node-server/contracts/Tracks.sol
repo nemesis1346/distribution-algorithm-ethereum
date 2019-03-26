@@ -21,7 +21,7 @@ contract Tracks{
 
     }
     
-    function getTrack(uint isrc) public returns(uint, string memory, uint, address) {
+    function getTrack(uint isrc) view public returns(uint, string memory, uint, address) {
         return (tracks[isrc].isrc,tracks[isrc].title,tracks[isrc].revenueTotal,tracks[isrc].uploaderEOA);
     }
     
