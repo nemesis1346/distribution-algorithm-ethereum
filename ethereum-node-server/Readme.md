@@ -55,3 +55,6 @@ const instanceEthInterface = await TrackContract.deployed(); //using async/await
 
 ```
 Important: Be aware of the gas limit that usually the network gives
+
+#Error Handling as we find errors
+TypeError: Cannot read property 'constructor' of undefined //When calling a contract with web3, was solved by adding a name of the variable in the event definitions. 

@@ -13,7 +13,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x2b86c5a6"
     },
     {
       "anonymous": false,
@@ -25,7 +26,8 @@
         }
       ],
       "name": "stringLogs",
-      "type": "event"
+      "type": "event",
+      "signature": "0x7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d46"
     },
     {
       "anonymous": false,
@@ -37,7 +39,8 @@
         }
       ],
       "name": "intLogs",
-      "type": "event"
+      "type": "event",
+      "signature": "0x82a5e81cde1835f4f28f4fdaac7e5ea0827d449ba9eb096e75cd3626cf3ec27f"
     },
     {
       "constant": false,
@@ -46,7 +49,8 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x17f436d9"
     }
   ],
   "bytecode": "0x608060405234801561001057600080fd5b5061148b806100206000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806317f436d9146100515780632b86c5a614610068575b600080fd5b34801561005d57600080fd5b506100666100bf565b005b34801561007457600080fd5b5061007d610878565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100c761089d565b604051809103906000f0801580156100e3573d6000803e3d6000fd5b506000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663ac58867560026040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050602060405180830381600087803b1580156101b457600080fd5b505af11580156101c8573d6000803e3d6000fd5b505050506040513d60208110156101de57600080fd5b81019080805190602001909291905050505060008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16638b84925b6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561027757600080fd5b505af115801561028b573d6000803e3d6000fd5b505050506040513d60208110156102a157600080fd5b810190808051906020019092919050505090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16637fcaf6666040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180806020018281038252600d8152602001807f4d45535341474520494e50555400000000000000000000000000000000000000815250602001915050600060405180830381600087803b15801561037557600080fd5b505af1158015610389573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060208110156103b357600080fd5b8101908080516401000000008111156103cb57600080fd5b828101905060208101848111156103e157600080fd5b81518560018202830111640100000000821117156103fe57600080fd5b50509291905050505060606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166389ea642f6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b15801561048e57600080fd5b505af11580156104a2573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060208110156104cc57600080fd5b8101908080516401000000008111156104e457600080fd5b828101905060208101848111156104fa57600080fd5b815185600182028301116401000000008211171561051757600080fd5b505092919050505090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b56ac1f2602c6040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200180602001828103825260118152602001807f74686973206973206120746573746e657400000000000000000000000000000081525060200192505050600060405180830381600087803b1580156105eb57600080fd5b505af11580156105ff573d6000803e3d6000fd5b50505050600060606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663cdfa8495602c6040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15801561069857600080fd5b505af11580156106ac573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060408110156106d657600080fd5b810190808051906020019092919080516401000000008111156106f857600080fd5b8281019050602081018481111561070e57600080fd5b815185600182028301116401000000008211171561072b57600080fd5b5050929190505050915091507f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d466040518080602001828103825260068152602001807f544553542032000000000000000000000000000000000000000000000000000081525060200191505060405180910390a17f82a5e81cde1835f4f28f4fdaac7e5ea0827d449ba9eb096e75cd3626cf3ec27f826040518082815260200191505060405180910390a17f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d46816040518080602001828103825283818151815260200191508051906020019080838360005b8381101561083857808201518184015260208101905061081d565b50505050905090810190601f1680156108655780820380516001836020036101000a031916815260200191505b509250505060405180910390a150505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b604051610bb2806108ae8339019056fe6080604052600080556040805190810160405280600481526020017f484f4c410000000000000000000000000000000000000000000000000000000081525060019080519060200190610053929190610066565b5034801561006057600080fd5b5061010b565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a757805160ff19168380011785556100d5565b828001600101855582156100d5579182015b828111156100d45782518255916020019190600101906100b9565b5b5090506100e291906100e6565b5090565b61010891905b808211156101045760008160009055506001016100ec565b5090565b90565b610a988061011a6000396000f3fe608060405260043610610099576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063418f3afa1461009e578063553419381461012e5780637fcaf666146101e957806389ea642f1461032a5780638b84925b146103ba578063ac588675146103e5578063b56ac1f214610434578063cdfa849514610506578063e974cdb1146105b4575b600080fd5b3480156100aa57600080fd5b506100b36105df565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f35780820151818401526020810190506100d8565b50505050905090810190601f1680156101205780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561013a57600080fd5b506101676004803603602081101561015157600080fd5b810190808035906020019092919050505061067d565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b838110156101ad578082015181840152602081019050610192565b50505050905090810190601f1680156101da5780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b3480156101f557600080fd5b506102af6004803603602081101561020c57600080fd5b810190808035906020019064010000000081111561022957600080fd5b82018360208201111561023b57600080fd5b8035906020019184600183028401116401000000008311171561025d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610739565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102ef5780820151818401526020810190506102d4565b50505050905090810190601f16801561031c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561033657600080fd5b5061033f610757565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561037f578082015181840152602081019050610364565b50505050905090810190601f1680156103ac5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103c657600080fd5b506103cf6107f9565b6040518082815260200191505060405180910390f35b3480156103f157600080fd5b5061041e6004803603602081101561040857600080fd5b8101908080359060200190929190505050610802565b6040518082815260200191505060405180910390f35b34801561044057600080fd5b506105046004803603604081101561045757600080fd5b81019080803590602001909291908035906020019064010000000081111561047e57600080fd5b82018360208201111561049057600080fd5b803590602001918460018302840111640100000000831117156104b257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610815565b005b6105326004803603602081101561051c57600080fd5b810190808035906020019092919050505061086b565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561057857808201518184015260208101905061055d565b50505050905090810190601f1680156105a55780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b3480156105c057600080fd5b506105c9610941565b6040518082815260200191505060405180910390f35b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106755780601f1061064a57610100808354040283529160200191610675565b820191906000526020600020905b81548152906001019060200180831161065857829003601f168201915b505050505081565b6002602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561072f5780601f106107045761010080835404028352916020019161072f565b820191906000526020600020905b81548152906001019060200180831161071257829003601f168201915b5050505050905082565b60608160019080519060200190610751929190610947565b50919050565b606060018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107ef5780601f106107c4576101008083540402835291602001916107ef565b820191906000526020600020905b8154815290600101906020018083116107d257829003601f168201915b5050505050905090565b60008054905090565b6000816000819055506000549050919050565b604080519081016040528083815260200182815250600260008481526020019081526020016000206000820151816000015560208201518160010190805190602001906108639291906109c7565b509050505050565b60006060600260008481526020019081526020016000206000015460026000858152602001908152602001600020600101808054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109315780601f1061090657610100808354040283529160200191610931565b820191906000526020600020905b81548152906001019060200180831161091457829003601f168201915b5050505050905091509150915091565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061098857805160ff19168380011785556109b6565b828001600101855582156109b6579182015b828111156109b557825182559160200191906001019061099a565b5b5090506109c39190610a47565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a0857805160ff1916838001178555610a36565b82800160010185558215610a36579182015b82811115610a35578251825591602001919060010190610a1a565b5b509050610a439190610a47565b5090565b610a6991905b80821115610a65576000816000905550600101610a4d565b5090565b9056fea165627a7a723058209f96a786b2acf998dfee1029a1a201f43e726fa92d47454b8983f2dda7f41f9c0029a165627a7a723058205a7fca421175197c467c2e61901b2698f74670b7e8a425d9c60211241b4025d30029",
@@ -82,7 +86,7 @@
         "id": 507,
         "nodeType": "ImportDirective",
         "scope": 581,
-        "sourceUnit": 505,
+        "sourceUnit": 381,
         "src": "24:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -90,7 +94,7 @@
       {
         "baseContracts": [],
         "contractDependencies": [
-          504
+          380
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -112,7 +116,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CalleeTest_$504",
+              "typeIdentifier": "t_contract$_CalleeTest_$380",
               "typeString": "contract CalleeTest"
             },
             "typeName": {
@@ -120,10 +124,10 @@
               "id": 508,
               "name": "CalleeTest",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 504,
+              "referencedDeclaration": 380,
               "src": "144:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CalleeTest_$504",
+                "typeIdentifier": "t_contract$_CalleeTest_$380",
                 "typeString": "contract CalleeTest"
               }
             },
@@ -153,7 +157,7 @@
                       "referencedDeclaration": 509,
                       "src": "227:19:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$504",
+                        "typeIdentifier": "t_contract$_CalleeTest_$380",
                         "typeString": "contract CalleeTest"
                       }
                     },
@@ -172,7 +176,7 @@
                         "nodeType": "NewExpression",
                         "src": "249:14:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$504_$",
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$380_$",
                           "typeString": "function () returns (contract CalleeTest)"
                         },
                         "typeName": {
@@ -180,10 +184,10 @@
                           "id": 513,
                           "name": "CalleeTest",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 504,
+                          "referencedDeclaration": 380,
                           "src": "253:10:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_CalleeTest_$504",
+                            "typeIdentifier": "t_contract$_CalleeTest_$380",
                             "typeString": "contract CalleeTest"
                           }
                         }
@@ -198,13 +202,13 @@
                       "nodeType": "FunctionCall",
                       "src": "249:16:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$504",
+                        "typeIdentifier": "t_contract$_CalleeTest_$380",
                         "typeString": "contract CalleeTest"
                       }
                     },
                     "src": "227:38:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CalleeTest_$504",
+                      "typeIdentifier": "t_contract$_CalleeTest_$380",
                       "typeString": "contract CalleeTest"
                     }
                   },
@@ -251,7 +255,7 @@
                         "referencedDeclaration": 509,
                         "src": "284:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -262,7 +266,7 @@
                       "lValueRequested": false,
                       "memberName": "setInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 458,
+                      "referencedDeclaration": 334,
                       "src": "284:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
@@ -334,7 +338,7 @@
                         "referencedDeclaration": 509,
                         "src": "340:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -345,7 +349,7 @@
                       "lValueRequested": false,
                       "memberName": "getInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 444,
+                      "referencedDeclaration": 320,
                       "src": "340:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
@@ -408,7 +412,7 @@
                         "referencedDeclaration": 509,
                         "src": "391:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -419,7 +423,7 @@
                       "lValueRequested": false,
                       "memberName": "setString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 436,
+                      "referencedDeclaration": 312,
                       "src": "391:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
@@ -491,7 +495,7 @@
                         "referencedDeclaration": 509,
                         "src": "473:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -502,7 +506,7 @@
                       "lValueRequested": false,
                       "memberName": "getString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 424,
+                      "referencedDeclaration": 300,
                       "src": "473:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_string_memory_ptr_$",
@@ -587,7 +591,7 @@
                         "referencedDeclaration": 509,
                         "src": "523:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -598,7 +602,7 @@
                       "lValueRequested": false,
                       "memberName": "setStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 495,
+                      "referencedDeclaration": 371,
                       "src": "523:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
@@ -721,7 +725,7 @@
                         "referencedDeclaration": 509,
                         "src": "616:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -732,7 +736,7 @@
                       "lValueRequested": false,
                       "memberName": "getStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 478,
+                      "referencedDeclaration": 354,
                       "src": "616:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_payable$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$",
@@ -1068,7 +1072,7 @@
         "id": 507,
         "nodeType": "ImportDirective",
         "scope": 581,
-        "sourceUnit": 505,
+        "sourceUnit": 381,
         "src": "24:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1076,7 +1080,7 @@
       {
         "baseContracts": [],
         "contractDependencies": [
-          504
+          380
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -1098,7 +1102,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CalleeTest_$504",
+              "typeIdentifier": "t_contract$_CalleeTest_$380",
               "typeString": "contract CalleeTest"
             },
             "typeName": {
@@ -1106,10 +1110,10 @@
               "id": 508,
               "name": "CalleeTest",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 504,
+              "referencedDeclaration": 380,
               "src": "144:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CalleeTest_$504",
+                "typeIdentifier": "t_contract$_CalleeTest_$380",
                 "typeString": "contract CalleeTest"
               }
             },
@@ -1139,7 +1143,7 @@
                       "referencedDeclaration": 509,
                       "src": "227:19:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$504",
+                        "typeIdentifier": "t_contract$_CalleeTest_$380",
                         "typeString": "contract CalleeTest"
                       }
                     },
@@ -1158,7 +1162,7 @@
                         "nodeType": "NewExpression",
                         "src": "249:14:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$504_$",
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$380_$",
                           "typeString": "function () returns (contract CalleeTest)"
                         },
                         "typeName": {
@@ -1166,10 +1170,10 @@
                           "id": 513,
                           "name": "CalleeTest",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 504,
+                          "referencedDeclaration": 380,
                           "src": "253:10:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_CalleeTest_$504",
+                            "typeIdentifier": "t_contract$_CalleeTest_$380",
                             "typeString": "contract CalleeTest"
                           }
                         }
@@ -1184,13 +1188,13 @@
                       "nodeType": "FunctionCall",
                       "src": "249:16:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$504",
+                        "typeIdentifier": "t_contract$_CalleeTest_$380",
                         "typeString": "contract CalleeTest"
                       }
                     },
                     "src": "227:38:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CalleeTest_$504",
+                      "typeIdentifier": "t_contract$_CalleeTest_$380",
                       "typeString": "contract CalleeTest"
                     }
                   },
@@ -1237,7 +1241,7 @@
                         "referencedDeclaration": 509,
                         "src": "284:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -1248,7 +1252,7 @@
                       "lValueRequested": false,
                       "memberName": "setInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 458,
+                      "referencedDeclaration": 334,
                       "src": "284:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
@@ -1320,7 +1324,7 @@
                         "referencedDeclaration": 509,
                         "src": "340:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -1331,7 +1335,7 @@
                       "lValueRequested": false,
                       "memberName": "getInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 444,
+                      "referencedDeclaration": 320,
                       "src": "340:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
@@ -1394,7 +1398,7 @@
                         "referencedDeclaration": 509,
                         "src": "391:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -1405,7 +1409,7 @@
                       "lValueRequested": false,
                       "memberName": "setString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 436,
+                      "referencedDeclaration": 312,
                       "src": "391:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
@@ -1477,7 +1481,7 @@
                         "referencedDeclaration": 509,
                         "src": "473:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -1488,7 +1492,7 @@
                       "lValueRequested": false,
                       "memberName": "getString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 424,
+                      "referencedDeclaration": 300,
                       "src": "473:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_string_memory_ptr_$",
@@ -1573,7 +1577,7 @@
                         "referencedDeclaration": 509,
                         "src": "523:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -1584,7 +1588,7 @@
                       "lValueRequested": false,
                       "memberName": "setStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 495,
+                      "referencedDeclaration": 371,
                       "src": "523:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
@@ -1707,7 +1711,7 @@
                         "referencedDeclaration": 509,
                         "src": "616:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$504",
+                          "typeIdentifier": "t_contract$_CalleeTest_$380",
                           "typeString": "contract CalleeTest"
                         }
                       },
@@ -1718,7 +1722,7 @@
                       "lValueRequested": false,
                       "memberName": "getStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 478,
+                      "referencedDeclaration": 354,
                       "src": "616:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_payable$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$",
@@ -2031,9 +2035,22 @@
     "name": "solc",
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x8e47E1fe7861870e802488c895cA5bc5D97Ef37D",
+      "transactionHash": "0x4b6a50fc150be0303993ace0fd3e94bd4219c03426cc84e7f900e1a459f55549"
+    },
+    "1553622166986": {
+      "events": {},
+      "links": {},
+      "address": "0xa6cD53A88eD65Ab90a0Ad1551086942a6e0F6c61",
+      "transactionHash": "0x4598fcd7a07e52a324cf702ac5dda489b9711bc2c574c07ab251f272cf914155"
+    }
+  },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-03-20T03:16:53.978Z",
+  "updatedAt": "2019-03-26T18:33:23.914Z",
   "devdoc": {
     "methods": {}
   },

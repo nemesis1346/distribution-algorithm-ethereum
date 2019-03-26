@@ -25,6 +25,6 @@ contract Tracks{
         return (tracks[isrc].isrc,tracks[isrc].title,tracks[isrc].revenueTotal,tracks[isrc].uploaderEOA);
     }
     
-    event LogTrack(string);
+    event LogTrack(string message);
 
 }    

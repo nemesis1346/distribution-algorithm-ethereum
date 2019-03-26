@@ -5,14 +5,14 @@ var Agreements = artifacts.require('./Agreements.sol');
 var TokenAccounts = artifacts.require('./TokenAccounts.sol');
 var Tracks = artifacts.require('./Tracks.sol');
 var Traders = artifacts.require('./Traders.sol');
-var CalleeAddressTest = artifacts.require('./CalleeAddressTest.sol');
+var CalleeAddressTest = artifacts.require('./CallerAddressTest.sol');
 var CalleeTest=artifacts.require('./CalleeTest.sol');
 var CallerTest = artifacts.require('./CallerTest.sol');
 
 module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
+  //deployer.deploy(ConvertLib);
+  //deployer.link(ConvertLib, MetaCoin);
+  //deployer.deploy(MetaCoin);
   deployer.deploy(Track);
   deployer.deploy(Agreements);
   deployer.deploy(TokenAccounts);

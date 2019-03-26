@@ -4,6 +4,7 @@ const metacoin_artifact = require('../build/contracts/MetaCoin.json');
 
 const MetaCoin = contract(metacoin_artifact);
 
+//These are classes for learning the proper way to do it 
 module.exports = {
   start: function (callback) {
     var self = this;//? where does this come from?
