@@ -32,7 +32,7 @@ contract CallerAddressTest{
         emit stringLogs(name);
     }
 
-    event stringLogs(string);
-    event intLogs(uint);
+    event stringLogs(string stringLogs);
+    event intLogs(uint intLogs);
 }    
 

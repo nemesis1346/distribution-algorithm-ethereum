@@ -38,7 +38,7 @@
       "inputs": [
         {
           "indexed": false,
-          "name": "",
+          "name": "stringLogs",
           "type": "string"
         }
       ],
@@ -62,7 +62,7 @@
       "signature": "0x8c2c6161"
     },
     {
-      "constant": false,
+      "constant": true,
       "inputs": [
         {
           "name": "tokenAccountId",
@@ -81,16 +81,16 @@
         }
       ],
       "payable": false,
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function",
       "signature": "0xf1873afd"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50610353806100206000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360a6023e1461005c5780638c2c6161146100ec578063f1873afd1461011a575b600080fd5b34801561006857600080fd5b506100956004803603602081101561007f57600080fd5b8101908080359060200190929190505050610170565b604051808581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101186004803603602081101561010257600080fd5b81019080803590602001909291905050506101c0565b005b34801561012657600080fd5b506101536004803603602081101561013d57600080fd5b81019080803590602001909291905050506102ef565b604051808381526020018281526020019250505060405180910390f35b60006020528060005260406000206000915090508060000154908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b6000339050600080905060008090506080604051908101604052808581526020018381526020018281526020018473ffffffffffffffffffffffffffffffffffffffff1681525060008086815260200190815260200160002060008201518160000155602082015181600101556040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050507f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d466040518080602001828103825260198152602001807f546f6b656e74204163636f756e7420637265617465642121210000000000000081525060200191505060405180910390a150505050565b60008060008084815260200190815260200160002060000154600080858152602001908152602001600020600101549150915091509156fea165627a7a72305820648df205c9907d31da127475cd3f0715130be78fc88896c90426d0e990d2235b0029",
-  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360a6023e1461005c5780638c2c6161146100ec578063f1873afd1461011a575b600080fd5b34801561006857600080fd5b506100956004803603602081101561007f57600080fd5b8101908080359060200190929190505050610170565b604051808581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101186004803603602081101561010257600080fd5b81019080803590602001909291905050506101c0565b005b34801561012657600080fd5b506101536004803603602081101561013d57600080fd5b81019080803590602001909291905050506102ef565b604051808381526020018281526020019250505060405180910390f35b60006020528060005260406000206000915090508060000154908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b6000339050600080905060008090506080604051908101604052808581526020018381526020018281526020018473ffffffffffffffffffffffffffffffffffffffff1681525060008086815260200190815260200160002060008201518160000155602082015181600101556040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050507f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d466040518080602001828103825260198152602001807f546f6b656e74204163636f756e7420637265617465642121210000000000000081525060200191505060405180910390a150505050565b60008060008084815260200190815260200160002060000154600080858152602001908152602001600020600101549150915091509156fea165627a7a72305820648df205c9907d31da127475cd3f0715130be78fc88896c90426d0e990d2235b0029",
-  "sourceMap": "104:1033:8:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;104:1033:8;;;;;;;",
-  "deployedSourceMap": "104:1033:8:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;284:48:8;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;284:48:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;340:360;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;340:360:8;;;;;;;;;;;;;;;;;;;;710:389;;8:9:-1;5:2;;;30:1;27;20:12;5:2;710:389:8;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;710:389:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;340:360::-;413:17;433:10;413:30;;454:19;474:1;454:21;;485:20;506:1;485:22;;547:72;;;;;;;;;560:14;547:72;;;;576:14;547:72;;;;592:15;547:72;;;;609:9;547:72;;;;;517:13;:29;531:14;517:29;;;;;;;;;;;:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;634:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;340:360;;;;:::o;710:389::-;771:4;777;1000:13;:29;1014:14;1000:29;;;;;;;;;;;:44;;;1046:13;:29;1060:14;1046:29;;;;;;;;;;;:44;;;992:99;;;;710:389;;;:::o",
-  "source": "//Version 2\npragma solidity ^0.5.0;\n\n//This is the best way to structure a digital entity in a contract\ncontract TokenAccounts{\n    \n    struct TokenAccount{\n        uint tokenAccountId;\n        uint balanceEnabled;\n        uint balanceDisabled;\n        address traderEOA;\n    }\n\n    mapping(uint=>TokenAccount) public tokenAccounts;\n\n\n    function createTokenAccount(uint tokenAccountId) public payable{\n        address traderEOA = msg.sender; \n        uint balanceEnabled=0;\n        uint balanceDisabled=0;\n        tokenAccounts[tokenAccountId]=TokenAccount(tokenAccountId, balanceEnabled, balanceDisabled, traderEOA);\n        emit stringLogs(\"Tokent Account created!!!\"); //this is an event \n    }\n    \n    function getTokenAccount(uint tokenAccountId) public returns(uint, uint) {\n        //return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled, tokenAccounts[tokenAccountId].balanceDisabled, tokenAccounts[tokenAccountId].traderEOA);\n        return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled);\n\n    }\n    \n    event stringLogs(string);\n\n}    \n",
+  "bytecode": "0x608060405234801561001057600080fd5b50610353806100206000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360a6023e1461005c5780638c2c6161146100ec578063f1873afd1461011a575b600080fd5b34801561006857600080fd5b506100956004803603602081101561007f57600080fd5b8101908080359060200190929190505050610170565b604051808581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101186004803603602081101561010257600080fd5b81019080803590602001909291905050506101c0565b005b34801561012657600080fd5b506101536004803603602081101561013d57600080fd5b81019080803590602001909291905050506102ef565b604051808381526020018281526020019250505060405180910390f35b60006020528060005260406000206000915090508060000154908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b6000339050600080905060008090506080604051908101604052808581526020018381526020018281526020018473ffffffffffffffffffffffffffffffffffffffff1681525060008086815260200190815260200160002060008201518160000155602082015181600101556040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050507f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d466040518080602001828103825260198152602001807f546f6b656e74204163636f756e7420637265617465642121210000000000000081525060200191505060405180910390a150505050565b60008060008084815260200190815260200160002060000154600080858152602001908152602001600020600101549150915091509156fea165627a7a72305820f22ec56004b49323ae5dc895f809ed84b725781004b1f3bca944b9eadcddb1190029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360a6023e1461005c5780638c2c6161146100ec578063f1873afd1461011a575b600080fd5b34801561006857600080fd5b506100956004803603602081101561007f57600080fd5b8101908080359060200190929190505050610170565b604051808581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101186004803603602081101561010257600080fd5b81019080803590602001909291905050506101c0565b005b34801561012657600080fd5b506101536004803603602081101561013d57600080fd5b81019080803590602001909291905050506102ef565b604051808381526020018281526020019250505060405180910390f35b60006020528060005260406000206000915090508060000154908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b6000339050600080905060008090506080604051908101604052808581526020018381526020018281526020018473ffffffffffffffffffffffffffffffffffffffff1681525060008086815260200190815260200160002060008201518160000155602082015181600101556040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050507f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d466040518080602001828103825260198152602001807f546f6b656e74204163636f756e7420637265617465642121210000000000000081525060200191505060405180910390a150505050565b60008060008084815260200190815260200160002060000154600080858152602001908152602001600020600101549150915091509156fea165627a7a72305820f22ec56004b49323ae5dc895f809ed84b725781004b1f3bca944b9eadcddb1190029",
+  "sourceMap": "104:1049:8:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;104:1049:8;;;;;;;",
+  "deployedSourceMap": "104:1049:8:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;284:48:8;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;284:48:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;340:360;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;340:360:8;;;;;;;;;;;;;;;;;;;;710:394;;8:9:-1;5:2;;;30:1;27;20:12;5:2;710:394:8;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;710:394:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;340:360::-;413:17;433:10;413:30;;454:19;474:1;454:21;;485:20;506:1;485:22;;547:72;;;;;;;;;560:14;547:72;;;;576:14;547:72;;;;592:15;547:72;;;;609:9;547:72;;;;;517:13;:29;531:14;517:29;;;;;;;;;;;:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;634:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;340:360;;;;:::o;710:394::-;776:4;782;1005:13;:29;1019:14;1005:29;;;;;;;;;;;:44;;;1051:13;:29;1065:14;1051:29;;;;;;;;;;;:44;;;997:99;;;;710:394;;;:::o",
+  "source": "//Version 2\npragma solidity ^0.5.0;\n\n//This is the best way to structure a digital entity in a contract\ncontract TokenAccounts{\n    \n    struct TokenAccount{\n        uint tokenAccountId;\n        uint balanceEnabled;\n        uint balanceDisabled;\n        address traderEOA;\n    }\n\n    mapping(uint=>TokenAccount) public tokenAccounts;\n\n\n    function createTokenAccount(uint tokenAccountId) public payable{\n        address traderEOA = msg.sender; \n        uint balanceEnabled=0;\n        uint balanceDisabled=0;\n        tokenAccounts[tokenAccountId]=TokenAccount(tokenAccountId, balanceEnabled, balanceDisabled, traderEOA);\n        emit stringLogs(\"Tokent Account created!!!\"); //this is an event \n    }\n    \n    function getTokenAccount(uint tokenAccountId) view public returns(uint, uint) {\n        //return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled, tokenAccounts[tokenAccountId].balanceDisabled, tokenAccounts[tokenAccountId].traderEOA);\n        return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled);\n\n    }\n    \n    event stringLogs(string stringLogs);\n\n}    \n",
   "sourcePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/TokenAccounts.sol",
   "ast": {
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/TokenAccounts.sol",
@@ -337,7 +337,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1055,
                       "src": "433:3:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -746,7 +746,7 @@
             "body": {
               "id": 831,
               "nodeType": "Block",
-              "src": "783:316:8",
+              "src": "788:316:8",
               "statements": [
                 {
                   "expression": {
@@ -763,7 +763,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 778,
-                            "src": "1000:13:8",
+                            "src": "1005:13:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TokenAccount_$774_storage_$",
                               "typeString": "mapping(uint256 => struct TokenAccounts.TokenAccount storage ref)"
@@ -777,7 +777,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 814,
-                            "src": "1014:14:8",
+                            "src": "1019:14:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -788,7 +788,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1000:29:8",
+                          "src": "1005:29:8",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_TokenAccount_$774_storage",
                             "typeString": "struct TokenAccounts.TokenAccount storage ref"
@@ -802,7 +802,7 @@
                         "memberName": "tokenAccountId",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 767,
-                        "src": "1000:44:8",
+                        "src": "1005:44:8",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -819,7 +819,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 778,
-                            "src": "1046:13:8",
+                            "src": "1051:13:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TokenAccount_$774_storage_$",
                               "typeString": "mapping(uint256 => struct TokenAccounts.TokenAccount storage ref)"
@@ -833,7 +833,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 814,
-                            "src": "1060:14:8",
+                            "src": "1065:14:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -844,7 +844,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1046:29:8",
+                          "src": "1051:29:8",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_TokenAccount_$774_storage",
                             "typeString": "struct TokenAccounts.TokenAccount storage ref"
@@ -858,7 +858,7 @@
                         "memberName": "balanceEnabled",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 769,
-                        "src": "1046:44:8",
+                        "src": "1051:44:8",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -872,7 +872,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "999:92:8",
+                    "src": "1004:92:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
                       "typeString": "tuple(uint256,uint256)"
@@ -881,7 +881,7 @@
                   "functionReturnParameters": 820,
                   "id": 830,
                   "nodeType": "Return",
-                  "src": "992:99:8"
+                  "src": "997:99:8"
                 }
               ]
             },
@@ -935,7 +935,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 832,
-                  "src": "771:4:8",
+                  "src": "776:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -946,7 +946,7 @@
                     "id": 816,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "771:4:8",
+                    "src": "776:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -961,7 +961,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 832,
-                  "src": "777:4:8",
+                  "src": "782:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -972,7 +972,7 @@
                     "id": 818,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "777:4:8",
+                    "src": "782:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -982,11 +982,11 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "770:12:8"
+              "src": "775:12:8"
             },
             "scope": 837,
-            "src": "710:389:8",
-            "stateMutability": "nonpayable",
+            "src": "710:394:8",
+            "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           },
@@ -1004,10 +1004,10 @@
                   "constant": false,
                   "id": 834,
                   "indexed": false,
-                  "name": "",
+                  "name": "stringLogs",
                   "nodeType": "VariableDeclaration",
                   "scope": 836,
-                  "src": "1126:6:8",
+                  "src": "1131:17:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1018,7 +1018,7 @@
                     "id": 833,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1126:6:8",
+                    "src": "1131:6:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1028,16 +1028,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1125:8:8"
+              "src": "1130:19:8"
             },
-            "src": "1109:25:8"
+            "src": "1114:36:8"
           }
         ],
         "scope": 838,
-        "src": "104:1033:8"
+        "src": "104:1049:8"
       }
     ],
-    "src": "12:1130:8"
+    "src": "12:1146:8"
   },
   "legacyAST": {
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/TokenAccounts.sol",
@@ -1284,7 +1284,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1055,
                       "src": "433:3:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -1693,7 +1693,7 @@
             "body": {
               "id": 831,
               "nodeType": "Block",
-              "src": "783:316:8",
+              "src": "788:316:8",
               "statements": [
                 {
                   "expression": {
@@ -1710,7 +1710,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 778,
-                            "src": "1000:13:8",
+                            "src": "1005:13:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TokenAccount_$774_storage_$",
                               "typeString": "mapping(uint256 => struct TokenAccounts.TokenAccount storage ref)"
@@ -1724,7 +1724,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 814,
-                            "src": "1014:14:8",
+                            "src": "1019:14:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1735,7 +1735,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1000:29:8",
+                          "src": "1005:29:8",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_TokenAccount_$774_storage",
                             "typeString": "struct TokenAccounts.TokenAccount storage ref"
@@ -1749,7 +1749,7 @@
                         "memberName": "tokenAccountId",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 767,
-                        "src": "1000:44:8",
+                        "src": "1005:44:8",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1766,7 +1766,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 778,
-                            "src": "1046:13:8",
+                            "src": "1051:13:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TokenAccount_$774_storage_$",
                               "typeString": "mapping(uint256 => struct TokenAccounts.TokenAccount storage ref)"
@@ -1780,7 +1780,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 814,
-                            "src": "1060:14:8",
+                            "src": "1065:14:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1791,7 +1791,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1046:29:8",
+                          "src": "1051:29:8",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_TokenAccount_$774_storage",
                             "typeString": "struct TokenAccounts.TokenAccount storage ref"
@@ -1805,7 +1805,7 @@
                         "memberName": "balanceEnabled",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 769,
-                        "src": "1046:44:8",
+                        "src": "1051:44:8",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1819,7 +1819,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "999:92:8",
+                    "src": "1004:92:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
                       "typeString": "tuple(uint256,uint256)"
@@ -1828,7 +1828,7 @@
                   "functionReturnParameters": 820,
                   "id": 830,
                   "nodeType": "Return",
-                  "src": "992:99:8"
+                  "src": "997:99:8"
                 }
               ]
             },
@@ -1882,7 +1882,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 832,
-                  "src": "771:4:8",
+                  "src": "776:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1893,7 +1893,7 @@
                     "id": 816,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "771:4:8",
+                    "src": "776:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1908,7 +1908,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 832,
-                  "src": "777:4:8",
+                  "src": "782:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1919,7 +1919,7 @@
                     "id": 818,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "777:4:8",
+                    "src": "782:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1929,11 +1929,11 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "770:12:8"
+              "src": "775:12:8"
             },
             "scope": 837,
-            "src": "710:389:8",
-            "stateMutability": "nonpayable",
+            "src": "710:394:8",
+            "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           },
@@ -1951,10 +1951,10 @@
                   "constant": false,
                   "id": 834,
                   "indexed": false,
-                  "name": "",
+                  "name": "stringLogs",
                   "nodeType": "VariableDeclaration",
                   "scope": 836,
-                  "src": "1126:6:8",
+                  "src": "1131:17:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1965,7 +1965,7 @@
                     "id": 833,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1126:6:8",
+                    "src": "1131:6:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1975,16 +1975,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1125:8:8"
+              "src": "1130:19:8"
             },
-            "src": "1109:25:8"
+            "src": "1114:36:8"
           }
         ],
         "scope": 838,
-        "src": "104:1033:8"
+        "src": "104:1049:8"
       }
     ],
-    "src": "12:1130:8"
+    "src": "12:1146:8"
   },
   "compiler": {
     "name": "solc",
@@ -1994,8 +1994,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x82c87D62ff4cE247Be9d32449D870AEeE12aeeEa",
-      "transactionHash": "0x58954f2f4697c8cebf022ccc10a8e005197bbc101c968a89261c5421c7013e4f"
+      "address": "0x5d77519Dc2d4308d718dA6034955edcA476E6304",
+      "transactionHash": "0xb36670e469d8b2fdfc99f8c0a98df4a10e1f752b43ff19166d11a1ac45c1fd8b"
     },
     "1553622166986": {
       "events": {},
@@ -2005,7 +2005,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-03-26T19:26:12.958Z",
+  "updatedAt": "2019-03-26T20:45:51.621Z",
   "devdoc": {
     "methods": {}
   },

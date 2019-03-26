@@ -22,12 +22,12 @@ contract TokenAccounts{
         emit stringLogs("Tokent Account created!!!"); //this is an event 
     }
     
-    function getTokenAccount(uint tokenAccountId) public returns(uint, uint) {
+    function getTokenAccount(uint tokenAccountId) view public returns(uint, uint) {
         //return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled, tokenAccounts[tokenAccountId].balanceDisabled, tokenAccounts[tokenAccountId].traderEOA);
         return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled);
 
     }
     
-    event stringLogs(string);
+    event stringLogs(string stringLogs);
 
 }    
