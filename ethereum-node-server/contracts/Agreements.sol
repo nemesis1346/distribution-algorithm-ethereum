@@ -21,6 +21,8 @@ contract Agreements{
     }
 
     mapping(uint=>Agreement) public agreements;
+    mapping(uint=> uint) agreementIdByReceiver;
+
 
     function createAgreement(uint id, 
                             uint traderEmitterId, 
@@ -34,6 +36,7 @@ contract Agreements{
                             address tracksContractAddr
                             ) public{
       
+        agreementIdByReceiver[traderReceiverId]=id;//This is for query the agreement by receiver
         percentageReceiver = percentageReceiver/100;
         agreements[id]=Agreement(id,traderEmitterId, traderReceiverId, percentageReceiver, status, isrc,traderEmiterName, traderReceiverName);
         
@@ -43,6 +46,9 @@ contract Agreements{
         emit stringLogs("Agreement created!!!"); //this is an event
         //TODO: check the percentage limit 
 
+    }
+      function getAgreementIdByReceiver(uint receiverId) public returns(uint){
+        return agreementIdByReceiver[receiverId];
     }
     
     function existTrack(uint isrc, address tracksContractAddr) public returns (bool){

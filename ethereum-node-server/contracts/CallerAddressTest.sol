@@ -13,6 +13,24 @@ contract CalleeTest{
 contract CallerAddressTest{
     CalleeTest public calleeTestInterface;
     
+    //This is a test for query by other property
+    struct AgreementTest{
+        uint agreementId;
+        uint emitterId;
+        uint receiverId;
+    }
+    mapping(uint=>AgreementTest) public agreements;
+    mapping(uint=> uint) getAgreementIdByReceiver;
+
+
+    function createTraderTest(uint agreementId, uint emitterId, uint receiverId) public {
+        getAgreementIdByReceiver[receiverId]=agreementId;
+        agreements[agreementId]=AgreementTest(agreementId,emitterId,receiverId);
+    }
+    function getAgreementByReceiver(uint receiverId) public returns(uint){
+        return getAgreementIdByReceiver[receiverId];
+    }
+    
     function getTest2(address calleAddress)public{
         calleeTestInterface = CalleeTest(calleAddress); //this CREATES A NEW EMPTY CONTRACT INSTANCE
         
