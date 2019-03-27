@@ -353,7 +353,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1055,
                       "src": "404:3:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -1409,7 +1409,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1055,
                       "src": "404:3:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -2234,8 +2234,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x8137a8D624266d6044961E5F02bBDB6b37C5ce84",
-      "transactionHash": "0x0374cb0341dd267290d44638edf4379211c51f2c459f43981e784186f5698953"
+      "address": "0x2Ffa047158345A50235D43Dfe459ffb6D11c33A4",
+      "transactionHash": "0xd524dd53bd57cadb691adde8c580f719ea2380a2f4baf2a12ed8bde220eb1931"
     },
     "1551897836200": {
       "events": {},
@@ -2257,7 +2257,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-03-26T20:45:51.622Z",
+  "updatedAt": "2019-03-27T00:27:29.700Z",
   "devdoc": {
     "methods": {}
   },

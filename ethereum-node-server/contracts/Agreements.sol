@@ -77,7 +77,7 @@ contract Agreements{
         }  
     }
     
-    function getAgreement(uint id) public returns(uint,uint, uint, string memory,uint,string memory,string memory) {
+    function getAgreement(uint id) view public returns(uint,uint, uint, string memory,uint,string memory,string memory) {
         //This is the best way to avoid error stack too deep
         Agreement memory agreement = agreements[id];
         return (
