@@ -17,37 +17,49 @@ const AgreementsContract = contractTruffle(agreements_artfact);
 //   gasLimit:'1000000',  //This is necessary as defaults
 //   gas:'10'
 // })
+
 async function testing() {
     try {
         //Setting Providers
+
         TracksContract.setProvider(web3Provider.currentProvider);
         TradersContract.setProvider(web3Provider.currentProvider);
         TokenAccountsContract.setProvider(web3Provider.currentProvider);
         AgreementsContract.setProvider(web3Provider.currentProvider);
+
         //Getting the interface of the deployed contract
         const tracksInterface = await TracksContract.deployed();
         const tradersInterface = await TradersContract.deployed();
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
         const agreementsInterface = await AgreementsContract.deployed();
 
-        const accounts = web3Provider.eth.accounts;
+        const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
         console.log(accounts)
 
+        //Delegating accounts addresses/ids
+        let trackAddress = accounts[1];
+        let traderEmitterAddress =accounts[2]; //Artist
+        let traderReceiverAddress=accounts[3];
+        let traderEmitterTA =accounts[4]; //this is the design, the accounts of balances are separated from the traders
+        let traderReceiverTA=accounts[5];
+
         //Creating and testing tracks
-        let trackId = new Date().getUTCMilliseconds();//We are using integer since the structs in solidity
+        let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
+
         await tracksInterface.createTrack(
-            trackId,
+            trackAddress,
+            traderIsrc,
             'test',
             100,
-            { from: accounts[1], gasLimit: '6721975' });
-        let trackResult = await tracksInterface.getTrack(trackId, { from: accounts[1], gasLimit: '6721975' });
+            { from: traderEmitterAddress, gasLimit: '6721975' });
+        let trackResult = await tracksInterface.getTrack(trackAddress, { from: traderEmitterAddress, gasLimit: '6721975' });
         console.log('TRACK CREATION');
         console.log(trackResult);
 
         //Creating and testing traders
         //Creating Emitter
-        //let traderEmitterId = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
+        let traderEmitterId = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
         await tradersInterface.createTrader(
             traderEmitterId,
             'emitter',
@@ -91,7 +103,6 @@ async function testing() {
         let agreementResult = await agreementsInterface.getAgreement(agreementId, { from: accounts[1], gasLimit: '6721975' });
         console.log('AGREEMENT CREATION RESULT');
         console.log(agreementResult);
-
 
     } catch (error) {
         console.log(error)

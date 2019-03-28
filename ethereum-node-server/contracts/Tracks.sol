@@ -5,26 +5,50 @@ pragma solidity ^0.5.0;
 contract Tracks{
     
     struct Track{
+        address id;
         uint isrc;
         string title;
         uint revenueTotal;
         address uploaderEOA;
+        bool isTrack; //flag for controlling existence
     }
 
-    mapping(uint=>Track) public tracks;
+    mapping(address=>Track) public trackStructList;
+    address[] public trackAddressList;  //this is the best way to record all the addresses, is the responsability of the client to deal with the looping
 
+    function isTrack(address id) public view returns(bool){
+        return trackStructList[id].isTrack;
+    }
 
-    function createTrack(uint isrc, string memory title, uint revenueTotal) public{
+    function createTrack(address id, uint isrc, string memory title, uint revenueTotal) public{
+        //We evaluate the existence of the same entity
+        if(isTrack(id)) revert();
+        
         address uploaderEOA = msg.sender; 
-        tracks[isrc]=Track(isrc, title, revenueTotal, uploaderEOA);
+        trackStructList[id].id = id; //this is created in the network where you are in 
+        trackStructList[id].isrc = isrc;
+        trackStructList[id].title=title;
+        trackStructList[id].revenueTotal=revenueTotal;
+        trackStructList[id].uploaderEOA=uploaderEOA;
+        trackStructList[id].isTrack=true;
+        
+        trackAddressList.push(id);
+        
         emit LogTrack("Track created!!!"); //this is an event 
 
     }
     
-    function getTrack(uint isrc) view public returns(uint, string memory, uint, address) {
-        return (tracks[isrc].isrc,tracks[isrc].title,tracks[isrc].revenueTotal,tracks[isrc].uploaderEOA);
+    function getTrackCount() public view returns(uint count) {
+        return trackAddressList.length;
     }
     
+    function getTrack(address id) view public returns(address, uint, string memory, uint, address,bool) {
+        return (trackStructList[id].id,
+                trackStructList[id].isrc,
+                trackStructList[id].title,
+                trackStructList[id].revenueTotal,
+                trackStructList[id].uploaderEOA,
+                trackStructList[id].isTrack);
+    }
     event LogTrack(string message);
-
 }    

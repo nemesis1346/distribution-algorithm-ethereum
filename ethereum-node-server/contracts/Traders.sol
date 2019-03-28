@@ -1,37 +1,58 @@
 pragma solidity ^0.5.0;
 //pragma experimental 
 contract TokenAccounts{
-    function createTokenAccount(uint tokenAccountId) public payable{}
+    function createTokenAccount(address tokenAccountId) public payable{}
 }
 
 //This is the best way to structure a digital entity in a contract
 contract Traders{
     TokenAccounts public tokenAccountsInterface;
     struct Trader{
-        uint id;
+        address id;
         string name;
         string email;
         string traderType;
-        uint tokenAccountId;
-        address tradersEOA;
+        address tokenAccountId;
+        bool isTrader;
     }
 
-    mapping(uint=>Trader) public traders;
+    mapping(address=>Trader) public traderStructList;
+    address[] public traderAddressList;
+    
+     function isTrader(address id) public view returns(bool){
+        return traderStructList[id].isTrader;
+    }
 
-    function createTrader(uint id, string memory name, string memory email, string memory traderType, uint tokenAccount, address tokenAccountContractAddr) public{
-        address tradersEOA = msg.sender; 
-        traders[id]=Trader(id,name, email, traderType, tokenAccount,tradersEOA);
+    function createTrader(address id, string memory name, string memory email, string memory traderType, address tokenAccountCtrAdd, address tokenAccountId) public{
+        if(isTrader(id)) revert();
+
+       traderStructList[id].id = id;
+       traderStructList[id].name = name;
+       traderStructList[id].email=email;
+       traderStructList[id].traderType=traderType;
+       traderStructList[id].tokenAccountId=tokenAccountId;
+        traderStructList[id].isTrader =true;
+        
+        traderAddressList.push(id);
         
         //We create the token account accessing the other contract
-        tokenAccountsInterface = TokenAccounts(tokenAccountContractAddr);
-        tokenAccountsInterface.createTokenAccount(id);
+        tokenAccountsInterface = TokenAccounts(tokenAccountCtrAdd);
+        tokenAccountsInterface.createTokenAccount(tokenAccountId);
         emit stringLogs("Trader Was Created");
     }
     
-    function getTrader(uint id) view public returns(uint, string memory,string memory, string memory,uint) {
-        return (traders[id].id, traders[id].name,traders[id].email,traders[id].traderType, traders[id].tokenAccountId);
+     function getTraderCount() public view returns(uint count) {
+        return traderAddressList.length;
+    }
+    
+    function getTrader(address id) view public returns(address, string memory,string memory, string memory,address) {
+        return (traderStructList[id].id, 
+        traderStructList[id].name,
+        traderStructList[id].email,
+        traderStructList[id].traderType, 
+        traderStructList[id].tokenAccountId);
     }
 
 
-    event stringLogs(string stringLogs);
+    event stringLogs(string);
 }    
