@@ -15,7 +15,7 @@ contract Traders{
     }
 
     function createTrader(address id, string memory name) public{
-        if(isTrader(id)) revert();
+        if(isTrader(id)) revert("trader already exists");
 
        traderStructList[id].id = id;
        traderStructList[id].name = name;
@@ -39,7 +39,7 @@ contract Traders{
     event stringLogs(string logs);
 }    
 
-contract DigitalAsset{
+contract DigitalAssets{
     
     struct Asset{
         address id;
@@ -54,7 +54,7 @@ contract DigitalAsset{
     }
     
     function createTrack(address id, string memory name) public{
-        if(isAsset(id)) revert();
+        if(isAsset(id)) revert("Track already exists");
         
         assetStructList[id].id=id;
         assetStructList[id].name=name;
@@ -80,11 +80,10 @@ contract Traders{
     function isTrader(address id) public returns(bool){}
     function getTrader(address id) view public returns(address, string memory){}
 }
-contract DigitalAsset{
+contract DigitalAssets{
     function isAsset(address id)public returns(bool){}
     function getAsset(address id) view public returns(address,string memory){}
 }
-
 contract Agreements{
     struct Agreement{
         address id;
@@ -100,25 +99,23 @@ contract Agreements{
     function isAgreement(address id)public returns(bool){
         return agreementStructList[id].isAgreement;
     }
-   // function createAgreement(address id, address emitter,address receiver,address asset, uint percentage,address tradersCtr,address digitalAssetCtr) public{
+    function createAgreement(address id, address emitter,address receiver,address asset, uint percentage,address tradersCtr,address digitalAssetCtr) public{
 
-    function createAgreement(address id, address emitter) public{
-        //DigitalAsset  digitalAssetCtr= DigitalAsset(digitalAssetCtr);
-        //Traders traderCtr = Traders(tradersCtr);
+        DigitalAssets digitalAssetCtr= DigitalAssets(digitalAssetCtr);
+        Traders traderCtr = Traders(tradersCtr);
         
-       // if(isAgreement(id)) revert();
-        //if(digitalAssetCtr.isAsset(asset)) revert();
-        //if(traderCtr.isTrader(receiver)) revert();
-        //if(traderCtr.isTrader(emitter)) revert();
+        if(isAgreement(id)) revert("agreement exists");
+        if(!digitalAssetCtr.isAsset(asset)) revert("asset doesnt exist");
+        if(!traderCtr.isTrader(receiver)) revert("receiver doesnt exist");
+        if(!traderCtr.isTrader(emitter)) revert("emiter doesnt exist");
         
-        //agreementStructList[id].id= id;
-        //agreementStructList[id].emitter= emitter;
-        //agreementStructList[id].receiver = receiver;
-        //agreementStructList[id].asset = asset;
-        //agreementStructList[id].perentageShare =percentage;
+        agreementStructList[id].id= id;
+        agreementStructList[id].emitter= emitter;
+        agreementStructList[id].receiver = receiver;
+        agreementStructList[id].asset = asset;
+        agreementStructList[id].perentageShare =percentage;
         
         emit stringLogs('Agreement created');
-        
     }
         event stringLogs(string);
 
