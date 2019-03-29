@@ -5,27 +5,39 @@ pragma solidity ^0.5.0;
 contract TokenAccounts{
     
     struct TokenAccount{
-        uint tokenAccountId;
+        address tokenAccountId;
         uint balanceEnabled;
         uint balanceDisabled;
         address traderEOA;
+        bool isTokenAccount;
     }
 
-    mapping(uint=>TokenAccount) public tokenAccounts;
+    mapping(address=>TokenAccount) public tokenAccountStrucList;
+    address[] public tokenAccAddrList;
+    
+    function isTokenAccount(address id) public returns(bool){
+        return tokenAccountStrucList[id].isTokenAccount;
+    }
 
-
-    function createTokenAccount(uint tokenAccountId) public payable{
+    function createTokenAccount(address id) public payable{
+        if(isTokenAccount(id)) revert('Token account already exist');
         address traderEOA = msg.sender; 
-        uint balanceEnabled=0;
-        uint balanceDisabled=0;
-        tokenAccounts[tokenAccountId]=TokenAccount(tokenAccountId, balanceEnabled, balanceDisabled, traderEOA);
+        tokenAccountStrucList[id].tokenAccountId=id;
+        tokenAccountStrucList[id].balanceEnabled=0;
+        tokenAccountStrucList[id].balanceDisabled=0;
+        tokenAccountStrucList[id].traderEOA = traderEOA;
+        tokenAccountStrucList[id].isTokenAccount=true;
+
+        tokenAccAddrList.push(id);
+        
         emit stringLogs("Tokent Account created!!!"); //this is an event 
     }
     
-    function getTokenAccount(uint tokenAccountId) view public returns(uint, uint) {
-        //return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled, tokenAccounts[tokenAccountId].balanceDisabled, tokenAccounts[tokenAccountId].traderEOA);
-        return (tokenAccounts[tokenAccountId].tokenAccountId, tokenAccounts[tokenAccountId].balanceEnabled);
-
+    function getTokenAccount(address tokenAccountId) view public returns(address, uint, uint, address) {
+        return (tokenAccountStrucList[tokenAccountId].tokenAccountId, 
+        tokenAccountStrucList[tokenAccountId].balanceEnabled, 
+        tokenAccountStrucList[tokenAccountId].balanceDisabled, 
+        tokenAccountStrucList[tokenAccountId].traderEOA);
     }
     
     event stringLogs(string stringLogs);

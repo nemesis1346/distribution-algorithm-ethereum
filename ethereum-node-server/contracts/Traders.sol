@@ -10,7 +10,6 @@ contract Traders{
     struct Trader{
         address id;
         string name;
-        string email;
         string traderType;
         address tokenAccountId;
         bool isTrader;
@@ -23,12 +22,11 @@ contract Traders{
         return traderStructList[id].isTrader;
     }
 
-    function createTrader(address id, string memory name, string memory email, string memory traderType, address tokenAccountCtrAdd, address tokenAccountId) public{
+    function createTrader(address id, string memory name, string memory traderType, address tokenAccountId,address tokenAccountCtrAdd) public{
         if(isTrader(id)) revert();
 
        traderStructList[id].id = id;
        traderStructList[id].name = name;
-       traderStructList[id].email=email;
        traderStructList[id].traderType=traderType;
        traderStructList[id].tokenAccountId=tokenAccountId;
         traderStructList[id].isTrader =true;
@@ -45,10 +43,9 @@ contract Traders{
         return traderAddressList.length;
     }
     
-    function getTrader(address id) view public returns(address, string memory,string memory, string memory,address) {
+    function getTrader(address id) view public returns(address, string memory, string memory,address) {
         return (traderStructList[id].id, 
         traderStructList[id].name,
-        traderStructList[id].email,
         traderStructList[id].traderType, 
         traderStructList[id].tokenAccountId);
     }

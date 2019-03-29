@@ -1,99 +1,79 @@
 pragma solidity ^0.5.0;
 
 contract Traders{
-    function getTrader(uint id) public returns(uint, string memory,string memory, string memory,uint){}
+    function getTrader(address id) public returns(uint, string memory,string memory, string memory,uint){}
+    function isTrader(address id) public returns(bool){}
 }
 contract Tracks{
-    function getTrack(uint id) public returns(uint, string memory, uint, address){}
+    function getTrack(address id) public returns(uint, string memory, uint, address){}
+    function isTrack(address id) public returns(bool){}
 }
+
 //This is the best way to structure a digital entity in a contract
 contract Agreements{
     
     struct Agreement{
-        uint id;
-        uint traderEmitterId;
-        uint traderReceiverId;
+        address id;
+        address traderEmitterId;
+        address traderReceiverId;
         uint percentage;
-        string status;
-        uint isrc;
-        string traderEmiterName;
-        string traderReceiverName;
+        address trackId;
+        bool isAgreement;
     }
 
-    mapping(uint=>Agreement) public agreements;
-    mapping(uint=> uint) agreementIdByReceiver;
+    mapping(address=>Agreement) public agreementStructList;
+    mapping(address=> address) agreementIdByReceiver; //query
+    address[] public agreementAddrList;
 
+    function isAgreement(address id) public returns(bool){
+        return agreementStructList[id].isAgreement;
+    }
 
-    function createAgreement(uint id, 
-                            uint traderEmitterId, 
-                            uint traderReceiverId, 
+    function createAgreement(address id, 
+                            address traderEmitterId, 
+                            address traderReceiverId, 
                             uint percentageReceiver, 
-                            string memory status, 
-                            uint isrc,
-                            string memory traderEmiterName,
-                            string memory traderReceiverName,
+                            address trackId,
                             address tradersContractAddr,
                             address tracksContractAddr
                             ) public{
-      
+        if(isAgreement(id)) revert("Agreement already exists");
+
         agreementIdByReceiver[traderReceiverId]=id;//This is for query the agreement by receiver
         percentageReceiver = percentageReceiver/100;
-        agreements[id]=Agreement(id,traderEmitterId, traderReceiverId, percentageReceiver, status, isrc,traderEmiterName, traderReceiverName);
         
-        require(existTrader(traderEmitterId,tradersContractAddr));
-        require(existTrader(traderReceiverId,tradersContractAddr));
-        require(existTrack(isrc, tracksContractAddr));
+        Traders tradersContract= Traders(tradersContractAddr);
+        Tracks tracksContract = Tracks(tradersContractAddr);
+
+        if(!tradersContract.isTrader(traderEmitterId)) revert('Emitter doesnt exists');
+        if(!tradersContract.isTrader(traderReceiverId)) revert('Receiver doesnt exists');
+        if(!tracksContract.isTrack(trackId)) revert('Track doenst exists');
+
+        agreementStructList[id].id= id;
+        agreementStructList[id].traderEmitterId=traderEmitterId;
+        agreementStructList[id].traderReceiverId=traderReceiverId;
+        agreementStructList[id].percentage=percentageReceiver;
+        agreementStructList[id].trackId = trackId;
+        agreementStructList[id].isAgreement=true;
+        
+        agreementAddrList.push(id);
+
         emit stringLogs("Agreement created!!!"); //this is an event
         //TODO: check the percentage limit 
 
     }
-      function getAgreementIdByReceiver(uint receiverId) public returns(uint){
+      function getAgreementIdByReceiver(address receiverId) public returns(address){
         return agreementIdByReceiver[receiverId];
     }
-    
-    function existTrack(uint isrc, address tracksContractAddr) public returns (bool){
-        Tracks tracksInterface = Tracks(tracksContractAddr);
-        (uint isrc, 
-        string memory title, 
-        uint revenueTotal, 
-        address uploaderEOA)=tracksInterface.getTrack(isrc);
-        
-         if(isrc!=0 && bytes(title).length>0){
-            return true; 
-        } else{
-            return false;
-        }  
-    }
-    
- 
-    function existTrader(uint traderId,address tradersContractAddr) public returns (bool){
-          //We get the Traders contract with address                        
-        Traders tradersInterface = Traders(tradersContractAddr);
 
-        (uint idTrader,
-        string memory nameTrader, 
-        string memory emailTrader, 
-        string memory traderTypeTrader,
-        uint tokenAccountIdTrader)=tradersInterface.getTrader(traderId);
-        
-        if(idTrader!=0 && bytes(nameTrader).length>0){
-            return true; 
-        } else{
-            return false;
-        }  
-    }
-    
-    function getAgreement(uint id) view public returns(uint,uint, uint, string memory,uint,string memory,string memory) {
+    function getAgreement(address id) view public returns(address,address, address, uint,address) {
         //This is the best way to avoid error stack too deep
-        Agreement memory agreement = agreements[id];
         return (
-                agreement.traderEmitterId,
-                agreement.traderReceiverId,
-                agreement.percentage,
-                agreement.status, 
-                agreement.isrc,
-                agreement.traderEmiterName,
-                agreement.traderReceiverName);
+                agreementStructList[id].id,
+                agreementStructList[id].traderEmitterId,
+                agreementStructList[id].traderReceiverId,
+                agreementStructList[id].percentage,
+                agreementStructList[id].trackId);
     }
 
     event stringLogs(string stringLogs);
