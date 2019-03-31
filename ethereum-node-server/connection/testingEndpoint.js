@@ -41,8 +41,7 @@ async function testing() {
         let trackAddress = accounts[1];
         let traderEmitterAddress =accounts[2]; //Artist
         let traderReceiverAddress=accounts[3];
-        let traderEmitterTA =accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let traderReceiverTA=accounts[5];
+        let agreementAddress =accounts[4]; //this is the design, the accounts of balances are separated from the traders
 
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
@@ -59,48 +58,39 @@ async function testing() {
 
         //Creating and testing traders
         //Creating Emitter
-        let traderEmitterId = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
         await tradersInterface.createTrader(
-            traderEmitterId,
+            traderEmitterAddress,
             'emitter',
-            "email",
-            "DISTRIBUTOR",
-            traderEmitterId,
+            traderEmitterAddress,
             tokenAccountsInterface.address,
-            { from: accounts[1], gasLimit: '6721975' });
-        let traderEmitterResult = await tradersInterface.getTrader(traderEmitterId, { from: accounts[1], gasLimit: '6721975' });
-        console.log("TRACK CREATION RESULT");
+            { from: traderEmitterAddress, gasLimit: '6721975' });
+        let traderEmitterResult = await tradersInterface.getTrader(traderEmitterAddress, { from: traderEmitterAddress, gasLimit: '6721975' });
+        console.log("EMMITER CREATION RESULT");
         console.log(traderEmitterResult);
 
         //Creating Receiver
-        let traderReceiverId = new Date().getUTCMilliseconds();
         await tradersInterface.createTrader(
-            traderReceiverId,
+            traderReceiverAddress,
             'receiver',
-            "email",
-            "ARTIST",
-            traderReceiverId,
+            traderReceiverAddress,
             tokenAccountsInterface.address,
-            { from: accounts[1], gasLimit: '6721975' });
-        let traderReceiverResult = await tradersInterface.getTrader(traderReceiverId, { from: accounts[1], gasLimit: '6721975' });
-        console.log("TRACK CREATION RESULT");
+            { from: traderReceiverAddress, gasLimit: '6721975' });
+            console.log('gets here');
+        let traderReceiverResult = await tradersInterface.getTrader(traderReceiverAddress, { from: traderReceiverAddress, gasLimit: '6721975' });
+        console.log("RECEIVER CREATION RESULT");
         console.log(traderReceiverResult);
 
         //Creating Agreements
-        let agreementId = new Date().getUTCMilliseconds();
         await agreementsInterface.createAgreement(
-            agreementId,
-            traderEmitterId,
-            traderReceiverId,
+            agreementAddress,
+            traderEmitterAddress,
+            traderReceiverAddress,
             50,
-            "PENDING",
-            trackId,
-            "emitter",
-            "receiver",
+            trackAddress,
             tradersInterface.address,
             tracksInterface.address,
-            { from: accounts[1], gasLimit: '6721975' });
-        let agreementResult = await agreementsInterface.getAgreement(agreementId, { from: accounts[1], gasLimit: '6721975' });
+            { from: agreementAddress, gasLimit: '6721975' });
+        let agreementResult = await agreementsInterface.getAgreement(agreementAddress, { from: agreementAddress, gasLimit: '6721975' });
         console.log('AGREEMENT CREATION RESULT');
         console.log(agreementResult);
 

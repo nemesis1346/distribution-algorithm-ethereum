@@ -10,7 +10,6 @@ contract Traders{
     struct Trader{
         address id;
         string name;
-        string traderType;
         address tokenAccountId;
         bool isTrader;
     }
@@ -22,12 +21,11 @@ contract Traders{
         return traderStructList[id].isTrader;
     }
 
-    function createTrader(address id, string memory name, string memory traderType, address tokenAccountId,address tokenAccountCtrAdd) public{
-        if(isTrader(id)) revert();
+    function createTrader(address id, string memory name, address tokenAccountId,address tokenAccountCtrAdd) public{
+        if(isTrader(id)) revert('Trader already created');
 
        traderStructList[id].id = id;
        traderStructList[id].name = name;
-       traderStructList[id].traderType=traderType;
        traderStructList[id].tokenAccountId=tokenAccountId;
         traderStructList[id].isTrader =true;
         
@@ -43,13 +41,12 @@ contract Traders{
         return traderAddressList.length;
     }
     
-    function getTrader(address id) view public returns(address, string memory, string memory,address) {
+    function getTrader(address id) view public returns(address, string memory,address) {
         return (traderStructList[id].id, 
         traderStructList[id].name,
-        traderStructList[id].traderType, 
         traderStructList[id].tokenAccountId);
     }
 
 
-    event stringLogs(string);
+    event stringLogs(string logs);
 }    

@@ -11,7 +11,6 @@ contract Tracks{
 
 //This is the best way to structure a digital entity in a contract
 contract Agreements{
-    
     struct Agreement{
         address id;
         address traderEmitterId;
@@ -20,7 +19,6 @@ contract Agreements{
         address trackId;
         bool isAgreement;
     }
-
     mapping(address=>Agreement) public agreementStructList;
     mapping(address=> address) agreementIdByReceiver; //query
     address[] public agreementAddrList;
@@ -28,7 +26,6 @@ contract Agreements{
     function isAgreement(address id) public returns(bool){
         return agreementStructList[id].isAgreement;
     }
-
     function createAgreement(address id, 
                             address traderEmitterId, 
                             address traderReceiverId, 
@@ -43,7 +40,7 @@ contract Agreements{
         percentageReceiver = percentageReceiver/100;
         
         Traders tradersContract= Traders(tradersContractAddr);
-        Tracks tracksContract = Tracks(tradersContractAddr);
+        Tracks tracksContract = Tracks(tracksContractAddr);
 
         if(!tradersContract.isTrader(traderEmitterId)) revert('Emitter doesnt exists');
         if(!tradersContract.isTrader(traderReceiverId)) revert('Receiver doesnt exists');
@@ -75,7 +72,6 @@ contract Agreements{
                 agreementStructList[id].percentage,
                 agreementStructList[id].trackId);
     }
-
     event stringLogs(string stringLogs);
     event intLogs(uint intLogs);
 }    

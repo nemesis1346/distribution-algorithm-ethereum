@@ -101,11 +101,11 @@ contract Agreements{
     }
     function createAgreement(address id, address emitter,address receiver,address asset, uint percentage,address tradersCtr,address digitalAssetCtr) public{
 
-        DigitalAssets digitalAssetCtr= DigitalAssets(digitalAssetCtr);
+        DigitalAssets digitalAssetInterface= DigitalAssets(digitalAssetCtr);
         Traders traderCtr = Traders(tradersCtr);
         
         if(isAgreement(id)) revert("agreement exists");
-        if(!digitalAssetCtr.isAsset(asset)) revert("asset doesnt exist");
+        if(!digitalAssetInterface.isAsset(asset)) revert("asset doesnt exist");
         if(!traderCtr.isTrader(receiver)) revert("receiver doesnt exist");
         if(!traderCtr.isTrader(emitter)) revert("emiter doesnt exist");
         
