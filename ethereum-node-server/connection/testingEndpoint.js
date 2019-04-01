@@ -13,20 +13,17 @@ const TracksContract = contractTruffle(tracks_artifact);
 const TradersContract = contractTruffle(trader_artifact);
 const TokenAccountsContract = contractTruffle(tokenAccounts_artifacts);
 const AgreementsContract = contractTruffle(agreements_artfact);
-// TrackContract.defaults({
-//   gasLimit:'1000000',  //This is necessary as defaults
-//   gas:'10'
-// })
+
+//Setting Providers
+
+TracksContract.setProvider(web3Provider.currentProvider);
+TradersContract.setProvider(web3Provider.currentProvider);
+TokenAccountsContract.setProvider(web3Provider.currentProvider);
+AgreementsContract.setProvider(web3Provider.currentProvider);
+
 
 async function testing() {
     try {
-        //Setting Providers
-
-        TracksContract.setProvider(web3Provider.currentProvider);
-        TradersContract.setProvider(web3Provider.currentProvider);
-        TokenAccountsContract.setProvider(web3Provider.currentProvider);
-        AgreementsContract.setProvider(web3Provider.currentProvider);
-
         //Getting the interface of the deployed contract
         const tracksInterface = await TracksContract.deployed();
         const tradersInterface = await TradersContract.deployed();
@@ -39,9 +36,10 @@ async function testing() {
 
         //Delegating accounts addresses/ids
         let trackAddress = accounts[1];
-        let traderEmitterAddress =accounts[2]; //Artist
-        let traderReceiverAddress=accounts[3];
-        let agreementAddress =accounts[4]; //this is the design, the accounts of balances are separated from the traders
+        let traderEmitterAddress = accounts[2]; //Artist
+        let traderReceiverAddress = accounts[3];
+        let agreementAddress = accounts[4]; //this is the design, the accounts of balances are separated from the traders
+        let agreementAddress2 = accounts[5];
 
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
@@ -52,7 +50,9 @@ async function testing() {
             'test',
             100,
             { from: traderEmitterAddress, gasLimit: '6721975' });
-        let trackResult = await tracksInterface.getTrack(trackAddress, { from: traderEmitterAddress, gasLimit: '6721975' });
+        let trackResult = await tracksInterface.getTrack(
+            trackAddress,
+            { from: traderEmitterAddress, gasLimit: '6721975' });
         console.log('TRACK CREATION');
         console.log(trackResult);
 
@@ -64,7 +64,9 @@ async function testing() {
             traderEmitterAddress,
             tokenAccountsInterface.address,
             { from: traderEmitterAddress, gasLimit: '6721975' });
-        let traderEmitterResult = await tradersInterface.getTrader(traderEmitterAddress, { from: traderEmitterAddress, gasLimit: '6721975' });
+        let traderEmitterResult = await tradersInterface.getTrader(
+            traderEmitterAddress,
+            { from: traderEmitterAddress, gasLimit: '6721975' });
         console.log("EMMITER CREATION RESULT");
         console.log(traderEmitterResult);
 
@@ -75,8 +77,10 @@ async function testing() {
             traderReceiverAddress,
             tokenAccountsInterface.address,
             { from: traderReceiverAddress, gasLimit: '6721975' });
-            console.log('gets here');
-        let traderReceiverResult = await tradersInterface.getTrader(traderReceiverAddress, { from: traderReceiverAddress, gasLimit: '6721975' });
+        console.log('gets here');
+        let traderReceiverResult = await tradersInterface.getTrader(
+            traderReceiverAddress,
+            { from: traderReceiverAddress, gasLimit: '6721975' });
         console.log("RECEIVER CREATION RESULT");
         console.log(traderReceiverResult);
 
@@ -89,18 +93,50 @@ async function testing() {
             trackAddress,
             tradersInterface.address,
             tracksInterface.address,
-            { from: agreementAddress, gasLimit: '6721975' });
-        let agreementResult = await agreementsInterface.getAgreement(agreementAddress, { from: agreementAddress, gasLimit: '6721975' });
+            { from: traderEmitterAddress, gasLimit: '6721975' });
+        let agreementResult = await agreementsInterface.getAgreement(
+            agreementAddress,
+            { from: traderEmitterAddress, gasLimit: '6721975' });
         console.log('AGREEMENT CREATION RESULT');
         console.log(agreementResult);
-       
+
+        await agreementsInterface.createAgreement(
+            agreementAddress2,
+            traderEmitterAddress,
+            traderReceiverAddress,
+            50,
+            trackAddress,
+            tradersInterface.address,
+            tracksInterface.address,
+            { from: traderEmitterAddress, gasLimit: '6721975' });
+        let agreementResult2 = await agreementsInterface.getAgreement(
+            agreementAddress2,
+            { from: traderEmitterAddress, gasLimit: '6721975' });
+        console.log('AGREEMENT CREATION RESULT 2');
+        console.log(agreementResult2);
+
         //Get all agreements between emitter and receiver 
-         let agreements = await agreementsInterface.getAgreementsByEmitter(traderEmitterAddress,{ from: agreementAddress, gasLimit: '6721975' });
-         console.log('LIST OF AGREEMENTS');
-         console.log(agreements);
+        let agreements = await agreementsInterface.getAgreementsByEmitter(
+            traderEmitterAddress,
+            { from: traderEmitterAddress, gasLimit: '6721975' });
+        console.log('LIST OF AGREEMENTS');
+        console.log(agreements);
+
+        let receiverList = [];
+        //Get each individual agreement and get the receivers
+        for (const agreement of agreements) {
+            let currentAgreement = await agreementsInterface.getAgreement(
+                agreement,
+                { from: traderEmitterAddress, gasLimit: '6721975' });
+            let currentReceiverResult = currentAgreement[2];
+
+            receiverList.push(currentReceiverResult);
+        }
+        console.log(receiverList);
 
     } catch (error) {
         console.log(error)
     }
 }
+
 testing();

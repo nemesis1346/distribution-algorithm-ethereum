@@ -52,6 +52,7 @@ contract Agreements{
         if(!tradersContract.isTrader(traderEmitterId)) revert('Emitter doesnt exists');
         if(!tradersContract.isTrader(traderReceiverId)) revert('Receiver doesnt exists');
         if(!tracksContract.isTrack(trackId)) revert('Track doenst exists');
+        //TODO: There should be some validation of the existence of duplication of emitter and receiver
 
         agreementStructList[id].id= id;
         agreementStructList[id].traderEmitterId=traderEmitterId;
