@@ -91,14 +91,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506127106000803273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610426806100656000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637bd703e81461005c57806390b98a11146100c1578063f8b2cb4f14610134575b600080fd5b34801561006857600080fd5b506100ab6004803603602081101561007f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610199565b6040518082815260200191505060405180910390f35b3480156100cd57600080fd5b5061011a600480360360408110156100e457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610259565b604051808215151515815260200191505060405180910390f35b34801561014057600080fd5b506101836004803603602081101561015757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103b2565b6040518082815260200191505060405180910390f35b600073__ConvertLib____________________________6396e4ee3d6101be846103b2565b60026040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018281526020019250505060206040518083038186803b15801561021757600080fd5b505af415801561022b573d6000803e3d6000fd5b505050506040513d602081101561024157600080fd5b81019080805190602001909291905050509050919050565b6000816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156102aa57600090506103ac565b816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190505b92915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea165627a7a72305820c9bba19fd9d3c8418e472833c2a249b0a9002d69ee991040541e54fb565c6b300029",
-  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637bd703e81461005c57806390b98a11146100c1578063f8b2cb4f14610134575b600080fd5b34801561006857600080fd5b506100ab6004803603602081101561007f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610199565b6040518082815260200191505060405180910390f35b3480156100cd57600080fd5b5061011a600480360360408110156100e457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610259565b604051808215151515815260200191505060405180910390f35b34801561014057600080fd5b506101836004803603602081101561015757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103b2565b6040518082815260200191505060405180910390f35b600073__ConvertLib____________________________6396e4ee3d6101be846103b2565b60026040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018281526020019250505060206040518083038186803b15801561021757600080fd5b505af415801561022b573d6000803e3d6000fd5b505050506040513d602081101561024157600080fd5b81019080805190602001909291905050509050919050565b6000816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156102aa57600090506103ac565b816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190505b92915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea165627a7a72305820c9bba19fd9d3c8418e472833c2a249b0a9002d69ee991040541e54fb565c6b300029",
+  "bytecode": "0x608060405234801561001057600080fd5b506127106000803273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610426806100656000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637bd703e81461005c57806390b98a11146100c1578063f8b2cb4f14610134575b600080fd5b34801561006857600080fd5b506100ab6004803603602081101561007f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610199565b6040518082815260200191505060405180910390f35b3480156100cd57600080fd5b5061011a600480360360408110156100e457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610259565b604051808215151515815260200191505060405180910390f35b34801561014057600080fd5b506101836004803603602081101561015757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103b2565b6040518082815260200191505060405180910390f35b600073__ConvertLib____________________________6396e4ee3d6101be846103b2565b60026040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018281526020019250505060206040518083038186803b15801561021757600080fd5b505af415801561022b573d6000803e3d6000fd5b505050506040513d602081101561024157600080fd5b81019080805190602001909291905050509050919050565b6000816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156102aa57600090506103ac565b816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190505b92915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea165627a7a72305820f99cbb79fe70b2c57a1c144a60f6de3b0e360e4a62fc3e6a171d58e50be9779d0029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637bd703e81461005c57806390b98a11146100c1578063f8b2cb4f14610134575b600080fd5b34801561006857600080fd5b506100ab6004803603602081101561007f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610199565b6040518082815260200191505060405180910390f35b3480156100cd57600080fd5b5061011a600480360360408110156100e457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610259565b604051808215151515815260200191505060405180910390f35b34801561014057600080fd5b506101836004803603602081101561015757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103b2565b6040518082815260200191505060405180910390f35b600073__ConvertLib____________________________6396e4ee3d6101be846103b2565b60026040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018281526020019250505060206040518083038186803b15801561021757600080fd5b505af415801561022b573d6000803e3d6000fd5b505050506040513d602081101561024157600080fd5b81019080805190602001909291905050509050919050565b6000816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156102aa57600090506103ac565b816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190505b92915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea165627a7a72305820f99cbb79fe70b2c57a1c144a60f6de3b0e360e4a62fc3e6a171d58e50be9779d0029",
   "sourceMap": "111:748:7:-;;;248:130;8:9:-1;5:2;;;30:1;27;20:12;5:2;248:130:7;369:5;347:8;:19;356:9;347:19;;;;;;;;;;;;;;;:27;;;;111:748;;;;;;",
   "deployedSourceMap": "111:748:7:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;648:117;;8:9:-1;5:2;;;30:1;27;20:12;5:2;648:117:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;648:117:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;381:264;;8:9:-1;5:2;;;30:1;27;20:12;5:2;381:264:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;381:264:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;768:89;;8:9:-1;5:2;;;30:1;27;20:12;5:2;768:89:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;768:89:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;648:117;707:4;723:10;:18;742:16;753:4;742:10;:16::i;:::-;759:1;723:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;723:38:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;723:38:7;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;723:38:7;;;;;;;;;;;;;;;;716:45;;648:117;;;:::o;381:264::-;445:15;493:6;470:8;:20;479:10;470:20;;;;;;;;;;;;;;;;:29;466:47;;;508:5;501:12;;;;466:47;541:6;517:8;:20;526:10;517:20;;;;;;;;;;;;;;;;:30;;;;;;;;;;;573:6;551:8;:18;560:8;551:18;;;;;;;;;;;;;;;;:28;;;;;;;;;;;609:8;588:38;;597:10;588:38;;;619:6;588:38;;;;;;;;;;;;;;;;;;637:4;630:11;;381:264;;;;;:::o;768:89::-;822:4;839:8;:14;848:4;839:14;;;;;;;;;;;;;;;;832:21;;768:89;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./ConvertLib.sol\";\n\n// This is an example of how a contract should be written\ncontract MetaCoin {\n\tmapping (address => uint) balances;\n\n\tevent Transfer(address indexed _from, address indexed _to, uint256 _value);\n\n\tconstructor() public { //Mus be constructor instead of the name of the contract as a constructor\n\t\tbalances[tx.origin] = 10000;\n\t}\n\n\tfunction sendCoin(address receiver, uint amount) public returns(bool sufficient) {\n\t\tif (balances[msg.sender] < amount) return false;\n\t\tbalances[msg.sender] -= amount;\n\t\tbalances[receiver] += amount;\n\t\temit Transfer(msg.sender, receiver, amount);\n\t\treturn true;\n\t}\n\n\tfunction getBalanceInEth(address addr) public view returns(uint){\n\t\treturn ConvertLib.convert(getBalance(addr),2);\n\t}\n\n\tfunction getBalance(address addr) public view returns(uint) {\n\t\treturn balances[addr];\n\t}\n}\n",
-  "sourcePath": "/Users/nemesis1346/Documents/University Projects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/MetaCoin.sol",
+  "sourcePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/MetaCoin.sol",
   "ast": {
-    "absolutePath": "/Users/nemesis1346/Documents/University Projects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/MetaCoin.sol",
+    "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/MetaCoin.sol",
     "exportedSymbols": {
       "MetaCoin": [
         869
@@ -119,7 +119,7 @@
         "src": "0:23:7"
       },
       {
-        "absolutePath": "/Users/nemesis1346/Documents/University Projects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/ConvertLib.sol",
+        "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/ConvertLib.sol",
         "file": "./ConvertLib.sol",
         "id": 776,
         "nodeType": "ImportDirective",
@@ -323,7 +323,7 @@
                           "name": "tx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1405,
+                          "referencedDeclaration": 1407,
                           "src": "356:2:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_transaction",
@@ -454,7 +454,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1393,
+                          "referencedDeclaration": 1395,
                           "src": "479:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -568,7 +568,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1393,
+                          "referencedDeclaration": 1395,
                           "src": "526:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -710,7 +710,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1393,
+                          "referencedDeclaration": 1395,
                           "src": "597:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1293,7 +1293,7 @@
     "src": "0:860:7"
   },
   "legacyAST": {
-    "absolutePath": "/Users/nemesis1346/Documents/University Projects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/MetaCoin.sol",
+    "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/MetaCoin.sol",
     "exportedSymbols": {
       "MetaCoin": [
         869
@@ -1314,7 +1314,7 @@
         "src": "0:23:7"
       },
       {
-        "absolutePath": "/Users/nemesis1346/Documents/University Projects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/ConvertLib.sol",
+        "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/ConvertLib.sol",
         "file": "./ConvertLib.sol",
         "id": 776,
         "nodeType": "ImportDirective",
@@ -1518,7 +1518,7 @@
                           "name": "tx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1405,
+                          "referencedDeclaration": 1407,
                           "src": "356:2:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_transaction",
@@ -1649,7 +1649,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1393,
+                          "referencedDeclaration": 1395,
                           "src": "479:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1763,7 +1763,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1393,
+                          "referencedDeclaration": 1395,
                           "src": "526:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1905,7 +1905,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1393,
+                          "referencedDeclaration": 1395,
                           "src": "597:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2558,7 +2558,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-03-31T22:28:54.376Z",
+  "updatedAt": "2019-04-01T00:24:01.666Z",
   "devdoc": {
     "methods": {}
   },

@@ -93,6 +93,11 @@ async function testing() {
         let agreementResult = await agreementsInterface.getAgreement(agreementAddress, { from: agreementAddress, gasLimit: '6721975' });
         console.log('AGREEMENT CREATION RESULT');
         console.log(agreementResult);
+       
+        //Get all agreements between emitter and receiver 
+         let agreements = await agreementsInterface.getAgreementsByEmitter(traderEmitterAddress,{ from: agreementAddress, gasLimit: '6721975' });
+         console.log('LIST OF AGREEMENTS');
+         console.log(agreements);
 
     } catch (error) {
         console.log(error)

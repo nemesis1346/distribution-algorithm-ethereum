@@ -19,8 +19,12 @@ contract Agreements{
         address trackId;
         bool isAgreement;
     }
+    struct AgreementByEmitter{
+        address emitter;
+        address[] agreements;
+    }
     mapping(address=>Agreement) public agreementStructList;
-    mapping(address=> address) agreementIdByReceiver; //query
+    mapping(address=> AgreementByEmitter) agreementsByEmitter; //query
     address[] public agreementAddrList;
 
     function isAgreement(address id) public returns(bool){
@@ -36,7 +40,10 @@ contract Agreements{
                             ) public{
         if(isAgreement(id)) revert("Agreement already exists");
 
-        agreementIdByReceiver[traderReceiverId]=id;//This is for query the agreement by receiver
+        //This is just some testing
+        agreementsByEmitter[traderEmitterId].emitter=traderEmitterId;
+        agreementsByEmitter[traderEmitterId].agreements.push(id);//This is for query the agreement by receiver
+       
         percentageReceiver = percentageReceiver/100;
         
         Traders tradersContract= Traders(tradersContractAddr);
@@ -59,8 +66,8 @@ contract Agreements{
         //TODO: check the percentage limit 
 
     }
-      function getAgreementIdByReceiver(address receiverId) public returns(address){
-        return agreementIdByReceiver[receiverId];
+      function getAgreementsByEmitter(address emitterId) view public returns(address[] memory){
+        return agreementsByEmitter[emitterId].agreements;
     }
 
     function getAgreement(address id) view public returns(address,address, address, uint,address) {
