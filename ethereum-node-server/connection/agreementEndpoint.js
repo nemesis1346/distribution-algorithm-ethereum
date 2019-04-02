@@ -1,16 +1,16 @@
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-const TrackModel = require('../models/trackModel.js');
+const AgreementModel = require('../models/agreementModel.js');
 //Artifacts
-const tracks_artifact = require('../build/contracts/Tracks.json');
+const agreements_artifact = require('../build/contracts/Agreements.json');
 //Contract
-const TracksContract = contractTruffle(tracks_artifact);
+const AgreementsContract = contractTruffle(agreements_artifact);
 //Setting Providers
-TracksContract.setProvider(web3Provider.currentProvider);
+AgreementsContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
 
-async function createTrack(trackId, isrc, title, revenue, fromAddress, gasLimit) {
+async function createAgreement(trackId, isrc, title, revenue, fromAddress, gasLimit) {
   try {
     const tracksInterface = await TracksContract.deployed();
 
@@ -32,7 +32,7 @@ async function createTrack(trackId, isrc, title, revenue, fromAddress, gasLimit)
 module.exports.createTrack = createTrack;
 
 async function getTrack(trackId, fromAddress, gasLimit) {
-  let trackModel = new TrackModel(null, null, null,null,null);
+  let agreementModel = new AgreementModel(null, null, null,null,null);
   const tracksInterface = await TracksContract.deployed();
   let trackResult = await tracksInterface.getTrack(
     trackId,

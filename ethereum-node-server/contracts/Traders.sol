@@ -30,11 +30,12 @@ contract Traders{
         traderStructList[id].isTrader =true;
         
         traderAddressList.push(id);
-        
+        emit stringLogs("Trader Was Created");
+
         //We create the token account accessing the other contract
         tokenAccountsInterface = TokenAccounts(tokenAccountCtrAdd);
         tokenAccountsInterface.createTokenAccount(tokenAccountId);
-        emit stringLogs("Trader Was Created");
+        emit stringLogs("Token Account Was Created in Trader Contract");
     }
     
      function getTraderCount() public view returns(uint count) {
