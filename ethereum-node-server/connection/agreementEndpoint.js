@@ -55,7 +55,7 @@ async function getAgreement(agreementId, fromAddress, gasLimit) {
 }
 module.exports.getAgreement = getAgreement;
 
-async function getAgreementsByEmitter(emitterId) {
+async function getAgreementsByEmitter(emitterId, fromAddress, gasLimit) {
     const agreementInterface = await AgreementsContract.deployed();
     let agreementsResult = await agreementInterface.getAgreementsByEmitter(
         emitterId,

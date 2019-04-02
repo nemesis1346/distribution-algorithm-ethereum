@@ -4,6 +4,7 @@ const trackEndpoint = require('./trackEndpoint.js');
 const traderEndpoint = require('./traderEndpoint.js');
 const tokenAccountEndpoint = require('./tokenAccountEndpoint.js');
 const agreementEndpoint = require('./agreementEndpoint.js');
+const distributionEndpoint = require('./distributionEndPoint');
 async function example1() {
     try {
         const accounts = await web3Provider.eth.accounts;
@@ -105,11 +106,12 @@ async function example1() {
         console.log('TRADER TRADER 4 CREATION');
         console.log(trader4Result);
 
+        //Agreement 1
         await agreementEndpoint.createAgreement(
             agreement1Id,
             trader1,
             trader2,
-            25,
+            30,
             trackId,
             await traderEndpoint.getTraderContractAddress(),
             await trackEndpoint.getTrackContractAddress(),
@@ -117,13 +119,63 @@ async function example1() {
             '6721975'
         );
 
-        let agreement1Result  = await agreementEndpoint.getAgreement(
+        let agreement1Result = await agreementEndpoint.getAgreement(
             agreement1Id,
             trader1,
             '6721975'
         );
         console.log('TRADER AGREEMENT 1 CREATION');
         console.log(agreement1Result);
+
+        //Agreement 2
+        await agreementEndpoint.createAgreement(
+            agreement2Id,
+            trader1,
+            trader3,
+            50,
+            trackId,
+            await traderEndpoint.getTraderContractAddress(),
+            await trackEndpoint.getTrackContractAddress(),
+            trader1,
+            '6721975'
+        );
+
+        let agreement2Result = await agreementEndpoint.getAgreement(
+            agreement2Id,
+            trader1,
+            '6721975'
+        );
+        console.log('TRADER AGREEMENT 2 CREATION');
+        console.log(agreement2Result);
+
+        //Agreement 3
+        await agreementEndpoint.createAgreement(
+            agreement3Id,
+            trader3,
+            trader4,
+            90,
+            trackId,
+            await traderEndpoint.getTraderContractAddress(),
+            await trackEndpoint.getTrackContractAddress(),
+            trader1,
+            '6721975'
+        );
+
+        let agreement3Result = await agreementEndpoint.getAgreement(
+            agreement3Id,
+            trader1,
+            '6721975'
+        );
+        console.log('TRADER AGREEMENT 3 CREATION');
+        console.log(agreement3Result);
+
+        await distributionEndpoint.distribution(
+            trackId,
+            trader1,
+            new Date().getTime(),
+            trader1,
+            '6721975');
+
     } catch (error) {
         console.log(error)
     }
