@@ -15,12 +15,10 @@ const TokenAccountsContract = contractTruffle(tokenAccounts_artifacts);
 const AgreementsContract = contractTruffle(agreements_artfact);
 
 //Setting Providers
-
 TracksContract.setProvider(web3Provider.currentProvider);
 TradersContract.setProvider(web3Provider.currentProvider);
 TokenAccountsContract.setProvider(web3Provider.currentProvider);
 AgreementsContract.setProvider(web3Provider.currentProvider);
-
 
 async function testing() {
     try {

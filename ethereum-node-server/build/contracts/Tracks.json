@@ -187,14 +187,14 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/Tracks.sol",
     "exportedSymbols": {
       "Tracks": [
-        1247
+        1241
       ]
     },
-    "id": 1248,
+    "id": 1242,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1079,
+        "id": 1073,
         "literals": [
           "solidity",
           "^",
@@ -210,23 +210,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1247,
+        "id": 1241,
         "linearizedBaseContracts": [
-          1247
+          1241
         ],
         "name": "Tracks",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Tracks.Track",
-            "id": 1092,
+            "id": 1086,
             "members": [
               {
                 "constant": false,
-                "id": 1081,
+                "id": 1075,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "152:10:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -235,7 +235,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1080,
+                  "id": 1074,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "152:7:10",
@@ -250,10 +250,10 @@
               },
               {
                 "constant": false,
-                "id": 1083,
+                "id": 1077,
                 "name": "isrc",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "172:9:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -262,7 +262,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1082,
+                  "id": 1076,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "172:4:10",
@@ -276,10 +276,10 @@
               },
               {
                 "constant": false,
-                "id": 1085,
+                "id": 1079,
                 "name": "title",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "191:12:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -288,7 +288,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1084,
+                  "id": 1078,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "191:6:10",
@@ -302,10 +302,10 @@
               },
               {
                 "constant": false,
-                "id": 1087,
+                "id": 1081,
                 "name": "revenueTotal",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "213:17:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -314,7 +314,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1086,
+                  "id": 1080,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "213:4:10",
@@ -328,10 +328,10 @@
               },
               {
                 "constant": false,
-                "id": 1089,
+                "id": 1083,
                 "name": "uploaderEOA",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "240:19:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -340,7 +340,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1088,
+                  "id": 1082,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "240:7:10",
@@ -355,10 +355,10 @@
               },
               {
                 "constant": false,
-                "id": 1091,
+                "id": 1085,
                 "name": "isTrack",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "269:12:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -367,7 +367,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1090,
+                  "id": 1084,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "269:4:10",
@@ -382,27 +382,27 @@
             ],
             "name": "Track",
             "nodeType": "StructDefinition",
-            "scope": 1247,
+            "scope": 1241,
             "src": "130:191:10",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1096,
+            "id": 1090,
             "name": "trackStructList",
             "nodeType": "VariableDeclaration",
-            "scope": 1247,
+            "scope": 1241,
             "src": "327:46:10",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
               "typeString": "mapping(address => struct Tracks.Track)"
             },
             "typeName": {
-              "id": 1095,
+              "id": 1089,
               "keyType": {
-                "id": 1093,
+                "id": 1087,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "335:7:10",
@@ -414,18 +414,18 @@
               "nodeType": "Mapping",
               "src": "327:23:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                 "typeString": "mapping(address => struct Tracks.Track)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1094,
+                "id": 1088,
                 "name": "Track",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1092,
+                "referencedDeclaration": 1086,
                 "src": "344:5:10",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Track_$1092_storage_ptr",
+                  "typeIdentifier": "t_struct$_Track_$1086_storage_ptr",
                   "typeString": "struct Tracks.Track"
                 }
               }
@@ -435,10 +435,10 @@
           },
           {
             "constant": false,
-            "id": 1099,
+            "id": 1093,
             "name": "trackAddressList",
             "nodeType": "VariableDeclaration",
-            "scope": 1247,
+            "scope": 1241,
             "src": "379:33:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -448,7 +448,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 1097,
+                "id": 1091,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "379:7:10",
@@ -458,7 +458,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 1098,
+              "id": 1092,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "379:9:10",
@@ -472,7 +472,7 @@
           },
           {
             "body": {
-              "id": 1111,
+              "id": 1105,
               "nodeType": "Block",
               "src": "587:51:10",
               "statements": [
@@ -483,25 +483,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 1106,
+                        "id": 1100,
                         "name": "trackStructList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1096,
+                        "referencedDeclaration": 1090,
                         "src": "604:15:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                           "typeString": "mapping(address => struct Tracks.Track storage ref)"
                         }
                       },
-                      "id": 1108,
+                      "id": 1102,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 1107,
+                        "id": 1101,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1101,
+                        "referencedDeclaration": 1095,
                         "src": "620:2:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -515,48 +515,48 @@
                       "nodeType": "IndexAccess",
                       "src": "604:19:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Track_$1092_storage",
+                        "typeIdentifier": "t_struct$_Track_$1086_storage",
                         "typeString": "struct Tracks.Track storage ref"
                       }
                     },
-                    "id": 1109,
+                    "id": 1103,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isTrack",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 1091,
+                    "referencedDeclaration": 1085,
                     "src": "604:27:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 1105,
-                  "id": 1110,
+                  "functionReturnParameters": 1099,
+                  "id": 1104,
                   "nodeType": "Return",
                   "src": "597:34:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1112,
+            "id": 1106,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isTrack",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1102,
+              "id": 1096,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1101,
+                  "id": 1095,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1112,
+                  "scope": 1106,
                   "src": "550:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -565,7 +565,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1100,
+                    "id": 1094,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "550:7:10",
@@ -582,15 +582,15 @@
               "src": "549:12:10"
             },
             "returnParameters": {
-              "id": 1105,
+              "id": 1099,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1104,
+                  "id": 1098,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1112,
+                  "scope": 1106,
                   "src": "582:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -599,7 +599,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1103,
+                    "id": 1097,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "582:4:10",
@@ -614,7 +614,7 @@
               ],
               "src": "581:6:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "533:105:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -622,7 +622,7 @@
           },
           {
             "body": {
-              "id": 1188,
+              "id": 1182,
               "nodeType": "Block",
               "src": "734:607:10",
               "statements": [
@@ -632,11 +632,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1124,
+                        "id": 1118,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1114,
+                        "referencedDeclaration": 1108,
                         "src": "810:2:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -651,18 +651,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 1123,
+                      "id": 1117,
                       "name": "isTrack",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1112,
+                      "referencedDeclaration": 1106,
                       "src": "802:7:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-                    "id": 1125,
+                    "id": 1119,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -677,7 +677,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 1130,
+                  "id": 1124,
                   "nodeType": "IfStatement",
                   "src": "799:46:10",
                   "trueBody": {
@@ -687,7 +687,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "547261636b20616c726561647920657869737473",
-                          "id": 1127,
+                          "id": 1121,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -710,21 +710,21 @@
                             "typeString": "literal_string \"Track already exists\""
                           }
                         ],
-                        "id": 1126,
+                        "id": 1120,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1417,
-                          1418
+                          1415,
+                          1416
                         ],
-                        "referencedDeclaration": 1418,
+                        "referencedDeclaration": 1416,
                         "src": "815:6:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
                           "typeString": "function (string memory) pure"
                         }
                       },
-                      "id": 1128,
+                      "id": 1122,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -738,22 +738,22 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1129,
+                    "id": 1123,
                     "nodeType": "ExpressionStatement",
                     "src": "815:30:10"
                   }
                 },
                 {
                   "assignments": [
-                    1132
+                    1126
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1132,
+                      "id": 1126,
                       "name": "uploaderEOA",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1188,
+                      "scope": 1182,
                       "src": "864:19:10",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -762,7 +762,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 1131,
+                        "id": 1125,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "864:7:10",
@@ -776,23 +776,23 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1135,
+                  "id": 1129,
                   "initialValue": {
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1133,
+                      "id": 1127,
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1412,
+                      "referencedDeclaration": 1410,
                       "src": "886:3:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
                         "typeString": "msg"
                       }
                     },
-                    "id": 1134,
+                    "id": 1128,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -812,7 +812,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1141,
+                    "id": 1135,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -823,25 +823,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1136,
+                          "id": 1130,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "907:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1138,
+                        "id": 1132,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1137,
+                          "id": 1131,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "923:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -855,18 +855,18 @@
                         "nodeType": "IndexAccess",
                         "src": "907:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1139,
+                      "id": 1133,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "id",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1081,
+                      "referencedDeclaration": 1075,
                       "src": "907:22:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -877,11 +877,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1140,
+                      "id": 1134,
                       "name": "id",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1114,
+                      "referencedDeclaration": 1108,
                       "src": "932:2:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -894,14 +894,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1142,
+                  "id": 1136,
                   "nodeType": "ExpressionStatement",
                   "src": "907:27:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1148,
+                    "id": 1142,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -912,25 +912,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1143,
+                          "id": 1137,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "995:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1145,
+                        "id": 1139,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1144,
+                          "id": 1138,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1011:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -944,18 +944,18 @@
                         "nodeType": "IndexAccess",
                         "src": "995:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1146,
+                      "id": 1140,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isrc",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1083,
+                      "referencedDeclaration": 1077,
                       "src": "995:24:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -966,11 +966,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1147,
+                      "id": 1141,
                       "name": "isrc",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1116,
+                      "referencedDeclaration": 1110,
                       "src": "1022:4:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -983,14 +983,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1149,
+                  "id": 1143,
                   "nodeType": "ExpressionStatement",
                   "src": "995:31:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1155,
+                    "id": 1149,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1001,25 +1001,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1150,
+                          "id": 1144,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1036:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1152,
+                        "id": 1146,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1151,
+                          "id": 1145,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1052:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1033,18 +1033,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1036:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1153,
+                      "id": 1147,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "title",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1085,
+                      "referencedDeclaration": 1079,
                       "src": "1036:25:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -1055,11 +1055,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1154,
+                      "id": 1148,
                       "name": "title",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1118,
+                      "referencedDeclaration": 1112,
                       "src": "1062:5:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -1072,14 +1072,14 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 1156,
+                  "id": 1150,
                   "nodeType": "ExpressionStatement",
                   "src": "1036:31:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1162,
+                    "id": 1156,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1090,25 +1090,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1157,
+                          "id": 1151,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1077:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1159,
+                        "id": 1153,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1158,
+                          "id": 1152,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1093:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1122,18 +1122,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1077:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1160,
+                      "id": 1154,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "revenueTotal",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1087,
+                      "referencedDeclaration": 1081,
                       "src": "1077:32:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1144,11 +1144,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1161,
+                      "id": 1155,
                       "name": "revenueTotal",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1120,
+                      "referencedDeclaration": 1114,
                       "src": "1110:12:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1161,14 +1161,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1163,
+                  "id": 1157,
                   "nodeType": "ExpressionStatement",
                   "src": "1077:45:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1169,
+                    "id": 1163,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1179,25 +1179,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1164,
+                          "id": 1158,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1132:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1166,
+                        "id": 1160,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1165,
+                          "id": 1159,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1148:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1211,18 +1211,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1132:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1167,
+                      "id": 1161,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "uploaderEOA",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1089,
+                      "referencedDeclaration": 1083,
                       "src": "1132:31:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1233,11 +1233,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1168,
+                      "id": 1162,
                       "name": "uploaderEOA",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1132,
+                      "referencedDeclaration": 1126,
                       "src": "1164:11:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1250,14 +1250,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1170,
+                  "id": 1164,
                   "nodeType": "ExpressionStatement",
                   "src": "1132:43:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1176,
+                    "id": 1170,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1268,25 +1268,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1171,
+                          "id": 1165,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1185:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1173,
+                        "id": 1167,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1172,
+                          "id": 1166,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1201:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1300,18 +1300,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1185:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1174,
+                      "id": 1168,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isTrack",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1091,
+                      "referencedDeclaration": 1085,
                       "src": "1185:27:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1323,7 +1323,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 1175,
+                      "id": 1169,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1344,7 +1344,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1177,
+                  "id": 1171,
                   "nodeType": "ExpressionStatement",
                   "src": "1185:32:10"
                 },
@@ -1354,11 +1354,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1181,
+                        "id": 1175,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1114,
+                        "referencedDeclaration": 1108,
                         "src": "1258:2:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1375,18 +1375,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1178,
+                        "id": 1172,
                         "name": "trackAddressList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1099,
+                        "referencedDeclaration": 1093,
                         "src": "1236:16:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 1180,
+                      "id": 1174,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1400,7 +1400,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 1182,
+                    "id": 1176,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1414,7 +1414,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1183,
+                  "id": 1177,
                   "nodeType": "ExpressionStatement",
                   "src": "1236:25:10"
                 },
@@ -1425,7 +1425,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "547261636b2063726561746564212121",
-                        "id": 1185,
+                        "id": 1179,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1448,18 +1448,18 @@
                           "typeString": "literal_string \"Track created!!!\""
                         }
                       ],
-                      "id": 1184,
+                      "id": 1178,
                       "name": "LogTrack",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1246,
+                      "referencedDeclaration": 1240,
                       "src": "1285:8:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 1186,
+                    "id": 1180,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1473,29 +1473,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1187,
+                  "id": 1181,
                   "nodeType": "EmitStatement",
                   "src": "1280:33:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1189,
+            "id": 1183,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTrack",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1121,
+              "id": 1115,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1114,
+                  "id": 1108,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "665:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1504,7 +1504,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1113,
+                    "id": 1107,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "665:7:10",
@@ -1519,10 +1519,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1116,
+                  "id": 1110,
                   "name": "isrc",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "677:9:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1531,7 +1531,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1115,
+                    "id": 1109,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "677:4:10",
@@ -1545,10 +1545,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1118,
+                  "id": 1112,
                   "name": "title",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "688:19:10",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1557,7 +1557,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1117,
+                    "id": 1111,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "688:6:10",
@@ -1571,10 +1571,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1120,
+                  "id": 1114,
                   "name": "revenueTotal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "709:17:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1583,7 +1583,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1119,
+                    "id": 1113,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "709:4:10",
@@ -1599,12 +1599,12 @@
               "src": "664:63:10"
             },
             "returnParameters": {
-              "id": 1122,
+              "id": 1116,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "734:0:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "644:697:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1612,7 +1612,7 @@
           },
           {
             "body": {
-              "id": 1197,
+              "id": 1191,
               "nodeType": "Block",
               "src": "1408:47:10",
               "statements": [
@@ -1621,18 +1621,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1194,
+                      "id": 1188,
                       "name": "trackAddressList",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1099,
+                      "referencedDeclaration": 1093,
                       "src": "1425:16:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 1195,
+                    "id": 1189,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -1646,36 +1646,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1193,
-                  "id": 1196,
+                  "functionReturnParameters": 1187,
+                  "id": 1190,
                   "nodeType": "Return",
                   "src": "1418:30:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1198,
+            "id": 1192,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTrackCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1190,
+              "id": 1184,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1373:2:10"
             },
             "returnParameters": {
-              "id": 1193,
+              "id": 1187,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1192,
+                  "id": 1186,
                   "name": "count",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1198,
+                  "scope": 1192,
                   "src": "1396:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1684,7 +1684,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1191,
+                    "id": 1185,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1396:4:10",
@@ -1699,7 +1699,7 @@
               ],
               "src": "1395:12:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "1351:104:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -1707,7 +1707,7 @@
           },
           {
             "body": {
-              "id": 1241,
+              "id": 1235,
               "nodeType": "Block",
               "src": "1565:277:10",
               "statements": [
@@ -1721,25 +1721,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1215,
+                            "id": 1209,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1583:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1217,
+                          "id": 1211,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1216,
+                            "id": 1210,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1599:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1753,18 +1753,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1583:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1218,
+                        "id": 1212,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "id",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1081,
+                        "referencedDeclaration": 1075,
                         "src": "1583:22:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1777,25 +1777,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1219,
+                            "id": 1213,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1623:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1221,
+                          "id": 1215,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1220,
+                            "id": 1214,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1639:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1809,18 +1809,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1623:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1222,
+                        "id": 1216,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "isrc",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1083,
+                        "referencedDeclaration": 1077,
                         "src": "1623:24:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1833,25 +1833,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1223,
+                            "id": 1217,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1665:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1225,
+                          "id": 1219,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1224,
+                            "id": 1218,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1681:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1865,18 +1865,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1665:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1226,
+                        "id": 1220,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "title",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1085,
+                        "referencedDeclaration": 1079,
                         "src": "1665:25:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -1889,25 +1889,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1227,
+                            "id": 1221,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1708:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1229,
+                          "id": 1223,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1228,
+                            "id": 1222,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1724:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1921,18 +1921,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1708:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1230,
+                        "id": 1224,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "revenueTotal",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1087,
+                        "referencedDeclaration": 1081,
                         "src": "1708:32:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1945,25 +1945,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1231,
+                            "id": 1225,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1758:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1233,
+                          "id": 1227,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1232,
+                            "id": 1226,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1774:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1977,18 +1977,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1758:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1234,
+                        "id": 1228,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "uploaderEOA",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1089,
+                        "referencedDeclaration": 1083,
                         "src": "1758:31:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2001,25 +2001,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1235,
+                            "id": 1229,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1807:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1237,
+                          "id": 1231,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1236,
+                            "id": 1230,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1823:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -2033,18 +2033,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1807:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1238,
+                        "id": 1232,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "isTrack",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1091,
+                        "referencedDeclaration": 1085,
                         "src": "1807:27:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -2052,7 +2052,7 @@
                         }
                       }
                     ],
-                    "id": 1239,
+                    "id": 1233,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -2065,30 +2065,30 @@
                       "typeString": "tuple(address,uint256,string storage ref,uint256,address,bool)"
                     }
                   },
-                  "functionReturnParameters": 1214,
-                  "id": 1240,
+                  "functionReturnParameters": 1208,
+                  "id": 1234,
                   "nodeType": "Return",
                   "src": "1575:260:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1242,
+            "id": 1236,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTrack",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1201,
+              "id": 1195,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1200,
+                  "id": 1194,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1483:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2097,7 +2097,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1199,
+                    "id": 1193,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1483:7:10",
@@ -2114,15 +2114,15 @@
               "src": "1482:12:10"
             },
             "returnParameters": {
-              "id": 1214,
+              "id": 1208,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1203,
+                  "id": 1197,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1515:7:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2131,7 +2131,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1202,
+                    "id": 1196,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1515:7:10",
@@ -2146,10 +2146,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1205,
+                  "id": 1199,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1524:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2158,7 +2158,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1204,
+                    "id": 1198,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1524:4:10",
@@ -2172,10 +2172,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1207,
+                  "id": 1201,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1530:13:10",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2184,7 +2184,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1206,
+                    "id": 1200,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1530:6:10",
@@ -2198,10 +2198,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1209,
+                  "id": 1203,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1545:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2210,7 +2210,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1208,
+                    "id": 1202,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1545:4:10",
@@ -2224,10 +2224,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1211,
+                  "id": 1205,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1551:7:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2236,7 +2236,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1210,
+                    "id": 1204,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1551:7:10",
@@ -2251,10 +2251,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1213,
+                  "id": 1207,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1559:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2263,7 +2263,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1212,
+                    "id": 1206,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1559:4:10",
@@ -2278,7 +2278,7 @@
               ],
               "src": "1514:50:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "1465:377:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -2287,20 +2287,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1246,
+            "id": 1240,
             "name": "LogTrack",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1245,
+              "id": 1239,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1244,
+                  "id": 1238,
                   "indexed": false,
                   "name": "message",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1246,
+                  "scope": 1240,
                   "src": "1862:14:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2309,7 +2309,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1243,
+                    "id": 1237,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1862:6:10",
@@ -2327,7 +2327,7 @@
             "src": "1847:31:10"
           }
         ],
-        "scope": 1248,
+        "scope": 1242,
         "src": "104:1776:10"
       }
     ],
@@ -2337,14 +2337,14 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/Tracks.sol",
     "exportedSymbols": {
       "Tracks": [
-        1247
+        1241
       ]
     },
-    "id": 1248,
+    "id": 1242,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1079,
+        "id": 1073,
         "literals": [
           "solidity",
           "^",
@@ -2360,23 +2360,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1247,
+        "id": 1241,
         "linearizedBaseContracts": [
-          1247
+          1241
         ],
         "name": "Tracks",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Tracks.Track",
-            "id": 1092,
+            "id": 1086,
             "members": [
               {
                 "constant": false,
-                "id": 1081,
+                "id": 1075,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "152:10:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2385,7 +2385,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1080,
+                  "id": 1074,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "152:7:10",
@@ -2400,10 +2400,10 @@
               },
               {
                 "constant": false,
-                "id": 1083,
+                "id": 1077,
                 "name": "isrc",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "172:9:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2412,7 +2412,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1082,
+                  "id": 1076,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "172:4:10",
@@ -2426,10 +2426,10 @@
               },
               {
                 "constant": false,
-                "id": 1085,
+                "id": 1079,
                 "name": "title",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "191:12:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2438,7 +2438,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1084,
+                  "id": 1078,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "191:6:10",
@@ -2452,10 +2452,10 @@
               },
               {
                 "constant": false,
-                "id": 1087,
+                "id": 1081,
                 "name": "revenueTotal",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "213:17:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2464,7 +2464,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1086,
+                  "id": 1080,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "213:4:10",
@@ -2478,10 +2478,10 @@
               },
               {
                 "constant": false,
-                "id": 1089,
+                "id": 1083,
                 "name": "uploaderEOA",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "240:19:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2490,7 +2490,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1088,
+                  "id": 1082,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "240:7:10",
@@ -2505,10 +2505,10 @@
               },
               {
                 "constant": false,
-                "id": 1091,
+                "id": 1085,
                 "name": "isTrack",
                 "nodeType": "VariableDeclaration",
-                "scope": 1092,
+                "scope": 1086,
                 "src": "269:12:10",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2517,7 +2517,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1090,
+                  "id": 1084,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "269:4:10",
@@ -2532,27 +2532,27 @@
             ],
             "name": "Track",
             "nodeType": "StructDefinition",
-            "scope": 1247,
+            "scope": 1241,
             "src": "130:191:10",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1096,
+            "id": 1090,
             "name": "trackStructList",
             "nodeType": "VariableDeclaration",
-            "scope": 1247,
+            "scope": 1241,
             "src": "327:46:10",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
               "typeString": "mapping(address => struct Tracks.Track)"
             },
             "typeName": {
-              "id": 1095,
+              "id": 1089,
               "keyType": {
-                "id": 1093,
+                "id": 1087,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "335:7:10",
@@ -2564,18 +2564,18 @@
               "nodeType": "Mapping",
               "src": "327:23:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                 "typeString": "mapping(address => struct Tracks.Track)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1094,
+                "id": 1088,
                 "name": "Track",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1092,
+                "referencedDeclaration": 1086,
                 "src": "344:5:10",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Track_$1092_storage_ptr",
+                  "typeIdentifier": "t_struct$_Track_$1086_storage_ptr",
                   "typeString": "struct Tracks.Track"
                 }
               }
@@ -2585,10 +2585,10 @@
           },
           {
             "constant": false,
-            "id": 1099,
+            "id": 1093,
             "name": "trackAddressList",
             "nodeType": "VariableDeclaration",
-            "scope": 1247,
+            "scope": 1241,
             "src": "379:33:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2598,7 +2598,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 1097,
+                "id": 1091,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "379:7:10",
@@ -2608,7 +2608,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 1098,
+              "id": 1092,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "379:9:10",
@@ -2622,7 +2622,7 @@
           },
           {
             "body": {
-              "id": 1111,
+              "id": 1105,
               "nodeType": "Block",
               "src": "587:51:10",
               "statements": [
@@ -2633,25 +2633,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 1106,
+                        "id": 1100,
                         "name": "trackStructList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1096,
+                        "referencedDeclaration": 1090,
                         "src": "604:15:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                           "typeString": "mapping(address => struct Tracks.Track storage ref)"
                         }
                       },
-                      "id": 1108,
+                      "id": 1102,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 1107,
+                        "id": 1101,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1101,
+                        "referencedDeclaration": 1095,
                         "src": "620:2:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2665,48 +2665,48 @@
                       "nodeType": "IndexAccess",
                       "src": "604:19:10",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Track_$1092_storage",
+                        "typeIdentifier": "t_struct$_Track_$1086_storage",
                         "typeString": "struct Tracks.Track storage ref"
                       }
                     },
-                    "id": 1109,
+                    "id": 1103,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isTrack",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 1091,
+                    "referencedDeclaration": 1085,
                     "src": "604:27:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 1105,
-                  "id": 1110,
+                  "functionReturnParameters": 1099,
+                  "id": 1104,
                   "nodeType": "Return",
                   "src": "597:34:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1112,
+            "id": 1106,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isTrack",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1102,
+              "id": 1096,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1101,
+                  "id": 1095,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1112,
+                  "scope": 1106,
                   "src": "550:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2715,7 +2715,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1100,
+                    "id": 1094,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "550:7:10",
@@ -2732,15 +2732,15 @@
               "src": "549:12:10"
             },
             "returnParameters": {
-              "id": 1105,
+              "id": 1099,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1104,
+                  "id": 1098,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1112,
+                  "scope": 1106,
                   "src": "582:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2749,7 +2749,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1103,
+                    "id": 1097,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "582:4:10",
@@ -2764,7 +2764,7 @@
               ],
               "src": "581:6:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "533:105:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -2772,7 +2772,7 @@
           },
           {
             "body": {
-              "id": 1188,
+              "id": 1182,
               "nodeType": "Block",
               "src": "734:607:10",
               "statements": [
@@ -2782,11 +2782,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1124,
+                        "id": 1118,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1114,
+                        "referencedDeclaration": 1108,
                         "src": "810:2:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2801,18 +2801,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 1123,
+                      "id": 1117,
                       "name": "isTrack",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1112,
+                      "referencedDeclaration": 1106,
                       "src": "802:7:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-                    "id": 1125,
+                    "id": 1119,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2827,7 +2827,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 1130,
+                  "id": 1124,
                   "nodeType": "IfStatement",
                   "src": "799:46:10",
                   "trueBody": {
@@ -2837,7 +2837,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "547261636b20616c726561647920657869737473",
-                          "id": 1127,
+                          "id": 1121,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2860,21 +2860,21 @@
                             "typeString": "literal_string \"Track already exists\""
                           }
                         ],
-                        "id": 1126,
+                        "id": 1120,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1417,
-                          1418
+                          1415,
+                          1416
                         ],
-                        "referencedDeclaration": 1418,
+                        "referencedDeclaration": 1416,
                         "src": "815:6:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
                           "typeString": "function (string memory) pure"
                         }
                       },
-                      "id": 1128,
+                      "id": 1122,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2888,22 +2888,22 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1129,
+                    "id": 1123,
                     "nodeType": "ExpressionStatement",
                     "src": "815:30:10"
                   }
                 },
                 {
                   "assignments": [
-                    1132
+                    1126
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1132,
+                      "id": 1126,
                       "name": "uploaderEOA",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1188,
+                      "scope": 1182,
                       "src": "864:19:10",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -2912,7 +2912,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 1131,
+                        "id": 1125,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "864:7:10",
@@ -2926,23 +2926,23 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1135,
+                  "id": 1129,
                   "initialValue": {
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1133,
+                      "id": 1127,
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1412,
+                      "referencedDeclaration": 1410,
                       "src": "886:3:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
                         "typeString": "msg"
                       }
                     },
-                    "id": 1134,
+                    "id": 1128,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2962,7 +2962,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1141,
+                    "id": 1135,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2973,25 +2973,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1136,
+                          "id": 1130,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "907:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1138,
+                        "id": 1132,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1137,
+                          "id": 1131,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "923:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3005,18 +3005,18 @@
                         "nodeType": "IndexAccess",
                         "src": "907:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1139,
+                      "id": 1133,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "id",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1081,
+                      "referencedDeclaration": 1075,
                       "src": "907:22:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -3027,11 +3027,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1140,
+                      "id": 1134,
                       "name": "id",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1114,
+                      "referencedDeclaration": 1108,
                       "src": "932:2:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -3044,14 +3044,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1142,
+                  "id": 1136,
                   "nodeType": "ExpressionStatement",
                   "src": "907:27:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1148,
+                    "id": 1142,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3062,25 +3062,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1143,
+                          "id": 1137,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "995:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1145,
+                        "id": 1139,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1144,
+                          "id": 1138,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1011:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3094,18 +3094,18 @@
                         "nodeType": "IndexAccess",
                         "src": "995:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1146,
+                      "id": 1140,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isrc",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1083,
+                      "referencedDeclaration": 1077,
                       "src": "995:24:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3116,11 +3116,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1147,
+                      "id": 1141,
                       "name": "isrc",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1116,
+                      "referencedDeclaration": 1110,
                       "src": "1022:4:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3133,14 +3133,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1149,
+                  "id": 1143,
                   "nodeType": "ExpressionStatement",
                   "src": "995:31:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1155,
+                    "id": 1149,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3151,25 +3151,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1150,
+                          "id": 1144,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1036:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1152,
+                        "id": 1146,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1151,
+                          "id": 1145,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1052:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3183,18 +3183,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1036:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1153,
+                      "id": 1147,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "title",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1085,
+                      "referencedDeclaration": 1079,
                       "src": "1036:25:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -3205,11 +3205,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1154,
+                      "id": 1148,
                       "name": "title",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1118,
+                      "referencedDeclaration": 1112,
                       "src": "1062:5:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -3222,14 +3222,14 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 1156,
+                  "id": 1150,
                   "nodeType": "ExpressionStatement",
                   "src": "1036:31:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1162,
+                    "id": 1156,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3240,25 +3240,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1157,
+                          "id": 1151,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1077:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1159,
+                        "id": 1153,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1158,
+                          "id": 1152,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1093:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3272,18 +3272,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1077:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1160,
+                      "id": 1154,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "revenueTotal",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1087,
+                      "referencedDeclaration": 1081,
                       "src": "1077:32:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3294,11 +3294,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1161,
+                      "id": 1155,
                       "name": "revenueTotal",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1120,
+                      "referencedDeclaration": 1114,
                       "src": "1110:12:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3311,14 +3311,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1163,
+                  "id": 1157,
                   "nodeType": "ExpressionStatement",
                   "src": "1077:45:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1169,
+                    "id": 1163,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3329,25 +3329,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1164,
+                          "id": 1158,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1132:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1166,
+                        "id": 1160,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1165,
+                          "id": 1159,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1148:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3361,18 +3361,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1132:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1167,
+                      "id": 1161,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "uploaderEOA",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1089,
+                      "referencedDeclaration": 1083,
                       "src": "1132:31:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -3383,11 +3383,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1168,
+                      "id": 1162,
                       "name": "uploaderEOA",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1132,
+                      "referencedDeclaration": 1126,
                       "src": "1164:11:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -3400,14 +3400,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1170,
+                  "id": 1164,
                   "nodeType": "ExpressionStatement",
                   "src": "1132:43:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1176,
+                    "id": 1170,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3418,25 +3418,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1171,
+                          "id": 1165,
                           "name": "trackStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1096,
+                          "referencedDeclaration": 1090,
                           "src": "1185:15:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                             "typeString": "mapping(address => struct Tracks.Track storage ref)"
                           }
                         },
-                        "id": 1173,
+                        "id": 1167,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1172,
+                          "id": 1166,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1114,
+                          "referencedDeclaration": 1108,
                           "src": "1201:2:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3450,18 +3450,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1185:19:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Track_$1092_storage",
+                          "typeIdentifier": "t_struct$_Track_$1086_storage",
                           "typeString": "struct Tracks.Track storage ref"
                         }
                       },
-                      "id": 1174,
+                      "id": 1168,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isTrack",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1091,
+                      "referencedDeclaration": 1085,
                       "src": "1185:27:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -3473,7 +3473,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 1175,
+                      "id": 1169,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3494,7 +3494,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1177,
+                  "id": 1171,
                   "nodeType": "ExpressionStatement",
                   "src": "1185:32:10"
                 },
@@ -3504,11 +3504,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1181,
+                        "id": 1175,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1114,
+                        "referencedDeclaration": 1108,
                         "src": "1258:2:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3525,18 +3525,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1178,
+                        "id": 1172,
                         "name": "trackAddressList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1099,
+                        "referencedDeclaration": 1093,
                         "src": "1236:16:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 1180,
+                      "id": 1174,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3550,7 +3550,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 1182,
+                    "id": 1176,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3564,7 +3564,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1183,
+                  "id": 1177,
                   "nodeType": "ExpressionStatement",
                   "src": "1236:25:10"
                 },
@@ -3575,7 +3575,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "547261636b2063726561746564212121",
-                        "id": 1185,
+                        "id": 1179,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3598,18 +3598,18 @@
                           "typeString": "literal_string \"Track created!!!\""
                         }
                       ],
-                      "id": 1184,
+                      "id": 1178,
                       "name": "LogTrack",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1246,
+                      "referencedDeclaration": 1240,
                       "src": "1285:8:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 1186,
+                    "id": 1180,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3623,29 +3623,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1187,
+                  "id": 1181,
                   "nodeType": "EmitStatement",
                   "src": "1280:33:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1189,
+            "id": 1183,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTrack",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1121,
+              "id": 1115,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1114,
+                  "id": 1108,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "665:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3654,7 +3654,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1113,
+                    "id": 1107,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "665:7:10",
@@ -3669,10 +3669,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1116,
+                  "id": 1110,
                   "name": "isrc",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "677:9:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3681,7 +3681,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1115,
+                    "id": 1109,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "677:4:10",
@@ -3695,10 +3695,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1118,
+                  "id": 1112,
                   "name": "title",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "688:19:10",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3707,7 +3707,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1117,
+                    "id": 1111,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "688:6:10",
@@ -3721,10 +3721,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1120,
+                  "id": 1114,
                   "name": "revenueTotal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1189,
+                  "scope": 1183,
                   "src": "709:17:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3733,7 +3733,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1119,
+                    "id": 1113,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "709:4:10",
@@ -3749,12 +3749,12 @@
               "src": "664:63:10"
             },
             "returnParameters": {
-              "id": 1122,
+              "id": 1116,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "734:0:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "644:697:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3762,7 +3762,7 @@
           },
           {
             "body": {
-              "id": 1197,
+              "id": 1191,
               "nodeType": "Block",
               "src": "1408:47:10",
               "statements": [
@@ -3771,18 +3771,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1194,
+                      "id": 1188,
                       "name": "trackAddressList",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1099,
+                      "referencedDeclaration": 1093,
                       "src": "1425:16:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 1195,
+                    "id": 1189,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -3796,36 +3796,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1193,
-                  "id": 1196,
+                  "functionReturnParameters": 1187,
+                  "id": 1190,
                   "nodeType": "Return",
                   "src": "1418:30:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1198,
+            "id": 1192,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTrackCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1190,
+              "id": 1184,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1373:2:10"
             },
             "returnParameters": {
-              "id": 1193,
+              "id": 1187,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1192,
+                  "id": 1186,
                   "name": "count",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1198,
+                  "scope": 1192,
                   "src": "1396:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3834,7 +3834,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1191,
+                    "id": 1185,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1396:4:10",
@@ -3849,7 +3849,7 @@
               ],
               "src": "1395:12:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "1351:104:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -3857,7 +3857,7 @@
           },
           {
             "body": {
-              "id": 1241,
+              "id": 1235,
               "nodeType": "Block",
               "src": "1565:277:10",
               "statements": [
@@ -3871,25 +3871,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1215,
+                            "id": 1209,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1583:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1217,
+                          "id": 1211,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1216,
+                            "id": 1210,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1599:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -3903,18 +3903,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1583:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1218,
+                        "id": 1212,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "id",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1081,
+                        "referencedDeclaration": 1075,
                         "src": "1583:22:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3927,25 +3927,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1219,
+                            "id": 1213,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1623:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1221,
+                          "id": 1215,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1220,
+                            "id": 1214,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1639:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -3959,18 +3959,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1623:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1222,
+                        "id": 1216,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "isrc",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1083,
+                        "referencedDeclaration": 1077,
                         "src": "1623:24:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -3983,25 +3983,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1223,
+                            "id": 1217,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1665:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1225,
+                          "id": 1219,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1224,
+                            "id": 1218,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1681:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -4015,18 +4015,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1665:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1226,
+                        "id": 1220,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "title",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1085,
+                        "referencedDeclaration": 1079,
                         "src": "1665:25:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -4039,25 +4039,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1227,
+                            "id": 1221,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1708:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1229,
+                          "id": 1223,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1228,
+                            "id": 1222,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1724:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -4071,18 +4071,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1708:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1230,
+                        "id": 1224,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "revenueTotal",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1087,
+                        "referencedDeclaration": 1081,
                         "src": "1708:32:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4095,25 +4095,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1231,
+                            "id": 1225,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1758:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1233,
+                          "id": 1227,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1232,
+                            "id": 1226,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1774:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -4127,18 +4127,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1758:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1234,
+                        "id": 1228,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "uploaderEOA",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1089,
+                        "referencedDeclaration": 1083,
                         "src": "1758:31:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -4151,25 +4151,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1235,
+                            "id": 1229,
                             "name": "trackStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1096,
+                            "referencedDeclaration": 1090,
                             "src": "1807:15:10",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1092_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Track_$1086_storage_$",
                               "typeString": "mapping(address => struct Tracks.Track storage ref)"
                             }
                           },
-                          "id": 1237,
+                          "id": 1231,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1236,
+                            "id": 1230,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1200,
+                            "referencedDeclaration": 1194,
                             "src": "1823:2:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -4183,18 +4183,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1807:19:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Track_$1092_storage",
+                            "typeIdentifier": "t_struct$_Track_$1086_storage",
                             "typeString": "struct Tracks.Track storage ref"
                           }
                         },
-                        "id": 1238,
+                        "id": 1232,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "isTrack",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1091,
+                        "referencedDeclaration": 1085,
                         "src": "1807:27:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -4202,7 +4202,7 @@
                         }
                       }
                     ],
-                    "id": 1239,
+                    "id": 1233,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -4215,30 +4215,30 @@
                       "typeString": "tuple(address,uint256,string storage ref,uint256,address,bool)"
                     }
                   },
-                  "functionReturnParameters": 1214,
-                  "id": 1240,
+                  "functionReturnParameters": 1208,
+                  "id": 1234,
                   "nodeType": "Return",
                   "src": "1575:260:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 1242,
+            "id": 1236,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTrack",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1201,
+              "id": 1195,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1200,
+                  "id": 1194,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1483:10:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4247,7 +4247,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1199,
+                    "id": 1193,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1483:7:10",
@@ -4264,15 +4264,15 @@
               "src": "1482:12:10"
             },
             "returnParameters": {
-              "id": 1214,
+              "id": 1208,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1203,
+                  "id": 1197,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1515:7:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4281,7 +4281,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1202,
+                    "id": 1196,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1515:7:10",
@@ -4296,10 +4296,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1205,
+                  "id": 1199,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1524:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4308,7 +4308,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1204,
+                    "id": 1198,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1524:4:10",
@@ -4322,10 +4322,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1207,
+                  "id": 1201,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1530:13:10",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4334,7 +4334,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1206,
+                    "id": 1200,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1530:6:10",
@@ -4348,10 +4348,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1209,
+                  "id": 1203,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1545:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4360,7 +4360,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1208,
+                    "id": 1202,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1545:4:10",
@@ -4374,10 +4374,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1211,
+                  "id": 1205,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1551:7:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4386,7 +4386,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1210,
+                    "id": 1204,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1551:7:10",
@@ -4401,10 +4401,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1213,
+                  "id": 1207,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1242,
+                  "scope": 1236,
                   "src": "1559:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4413,7 +4413,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1212,
+                    "id": 1206,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1559:4:10",
@@ -4428,7 +4428,7 @@
               ],
               "src": "1514:50:10"
             },
-            "scope": 1247,
+            "scope": 1241,
             "src": "1465:377:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -4437,20 +4437,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1246,
+            "id": 1240,
             "name": "LogTrack",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1245,
+              "id": 1239,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1244,
+                  "id": 1238,
                   "indexed": false,
                   "name": "message",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1246,
+                  "scope": 1240,
                   "src": "1862:14:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4459,7 +4459,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1243,
+                    "id": 1237,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1862:6:10",
@@ -4477,7 +4477,7 @@
             "src": "1847:31:10"
           }
         ],
-        "scope": 1248,
+        "scope": 1242,
         "src": "104:1776:10"
       }
     ],
@@ -4497,8 +4497,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x4b4664CfBFbEA90D59333386b64c1a0a0B48AbF2",
-      "transactionHash": "0xe79b4afd62668b546fd44162a10e5199072058de63d36ad2c9288623644c9b82"
+      "address": "0xFE52C9605E2fB40648f907db164A9ae487Dc3cf4",
+      "transactionHash": "0x818f7563b8a6816c7a6dec3002a7f33125d37e7a5950cce56747a9a94280d8d1"
     },
     "1551897836200": {
       "events": {},
@@ -4520,7 +4520,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-04-02T21:43:14.531Z",
+  "updatedAt": "2019-04-02T22:13:43.881Z",
   "devdoc": {
     "methods": {}
   },

@@ -43,9 +43,7 @@ contract Agreements{
         //This is just some testing
         agreementsByEmitter[traderEmitterId].emitter=traderEmitterId;
         agreementsByEmitter[traderEmitterId].agreements.push(id);//This is for query the agreement by receiver
-       
-        percentageReceiver = percentageReceiver/100;
-        
+               
         Traders tradersContract= Traders(tradersContractAddr);
         Tracks tracksContract = Tracks(tracksContractAddr);
 

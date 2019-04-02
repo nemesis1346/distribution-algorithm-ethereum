@@ -27,6 +27,7 @@ async function distribution(trackId, uploaderId, datetime, fromAddress, gasLimit
 module.exports.distribution = distribution;
 
 async function evaluateReceivers(tracKId, emitterId, revenueTotalInput, datetime, previousReceiverId, previousAgreement, uploaderId, fromAddress, gasLimit) {
+    let shareTotal = 1;
 
     let emitter = await traderEndpoint.getTrader(
         emitterId,
@@ -55,5 +56,27 @@ async function evaluateReceivers(tracKId, emitterId, revenueTotalInput, datetime
     console.log('LIST OF AGREEMENTS');
     console.log(agreements);
 
+    let receiverList = [];
+    if (agreements && agreements.length > 0) {
+        for (const element of agreements) {
+
+            let currentAgreement = await agreementEndpoint.getAgreement(
+                element,
+                 fromAddress, 
+                  '6721975');
+                
+            receiverList.push(currentAgreement);
+            
+            console.log(currentAgreement.percentage);
+            shareTotal = parseFloat(shareTotal) - parseFloat(currentAgreement.percentage);
+            if (shareTotal < 0) {
+                throw ("Total percentage exceded permited share");
+            }
+            let receiverShareAmmount = parseFloat(revenueTotalInput) * parseFloat(currentAgreement.percentage);
+            console.log('RECEIVER SHARE AMMOUNT');
+            console.log(receiverShareAmmount);
+        }
+        console.log(receiverList);
+    }
 }
 module.exports.evaluateReceivers = evaluateReceivers;
