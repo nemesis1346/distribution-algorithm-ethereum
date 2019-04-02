@@ -4,13 +4,13 @@ class AgreementModel {
         traderEmiterId,
         traderReceiverId,
         percentage,
-        isrc,
+        trackId,
     ) {
         this.agreementId = agreementId;
         this.traderEmiterId = traderEmiterId;
         this.traderReceiverId = traderReceiverId;
         this.percentage = percentage;
-        this.isrc=isrc;
+        this.trackId=trackId;
     }
 }
 

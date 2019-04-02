@@ -51,3 +51,9 @@ async function getTrack(trackId, fromAddress, gasLimit) {
   return trackModel;
 }
 module.exports.getTrack = getTrack;
+
+async function getTrackContractAddress(){
+  const tracksInterface = await TracksContract.deployed();
+  return tracksInterface.address;
+}
+module.exports.getTrackContractAddress=getTrackContractAddress;

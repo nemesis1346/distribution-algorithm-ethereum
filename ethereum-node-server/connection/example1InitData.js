@@ -3,6 +3,7 @@ const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:
 const trackEndpoint = require('./trackEndpoint.js');
 const traderEndpoint = require('./traderEndpoint.js');
 const tokenAccountEndpoint = require('./tokenAccountEndpoint.js');
+const agreementEndpoint = require('./agreementEndpoint.js');
 async function example1() {
     try {
         const accounts = await web3Provider.eth.accounts;
@@ -104,6 +105,25 @@ async function example1() {
         console.log('TRADER TRADER 4 CREATION');
         console.log(trader4Result);
 
+        await agreementEndpoint.createAgreement(
+            agreement1Id,
+            trader1,
+            trader2,
+            25,
+            trackId,
+            await traderEndpoint.getTraderContractAddress(),
+            await trackEndpoint.getTrackContractAddress(),
+            trader1,
+            '6721975'
+        );
+
+        let agreement1Result  = await agreementEndpoint.getAgreement(
+            agreement1Id,
+            trader1,
+            '6721975'
+        );
+        console.log('TRADER AGREEMENT 1 CREATION');
+        console.log(agreement1Result);
     } catch (error) {
         console.log(error)
     }

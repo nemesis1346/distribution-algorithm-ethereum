@@ -10,44 +10,59 @@ const AgreementsContract = contractTruffle(agreements_artifact);
 AgreementsContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
 
-async function createAgreement(trackId, isrc, title, revenue, fromAddress, gasLimit) {
-  try {
-    const tracksInterface = await TracksContract.deployed();
+async function createAgreement(agreementId, emitterId, receiverId, percentage, trackId, tradersCtrAddr, tracksCtrAddr, fromAddress, gasLimit) {
+    try {
+        const agreementsInterface = await AgreementsContract.deployed();
 
-    await tracksInterface.createTrack(
-      trackId,
-      isrc,
-      title,
-      revenue,
-      {
-        from: fromAddress,
-        gasLimit: gasLimit
-      });
-    console.log('TRACK CREATION SUCCESFUL');
+        await agreementsInterface.createAgreement(
+            agreementId,
+            emitterId,
+            receiverId,
+            percentage,
+            trackId,
+            tradersCtrAddr,
+            tracksCtrAddr,
+            {
+                from: fromAddress,
+                gasLimit: gasLimit
+            });
+        console.log('AGREEMENT CREATION SUCCESFUL');
 
-  } catch (error) {
-    console.log(error)
-  }
+    } catch (error) {
+        console.log(error)
+    }
 }
-module.exports.createTrack = createTrack;
+module.exports.createAgreement = createAgreement;
 
-async function getTrack(trackId, fromAddress, gasLimit) {
-  let agreementModel = new AgreementModel(null, null, null,null,null);
-  const tracksInterface = await TracksContract.deployed();
-  let trackResult = await tracksInterface.getTrack(
-    trackId,
-    {
-      from: fromAddress,
-      gasLimit: gasLimit
-    });
-  trackModel.trackId = trackResult[0];
-  trackModel.isrc = trackResult[1].toString();
-  trackModel.title = trackResult[2];
-  trackModel.revenueTotal = trackResult[3].toString();
-  trackModel.uploaderId = trackResult[4];
-  console.log('TRACK RESULT:');
-  console.log(trackResult);
+async function getAgreement(agreementId, fromAddress, gasLimit) {
+    let agreementModel = new AgreementModel(null, null, null, null, null);
+    const agreementInterface = await AgreementsContract.deployed();
+    let agreementResult = await agreementInterface.getAgreement(
+        agreementId,
+        {
+            from: fromAddress,
+            gasLimit: gasLimit
+        });
+    agreementModel.agreementId = agreementResult[0];
+    agreementModel.traderEmiterId = agreementResult[1];
+    agreementModel.traderReceiverId = agreementResult[2];
+    agreementModel.percentage = agreementResult[3].toString();
+    agreementModel.trackId = agreementResult[4];
+    console.log('TRACK RESULT:');
+    console.log(agreementResult);
 
-  return trackModel;
+    return agreementModel;
 }
-module.exports.getTrack = getTrack;
+module.exports.getAgreement = getAgreement;
+
+async function getAgreementsByEmitter(emitterId) {
+    const agreementInterface = await AgreementsContract.deployed();
+    let agreementsResult = await agreementInterface.getAgreementsByEmitter(
+        emitterId,
+        {
+            from: fromAddress,
+            gasLimit: gasLimit
+        });
+    return agreementsResult;
+}
+module.exports.getAgreementsByEmitter = getAgreementsByEmitter;
