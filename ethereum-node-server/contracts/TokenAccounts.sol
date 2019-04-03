@@ -39,7 +39,14 @@ contract TokenAccounts{
         tokenAccountStrucList[tokenAccountId].balanceDisabled, 
         tokenAccountStrucList[tokenAccountId].traderEOA);
     }
-    
+    function addEnabledBalance(address tokenAccountId, uint value)public returns(bool){
+        tokenAccountStrucList[tokenAccountId].balanceEnabled+=value;
+        return true;
+    }
+    function addDisabledBalance(address tokenAccountId, uint value) public returns(bool){
+        tokenAccountStrucList[tokenAccountId].balanceDisabled+= value;
+        return true;
+    }
     event stringLogs(string stringLogs);
 
 }    

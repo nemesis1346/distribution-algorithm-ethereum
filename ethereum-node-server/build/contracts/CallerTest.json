@@ -13,8 +13,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x2b86c5a6"
+      "type": "function"
     },
     {
       "anonymous": false,
@@ -26,8 +25,7 @@
         }
       ],
       "name": "stringLogs",
-      "type": "event",
-      "signature": "0x7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d46"
+      "type": "event"
     },
     {
       "anonymous": false,
@@ -39,8 +37,7 @@
         }
       ],
       "name": "intLogs",
-      "type": "event",
-      "signature": "0x82a5e81cde1835f4f28f4fdaac7e5ea0827d449ba9eb096e75cd3626cf3ec27f"
+      "type": "event"
     },
     {
       "constant": false,
@@ -49,8 +46,7 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0x17f436d9"
+      "type": "function"
     }
   ],
   "bytecode": "0x608060405234801561001057600080fd5b5061148b806100206000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806317f436d9146100515780632b86c5a614610068575b600080fd5b34801561005d57600080fd5b506100666100bf565b005b34801561007457600080fd5b5061007d610878565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100c761089d565b604051809103906000f0801580156100e3573d6000803e3d6000fd5b506000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663ac58867560026040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050602060405180830381600087803b1580156101b457600080fd5b505af11580156101c8573d6000803e3d6000fd5b505050506040513d60208110156101de57600080fd5b81019080805190602001909291905050505060008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16638b84925b6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561027757600080fd5b505af115801561028b573d6000803e3d6000fd5b505050506040513d60208110156102a157600080fd5b810190808051906020019092919050505090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16637fcaf6666040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180806020018281038252600d8152602001807f4d45535341474520494e50555400000000000000000000000000000000000000815250602001915050600060405180830381600087803b15801561037557600080fd5b505af1158015610389573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060208110156103b357600080fd5b8101908080516401000000008111156103cb57600080fd5b828101905060208101848111156103e157600080fd5b81518560018202830111640100000000821117156103fe57600080fd5b50509291905050505060606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166389ea642f6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b15801561048e57600080fd5b505af11580156104a2573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060208110156104cc57600080fd5b8101908080516401000000008111156104e457600080fd5b828101905060208101848111156104fa57600080fd5b815185600182028301116401000000008211171561051757600080fd5b505092919050505090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663b56ac1f2602c6040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018082815260200180602001828103825260118152602001807f74686973206973206120746573746e657400000000000000000000000000000081525060200192505050600060405180830381600087803b1580156105eb57600080fd5b505af11580156105ff573d6000803e3d6000fd5b50505050600060606000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663cdfa8495602c6040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15801561069857600080fd5b505af11580156106ac573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060408110156106d657600080fd5b810190808051906020019092919080516401000000008111156106f857600080fd5b8281019050602081018481111561070e57600080fd5b815185600182028301116401000000008211171561072b57600080fd5b5050929190505050915091507f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d466040518080602001828103825260068152602001807f544553542032000000000000000000000000000000000000000000000000000081525060200191505060405180910390a17f82a5e81cde1835f4f28f4fdaac7e5ea0827d449ba9eb096e75cd3626cf3ec27f826040518082815260200191505060405180910390a17f7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d46816040518080602001828103825283818151815260200191508051906020019080838360005b8381101561083857808201518184015260208101905061081d565b50505050905090810190601f1680156108655780820380516001836020036101000a031916815260200191505b509250505060405180910390a150505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b604051610bb2806108ae8339019056fe6080604052600080556040805190810160405280600481526020017f484f4c410000000000000000000000000000000000000000000000000000000081525060019080519060200190610053929190610066565b5034801561006057600080fd5b5061010b565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a757805160ff19168380011785556100d5565b828001600101855582156100d5579182015b828111156100d45782518255916020019190600101906100b9565b5b5090506100e291906100e6565b5090565b61010891905b808211156101045760008160009055506001016100ec565b5090565b90565b610a988061011a6000396000f3fe608060405260043610610099576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063418f3afa1461009e578063553419381461012e5780637fcaf666146101e957806389ea642f1461032a5780638b84925b146103ba578063ac588675146103e5578063b56ac1f214610434578063cdfa849514610506578063e974cdb1146105b4575b600080fd5b3480156100aa57600080fd5b506100b36105df565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f35780820151818401526020810190506100d8565b50505050905090810190601f1680156101205780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561013a57600080fd5b506101676004803603602081101561015157600080fd5b810190808035906020019092919050505061067d565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b838110156101ad578082015181840152602081019050610192565b50505050905090810190601f1680156101da5780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b3480156101f557600080fd5b506102af6004803603602081101561020c57600080fd5b810190808035906020019064010000000081111561022957600080fd5b82018360208201111561023b57600080fd5b8035906020019184600183028401116401000000008311171561025d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610739565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102ef5780820151818401526020810190506102d4565b50505050905090810190601f16801561031c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561033657600080fd5b5061033f610757565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561037f578082015181840152602081019050610364565b50505050905090810190601f1680156103ac5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103c657600080fd5b506103cf6107f9565b6040518082815260200191505060405180910390f35b3480156103f157600080fd5b5061041e6004803603602081101561040857600080fd5b8101908080359060200190929190505050610802565b6040518082815260200191505060405180910390f35b34801561044057600080fd5b506105046004803603604081101561045757600080fd5b81019080803590602001909291908035906020019064010000000081111561047e57600080fd5b82018360208201111561049057600080fd5b803590602001918460018302840111640100000000831117156104b257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610815565b005b6105326004803603602081101561051c57600080fd5b810190808035906020019092919050505061086b565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561057857808201518184015260208101905061055d565b50505050905090810190601f1680156105a55780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b3480156105c057600080fd5b506105c9610941565b6040518082815260200191505060405180910390f35b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106755780601f1061064a57610100808354040283529160200191610675565b820191906000526020600020905b81548152906001019060200180831161065857829003601f168201915b505050505081565b6002602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561072f5780601f106107045761010080835404028352916020019161072f565b820191906000526020600020905b81548152906001019060200180831161071257829003601f168201915b5050505050905082565b60608160019080519060200190610751929190610947565b50919050565b606060018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107ef5780601f106107c4576101008083540402835291602001916107ef565b820191906000526020600020905b8154815290600101906020018083116107d257829003601f168201915b5050505050905090565b60008054905090565b6000816000819055506000549050919050565b604080519081016040528083815260200182815250600260008481526020019081526020016000206000820151816000015560208201518160010190805190602001906108639291906109c7565b509050505050565b60006060600260008481526020019081526020016000206000015460026000858152602001908152602001600020600101808054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109315780601f1061090657610100808354040283529160200191610931565b820191906000526020600020905b81548152906001019060200180831161091457829003601f168201915b5050505050905091509150915091565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061098857805160ff19168380011785556109b6565b828001600101855582156109b6579182015b828111156109b557825182559160200191906001019061099a565b5b5090506109c39190610a47565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a0857805160ff1916838001178555610a36565b82800160010185558215610a36579182015b82811115610a35578251825591602001919060010190610a1a565b5b509050610a439190610a47565b5090565b610a6991905b80821115610a65576000816000905550600101610a4d565b5090565b9056fea165627a7a72305820cb350df9bc9e3cb09b5d7968fef3e3db0f3cb4b804cb5bd5630ac94b669f72c10029a165627a7a7230582057308ebad3d8f60bb0555b4b9f201699f4c31ff5d4e026b5f475c0bfc284da890029",
@@ -63,14 +59,14 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/CallerTest.sol",
     "exportedSymbols": {
       "CallerTest": [
-        641
+        652
       ]
     },
-    "id": 642,
+    "id": 653,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 567,
+        "id": 578,
         "literals": [
           "solidity",
           "^",
@@ -83,10 +79,10 @@
       {
         "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/CalleeTest.sol",
         "file": "./CalleeTest.sol",
-        "id": 568,
+        "id": 579,
         "nodeType": "ImportDirective",
-        "scope": 642,
-        "sourceUnit": 389,
+        "scope": 653,
+        "sourceUnit": 400,
         "src": "24:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -94,40 +90,40 @@
       {
         "baseContracts": [],
         "contractDependencies": [
-          388
+          399
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 641,
+        "id": 652,
         "linearizedBaseContracts": [
-          641
+          652
         ],
         "name": "CallerTest",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 570,
+            "id": 581,
             "name": "calleeTestInterface",
             "nodeType": "VariableDeclaration",
-            "scope": 641,
+            "scope": 652,
             "src": "144:37:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CalleeTest_$388",
+              "typeIdentifier": "t_contract$_CalleeTest_$399",
               "typeString": "contract CalleeTest"
             },
             "typeName": {
               "contractScope": null,
-              "id": 569,
+              "id": 580,
               "name": "CalleeTest",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 388,
+              "referencedDeclaration": 399,
               "src": "144:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CalleeTest_$388",
+                "typeIdentifier": "t_contract$_CalleeTest_$399",
                 "typeString": "contract CalleeTest"
               }
             },
@@ -136,28 +132,28 @@
           },
           {
             "body": {
-              "id": 631,
+              "id": 642,
               "nodeType": "Block",
               "src": "217:611:3",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 577,
+                    "id": 588,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 573,
+                      "id": 584,
                       "name": "calleeTestInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 570,
+                      "referencedDeclaration": 581,
                       "src": "227:19:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$388",
+                        "typeIdentifier": "t_contract$_CalleeTest_$399",
                         "typeString": "contract CalleeTest"
                       }
                     },
@@ -168,7 +164,7 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 575,
+                        "id": 586,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -176,23 +172,23 @@
                         "nodeType": "NewExpression",
                         "src": "249:14:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$388_$",
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$399_$",
                           "typeString": "function () returns (contract CalleeTest)"
                         },
                         "typeName": {
                           "contractScope": null,
-                          "id": 574,
+                          "id": 585,
                           "name": "CalleeTest",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 388,
+                          "referencedDeclaration": 399,
                           "src": "253:10:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_CalleeTest_$388",
+                            "typeIdentifier": "t_contract$_CalleeTest_$399",
                             "typeString": "contract CalleeTest"
                           }
                         }
                       },
-                      "id": 576,
+                      "id": 587,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -202,17 +198,17 @@
                       "nodeType": "FunctionCall",
                       "src": "249:16:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$388",
+                        "typeIdentifier": "t_contract$_CalleeTest_$399",
                         "typeString": "contract CalleeTest"
                       }
                     },
                     "src": "227:38:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CalleeTest_$388",
+                      "typeIdentifier": "t_contract$_CalleeTest_$399",
                       "typeString": "contract CalleeTest"
                     }
                   },
-                  "id": 578,
+                  "id": 589,
                   "nodeType": "ExpressionStatement",
                   "src": "227:38:3"
                 },
@@ -223,7 +219,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "32",
-                        "id": 582,
+                        "id": 593,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -248,32 +244,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 579,
+                        "id": 590,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "284:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 581,
+                      "id": 592,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 342,
+                      "referencedDeclaration": 353,
                       "src": "284:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) external returns (uint256)"
                       }
                     },
-                    "id": 583,
+                    "id": 594,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -287,21 +283,21 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 584,
+                  "id": 595,
                   "nodeType": "ExpressionStatement",
                   "src": "284:33:3"
                 },
                 {
                   "assignments": [
-                    586
+                    597
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 586,
+                      "id": 597,
                       "name": "test2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "327:10:3",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -310,7 +306,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 585,
+                        "id": 596,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "327:4:3",
@@ -323,7 +319,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 590,
+                  "id": 601,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
@@ -331,32 +327,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 587,
+                        "id": 598,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "340:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 588,
+                      "id": 599,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 328,
+                      "referencedDeclaration": 339,
                       "src": "340:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
                         "typeString": "function () external returns (uint256)"
                       }
                     },
-                    "id": 589,
+                    "id": 600,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -380,7 +376,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4d45535341474520494e505554",
-                        "id": 594,
+                        "id": 605,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -405,32 +401,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 591,
+                        "id": 602,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "391:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 593,
+                      "id": 604,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 320,
+                      "referencedDeclaration": 331,
                       "src": "391:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) external returns (string memory)"
                       }
                     },
-                    "id": 595,
+                    "id": 606,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -444,21 +440,21 @@
                       "typeString": "string memory"
                     }
                   },
-                  "id": 596,
+                  "id": 607,
                   "nodeType": "ExpressionStatement",
                   "src": "391:46:3"
                 },
                 {
                   "assignments": [
-                    598
+                    609
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 598,
+                      "id": 609,
                       "name": "stringTest2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "447:25:3",
                       "stateVariable": false,
                       "storageLocation": "memory",
@@ -467,7 +463,7 @@
                         "typeString": "string"
                       },
                       "typeName": {
-                        "id": 597,
+                        "id": 608,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
                         "src": "447:6:3",
@@ -480,7 +476,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 602,
+                  "id": 613,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
@@ -488,32 +484,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 599,
+                        "id": 610,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "473:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 600,
+                      "id": 611,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 308,
+                      "referencedDeclaration": 319,
                       "src": "473:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_string_memory_ptr_$",
                         "typeString": "function () external returns (string memory)"
                       }
                     },
-                    "id": 601,
+                    "id": 612,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -537,7 +533,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "3434",
-                        "id": 606,
+                        "id": 617,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -555,7 +551,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "74686973206973206120746573746e6574",
-                        "id": 607,
+                        "id": 618,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -584,32 +580,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 603,
+                        "id": 614,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "523:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 605,
+                      "id": 616,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 379,
+                      "referencedDeclaration": 390,
                       "src": "523:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (uint256,string memory) external"
                       }
                     },
-                    "id": 608,
+                    "id": 619,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -623,22 +619,22 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 609,
+                  "id": 620,
                   "nodeType": "ExpressionStatement",
                   "src": "523:53:3"
                 },
                 {
                   "assignments": [
-                    611,
-                    613
+                    622,
+                    624
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 611,
+                      "id": 622,
                       "name": "id",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "587:7:3",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -647,7 +643,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 610,
+                        "id": 621,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "587:4:3",
@@ -661,10 +657,10 @@
                     },
                     {
                       "constant": false,
-                      "id": 613,
+                      "id": 624,
                       "name": "name",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "596:18:3",
                       "stateVariable": false,
                       "storageLocation": "memory",
@@ -673,7 +669,7 @@
                         "typeString": "string"
                       },
                       "typeName": {
-                        "id": 612,
+                        "id": 623,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
                         "src": "596:6:3",
@@ -686,14 +682,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 618,
+                  "id": 629,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
                         "hexValue": "3434",
-                        "id": 616,
+                        "id": 627,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -718,32 +714,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 614,
+                        "id": 625,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "616:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 615,
+                      "id": 626,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 362,
+                      "referencedDeclaration": 373,
                       "src": "616:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_payable$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$",
                         "typeString": "function (uint256) payable external returns (uint256,string memory)"
                       }
                     },
-                    "id": 617,
+                    "id": 628,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -767,7 +763,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "544553542032",
-                        "id": 620,
+                        "id": 631,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -790,18 +786,18 @@
                           "typeString": "literal_string \"TEST 2\""
                         }
                       ],
-                      "id": 619,
+                      "id": 630,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 636,
+                      "referencedDeclaration": 647,
                       "src": "673:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 621,
+                    "id": 632,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -815,7 +811,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 622,
+                  "id": 633,
                   "nodeType": "EmitStatement",
                   "src": "668:25:3"
                 },
@@ -825,11 +821,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 624,
+                        "id": 635,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 611,
+                        "referencedDeclaration": 622,
                         "src": "787:2:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -844,18 +840,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 623,
+                      "id": 634,
                       "name": "intLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 640,
+                      "referencedDeclaration": 651,
                       "src": "779:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 625,
+                    "id": 636,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -869,7 +865,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 626,
+                  "id": 637,
                   "nodeType": "EmitStatement",
                   "src": "774:16:3"
                 },
@@ -879,11 +875,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 628,
+                        "id": 639,
                         "name": "name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 613,
+                        "referencedDeclaration": 624,
                         "src": "816:4:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -898,18 +894,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 627,
+                      "id": 638,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 636,
+                      "referencedDeclaration": 647,
                       "src": "805:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 629,
+                    "id": 640,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -923,32 +919,32 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 630,
+                  "id": 641,
                   "nodeType": "EmitStatement",
                   "src": "800:21:3"
                 }
               ]
             },
             "documentation": null,
-            "id": 632,
+            "id": 643,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTest2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 571,
+              "id": 582,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "209:2:3"
             },
             "returnParameters": {
-              "id": 572,
+              "id": 583,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "217:0:3"
             },
-            "scope": 641,
+            "scope": 652,
             "src": "192:636:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -957,20 +953,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 636,
+            "id": 647,
             "name": "stringLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 635,
+              "id": 646,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 634,
+                  "id": 645,
                   "indexed": false,
                   "name": "stringLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 636,
+                  "scope": 647,
                   "src": "851:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -979,7 +975,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 633,
+                    "id": 644,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "851:6:3",
@@ -999,20 +995,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 640,
+            "id": 651,
             "name": "intLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 639,
+              "id": 650,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 638,
+                  "id": 649,
                   "indexed": false,
                   "name": "intLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 640,
+                  "scope": 651,
                   "src": "889:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1021,7 +1017,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 637,
+                    "id": 648,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "889:4:3",
@@ -1039,7 +1035,7 @@
             "src": "875:28:3"
           }
         ],
-        "scope": 642,
+        "scope": 653,
         "src": "119:786:3"
       }
     ],
@@ -1049,14 +1045,14 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/CallerTest.sol",
     "exportedSymbols": {
       "CallerTest": [
-        641
+        652
       ]
     },
-    "id": 642,
+    "id": 653,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 567,
+        "id": 578,
         "literals": [
           "solidity",
           "^",
@@ -1069,10 +1065,10 @@
       {
         "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/CalleeTest.sol",
         "file": "./CalleeTest.sol",
-        "id": 568,
+        "id": 579,
         "nodeType": "ImportDirective",
-        "scope": 642,
-        "sourceUnit": 389,
+        "scope": 653,
+        "sourceUnit": 400,
         "src": "24:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1080,40 +1076,40 @@
       {
         "baseContracts": [],
         "contractDependencies": [
-          388
+          399
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 641,
+        "id": 652,
         "linearizedBaseContracts": [
-          641
+          652
         ],
         "name": "CallerTest",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 570,
+            "id": 581,
             "name": "calleeTestInterface",
             "nodeType": "VariableDeclaration",
-            "scope": 641,
+            "scope": 652,
             "src": "144:37:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CalleeTest_$388",
+              "typeIdentifier": "t_contract$_CalleeTest_$399",
               "typeString": "contract CalleeTest"
             },
             "typeName": {
               "contractScope": null,
-              "id": 569,
+              "id": 580,
               "name": "CalleeTest",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 388,
+              "referencedDeclaration": 399,
               "src": "144:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CalleeTest_$388",
+                "typeIdentifier": "t_contract$_CalleeTest_$399",
                 "typeString": "contract CalleeTest"
               }
             },
@@ -1122,28 +1118,28 @@
           },
           {
             "body": {
-              "id": 631,
+              "id": 642,
               "nodeType": "Block",
               "src": "217:611:3",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 577,
+                    "id": 588,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 573,
+                      "id": 584,
                       "name": "calleeTestInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 570,
+                      "referencedDeclaration": 581,
                       "src": "227:19:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$388",
+                        "typeIdentifier": "t_contract$_CalleeTest_$399",
                         "typeString": "contract CalleeTest"
                       }
                     },
@@ -1154,7 +1150,7 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 575,
+                        "id": 586,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1162,23 +1158,23 @@
                         "nodeType": "NewExpression",
                         "src": "249:14:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$388_$",
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_CalleeTest_$399_$",
                           "typeString": "function () returns (contract CalleeTest)"
                         },
                         "typeName": {
                           "contractScope": null,
-                          "id": 574,
+                          "id": 585,
                           "name": "CalleeTest",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 388,
+                          "referencedDeclaration": 399,
                           "src": "253:10:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_CalleeTest_$388",
+                            "typeIdentifier": "t_contract$_CalleeTest_$399",
                             "typeString": "contract CalleeTest"
                           }
                         }
                       },
-                      "id": 576,
+                      "id": 587,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1188,17 +1184,17 @@
                       "nodeType": "FunctionCall",
                       "src": "249:16:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CalleeTest_$388",
+                        "typeIdentifier": "t_contract$_CalleeTest_$399",
                         "typeString": "contract CalleeTest"
                       }
                     },
                     "src": "227:38:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CalleeTest_$388",
+                      "typeIdentifier": "t_contract$_CalleeTest_$399",
                       "typeString": "contract CalleeTest"
                     }
                   },
-                  "id": 578,
+                  "id": 589,
                   "nodeType": "ExpressionStatement",
                   "src": "227:38:3"
                 },
@@ -1209,7 +1205,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "32",
-                        "id": 582,
+                        "id": 593,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1234,32 +1230,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 579,
+                        "id": 590,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "284:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 581,
+                      "id": 592,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 342,
+                      "referencedDeclaration": 353,
                       "src": "284:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) external returns (uint256)"
                       }
                     },
-                    "id": 583,
+                    "id": 594,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1273,21 +1269,21 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 584,
+                  "id": 595,
                   "nodeType": "ExpressionStatement",
                   "src": "284:33:3"
                 },
                 {
                   "assignments": [
-                    586
+                    597
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 586,
+                      "id": 597,
                       "name": "test2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "327:10:3",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1296,7 +1292,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 585,
+                        "id": 596,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "327:4:3",
@@ -1309,7 +1305,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 590,
+                  "id": 601,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
@@ -1317,32 +1313,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 587,
+                        "id": 598,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "340:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 588,
+                      "id": 599,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getInteger",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 328,
+                      "referencedDeclaration": 339,
                       "src": "340:30:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
                         "typeString": "function () external returns (uint256)"
                       }
                     },
-                    "id": 589,
+                    "id": 600,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1366,7 +1362,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4d45535341474520494e505554",
-                        "id": 594,
+                        "id": 605,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1391,32 +1387,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 591,
+                        "id": 602,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "391:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 593,
+                      "id": 604,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 320,
+                      "referencedDeclaration": 331,
                       "src": "391:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) external returns (string memory)"
                       }
                     },
-                    "id": 595,
+                    "id": 606,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1430,21 +1426,21 @@
                       "typeString": "string memory"
                     }
                   },
-                  "id": 596,
+                  "id": 607,
                   "nodeType": "ExpressionStatement",
                   "src": "391:46:3"
                 },
                 {
                   "assignments": [
-                    598
+                    609
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 598,
+                      "id": 609,
                       "name": "stringTest2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "447:25:3",
                       "stateVariable": false,
                       "storageLocation": "memory",
@@ -1453,7 +1449,7 @@
                         "typeString": "string"
                       },
                       "typeName": {
-                        "id": 597,
+                        "id": 608,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
                         "src": "447:6:3",
@@ -1466,7 +1462,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 602,
+                  "id": 613,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
@@ -1474,32 +1470,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 599,
+                        "id": 610,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "473:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 600,
+                      "id": 611,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 308,
+                      "referencedDeclaration": 319,
                       "src": "473:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_string_memory_ptr_$",
                         "typeString": "function () external returns (string memory)"
                       }
                     },
-                    "id": 601,
+                    "id": 612,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1523,7 +1519,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "3434",
-                        "id": 606,
+                        "id": 617,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1541,7 +1537,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "74686973206973206120746573746e6574",
-                        "id": 607,
+                        "id": 618,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1570,32 +1566,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 603,
+                        "id": 614,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "523:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 605,
+                      "id": 616,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "setStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 379,
+                      "referencedDeclaration": 390,
                       "src": "523:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (uint256,string memory) external"
                       }
                     },
-                    "id": 608,
+                    "id": 619,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1609,22 +1605,22 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 609,
+                  "id": 620,
                   "nodeType": "ExpressionStatement",
                   "src": "523:53:3"
                 },
                 {
                   "assignments": [
-                    611,
-                    613
+                    622,
+                    624
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 611,
+                      "id": 622,
                       "name": "id",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "587:7:3",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1633,7 +1629,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 610,
+                        "id": 621,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "587:4:3",
@@ -1647,10 +1643,10 @@
                     },
                     {
                       "constant": false,
-                      "id": 613,
+                      "id": 624,
                       "name": "name",
                       "nodeType": "VariableDeclaration",
-                      "scope": 631,
+                      "scope": 642,
                       "src": "596:18:3",
                       "stateVariable": false,
                       "storageLocation": "memory",
@@ -1659,7 +1655,7 @@
                         "typeString": "string"
                       },
                       "typeName": {
-                        "id": 612,
+                        "id": 623,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
                         "src": "596:6:3",
@@ -1672,14 +1668,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 618,
+                  "id": 629,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
                         "hexValue": "3434",
-                        "id": 616,
+                        "id": 627,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1704,32 +1700,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 614,
+                        "id": 625,
                         "name": "calleeTestInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 581,
                         "src": "616:19:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_CalleeTest_$388",
+                          "typeIdentifier": "t_contract$_CalleeTest_$399",
                           "typeString": "contract CalleeTest"
                         }
                       },
-                      "id": 615,
+                      "id": 626,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getStruct",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 362,
+                      "referencedDeclaration": 373,
                       "src": "616:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_payable$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$",
                         "typeString": "function (uint256) payable external returns (uint256,string memory)"
                       }
                     },
-                    "id": 617,
+                    "id": 628,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1753,7 +1749,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "544553542032",
-                        "id": 620,
+                        "id": 631,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1776,18 +1772,18 @@
                           "typeString": "literal_string \"TEST 2\""
                         }
                       ],
-                      "id": 619,
+                      "id": 630,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 636,
+                      "referencedDeclaration": 647,
                       "src": "673:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 621,
+                    "id": 632,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1801,7 +1797,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 622,
+                  "id": 633,
                   "nodeType": "EmitStatement",
                   "src": "668:25:3"
                 },
@@ -1811,11 +1807,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 624,
+                        "id": 635,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 611,
+                        "referencedDeclaration": 622,
                         "src": "787:2:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1830,18 +1826,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 623,
+                      "id": 634,
                       "name": "intLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 640,
+                      "referencedDeclaration": 651,
                       "src": "779:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 625,
+                    "id": 636,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1855,7 +1851,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 626,
+                  "id": 637,
                   "nodeType": "EmitStatement",
                   "src": "774:16:3"
                 },
@@ -1865,11 +1861,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 628,
+                        "id": 639,
                         "name": "name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 613,
+                        "referencedDeclaration": 624,
                         "src": "816:4:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1884,18 +1880,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 627,
+                      "id": 638,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 636,
+                      "referencedDeclaration": 647,
                       "src": "805:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 629,
+                    "id": 640,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1909,32 +1905,32 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 630,
+                  "id": 641,
                   "nodeType": "EmitStatement",
                   "src": "800:21:3"
                 }
               ]
             },
             "documentation": null,
-            "id": 632,
+            "id": 643,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTest2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 571,
+              "id": 582,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "209:2:3"
             },
             "returnParameters": {
-              "id": 572,
+              "id": 583,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "217:0:3"
             },
-            "scope": 641,
+            "scope": 652,
             "src": "192:636:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1943,20 +1939,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 636,
+            "id": 647,
             "name": "stringLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 635,
+              "id": 646,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 634,
+                  "id": 645,
                   "indexed": false,
                   "name": "stringLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 636,
+                  "scope": 647,
                   "src": "851:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1965,7 +1961,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 633,
+                    "id": 644,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "851:6:3",
@@ -1985,20 +1981,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 640,
+            "id": 651,
             "name": "intLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 639,
+              "id": 650,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 638,
+                  "id": 649,
                   "indexed": false,
                   "name": "intLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 640,
+                  "scope": 651,
                   "src": "889:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2007,7 +2003,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 637,
+                    "id": 648,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "889:4:3",
@@ -2025,7 +2021,7 @@
             "src": "875:28:3"
           }
         ],
-        "scope": 642,
+        "scope": 653,
         "src": "119:786:3"
       }
     ],
@@ -2050,7 +2046,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-04-02T22:13:43.868Z",
+  "updatedAt": "2019-04-03T02:56:08.110Z",
   "devdoc": {
     "methods": {}
   },

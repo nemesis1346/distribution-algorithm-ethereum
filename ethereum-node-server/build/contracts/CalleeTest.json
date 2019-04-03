@@ -13,8 +13,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x418f3afa"
+      "type": "function"
     },
     {
       "constant": true,
@@ -37,8 +36,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x55341938"
+      "type": "function"
     },
     {
       "constant": true,
@@ -52,8 +50,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xe974cdb1"
+      "type": "function"
     },
     {
       "anonymous": false,
@@ -65,8 +62,7 @@
         }
       ],
       "name": "stringLogs",
-      "type": "event",
-      "signature": "0x7204b477e961d11af7867ee2b94f62807cfb4d9bb931dab71c541f19f2152d46"
+      "type": "event"
     },
     {
       "anonymous": false,
@@ -78,8 +74,7 @@
         }
       ],
       "name": "intLogs",
-      "type": "event",
-      "signature": "0x82a5e81cde1835f4f28f4fdaac7e5ea0827d449ba9eb096e75cd3626cf3ec27f"
+      "type": "event"
     },
     {
       "constant": false,
@@ -93,8 +88,7 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0x89ea642f"
+      "type": "function"
     },
     {
       "constant": false,
@@ -113,8 +107,7 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0x7fcaf666"
+      "type": "function"
     },
     {
       "constant": false,
@@ -128,8 +121,7 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0x8b84925b"
+      "type": "function"
     },
     {
       "constant": false,
@@ -148,8 +140,7 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0xac588675"
+      "type": "function"
     },
     {
       "constant": false,
@@ -172,8 +163,7 @@
       ],
       "payable": true,
       "stateMutability": "payable",
-      "type": "function",
-      "signature": "0xcdfa8495"
+      "type": "function"
     },
     {
       "constant": false,
@@ -191,8 +181,7 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0xb56ac1f2"
+      "type": "function"
     }
   ],
   "bytecode": "0x6080604052600080556040805190810160405280600481526020017f484f4c410000000000000000000000000000000000000000000000000000000081525060019080519060200190610053929190610066565b5034801561006057600080fd5b5061010b565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a757805160ff19168380011785556100d5565b828001600101855582156100d5579182015b828111156100d45782518255916020019190600101906100b9565b5b5090506100e291906100e6565b5090565b61010891905b808211156101045760008160009055506001016100ec565b5090565b90565b610a988061011a6000396000f3fe608060405260043610610099576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063418f3afa1461009e578063553419381461012e5780637fcaf666146101e957806389ea642f1461032a5780638b84925b146103ba578063ac588675146103e5578063b56ac1f214610434578063cdfa849514610506578063e974cdb1146105b4575b600080fd5b3480156100aa57600080fd5b506100b36105df565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f35780820151818401526020810190506100d8565b50505050905090810190601f1680156101205780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561013a57600080fd5b506101676004803603602081101561015157600080fd5b810190808035906020019092919050505061067d565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b838110156101ad578082015181840152602081019050610192565b50505050905090810190601f1680156101da5780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b3480156101f557600080fd5b506102af6004803603602081101561020c57600080fd5b810190808035906020019064010000000081111561022957600080fd5b82018360208201111561023b57600080fd5b8035906020019184600183028401116401000000008311171561025d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610739565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102ef5780820151818401526020810190506102d4565b50505050905090810190601f16801561031c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561033657600080fd5b5061033f610757565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561037f578082015181840152602081019050610364565b50505050905090810190601f1680156103ac5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103c657600080fd5b506103cf6107f9565b6040518082815260200191505060405180910390f35b3480156103f157600080fd5b5061041e6004803603602081101561040857600080fd5b8101908080359060200190929190505050610802565b6040518082815260200191505060405180910390f35b34801561044057600080fd5b506105046004803603604081101561045757600080fd5b81019080803590602001909291908035906020019064010000000081111561047e57600080fd5b82018360208201111561049057600080fd5b803590602001918460018302840111640100000000831117156104b257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610815565b005b6105326004803603602081101561051c57600080fd5b810190808035906020019092919050505061086b565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561057857808201518184015260208101905061055d565b50505050905090810190601f1680156105a55780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b3480156105c057600080fd5b506105c9610941565b6040518082815260200191505060405180910390f35b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106755780601f1061064a57610100808354040283529160200191610675565b820191906000526020600020905b81548152906001019060200180831161065857829003601f168201915b505050505081565b6002602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561072f5780601f106107045761010080835404028352916020019161072f565b820191906000526020600020905b81548152906001019060200180831161071257829003601f168201915b5050505050905082565b60608160019080519060200190610751929190610947565b50919050565b606060018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107ef5780601f106107c4576101008083540402835291602001916107ef565b820191906000526020600020905b8154815290600101906020018083116107d257829003601f168201915b5050505050905090565b60008054905090565b6000816000819055506000549050919050565b604080519081016040528083815260200182815250600260008481526020019081526020016000206000820151816000015560208201518160010190805190602001906108639291906109c7565b509050505050565b60006060600260008481526020019081526020016000206000015460026000858152602001908152602001600020600101808054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109315780601f1061090657610100808354040283529160200191610931565b820191906000526020600020905b81548152906001019060200180831161091457829003601f168201915b5050505050905091509150915091565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061098857805160ff19168380011785556109b6565b828001600101855582156109b6579182015b828111156109b557825182559160200191906001019061099a565b5b5090506109c39190610a47565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a0857805160ff1916838001178555610a36565b82800160010185558215610a36579182015b82811115610a35578251825591602001919060010190610a1a565b5b509050610a439190610a47565b5090565b610a6991905b80821115610a65576000816000905550600101610a4d565b5090565b9056fea165627a7a72305820cb350df9bc9e3cb09b5d7968fef3e3db0f3cb4b804cb5bd5630ac94b669f72c10029",
@@ -205,14 +194,14 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/CalleeTest.sol",
     "exportedSymbols": {
       "CalleeTest": [
-        388
+        399
       ]
     },
-    "id": 389,
+    "id": 400,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 279,
+        "id": 290,
         "literals": [
           "solidity",
           "^",
@@ -228,19 +217,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 388,
+        "id": 399,
         "linearizedBaseContracts": [
-          388
+          399
         ],
         "name": "CalleeTest",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 282,
+            "id": 293,
             "name": "integerTest",
             "nodeType": "VariableDeclaration",
-            "scope": 388,
+            "scope": 399,
             "src": "117:25:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -249,7 +238,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 280,
+              "id": 291,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "117:4:1",
@@ -261,7 +250,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 281,
+              "id": 292,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -280,10 +269,10 @@
           },
           {
             "constant": false,
-            "id": 285,
+            "id": 296,
             "name": "anotherMessage",
             "nodeType": "VariableDeclaration",
-            "scope": 388,
+            "scope": 399,
             "src": "148:36:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -292,7 +281,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 283,
+              "id": 294,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "148:6:1",
@@ -304,7 +293,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "484f4c41",
-              "id": 284,
+              "id": 295,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -323,14 +312,14 @@
           },
           {
             "canonicalName": "CalleeTest.StructTest",
-            "id": 290,
+            "id": 301,
             "members": [
               {
                 "constant": false,
-                "id": 287,
+                "id": 298,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 290,
+                "scope": 301,
                 "src": "222:7:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -339,7 +328,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 286,
+                  "id": 297,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "222:4:1",
@@ -353,10 +342,10 @@
               },
               {
                 "constant": false,
-                "id": 289,
+                "id": 300,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 290,
+                "scope": 301,
                 "src": "239:11:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -365,7 +354,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 288,
+                  "id": 299,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "239:6:1",
@@ -380,20 +369,20 @@
             ],
             "name": "StructTest",
             "nodeType": "StructDefinition",
-            "scope": 388,
+            "scope": 399,
             "src": "195:62:1",
             "visibility": "public"
           },
           {
             "canonicalName": "CalleeTest.StructByString",
-            "id": 295,
+            "id": 306,
             "members": [
               {
                 "constant": false,
-                "id": 292,
+                "id": 303,
                 "name": "intProperty",
                 "nodeType": "VariableDeclaration",
-                "scope": 295,
+                "scope": 306,
                 "src": "293:16:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -402,7 +391,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 291,
+                  "id": 302,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "293:4:1",
@@ -416,10 +405,10 @@
               },
               {
                 "constant": false,
-                "id": 294,
+                "id": 305,
                 "name": "stringProperty",
                 "nodeType": "VariableDeclaration",
-                "scope": 295,
+                "scope": 306,
                 "src": "319:21:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -428,7 +417,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 293,
+                  "id": 304,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "319:6:1",
@@ -443,27 +432,27 @@
             ],
             "name": "StructByString",
             "nodeType": "StructDefinition",
-            "scope": 388,
+            "scope": 399,
             "src": "262:85:1",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 299,
+            "id": 310,
             "name": "structs",
             "nodeType": "VariableDeclaration",
-            "scope": 388,
+            "scope": 399,
             "src": "417:40:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
               "typeString": "mapping(uint256 => struct CalleeTest.StructTest)"
             },
             "typeName": {
-              "id": 298,
+              "id": 309,
               "keyType": {
-                "id": 296,
+                "id": 307,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "425:4:1",
@@ -475,18 +464,18 @@
               "nodeType": "Mapping",
               "src": "417:25:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                 "typeString": "mapping(uint256 => struct CalleeTest.StructTest)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 297,
+                "id": 308,
                 "name": "StructTest",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 290,
+                "referencedDeclaration": 301,
                 "src": "431:10:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_StructTest_$290_storage_ptr",
+                  "typeIdentifier": "t_struct$_StructTest_$301_storage_ptr",
                   "typeString": "struct CalleeTest.StructTest"
                 }
               }
@@ -496,7 +485,7 @@
           },
           {
             "body": {
-              "id": 307,
+              "id": 318,
               "nodeType": "Block",
               "src": "514:40:1",
               "statements": [
@@ -506,11 +495,11 @@
                     "components": [
                       {
                         "argumentTypes": null,
-                        "id": 304,
+                        "id": 315,
                         "name": "anotherMessage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 285,
+                        "referencedDeclaration": 296,
                         "src": "532:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -518,7 +507,7 @@
                         }
                       }
                     ],
-                    "id": 305,
+                    "id": 316,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -531,36 +520,36 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 303,
-                  "id": 306,
+                  "functionReturnParameters": 314,
+                  "id": 317,
                   "nodeType": "Return",
                   "src": "524:23:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 308,
+            "id": 319,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getString",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 300,
+              "id": 311,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "482:2:1"
             },
             "returnParameters": {
-              "id": 303,
+              "id": 314,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 302,
+                  "id": 313,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 308,
+                  "scope": 319,
                   "src": "500:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -569,7 +558,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 301,
+                    "id": 312,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "500:6:1",
@@ -584,7 +573,7 @@
               ],
               "src": "499:15:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "464:90:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -592,25 +581,25 @@
           },
           {
             "body": {
-              "id": 319,
+              "id": 330,
               "nodeType": "Block",
               "src": "633:45:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 317,
+                    "id": 328,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 315,
+                      "id": 326,
                       "name": "anotherMessage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 285,
+                      "referencedDeclaration": 296,
                       "src": "643:14:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -621,11 +610,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 316,
+                      "id": 327,
                       "name": "stringInput",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 310,
+                      "referencedDeclaration": 321,
                       "src": "660:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -638,29 +627,29 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 318,
+                  "id": 329,
                   "nodeType": "ExpressionStatement",
                   "src": "643:28:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 320,
+            "id": 331,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setString",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 311,
+              "id": 322,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 310,
+                  "id": 321,
                   "name": "stringInput",
                   "nodeType": "VariableDeclaration",
-                  "scope": 320,
+                  "scope": 331,
                   "src": "578:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -669,7 +658,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 309,
+                    "id": 320,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "578:6:1",
@@ -685,15 +674,15 @@
               "src": "577:27:1"
             },
             "returnParameters": {
-              "id": 314,
+              "id": 325,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 313,
+                  "id": 324,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 320,
+                  "scope": 331,
                   "src": "619:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -702,7 +691,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 312,
+                    "id": 323,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "619:6:1",
@@ -717,7 +706,7 @@
               ],
               "src": "618:15:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "559:119:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -725,54 +714,54 @@
           },
           {
             "body": {
-              "id": 327,
+              "id": 338,
               "nodeType": "Block",
               "src": "725:35:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 325,
+                    "id": 336,
                     "name": "integerTest",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 282,
+                    "referencedDeclaration": 293,
                     "src": "742:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 324,
-                  "id": 326,
+                  "functionReturnParameters": 335,
+                  "id": 337,
                   "nodeType": "Return",
                   "src": "735:18:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 328,
+            "id": 339,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getInteger",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 321,
+              "id": 332,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "702:2:1"
             },
             "returnParameters": {
-              "id": 324,
+              "id": 335,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 323,
+                  "id": 334,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 328,
+                  "scope": 339,
                   "src": "720:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -781,7 +770,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 322,
+                    "id": 333,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "720:4:1",
@@ -796,7 +785,7 @@
               ],
               "src": "719:6:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "683:77:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -804,25 +793,25 @@
           },
           {
             "body": {
-              "id": 341,
+              "id": 352,
               "nodeType": "Block",
               "src": "814:60:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 337,
+                    "id": 348,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 335,
+                      "id": 346,
                       "name": "integerTest",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 282,
+                      "referencedDeclaration": 293,
                       "src": "824:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -833,11 +822,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 336,
+                      "id": 347,
                       "name": "id",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 330,
+                      "referencedDeclaration": 341,
                       "src": "837:2:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -850,48 +839,48 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 338,
+                  "id": 349,
                   "nodeType": "ExpressionStatement",
                   "src": "824:15:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 339,
+                    "id": 350,
                     "name": "integerTest",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 282,
+                    "referencedDeclaration": 293,
                     "src": "856:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 334,
-                  "id": 340,
+                  "functionReturnParameters": 345,
+                  "id": 351,
                   "nodeType": "Return",
                   "src": "849:18:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 342,
+            "id": 353,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setInteger",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 331,
+              "id": 342,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 330,
+                  "id": 341,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 342,
+                  "scope": 353,
                   "src": "785:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -900,7 +889,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 329,
+                    "id": 340,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "785:4:1",
@@ -916,15 +905,15 @@
               "src": "784:9:1"
             },
             "returnParameters": {
-              "id": 334,
+              "id": 345,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 333,
+                  "id": 344,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 342,
+                  "scope": 353,
                   "src": "809:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -933,7 +922,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 332,
+                    "id": 343,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "809:4:1",
@@ -948,7 +937,7 @@
               ],
               "src": "808:6:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "765:109:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -956,7 +945,7 @@
           },
           {
             "body": {
-              "id": 361,
+              "id": 372,
               "nodeType": "Block",
               "src": "952:58:1",
               "statements": [
@@ -970,25 +959,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 351,
+                            "id": 362,
                             "name": "structs",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 299,
+                            "referencedDeclaration": 310,
                             "src": "970:7:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                               "typeString": "mapping(uint256 => struct CalleeTest.StructTest storage ref)"
                             }
                           },
-                          "id": 353,
+                          "id": 364,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 352,
+                            "id": 363,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 344,
+                            "referencedDeclaration": 355,
                             "src": "978:2:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1002,18 +991,18 @@
                           "nodeType": "IndexAccess",
                           "src": "970:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                            "typeIdentifier": "t_struct$_StructTest_$301_storage",
                             "typeString": "struct CalleeTest.StructTest storage ref"
                           }
                         },
-                        "id": 354,
+                        "id": 365,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "id",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 287,
+                        "referencedDeclaration": 298,
                         "src": "970:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1026,25 +1015,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 355,
+                            "id": 366,
                             "name": "structs",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 299,
+                            "referencedDeclaration": 310,
                             "src": "986:7:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                               "typeString": "mapping(uint256 => struct CalleeTest.StructTest storage ref)"
                             }
                           },
-                          "id": 357,
+                          "id": 368,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 356,
+                            "id": 367,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 344,
+                            "referencedDeclaration": 355,
                             "src": "994:2:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1058,18 +1047,18 @@
                           "nodeType": "IndexAccess",
                           "src": "986:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                            "typeIdentifier": "t_struct$_StructTest_$301_storage",
                             "typeString": "struct CalleeTest.StructTest storage ref"
                           }
                         },
-                        "id": 358,
+                        "id": 369,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "name",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 289,
+                        "referencedDeclaration": 300,
                         "src": "986:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -1077,7 +1066,7 @@
                         }
                       }
                     ],
-                    "id": 359,
+                    "id": 370,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -1090,30 +1079,30 @@
                       "typeString": "tuple(uint256,string storage ref)"
                     }
                   },
-                  "functionReturnParameters": 350,
-                  "id": 360,
+                  "functionReturnParameters": 361,
+                  "id": 371,
                   "nodeType": "Return",
                   "src": "962:41:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 362,
+            "id": 373,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getStruct",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 345,
+              "id": 356,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 344,
+                  "id": 355,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 362,
+                  "scope": 373,
                   "src": "899:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1122,7 +1111,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 343,
+                    "id": 354,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "899:4:1",
@@ -1138,15 +1127,15 @@
               "src": "898:9:1"
             },
             "returnParameters": {
-              "id": 350,
+              "id": 361,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 347,
+                  "id": 358,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 362,
+                  "scope": 373,
                   "src": "931:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1155,7 +1144,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 346,
+                    "id": 357,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "931:4:1",
@@ -1169,10 +1158,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 349,
+                  "id": 360,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 362,
+                  "scope": 373,
                   "src": "937:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1181,7 +1170,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 348,
+                    "id": 359,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "937:6:1",
@@ -1196,7 +1185,7 @@
               ],
               "src": "930:21:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "880:130:1",
             "stateMutability": "payable",
             "superFunction": null,
@@ -1204,14 +1193,14 @@
           },
           {
             "body": {
-              "id": 378,
+              "id": 389,
               "nodeType": "Block",
               "src": "1069:48:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 376,
+                    "id": 387,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1220,25 +1209,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 369,
+                        "id": 380,
                         "name": "structs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 299,
+                        "referencedDeclaration": 310,
                         "src": "1079:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                           "typeString": "mapping(uint256 => struct CalleeTest.StructTest storage ref)"
                         }
                       },
-                      "id": 371,
+                      "id": 382,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 370,
+                        "id": 381,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 364,
+                        "referencedDeclaration": 375,
                         "src": "1087:2:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1252,7 +1241,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1079:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                        "typeIdentifier": "t_struct$_StructTest_$301_storage",
                         "typeString": "struct CalleeTest.StructTest storage ref"
                       }
                     },
@@ -1263,11 +1252,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 373,
+                          "id": 384,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 364,
+                          "referencedDeclaration": 375,
                           "src": "1102:2:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1276,11 +1265,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 374,
+                          "id": 385,
                           "name": "name",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 366,
+                          "referencedDeclaration": 377,
                           "src": "1105:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -1299,18 +1288,18 @@
                             "typeString": "string memory"
                           }
                         ],
-                        "id": 372,
+                        "id": 383,
                         "name": "StructTest",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 290,
+                        "referencedDeclaration": 301,
                         "src": "1091:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_StructTest_$290_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_StructTest_$301_storage_ptr_$",
                           "typeString": "type(struct CalleeTest.StructTest storage pointer)"
                         }
                       },
-                      "id": 375,
+                      "id": 386,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1320,39 +1309,39 @@
                       "nodeType": "FunctionCall",
                       "src": "1091:19:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StructTest_$290_memory",
+                        "typeIdentifier": "t_struct$_StructTest_$301_memory",
                         "typeString": "struct CalleeTest.StructTest memory"
                       }
                     },
                     "src": "1079:31:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                      "typeIdentifier": "t_struct$_StructTest_$301_storage",
                       "typeString": "struct CalleeTest.StructTest storage ref"
                     }
                   },
-                  "id": 377,
+                  "id": 388,
                   "nodeType": "ExpressionStatement",
                   "src": "1079:31:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 379,
+            "id": 390,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setStruct",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 367,
+              "id": 378,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 364,
+                  "id": 375,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 379,
+                  "scope": 390,
                   "src": "1034:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1361,7 +1350,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 363,
+                    "id": 374,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1034:4:1",
@@ -1375,10 +1364,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 366,
+                  "id": 377,
                   "name": "name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 379,
+                  "scope": 390,
                   "src": "1043:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1387,7 +1376,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 365,
+                    "id": 376,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1043:6:1",
@@ -1403,12 +1392,12 @@
               "src": "1033:29:1"
             },
             "returnParameters": {
-              "id": 368,
+              "id": 379,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1069:0:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "1015:102:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1417,20 +1406,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 383,
+            "id": 394,
             "name": "stringLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 382,
+              "id": 393,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 381,
+                  "id": 392,
                   "indexed": false,
                   "name": "stringLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 383,
+                  "scope": 394,
                   "src": "1140:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1439,7 +1428,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 380,
+                    "id": 391,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1140:6:1",
@@ -1459,20 +1448,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 387,
+            "id": 398,
             "name": "intLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 386,
+              "id": 397,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 385,
+                  "id": 396,
                   "indexed": false,
                   "name": "intLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 387,
+                  "scope": 398,
                   "src": "1178:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1481,7 +1470,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 384,
+                    "id": 395,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1178:4:1",
@@ -1499,7 +1488,7 @@
             "src": "1164:28:1"
           }
         ],
-        "scope": 389,
+        "scope": 400,
         "src": "92:1102:1"
       }
     ],
@@ -1509,14 +1498,14 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/CalleeTest.sol",
     "exportedSymbols": {
       "CalleeTest": [
-        388
+        399
       ]
     },
-    "id": 389,
+    "id": 400,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 279,
+        "id": 290,
         "literals": [
           "solidity",
           "^",
@@ -1532,19 +1521,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 388,
+        "id": 399,
         "linearizedBaseContracts": [
-          388
+          399
         ],
         "name": "CalleeTest",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 282,
+            "id": 293,
             "name": "integerTest",
             "nodeType": "VariableDeclaration",
-            "scope": 388,
+            "scope": 399,
             "src": "117:25:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1553,7 +1542,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 280,
+              "id": 291,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "117:4:1",
@@ -1565,7 +1554,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 281,
+              "id": 292,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1584,10 +1573,10 @@
           },
           {
             "constant": false,
-            "id": 285,
+            "id": 296,
             "name": "anotherMessage",
             "nodeType": "VariableDeclaration",
-            "scope": 388,
+            "scope": 399,
             "src": "148:36:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1596,7 +1585,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 283,
+              "id": 294,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "148:6:1",
@@ -1608,7 +1597,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "484f4c41",
-              "id": 284,
+              "id": 295,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1627,14 +1616,14 @@
           },
           {
             "canonicalName": "CalleeTest.StructTest",
-            "id": 290,
+            "id": 301,
             "members": [
               {
                 "constant": false,
-                "id": 287,
+                "id": 298,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 290,
+                "scope": 301,
                 "src": "222:7:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1643,7 +1632,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 286,
+                  "id": 297,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "222:4:1",
@@ -1657,10 +1646,10 @@
               },
               {
                 "constant": false,
-                "id": 289,
+                "id": 300,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 290,
+                "scope": 301,
                 "src": "239:11:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1669,7 +1658,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 288,
+                  "id": 299,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "239:6:1",
@@ -1684,20 +1673,20 @@
             ],
             "name": "StructTest",
             "nodeType": "StructDefinition",
-            "scope": 388,
+            "scope": 399,
             "src": "195:62:1",
             "visibility": "public"
           },
           {
             "canonicalName": "CalleeTest.StructByString",
-            "id": 295,
+            "id": 306,
             "members": [
               {
                 "constant": false,
-                "id": 292,
+                "id": 303,
                 "name": "intProperty",
                 "nodeType": "VariableDeclaration",
-                "scope": 295,
+                "scope": 306,
                 "src": "293:16:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1706,7 +1695,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 291,
+                  "id": 302,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "293:4:1",
@@ -1720,10 +1709,10 @@
               },
               {
                 "constant": false,
-                "id": 294,
+                "id": 305,
                 "name": "stringProperty",
                 "nodeType": "VariableDeclaration",
-                "scope": 295,
+                "scope": 306,
                 "src": "319:21:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1732,7 +1721,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 293,
+                  "id": 304,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "319:6:1",
@@ -1747,27 +1736,27 @@
             ],
             "name": "StructByString",
             "nodeType": "StructDefinition",
-            "scope": 388,
+            "scope": 399,
             "src": "262:85:1",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 299,
+            "id": 310,
             "name": "structs",
             "nodeType": "VariableDeclaration",
-            "scope": 388,
+            "scope": 399,
             "src": "417:40:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
               "typeString": "mapping(uint256 => struct CalleeTest.StructTest)"
             },
             "typeName": {
-              "id": 298,
+              "id": 309,
               "keyType": {
-                "id": 296,
+                "id": 307,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "425:4:1",
@@ -1779,18 +1768,18 @@
               "nodeType": "Mapping",
               "src": "417:25:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                 "typeString": "mapping(uint256 => struct CalleeTest.StructTest)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 297,
+                "id": 308,
                 "name": "StructTest",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 290,
+                "referencedDeclaration": 301,
                 "src": "431:10:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_StructTest_$290_storage_ptr",
+                  "typeIdentifier": "t_struct$_StructTest_$301_storage_ptr",
                   "typeString": "struct CalleeTest.StructTest"
                 }
               }
@@ -1800,7 +1789,7 @@
           },
           {
             "body": {
-              "id": 307,
+              "id": 318,
               "nodeType": "Block",
               "src": "514:40:1",
               "statements": [
@@ -1810,11 +1799,11 @@
                     "components": [
                       {
                         "argumentTypes": null,
-                        "id": 304,
+                        "id": 315,
                         "name": "anotherMessage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 285,
+                        "referencedDeclaration": 296,
                         "src": "532:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -1822,7 +1811,7 @@
                         }
                       }
                     ],
-                    "id": 305,
+                    "id": 316,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -1835,36 +1824,36 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 303,
-                  "id": 306,
+                  "functionReturnParameters": 314,
+                  "id": 317,
                   "nodeType": "Return",
                   "src": "524:23:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 308,
+            "id": 319,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getString",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 300,
+              "id": 311,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "482:2:1"
             },
             "returnParameters": {
-              "id": 303,
+              "id": 314,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 302,
+                  "id": 313,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 308,
+                  "scope": 319,
                   "src": "500:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1873,7 +1862,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 301,
+                    "id": 312,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "500:6:1",
@@ -1888,7 +1877,7 @@
               ],
               "src": "499:15:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "464:90:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1896,25 +1885,25 @@
           },
           {
             "body": {
-              "id": 319,
+              "id": 330,
               "nodeType": "Block",
               "src": "633:45:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 317,
+                    "id": 328,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 315,
+                      "id": 326,
                       "name": "anotherMessage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 285,
+                      "referencedDeclaration": 296,
                       "src": "643:14:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -1925,11 +1914,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 316,
+                      "id": 327,
                       "name": "stringInput",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 310,
+                      "referencedDeclaration": 321,
                       "src": "660:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -1942,29 +1931,29 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 318,
+                  "id": 329,
                   "nodeType": "ExpressionStatement",
                   "src": "643:28:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 320,
+            "id": 331,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setString",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 311,
+              "id": 322,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 310,
+                  "id": 321,
                   "name": "stringInput",
                   "nodeType": "VariableDeclaration",
-                  "scope": 320,
+                  "scope": 331,
                   "src": "578:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1973,7 +1962,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 309,
+                    "id": 320,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "578:6:1",
@@ -1989,15 +1978,15 @@
               "src": "577:27:1"
             },
             "returnParameters": {
-              "id": 314,
+              "id": 325,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 313,
+                  "id": 324,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 320,
+                  "scope": 331,
                   "src": "619:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2006,7 +1995,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 312,
+                    "id": 323,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "619:6:1",
@@ -2021,7 +2010,7 @@
               ],
               "src": "618:15:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "559:119:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2029,54 +2018,54 @@
           },
           {
             "body": {
-              "id": 327,
+              "id": 338,
               "nodeType": "Block",
               "src": "725:35:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 325,
+                    "id": 336,
                     "name": "integerTest",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 282,
+                    "referencedDeclaration": 293,
                     "src": "742:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 324,
-                  "id": 326,
+                  "functionReturnParameters": 335,
+                  "id": 337,
                   "nodeType": "Return",
                   "src": "735:18:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 328,
+            "id": 339,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getInteger",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 321,
+              "id": 332,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "702:2:1"
             },
             "returnParameters": {
-              "id": 324,
+              "id": 335,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 323,
+                  "id": 334,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 328,
+                  "scope": 339,
                   "src": "720:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2085,7 +2074,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 322,
+                    "id": 333,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "720:4:1",
@@ -2100,7 +2089,7 @@
               ],
               "src": "719:6:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "683:77:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2108,25 +2097,25 @@
           },
           {
             "body": {
-              "id": 341,
+              "id": 352,
               "nodeType": "Block",
               "src": "814:60:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 337,
+                    "id": 348,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 335,
+                      "id": 346,
                       "name": "integerTest",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 282,
+                      "referencedDeclaration": 293,
                       "src": "824:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2137,11 +2126,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 336,
+                      "id": 347,
                       "name": "id",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 330,
+                      "referencedDeclaration": 341,
                       "src": "837:2:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2154,48 +2143,48 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 338,
+                  "id": 349,
                   "nodeType": "ExpressionStatement",
                   "src": "824:15:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 339,
+                    "id": 350,
                     "name": "integerTest",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 282,
+                    "referencedDeclaration": 293,
                     "src": "856:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 334,
-                  "id": 340,
+                  "functionReturnParameters": 345,
+                  "id": 351,
                   "nodeType": "Return",
                   "src": "849:18:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 342,
+            "id": 353,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setInteger",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 331,
+              "id": 342,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 330,
+                  "id": 341,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 342,
+                  "scope": 353,
                   "src": "785:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2204,7 +2193,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 329,
+                    "id": 340,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "785:4:1",
@@ -2220,15 +2209,15 @@
               "src": "784:9:1"
             },
             "returnParameters": {
-              "id": 334,
+              "id": 345,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 333,
+                  "id": 344,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 342,
+                  "scope": 353,
                   "src": "809:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2237,7 +2226,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 332,
+                    "id": 343,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "809:4:1",
@@ -2252,7 +2241,7 @@
               ],
               "src": "808:6:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "765:109:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2260,7 +2249,7 @@
           },
           {
             "body": {
-              "id": 361,
+              "id": 372,
               "nodeType": "Block",
               "src": "952:58:1",
               "statements": [
@@ -2274,25 +2263,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 351,
+                            "id": 362,
                             "name": "structs",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 299,
+                            "referencedDeclaration": 310,
                             "src": "970:7:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                               "typeString": "mapping(uint256 => struct CalleeTest.StructTest storage ref)"
                             }
                           },
-                          "id": 353,
+                          "id": 364,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 352,
+                            "id": 363,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 344,
+                            "referencedDeclaration": 355,
                             "src": "978:2:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2306,18 +2295,18 @@
                           "nodeType": "IndexAccess",
                           "src": "970:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                            "typeIdentifier": "t_struct$_StructTest_$301_storage",
                             "typeString": "struct CalleeTest.StructTest storage ref"
                           }
                         },
-                        "id": 354,
+                        "id": 365,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "id",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 287,
+                        "referencedDeclaration": 298,
                         "src": "970:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2330,25 +2319,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 355,
+                            "id": 366,
                             "name": "structs",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 299,
+                            "referencedDeclaration": 310,
                             "src": "986:7:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                               "typeString": "mapping(uint256 => struct CalleeTest.StructTest storage ref)"
                             }
                           },
-                          "id": 357,
+                          "id": 368,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 356,
+                            "id": 367,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 344,
+                            "referencedDeclaration": 355,
                             "src": "994:2:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2362,18 +2351,18 @@
                           "nodeType": "IndexAccess",
                           "src": "986:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                            "typeIdentifier": "t_struct$_StructTest_$301_storage",
                             "typeString": "struct CalleeTest.StructTest storage ref"
                           }
                         },
-                        "id": 358,
+                        "id": 369,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "name",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 289,
+                        "referencedDeclaration": 300,
                         "src": "986:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -2381,7 +2370,7 @@
                         }
                       }
                     ],
-                    "id": 359,
+                    "id": 370,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -2394,30 +2383,30 @@
                       "typeString": "tuple(uint256,string storage ref)"
                     }
                   },
-                  "functionReturnParameters": 350,
-                  "id": 360,
+                  "functionReturnParameters": 361,
+                  "id": 371,
                   "nodeType": "Return",
                   "src": "962:41:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 362,
+            "id": 373,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getStruct",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 345,
+              "id": 356,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 344,
+                  "id": 355,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 362,
+                  "scope": 373,
                   "src": "899:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2426,7 +2415,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 343,
+                    "id": 354,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "899:4:1",
@@ -2442,15 +2431,15 @@
               "src": "898:9:1"
             },
             "returnParameters": {
-              "id": 350,
+              "id": 361,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 347,
+                  "id": 358,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 362,
+                  "scope": 373,
                   "src": "931:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2459,7 +2448,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 346,
+                    "id": 357,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "931:4:1",
@@ -2473,10 +2462,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 349,
+                  "id": 360,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 362,
+                  "scope": 373,
                   "src": "937:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2485,7 +2474,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 348,
+                    "id": 359,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "937:6:1",
@@ -2500,7 +2489,7 @@
               ],
               "src": "930:21:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "880:130:1",
             "stateMutability": "payable",
             "superFunction": null,
@@ -2508,14 +2497,14 @@
           },
           {
             "body": {
-              "id": 378,
+              "id": 389,
               "nodeType": "Block",
               "src": "1069:48:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 376,
+                    "id": 387,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2524,25 +2513,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 369,
+                        "id": 380,
                         "name": "structs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 299,
+                        "referencedDeclaration": 310,
                         "src": "1079:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$290_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_StructTest_$301_storage_$",
                           "typeString": "mapping(uint256 => struct CalleeTest.StructTest storage ref)"
                         }
                       },
-                      "id": 371,
+                      "id": 382,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 370,
+                        "id": 381,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 364,
+                        "referencedDeclaration": 375,
                         "src": "1087:2:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2556,7 +2545,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1079:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                        "typeIdentifier": "t_struct$_StructTest_$301_storage",
                         "typeString": "struct CalleeTest.StructTest storage ref"
                       }
                     },
@@ -2567,11 +2556,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 373,
+                          "id": 384,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 364,
+                          "referencedDeclaration": 375,
                           "src": "1102:2:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -2580,11 +2569,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 374,
+                          "id": 385,
                           "name": "name",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 366,
+                          "referencedDeclaration": 377,
                           "src": "1105:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -2603,18 +2592,18 @@
                             "typeString": "string memory"
                           }
                         ],
-                        "id": 372,
+                        "id": 383,
                         "name": "StructTest",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 290,
+                        "referencedDeclaration": 301,
                         "src": "1091:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_StructTest_$290_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_StructTest_$301_storage_ptr_$",
                           "typeString": "type(struct CalleeTest.StructTest storage pointer)"
                         }
                       },
-                      "id": 375,
+                      "id": 386,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2624,39 +2613,39 @@
                       "nodeType": "FunctionCall",
                       "src": "1091:19:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StructTest_$290_memory",
+                        "typeIdentifier": "t_struct$_StructTest_$301_memory",
                         "typeString": "struct CalleeTest.StructTest memory"
                       }
                     },
                     "src": "1079:31:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StructTest_$290_storage",
+                      "typeIdentifier": "t_struct$_StructTest_$301_storage",
                       "typeString": "struct CalleeTest.StructTest storage ref"
                     }
                   },
-                  "id": 377,
+                  "id": 388,
                   "nodeType": "ExpressionStatement",
                   "src": "1079:31:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 379,
+            "id": 390,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setStruct",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 367,
+              "id": 378,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 364,
+                  "id": 375,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 379,
+                  "scope": 390,
                   "src": "1034:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2665,7 +2654,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 363,
+                    "id": 374,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1034:4:1",
@@ -2679,10 +2668,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 366,
+                  "id": 377,
                   "name": "name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 379,
+                  "scope": 390,
                   "src": "1043:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2691,7 +2680,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 365,
+                    "id": 376,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1043:6:1",
@@ -2707,12 +2696,12 @@
               "src": "1033:29:1"
             },
             "returnParameters": {
-              "id": 368,
+              "id": 379,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1069:0:1"
             },
-            "scope": 388,
+            "scope": 399,
             "src": "1015:102:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2721,20 +2710,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 383,
+            "id": 394,
             "name": "stringLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 382,
+              "id": 393,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 381,
+                  "id": 392,
                   "indexed": false,
                   "name": "stringLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 383,
+                  "scope": 394,
                   "src": "1140:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2743,7 +2732,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 380,
+                    "id": 391,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1140:6:1",
@@ -2763,20 +2752,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 387,
+            "id": 398,
             "name": "intLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 386,
+              "id": 397,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 385,
+                  "id": 396,
                   "indexed": false,
                   "name": "intLogs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 387,
+                  "scope": 398,
                   "src": "1178:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2785,7 +2774,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 384,
+                    "id": 395,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1178:4:1",
@@ -2803,7 +2792,7 @@
             "src": "1164:28:1"
           }
         ],
-        "scope": 389,
+        "scope": 400,
         "src": "92:1102:1"
       }
     ],
@@ -2828,7 +2817,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-04-02T22:13:43.869Z",
+  "updatedAt": "2019-04-03T02:56:08.123Z",
   "devdoc": {
     "methods": {}
   },
