@@ -3,7 +3,7 @@ pragma solidity ^0.5.0;
 contract Receipts{
 
     struct Receipt{
-        address id;
+        uint id;
         address trackId;
         uint ammount;
         address traderEmitterId;
@@ -12,46 +12,32 @@ contract Receipts{
         string paymentStatus;
         string datetime;
         address uploaderId;
-        uint percentageReceiver;
     }
-    mapping(address=>Receipt) public receiptStructList;
+    mapping(uint=>Receipt) public receiptStructList;
     address[] receiptAddressList;
 
     function createReceipt(
-        address id,
+        uint id,
         address trackId,
         uint ammount,
-        address traderEmitterId,
-        address traderReceiverId,
         address agreementId,
-        string memory paymentStatus,
-        string memory datetime,
-        address uploaderId,
-        uint percentageReceiver ) public{
+        string memory datetime
+       ) public{
         receiptStructList[id].id=id;
         receiptStructList[id].trackId=trackId;
         receiptStructList[id].ammount=ammount;
-        receiptStructList[id].traderEmitterId=traderEmitterId;
-        receiptStructList[id].traderReceiverId=traderReceiverId;
         receiptStructList[id].agreementId=agreementId;
-        receiptStructList[id].paymentStatus=paymentStatus;
         receiptStructList[id].datetime=datetime;
-        receiptStructList[id].uploaderId=uploaderId;
-        receiptStructList[id].percentageReceiver=percentageReceiver;
 
         emit stringLogs('Receipt Created!');
         }
-    function getReceipt(address id) view public returns(address, address, uint, address, address, address, string memory, string memory, address, uint){
+        
+    function getReceipt(uint id) view public returns(uint, address, uint, address, string memory){
         return(receiptStructList[id].id,
         receiptStructList[id].trackId,
         receiptStructList[id].ammount,
-        receiptStructList[id].traderEmitterId,
-        receiptStructList[id].traderReceiverId,
         receiptStructList[id].agreementId,
-        receiptStructList[id].paymentStatus,
-        receiptStructList[id].datetime,
-        receiptStructList[id].uploaderId,
-        receiptStructList[id].percentageReceiver);
+        receiptStructList[id].datetime);
     }
 
     event stringLogs(string stringLogs);

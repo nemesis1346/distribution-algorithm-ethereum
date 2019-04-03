@@ -10,31 +10,23 @@ ReceiptsContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
 const ReceiptModel = require('../models/receiptModel.js');
 
-async function createReceipts(
+async function createReceipt(
     receiptId,
     trackId,
     ammount,
-    traderEmitterId,
-    traderReceiverId,
     agreementId,
-    paymentStatus,
     datetime,
-    uploaderId,
-    percentageReceiver,
     fromAddress,
     gasLimit) {
     try {
-        await ReceiptsContract.createReceipt(
+        const receiptsInterface = await ReceiptsContract.deployed();
+
+        await receiptsInterface.createReceipt(
             receiptId,
             trackId,
             ammount,
-            traderEmitterId,
-            traderReceiverId,
             agreementId,
-            paymentStatus,
             datetime,
-            uploaderId,
-            percentageReceiver,
             {
                 from: fromAddress,
                 gasLimit: gasLimit
@@ -45,11 +37,11 @@ async function createReceipts(
         console.log(error);
     }
 }
-module.exports.createReceipts = createReceipts;
+module.exports.createReceipt = createReceipt;
 
 async function getReceipt(receiptId, fromAddress, gasLimit) {
     try {
-        let receiptModel = new ReceiptModel(null, null, null, null, null, null, null, null, null, null);
+        let receiptModel = new ReceiptModel(null, null, null, null, null);
         const receiptsInterface = await ReceiptsContract.deployed();
         let receiptResult = await receiptsInterface.getReceipt(
             receiptId,
@@ -61,13 +53,8 @@ async function getReceipt(receiptId, fromAddress, gasLimit) {
         receiptModel.receiptId = receiptResult[0];
         receiptModel.trackId = receiptResult[1];
         receiptModel.ammount = receiptResult[2].toString();
-        receiptModel.traderEmitterId = receiptResult[3];
-        receiptModel.traderReceiverId = receiptResult[4];
-        receiptModel.agreementId = receiptResult[5];
-        receiptModel.paymentStatus = receiptResult[6];
-        receiptModel.datetime = receiptResult[7];
-        receiptModel.uploaderId = receiptResult[8];
-        receiptModel.percentageReceiver = receiptResult[9];
+        receiptModel.agreementId = receiptResult[3];
+        receiptModel.datetime = receiptResult[4];
 
         return receiptModel;
     } catch (error) {
