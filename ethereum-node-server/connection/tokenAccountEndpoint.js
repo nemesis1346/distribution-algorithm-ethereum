@@ -11,9 +11,46 @@ TokenAccountsContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
 
 
+async function addEnabledBalance(tokenAccountId, ammount, fromAddress, gasLimit) {
+    try {
+        const tokenAccountsInterface = await TokenAccountsContract.deployed();
+        await tokenAccountsInterface.addEnabledBalance(
+            tokenAccountId,
+            ammount,
+            {
+                from: fromAddress,
+                gasLimit: gasLimit
+            });
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+module.exports.addEnabledBalance = addEnabledBalance;
+async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit) {
+    try {
+        const tokenAccountsInterface = await TokenAccountsContract.deployed();
+        await tokenAccountsInterface.addDisabledBalance(
+            tokenAccountId,
+            ammount,
+            {
+                from: fromAddress,
+                gasLimit: gasLimit
+            });
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+module.exports.addDisabledBalance = addDisabledBalance;
 async function getTAContractAddress() {
-    const tokenAccountsInterface = await TokenAccountsContract.deployed();
+    try {
+        const tokenAccountsInterface = await TokenAccountsContract.deployed();
+        return tokenAccountsInterface.address;
+    }
+    catch (error) {
+        console.log(error);
+    }
 
-    return tokenAccountsInterface.address;
 }
 module.exports.getTAContractAddress = getTAContractAddress;

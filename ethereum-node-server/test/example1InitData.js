@@ -1,10 +1,10 @@
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-const trackEndpoint = require('./trackEndpoint.js');
-const traderEndpoint = require('./traderEndpoint.js');
-const tokenAccountEndpoint = require('./tokenAccountEndpoint.js');
-const agreementEndpoint = require('./agreementEndpoint.js');
-const distributionEndpoint = require('./distributionEndPoint');
+const trackEndpoint = require('../connection/trackEndpoint.js');
+const traderEndpoint = require('../connection/traderEndpoint.js');
+const tokenAccountEndpoint = require('../connection/tokenAccountEndpoint.js');
+const agreementEndpoint = require('../connection/agreementEndpoint.js');
+const distributionEndpoint = require('../connection/distributionEndPoint');
 async function example1() {
     try {
         const accounts = await web3Provider.eth.accounts;

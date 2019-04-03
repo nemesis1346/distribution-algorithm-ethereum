@@ -13,7 +13,6 @@ TracksContract.setProvider(web3Provider.currentProvider);
 async function createTrack(trackId, isrc, title, revenue, fromAddress, gasLimit) {
   try {
     const tracksInterface = await TracksContract.deployed();
-
     await tracksInterface.createTrack(
       trackId,
       isrc,
@@ -26,34 +25,43 @@ async function createTrack(trackId, isrc, title, revenue, fromAddress, gasLimit)
     console.log('TRACK CREATION SUCCESFUL');
 
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 module.exports.createTrack = createTrack;
 
 async function getTrack(trackId, fromAddress, gasLimit) {
-  let trackModel = new TrackModel(null, null, null,null,null);
-  const tracksInterface = await TracksContract.deployed();
-  let trackResult = await tracksInterface.getTrack(
-    trackId,
-    {
-      from: fromAddress,
-      gasLimit: gasLimit
-    });
-  trackModel.trackId = trackResult[0];
-  trackModel.isrc = trackResult[1].toString();
-  trackModel.title = trackResult[2];
-  trackModel.revenueTotal = trackResult[3].toString();
-  trackModel.uploaderId = trackResult[4];
-  console.log('TRACK RESULT:');
-  console.log(trackResult);
+  try {
+    let trackModel = new TrackModel(null, null, null, null, null);
+    const tracksInterface = await TracksContract.deployed();
+    let trackResult = await tracksInterface.getTrack(
+      trackId,
+      {
+        from: fromAddress,
+        gasLimit: gasLimit
+      });
+    trackModel.trackId = trackResult[0];
+    trackModel.isrc = trackResult[1].toString();
+    trackModel.title = trackResult[2];
+    trackModel.revenueTotal = trackResult[3].toString();
+    trackModel.uploaderId = trackResult[4];
+    console.log('TRACK RESULT:');
+    console.log(trackResult);
 
-  return trackModel;
+    return trackModel;
+  } catch (error) {
+    console.log(error);
+  }
 }
 module.exports.getTrack = getTrack;
 
-async function getTrackContractAddress(){
-  const tracksInterface = await TracksContract.deployed();
-  return tracksInterface.address;
+async function getTrackContractAddress() {
+  try {
+    const tracksInterface = await TracksContract.deployed();
+    return tracksInterface.address;
+  } catch (error) {
+    console.log(error);
+  }
+
 }
-module.exports.getTrackContractAddress=getTrackContractAddress;
+module.exports.getTrackContractAddress = getTrackContractAddress;
