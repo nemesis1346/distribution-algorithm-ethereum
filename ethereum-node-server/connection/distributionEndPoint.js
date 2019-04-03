@@ -27,24 +27,84 @@ async function distribution(
     fromAddress,
     gasLimit
 ) {
-    let track = await trackEndpoint.getTrack(trackId, fromAddress, gasLimit);
-    console.log("TRACK RESULT IN DISTRIBUTION");
-    console.log(track);
+    try{
+        let track = await trackEndpoint.getTrack(trackId, fromAddress, gasLimit);
+        console.log("TRACK RESULT IN DISTRIBUTION");
+        console.log(track);
+        let receiverShareFirstTimeList = await this.evaluateReceivers(
+            trackId,
+            uploaderId,
+            track.revenueTotal,
+            datetime,
+            "none",
+            fromAddress,
+            uploaderId,
+            fromAddress,
+            gasLimit
+        );
+        console.log('RECEIVER EVALUATION FINISHED');
+        //just test
+        console.log(receiverShareFirstTimeList);
+    
+        if (receiverShareFirstTimeList.length == 0) {
+            await this.onHoldDistribution(
+                trackId,
+                uploaderId,
+                datetime,
+                track.revenueTotal
+            );
+    
+        } else if (receiverShareFirstTimeList.length >= 1) {
+            for (const element of receiverShareFirstTimeList) {
+                await this.distributionProcess(
+                    trackId,
+                    element.agreementId,
+                    element.traderEmitterId,
+                    datetime,
+                    track.revenueTotal,
+                    uploaderId,
+                    uploaderId,
+                    fromAddress,
+                    gasLimit
+                );
+            }
+        }
+        console.log('PROCESS FINISHED');
+    }catch(error){
+        console.log(error);
+    }
+}
+module.exports.distribution = distribution;
+
+
+async function distributionProcess(
+    trackId,
+    previousAgreementId,
+    emitterId,
+    datetime,
+    ammount,
+    previousEmitterId,
+    uploaderId,
+    fromAddress,
+    gasLimit
+) {
+    //assuming there is just one previous emitter
     let receiverList = await this.evaluateReceivers(
         trackId,
-        uploaderId,
-        track.revenueTotal,
+        emitterId,
+        ammount,
         datetime,
-        "none",
-        "none",
+        previousEmitterId,
+        previousAgreementId,
         uploaderId,
         fromAddress,
         gasLimit
     );
-    console.log('RECEIVER EVALUATION FINISHED');
+    console.log('EVALUATE RECEIVERS IN DISTRIBUTION PROCESS');
     console.log(receiverList);
+
 }
-module.exports.distribution = distribution;
+module.exports.distributionProcess = distributionProcess;
 
 async function evaluateReceivers(
     tracKId,
@@ -57,6 +117,8 @@ async function evaluateReceivers(
     fromAddress,
     gasLimit
 ) {
+    console.log('ENTERS INTO EVALUTER RECEIVERS');
+    console.log(emitterId);
     let shareTotal = 1;
 
     let emitter = await traderEndpoint.getTrader(
@@ -76,7 +138,7 @@ async function evaluateReceivers(
         console.log("PREVIOUS RECEIVER ID IN EVALUATE RECEIVERS");
         console.log(previousReceiver);
     } else {
-        previousReceiverId = "none";
+        previousReceiverId = fromAddress;
     }
     //Get all agreements between emitter and receiver
     let agreements = await agreementEndpoint.getAgreementsByEmitter(
@@ -93,7 +155,7 @@ async function evaluateReceivers(
             let currentAgreement = await agreementEndpoint.getAgreement(
                 element,
                 fromAddress,
-                "6721975"
+                gasLimit
             );
             console.log(currentAgreement.percentage);
             shareTotal =
@@ -106,12 +168,14 @@ async function evaluateReceivers(
                 parseFloat(revenueTotalInput) * parseFloat(currentAgreement.percentage);
             console.log("RECEIVER SHARE AMMOUNT");
             console.log(receiverShareAmmount);
+            console.log('CURRENT AGREEMENT');
+            console.log(currentAgreement);
             let currentShareModel = new ReceiverShareModel(
-                element.agreementId,
-                element.traderEmiterId,
-                element.traderReceiverId,
+                currentAgreement.agreementId,
+                currentAgreement.traderEmiterId,
+                currentAgreement.traderReceiverId,
                 Math.round(receiverShareAmmount),
-                element.percentageReceiver
+                currentAgreement.percentage
             );
             receiverShareListResult.push(currentShareModel);
         }
@@ -127,18 +191,14 @@ async function evaluateReceivers(
             gasLimit
         );
         let receiptUniqueId = new Date().getUTCMilliseconds();
+
         //Now we create the receipt
         await receiptEndpoint.createReceipt(
             receiptUniqueId,
             tracKId,
             Math.round(ammountToAddEmiter),
-            null,
-            emitterId,
-            previousAgreementId,
-            'EARNED',
-            datetime,
-            uploaderId,
-            shareTotal,
+            previousAgreementId, //lets test this
+            String(datetime),
             fromAddress,
             gasLimit
         );
@@ -149,11 +209,36 @@ async function evaluateReceivers(
 }
 module.exports.evaluateReceivers = evaluateReceivers;
 
-async function onHoldDistribution() {
+async function onHoldDistribution(
+    trackId,
+    uploaderId,
+    datetime,
+    revenueTotal,
+    fromAddress,
+    agreementId
+) {
+    console.log('GETTING HERE');
+    await tokenAccountEndpoint.addDisabledBalance(
+        uploaderId,
+        revenueTotal,
+        fromAddress,
+        gasLimit
+    );
 
+    console.log('ON HOLD DISTRIBUTION SUCCESSFUL');
+    //We craete teh receipt
+    let receiptUniqueId = new Date().getUTCMilliseconds();
+
+    await receiptEndpoint.createReceipt(
+        receiptUniqueId,
+        trackId,
+        revenueTotal,
+        agreementId,
+        datetime,
+        fromAddress,
+        gasLimit
+    );
+
+    console.log('RECEIPT CREATED');
 }
 module.exports.onHoldDistribution = onHoldDistribution;
-async function distributionProcess() {
-
-}
-module.exports.distributionProcess = distributionProcess;

@@ -10,6 +10,21 @@ const TradersContract = contractTruffle(trader_artifact);
 TradersContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
 
+//Event listening
+async function listenTraderEvents(){
+    const tradersInterface =  await TradersContract.deployed();
+   //console.log(tradersInterface);
+    let traderLogsEvent = tradersInterface.contract.events.stringLogs();
+    console.log(traderLogsEvent);
+    traderLogsEvent.watch(function(error, result){
+        if(!error){
+            console.log('Traders EVENT');
+            console.log(result);
+        }   
+    });
+}
+
+
 async function createTrader(traderId, name, tokenAccountId, tokenAccountAdd, fromAddress, gasLimit) {
     try {
         const tradersInterface = await TradersContract.deployed();
@@ -56,3 +71,4 @@ async function getTraderContractAddress() {
     return traderInterface.address;
 }
 module.exports.getTraderContractAddress = getTraderContractAddress;
+
