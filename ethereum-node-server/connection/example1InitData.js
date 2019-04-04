@@ -5,6 +5,8 @@ const traderEndpoint = require('./traderEndpoint.js');
 const tokenAccountEndpoint = require('./tokenAccountEndpoint.js');
 const agreementEndpoint = require('./agreementEndpoint.js');
 const distributionEndpoint = require('./distributionEndPoint');
+const gasLimit = '6721975';
+
 async function example1() {
     try {
         const accounts = await web3Provider.eth.accounts;
@@ -30,16 +32,7 @@ async function example1() {
             'track',
             100,
             trader1,
-            '6721975');
-
-        let trackResult = await trackEndpoint.getTrack(
-            trackId,
-            trader1,
-            '6721975');
-
-        console.log('TRACK CREATION');
-        console.log(trackResult);
-
+            gasLimit);
 
         //Creating Traders
         await traderEndpoint.createTrader(
@@ -48,15 +41,7 @@ async function example1() {
             trader1,
             await tokenAccountEndpoint.getTAContractAddress(),
             trader1,
-            '6721975');
-
-        let trader1Result = await traderEndpoint.getTrader(
-            trader1,
-            trader1,
-            '6721975');
-
-        console.log('TRADER TRADER 1 CREATION');
-        console.log(trader1Result);
+            gasLimit);
 
         await traderEndpoint.createTrader(
             trader2,
@@ -64,15 +49,7 @@ async function example1() {
             trader2,
             await tokenAccountEndpoint.getTAContractAddress(),
             trader2,
-            '6721975');
-
-        let trader2Result = await traderEndpoint.getTrader(
-            trader2,
-            trader2,
-            '6721975');
-
-        console.log('TRADER TRADER 2 CREATION');
-        console.log(trader2Result);
+            gasLimit);
 
         await traderEndpoint.createTrader(
             trader3,
@@ -80,15 +57,8 @@ async function example1() {
             trader3,
             await tokenAccountEndpoint.getTAContractAddress(),
             trader3,
-            '6721975');
+            gasLimit);
 
-        let trader3Result = await traderEndpoint.getTrader(
-            trader3,
-            trader3,
-            '6721975');
-
-        console.log('TRADER TRADER 3 CREATION');
-        console.log(trader3Result);
 
         await traderEndpoint.createTrader(
             trader4,
@@ -96,15 +66,7 @@ async function example1() {
             trader4,
             await tokenAccountEndpoint.getTAContractAddress(),
             trader4,
-            '6721975');
-
-        let trader4Result = await traderEndpoint.getTrader(
-            trader4,
-            trader4,
-            '6721975');
-
-        console.log('TRADER TRADER 4 CREATION');
-        console.log(trader4Result);
+            gasLimit);
 
         //Agreement 1
         await agreementEndpoint.createAgreement(
@@ -116,16 +78,8 @@ async function example1() {
             await traderEndpoint.getTraderContractAddress(),
             await trackEndpoint.getTrackContractAddress(),
             trader1,
-            '6721975'
+            gasLimit
         );
-
-        let agreement1Result = await agreementEndpoint.getAgreement(
-            agreement1Id,
-            trader1,
-            '6721975'
-        );
-        console.log('TRADER AGREEMENT 1 CREATION');
-        console.log(agreement1Result);
 
         //Agreement 2
         await agreementEndpoint.createAgreement(
@@ -137,16 +91,8 @@ async function example1() {
             await traderEndpoint.getTraderContractAddress(),
             await trackEndpoint.getTrackContractAddress(),
             trader1,
-            '6721975'
+            gasLimit
         );
-
-        let agreement2Result = await agreementEndpoint.getAgreement(
-            agreement2Id,
-            trader1,
-            '6721975'
-        );
-        console.log('TRADER AGREEMENT 2 CREATION');
-        console.log(agreement2Result);
 
         //Agreement 3
         await agreementEndpoint.createAgreement(
@@ -158,24 +104,89 @@ async function example1() {
             await traderEndpoint.getTraderContractAddress(),
             await trackEndpoint.getTrackContractAddress(),
             trader1,
-            '6721975'
+            gasLimit
         );
-
-        let agreement3Result = await agreementEndpoint.getAgreement(
-            agreement3Id,
-            trader1,
-            '6721975'
-        );
-        console.log('TRADER AGREEMENT 3 CREATION');
-        console.log(agreement3Result);
 
         await distributionEndpoint.distribution(
             trackId,
             trader1,
             new Date().getTime(),
             trader1,
-            '6721975');
+            gasLimit);
 
+        //Results after
+        console.log('TRADERS OUTPUT----------------------');
+            console.log(trader1);
+        //Trader1
+        let trader1Result = await traderEndpoint.getTrader(
+            trader1,
+            trader1,
+            gasLimit);
+
+        let tokenTrader1Result = await tokenAccountEndpoint.getTokenAccount(
+            trader1,
+            trader1,
+            gasLimit
+        );
+
+        console.log('TRADER ' + trader1Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader1Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader1Result.balanceEnabled);
+
+        //Trader2
+        let trader2Result = await traderEndpoint.getTrader(
+            trader2,
+            trader2,
+            gasLimit);
+
+        let tokenTrader2Result = await traderEndpoint.getTrader(
+            trader2,
+            trader2,
+            gasLimit
+        );
+
+        console.log('TRADER ' + trader2Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader2Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader2Result.balanceEnabled);
+
+        //Trader 3
+        let trader3Result = await traderEndpoint.getTrader(
+            trader3,
+            trader3,
+            gasLimit);
+
+        let tokenTrader3Result = await traderEndpoint.getTrader(
+            trader3,
+            trader3,
+            gasLimit
+        );
+        console.log('TRADER ' + trader3Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader3Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader3Result.balanceEnabled);
+
+        //Trader4
+        let trader4Result = await traderEndpoint.getTrader(
+            trader4,
+            trader4,
+            gasLimit);
+
+        let tokenTrader4Result = await traderEndpoint.getTrader(
+            trader4,
+            trader4,
+            gasLimit
+        );
+
+        console.log('TRADER ' + trader4Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader4Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader4Result.balanceEnabled);
     } catch (error) {
         console.log(error)
     }

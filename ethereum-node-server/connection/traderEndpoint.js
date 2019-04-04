@@ -58,8 +58,7 @@ async function getTrader(traderId, fromAddress, gasLimit) {
     traderModel.name = traderResult[1];
     traderModel.tokenAccountId = traderResult[2];
 
-    console.log('TRADER RESULT:');
-    console.log(traderResult);
+    console.log('TRADER '+traderModel.name+" GOTTEN");
 
     return traderModel;
 }

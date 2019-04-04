@@ -48,8 +48,8 @@ async function getAgreement(agreementId, fromAddress, gasLimit) {
     agreementModel.traderReceiverId = agreementResult[2];
     agreementModel.percentage = parseFloat(agreementResult[3].toString())/100;
     agreementModel.trackId = agreementResult[4];
-    console.log('TRACK RESULT:');
-    console.log(agreementResult);
+
+    console.log('AGREEMENT '+agreementModel.agreementId+" GOTTEN");
 
     return agreementModel;
 }

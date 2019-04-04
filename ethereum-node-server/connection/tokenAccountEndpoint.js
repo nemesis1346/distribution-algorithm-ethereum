@@ -21,6 +21,7 @@ async function addEnabledBalance(tokenAccountId, ammount, fromAddress, gasLimit)
                 from: fromAddress,
                 gasLimit: gasLimit
             });
+        console.log('BALANCE ENABLED ADDED');
     }
     catch (error) {
         console.log(error);
@@ -37,6 +38,8 @@ async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit
                 from: fromAddress,
                 gasLimit: gasLimit
             });
+        console.log('BALANCE DISABLED ADDED');
+
     }
     catch (error) {
         console.log(error);
@@ -54,3 +57,25 @@ async function getTAContractAddress() {
 
 }
 module.exports.getTAContractAddress = getTAContractAddress;
+
+async function getTokenAccount(tokenAccountId, fromAddress, gasLimit) {
+    try {
+        const tokenAccountsInterface = await TokenAccountsContract.deployed();
+        let tokenAccountModel = new TokenAccountModel(null, null, null);
+        let tokenAccountResult = await tokenAccountsInterface.getTokenAccount(
+            tokenAccountId,
+            {
+                from: fromAddress,
+                gasLimit: gasLimit
+            }
+        );
+        tokenAccountModel.tokenAccountId = tokenAccountResult[0];
+        tokenAccountModel.balanceEnabled = tokenAccountResult[1].toString();
+        tokenAccountModel.balanceDisabled = tokenAccountResult[2].toString();
+
+        return tokenAccountModel;
+    } catch (error) {
+        console.log(error);
+    }
+}
+module.exports.getTokenAccount = getTokenAccount;
