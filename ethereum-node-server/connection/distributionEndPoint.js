@@ -27,10 +27,10 @@ async function distribution(
     fromAddress,
     gasLimit
 ) {
-    
-    try{
+
+    try {
         let track = await trackEndpoint.getTrack(trackId, fromAddress, gasLimit);
-      
+
         let receiverShareFirstTimeList = await this.evaluateReceivers(
             trackId,
             uploaderId,
@@ -42,7 +42,7 @@ async function distribution(
             fromAddress,
             gasLimit
         );
-    
+
         if (receiverShareFirstTimeList.length == 0) {
             await this.onHoldDistribution(
                 trackId,
@@ -50,7 +50,7 @@ async function distribution(
                 datetime,
                 track.revenueTotal
             );
-    
+
         } else if (receiverShareFirstTimeList.length >= 1) {
             for (const element of receiverShareFirstTimeList) {
                 await this.distributionProcess(
@@ -61,13 +61,14 @@ async function distribution(
                     track.revenueTotal,
                     uploaderId,
                     uploaderId,
+                    element.percentageReceiver,
                     fromAddress,
-                    gasLimit
+                    gasLimit,
                 );
             }
         }
         console.log('PROCESS FINISHED');
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
 }
@@ -82,26 +83,88 @@ async function distributionProcess(
     ammount,
     previousEmitterId,
     uploaderId,
+    percentageReceiver,
     fromAddress,
     gasLimit
 ) {
-    
-    //assuming there is just one previous emitter
-    let receiverList = await this.evaluateReceivers(
-        trackId,
-        emitterId,
-        ammount,
-        datetime,
-        previousEmitterId,
-        previousAgreementId,
-        uploaderId,
-        fromAddress,
-        gasLimit
-    );
-    console.log('EVALUATE RECEIVERS IN DISTRIBUTION PROCESS');
-    console.log(receiverList);
+    try {
+        //assuming there is just one previous emitter
+        let receiverList = await this.evaluateReceivers(
+            trackId,
+            emitterId,
+            ammount,
+            datetime,
+            previousEmitterId,
+            previousAgreementId,
+            uploaderId,
+            fromAddress,
+            gasLimit
+        );
+        console.log('EVALUATE RECEIVERS IN DISTRIBUTION PROCESS');
+        console.log(receiverList);
 
-    //Continue
+        //Continue
+        if (receiverList.length == 0) {
+            await this.lastNodeDistribution(
+                previousEmitterId,
+                emitterId,
+                trackId,
+                percentageReceiver,
+                ammount,
+                datetime,
+                uploaderId
+            );
+        } else if (receiverList == 1) {
+            let uniqueShare = receiverList[0];
+            let receiptsBackwards = this.evaluateReceipts(
+                uniqueShare.agreementId,
+                uniqueShare.traderEmitterId,
+                uniqueShare.traderReceiverId,
+                trackId,
+                datetime
+            );
+
+            let receiptsForwards = this.evaluateReceipts(
+                uniqueShare.agreementId,
+                uniqueShare.traderEmitterId,
+                uniqueShare.traderReceiverId
+            );
+            if (!(receiptsBackwards + receiptsForwards) > 1) {
+                this.distributionProcess(
+                    trackId,
+                    uniqueShare.previousAgreementId,
+                    uniqueShare.traderReceiverId,
+                    datetime,
+                    uniqueShare.ammount,
+                    uniqueShare.traderEmitterId,
+                    uploaderId,
+                    uniqueShare.percentageReceiver,
+                    fromAddress,
+                    gasLimit
+                );
+            } else {
+                console.log('NODE FINISHED');
+            }
+        } else if (receiverList.length > 1) {
+            let uniqueShare = receiverShareList[0];
+            for (const element of receiverShareList) {
+                this.distributionProcess(
+                    trackId,
+                    element.agreementId,
+                    element.traderReceiverId,
+                    datetime,
+                    element.ammount,
+                    uniqueShare.traderEmitterId,
+                    uploaderId,
+                    element.percentageReceiver,
+                    fromAddress,
+                    gasLimit
+                );
+            }
+        }
+    } catch (error) {
+        console.log(error);
+    }
 
 }
 module.exports.distributionProcess = distributionProcess;
@@ -117,7 +180,7 @@ async function evaluateReceivers(
     fromAddress,
     gasLimit
 ) {
-   
+
     let shareTotal = 1;
 
     let emitter = await traderEndpoint.getTrader(
@@ -133,7 +196,7 @@ async function evaluateReceivers(
             gasLimit
         );
         previousReceiverId = previousReceiver.traderId;
-      
+
     } else {
         previousReceiverId = fromAddress;
     }
@@ -162,10 +225,10 @@ async function evaluateReceivers(
 
             let receiverShareAmmount =
                 parseFloat(revenueTotalInput) * parseFloat(currentAgreement.percentage);
-         
+
             let currentShareModel = new ReceiverShareModel(
                 currentAgreement.agreementId,
-                currentAgreement.traderEmiterId,
+                currentAgreement.traderEmitterId,
                 currentAgreement.traderReceiverId,
                 Math.round(receiverShareAmmount),
                 currentAgreement.percentage,
@@ -237,20 +300,25 @@ module.exports.onHoldDistribution = onHoldDistribution;
 
 async function lastNodeDistribution(
     emitterId,
-    receiverId, 
+    receiverId,
     trackId,
     percentageReceiver,
     ammount,
     datetime,
     uploaderId
-){
+) {
 
 }
-module.exports.lastNodeDistribution=lastNodeDistribution;
+module.exports.lastNodeDistribution = lastNodeDistribution;
 
 async function evaluateReceipts(
-    agreementId
-){
+    agreementId,
+    traderEmitterId,
+    traderReceiverId,
+    trackId,
+    datetime
+) {
 
 }
-module.exports.evaluateReceipts= evaluateReceipts;
+module.exports.evaluateReceipts = evaluateReceipts;
+
