@@ -1,4 +1,10 @@
 pragma solidity ^0.5.0;
+contract Agreements{
+    function validateAgreementByEmRc(address agreementId,
+        address traderEmitterId, 
+        address traderReceiverId,
+        address trackId) public returns(bool){}
+}
 
 contract Receipts{
 
@@ -38,6 +44,20 @@ contract Receipts{
         receiptStructList[id].ammount,
         receiptStructList[id].agreementId,
         receiptStructList[id].datetime);
+    }
+
+    function valdateReceipt(
+        uint receiptId,
+        address agreementId,
+        address traderEmitterId,
+        address traderReceiverId,
+        address trackId,
+        string memory datetime,
+        address agreementCtrAddress) public returns(bool){
+            Agreements agreementContract = Agreements(agreementCtrAddress);
+           //TODO: Handle the timestamp
+           if(agreementContract.validateAgreementByEmRc(agreementId, traderEmitterId, traderReceiverId,trackId)) return false;
+            return true;
     }
 
     event stringLogs(string stringLogs);

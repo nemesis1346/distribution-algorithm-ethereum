@@ -78,6 +78,18 @@ contract Agreements{
                 agreementStructList[id].percentage,
                 agreementStructList[id].trackId);
     }
+
+    function validateAgreementByEmRc(
+        address agreementId,
+        address traderEmitterId, 
+        address traderReceiverId,
+        address trackId) public returns(bool){
+            if(isAgreement(agreementId)) return false;
+            if(agreementStructList[agreementId].traderEmitterId!=traderEmitterId) return false;
+            if(agreementStructList[agreementId].traderReceiverId!=traderReceiverId) return false;
+            if(agreementStructList[agreementId].trackId!=trackId) return false;
+            return true;
+        }
     event stringLogs(string stringLogs);
     event intLogs(uint intLogs);
 }    

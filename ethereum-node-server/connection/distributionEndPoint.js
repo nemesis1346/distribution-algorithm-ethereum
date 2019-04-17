@@ -316,9 +316,22 @@ async function evaluateReceipts(
     traderEmitterId,
     traderReceiverId,
     trackId,
-    datetime
+    datetime,
+    agreementCtrAddr,
+    fromAddress,
+    gasLimit
 ) {
-
+    let result = await receiptEndpoint.validateReceipt(
+        agreementId,
+        traderEmitterId,
+        traderReceiverId,
+        trackId,
+        datetime,
+        agreementCtrAddr,
+        fromAddress,
+        gasLimit
+    );
+    return result;
 }
 module.exports.evaluateReceipts = evaluateReceipts;
 

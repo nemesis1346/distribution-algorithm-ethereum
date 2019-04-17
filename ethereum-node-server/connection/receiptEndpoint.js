@@ -63,8 +63,40 @@ async function getReceipt(receiptId, fromAddress, gasLimit) {
 }
 module.exports.getReceipt = getReceipt;
 
+async function validateReceipt(
+    agreementId,
+    traderEmitterId,
+    traderReceiverId,
+    trackId,
+    datetime,
+    agreementCtrAddr,
+    fromAddress,
+    gasLimit) {
+    try {
+        const receiptsInterface = await ReceiptsContract.deployed();
+
+        let result = await receiptsInterface.validateReceipt(
+            agreementId,
+            traderEmitterId,
+            traderReceiverId,
+            trackId,
+            datetime,
+            agreementCtrAddr,
+            {
+                from: fromAddress,
+                gasLimit: gasLimit
+            }
+        );
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+module.exports.validateReceipt = validateReceipt;
 async function getReceiptsContractAddress() {
     const receiptsInterface = await ReceiptsContract.deployed();
     return receiptsInterface.address;
 }
+
 module.exports.getReceiptsContractAddress = getReceiptsContractAddress;
