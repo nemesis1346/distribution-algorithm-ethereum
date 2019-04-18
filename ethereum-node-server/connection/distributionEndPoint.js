@@ -297,7 +297,9 @@ async function onHoldDistribution(
 }
 module.exports.onHoldDistribution = onHoldDistribution;
 
-
+/**
+ *All the parameters must come from a result from the blockchain call   
+ */
 async function lastNodeDistribution(
     emitterId,
     receiverId,
@@ -307,7 +309,25 @@ async function lastNodeDistribution(
     datetime,
     uploaderId
 ) {
+//validate last time emitter and receiver 
+//TODO:
+//We get the receiver token account
+let tokenAccountReceiver = await tokenAccountEndpoint.getTokenAccount(
+    receiverId,
+    fromAddress,
+    gasLimit
+);
+console.log(tokenAccountReceiver);
+console.log('PREVIOUS STATE***********************************');
+console.log("Trader Receiver Balance Enabled: " );
 
+//let ammountToAddReceiver =parseFloat()+parseFloat(ammount);
+// await tokenAccountEndpoint.addEnabledBalance(
+//     receiverId,
+//     Math.round(ammountToAddReceiver),
+//     fromAddress,
+//     gasLimit
+// );
 }
 module.exports.lastNodeDistribution = lastNodeDistribution;
 
