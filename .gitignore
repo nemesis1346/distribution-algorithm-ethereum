@@ -81,3 +81,5 @@ data-analysis-react/yarn.lock
 *package-lock.json
 
 ethereum-node-server/yarn.lock
+
+ionic-front-end/yarn.lock

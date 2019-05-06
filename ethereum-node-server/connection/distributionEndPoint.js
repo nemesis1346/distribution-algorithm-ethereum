@@ -27,7 +27,9 @@ async function distribution(
     fromAddress,
     gasLimit
 ) {
-
+console.log('****************************');
+console.log('Request Distribution in Distribution End Point');
+console.log('TrackId: '+trackId);
     try {
         let track = await trackEndpoint.getTrack(trackId, fromAddress, gasLimit);
 
