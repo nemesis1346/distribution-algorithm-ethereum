@@ -122,7 +122,7 @@ class DistributionAlgorithmChaincode {
             //TODO: In list equal to 0, there must be a respose with the info of the previous emiter 
             if (receiverShareList.length == 0) {
                 let distributionLastNodeRequest = new DistributionLastNodeRequest(
-                    JSON.sTtringify(previousEmitersArray),
+                    JSON.stringify(previousEmitersArray),
                     emiterId,
                     percentageReceiver,
                     shareAmmount, isrc,
