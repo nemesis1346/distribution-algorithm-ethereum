@@ -27,9 +27,9 @@ async function distribution(
     fromAddress,
     gasLimit
 ) {
-console.log('****************************');
-console.log('Request Distribution in Distribution End Point');
-console.log('TrackId: '+trackId);
+    console.log('****************************');
+    console.log('Request Distribution in Distribution End Point');
+    console.log('TrackId: ' + trackId);
     try {
         let track = await trackEndpoint.getTrack(trackId, fromAddress, gasLimit);
 
@@ -45,6 +45,8 @@ console.log('TrackId: '+trackId);
             gasLimit
         );
 
+        console.log('RESULT RECEIVERS SHARE FIRST TIME');
+        console.log(receiverShareFirstTimeList);
         if (receiverShareFirstTimeList.length == 0) {
             await this.onHoldDistribution(
                 trackId,
@@ -71,7 +73,9 @@ console.log('TrackId: '+trackId);
         }
         console.log('PROCESS FINISHED');
     } catch (error) {
+        console.log('ERROR IN TRANSACTION CHAINCODE');
         console.log(error);
+        throw new Error(error);
     }
 }
 module.exports.distribution = distribution;
@@ -90,6 +94,8 @@ async function distributionProcess(
     gasLimit
 ) {
     try {
+        console.log('PREVIOUS EMITTERS');
+        console.log(previousEmitterId);
         //assuming there is just one previous emitter
         let receiverList = await this.evaluateReceivers(
             trackId,
@@ -145,7 +151,7 @@ async function distributionProcess(
                     gasLimit
                 );
             } else {
-                console.log('NODE FINISHED');
+                console.log('NODE FINISHED**********************************');
             }
         } else if (receiverList.length > 1) {
             let uniqueShare = receiverShareList[0];
@@ -165,11 +171,122 @@ async function distributionProcess(
             }
         }
     } catch (error) {
+        console.log('ERROR IN TRANSACTION DISTRIBUTION PROCESS');
         console.log(error);
+        throw new Error(error);
     }
 
 }
 module.exports.distributionProcess = distributionProcess;
+
+/**
+ *All the parameters must come from a result from the blockchain call   
+ */
+async function distributionLastNode(
+    emitterId,
+    receiverId,
+    trackId,
+    percentageReceiver,
+    ammount,
+    datetime,
+    uploaderId
+) {
+    console.log('*************************************');
+    console.log('Distribution Last Node in Composer.js');
+    console.log('Emitter: ' + emitterId);
+    try{
+ //validate last time emitter and receiver 
+    //TODO:
+    //We get the receiver token account
+    let tokenAccountReceiver = await tokenAccountEndpoint.getTokenAccount(
+        receiverId,
+        fromAddress,
+        gasLimit
+    );
+    console.log(tokenAccountReceiver);
+    console.log('PREVIOUS STATE***********************************');
+    console.log("Trader Receiver Balance Enabled: ");
+
+    //let ammountToAddReceiver =parseFloat()+parseFloat(ammount);
+    // await tokenAccountEndpoint.addEnabledBalance(
+    //     receiverId,
+    //     Math.round(ammountToAddReceiver),
+    //     fromAddress,
+    //     gasLimit
+    // );
+    }catch(error){
+        console.log('ERROR IN TRANSACTION EVALUATE RECEIPT');
+        console.log(error);
+        throw new Error(error);
+    }
+}
+module.exports.distributionLastNode = distributionLastNode;
+
+async function evaluateReceipt(
+    agreementId,
+    traderEmitterId,
+    traderReceiverId,
+    trackId,
+    datetime,
+    agreementCtrAddr,
+    fromAddress,
+    gasLimit
+) {
+    try{
+        let result = await receiptEndpoint.validateReceipt(
+            agreementId,
+            traderEmitterId,
+            traderReceiverId,
+            trackId,
+            datetime,
+            agreementCtrAddr,
+            fromAddress,
+            gasLimit
+        );
+        return result;
+    }catch(error){
+        console.log('ERROR IN TRANSACTION EVALUATE RECEIPT');
+        console.log(error);
+        throw new Error(error);
+    }
+}
+module.exports.evaluateReceipt = evaluateReceipt;
+
+async function onHoldDistribution(
+    trackId,
+    uploaderId,
+    datetime,
+    revenueTotal,
+    fromAddress,
+    agreementId
+) {
+    try{
+        await tokenAccountEndpoint.addDisabledBalance(
+            uploaderId,
+            revenueTotal,
+            fromAddress,
+            gasLimit
+        );
+    
+        //We create the receipt
+        let receiptUniqueId = new Date().getUTCMilliseconds();
+    
+        await receiptEndpoint.createReceipt(
+            receiptUniqueId,
+            trackId,
+            revenueTotal,
+            agreementId,
+            datetime,
+            fromAddress,
+            gasLimit
+        );
+    }catch(error){
+        console.log('ERROR IN TRANSACTION ON HOLD DISTRIBUTION');
+        console.log(error);
+        throw new Error(error);
+    }
+}
+module.exports.onHoldDistribution = onHoldDistribution;
 
 async function evaluateReceivers(
     tracKId,
@@ -182,178 +299,93 @@ async function evaluateReceivers(
     fromAddress,
     gasLimit
 ) {
+    try {
+        let shareTotal = 1;
 
-    let shareTotal = 1;
-
-    let emitter = await traderEndpoint.getTrader(
-        emitterId,
-        fromAddress,
-        gasLimit
-    );
-
-    if (previousReceiverId && previousReceiverId != "none") {
-        previousReceiver = await traderEndpoint.getTrader(
-            previousReceiverId,
+        let emitter = await traderEndpoint.getTrader(
+            emitterId,
             fromAddress,
             gasLimit
         );
-        previousReceiverId = previousReceiver.traderId;
 
-    } else {
-        previousReceiverId = fromAddress;
-    }
-    //Get all agreements between emitter and receiver
-    let agreements = await agreementEndpoint.getAgreementsByEmitter(
-        emitter.traderId,
-        fromAddress,
-        gasLimit
-    );
-    console.log("LIST OF AGREEMENTS");
-    console.log(agreements);
-
-    let receiverShareListResult = [];
-    if (agreements && agreements.length > 0) {
-        for (const element of agreements) {
-            let currentAgreement = await agreementEndpoint.getAgreement(
-                element,
+        if (previousReceiverId && previousReceiverId != "none") {
+            previousReceiver = await traderEndpoint.getTrader(
+                previousReceiverId,
                 fromAddress,
                 gasLimit
             );
-            shareTotal =
-                parseFloat(shareTotal) - parseFloat(currentAgreement.percentage);
-            if (shareTotal < 0) {
-                throw "Total percentage exceded permited share";
+            previousReceiverId = previousReceiver.traderId;
+
+        } else {
+            previousReceiverId = fromAddress;
+        }
+        //Get all agreements between emitter and receiver
+        let agreements = await agreementEndpoint.getAgreementsByEmitter(
+            emitter.traderId,
+            fromAddress,
+            gasLimit
+        );
+        console.log("LIST OF AGREEMENTS**************************");
+        console.log(agreements);
+
+        let receiverShareListResult = [];
+        if (agreements && agreements.length > 0) {
+            for (const element of agreements) {
+                let currentAgreement = await agreementEndpoint.getAgreement(
+                    element,
+                    fromAddress,
+                    gasLimit
+                );
+                shareTotal =
+                    parseFloat(shareTotal) - parseFloat(currentAgreement.percentage);
+                if (shareTotal < 0) {
+                    throw "Total percentage exceded permited share";
+                }
+
+                let receiverShareAmmount =
+                    parseFloat(revenueTotalInput) * parseFloat(currentAgreement.percentage);
+
+                let currentShareModel = new ReceiverShareModel(
+                    currentAgreement.agreementId,
+                    currentAgreement.traderEmitterId,
+                    currentAgreement.traderReceiverId,
+                    Math.round(receiverShareAmmount),
+                    currentAgreement.percentage,
+                    datetime
+                );
+                receiverShareListResult.push(currentShareModel);
             }
 
-            let receiverShareAmmount =
-                parseFloat(revenueTotalInput) * parseFloat(currentAgreement.percentage);
+            //Now we distribute the emitter its share
+            let ammountToAddEmitter =
+                parseFloat(shareTotal) * parseFloat(revenueTotalInput);
 
-            let currentShareModel = new ReceiverShareModel(
-                currentAgreement.agreementId,
-                currentAgreement.traderEmitterId,
-                currentAgreement.traderReceiverId,
-                Math.round(receiverShareAmmount),
-                currentAgreement.percentage,
-                datetime
+            await tokenAccountEndpoint.addEnabledBalance(
+                emitterId,
+                Math.round(ammountToAddEmitter),
+                fromAddress,
+                gasLimit
             );
-            receiverShareListResult.push(currentShareModel);
+            let receiptUniqueId = new Date().getUTCMilliseconds();
+
+            //Now we create the receipt
+            await receiptEndpoint.createReceipt(
+                receiptUniqueId,
+                tracKId,
+                Math.round(ammountToAddEmitter),
+                previousAgreementId, //lets test this
+                String(datetime),
+                fromAddress,
+                gasLimit
+            );
+        } else {
+            console.log("No receivers for this trader: " + emitter.name);
         }
-
-        //Now we distribute the emitter its share
-        let ammountToAddEmitter =
-            parseFloat(shareTotal) * parseFloat(revenueTotalInput);
-
-        await tokenAccountEndpoint.addEnabledBalance(
-            emitterId,
-            Math.round(ammountToAddEmitter),
-            fromAddress,
-            gasLimit
-        );
-        let receiptUniqueId = new Date().getUTCMilliseconds();
-
-        //Now we create the receipt
-        await receiptEndpoint.createReceipt(
-            receiptUniqueId,
-            tracKId,
-            Math.round(ammountToAddEmitter),
-            previousAgreementId, //lets test this
-            String(datetime),
-            fromAddress,
-            gasLimit
-        );
-    } else {
-        console.log("No receivers for this trader: " + emitter.name);
+        return receiverShareListResult;
+    } catch (error) {
+        console.log('ERROR IN TRANSACTION EVALUATE EMITTERS');
+        console.log(error);
+        throw new Error(error);
     }
-    return receiverShareListResult;
 }
 module.exports.evaluateReceivers = evaluateReceivers;
-
-async function onHoldDistribution(
-    trackId,
-    uploaderId,
-    datetime,
-    revenueTotal,
-    fromAddress,
-    agreementId
-) {
-    await tokenAccountEndpoint.addDisabledBalance(
-        uploaderId,
-        revenueTotal,
-        fromAddress,
-        gasLimit
-    );
-
-    //We create the receipt
-    let receiptUniqueId = new Date().getUTCMilliseconds();
-
-    await receiptEndpoint.createReceipt(
-        receiptUniqueId,
-        trackId,
-        revenueTotal,
-        agreementId,
-        datetime,
-        fromAddress,
-        gasLimit
-    );
-
-}
-module.exports.onHoldDistribution = onHoldDistribution;
-
-/**
- *All the parameters must come from a result from the blockchain call   
- */
-async function lastNodeDistribution(
-    emitterId,
-    receiverId,
-    trackId,
-    percentageReceiver,
-    ammount,
-    datetime,
-    uploaderId
-) {
-//validate last time emitter and receiver 
-//TODO:
-//We get the receiver token account
-let tokenAccountReceiver = await tokenAccountEndpoint.getTokenAccount(
-    receiverId,
-    fromAddress,
-    gasLimit
-);
-console.log(tokenAccountReceiver);
-console.log('PREVIOUS STATE***********************************');
-console.log("Trader Receiver Balance Enabled: " );
-
-//let ammountToAddReceiver =parseFloat()+parseFloat(ammount);
-// await tokenAccountEndpoint.addEnabledBalance(
-//     receiverId,
-//     Math.round(ammountToAddReceiver),
-//     fromAddress,
-//     gasLimit
-// );
-}
-module.exports.lastNodeDistribution = lastNodeDistribution;
-
-async function evaluateReceipts(
-    agreementId,
-    traderEmitterId,
-    traderReceiverId,
-    trackId,
-    datetime,
-    agreementCtrAddr,
-    fromAddress,
-    gasLimit
-) {
-    let result = await receiptEndpoint.validateReceipt(
-        agreementId,
-        traderEmitterId,
-        traderReceiverId,
-        trackId,
-        datetime,
-        agreementCtrAddr,
-        fromAddress,
-        gasLimit
-    );
-    return result;
-}
-module.exports.evaluateReceipts = evaluateReceipts;
-
