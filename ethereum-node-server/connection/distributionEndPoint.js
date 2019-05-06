@@ -44,9 +44,9 @@ async function distribution(
             fromAddress,
             gasLimit
         );
-
         console.log('RESULT RECEIVERS SHARE FIRST TIME');
         console.log(receiverShareFirstTimeList);
+
         if (receiverShareFirstTimeList.length == 0) {
             await this.onHoldDistribution(
                 trackId,
@@ -93,6 +93,9 @@ async function distributionProcess(
     fromAddress,
     gasLimit
 ) {
+    console.log('*****************************************');
+    console.log('Request Distribution Process Method');
+
     try {
         console.log('PREVIOUS EMITTERS');
         console.log(previousEmitterId);
@@ -108,7 +111,7 @@ async function distributionProcess(
             fromAddress,
             gasLimit
         );
-        console.log('EVALUATE RECEIVERS IN DISTRIBUTION PROCESS');
+        console.log('EVALUATE RECEIVERS SHARE IN DISTRIBUTION PROCESS');
         console.log(receiverList);
 
         //Continue
@@ -194,6 +197,7 @@ async function distributionLastNode(
     console.log('*************************************');
     console.log('Distribution Last Node in Composer.js');
     console.log('Emitter: ' + emitterId);
+    //TODO: Improve logs
     try{
  //validate last time emitter and receiver 
     //TODO:
