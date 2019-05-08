@@ -307,6 +307,8 @@ async function evaluateReceivers(
     fromAddress,
     gasLimit
 ) {
+    console.log('*************************************');
+    console.log('Request Evaluate Receivers in Composer.js');
     try {
         let shareTotal = 1;
 
@@ -333,6 +335,7 @@ async function evaluateReceivers(
             fromAddress,
             gasLimit
         );
+        //TODO: For each agremeent get the entire structure
         console.log("LIST OF AGREEMENTS**************************");
         console.log(agreements);
 
