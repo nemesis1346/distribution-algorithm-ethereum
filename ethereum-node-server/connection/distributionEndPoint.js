@@ -123,7 +123,9 @@ async function distributionProcess(
                 percentageReceiver,
                 ammount,
                 datetime,
-                uploaderId
+                uploaderId,
+                fromAddress, //TODO: Mention how we had to use constantly address and gas
+                gasLimit
             );
         } else if (receiverList == 1) {
             let uniqueShare = receiverList[0];
@@ -192,7 +194,9 @@ async function distributionLastNode(
     percentageReceiver,
     ammount,
     datetime,
-    uploaderId
+    uploaderId,
+    fromAddress,
+    gasLimit
 ) {
     console.log('*************************************');
     console.log('Distribution Last Node in Composer.js');
