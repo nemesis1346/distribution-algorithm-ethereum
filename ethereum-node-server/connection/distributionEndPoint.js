@@ -116,7 +116,7 @@ async function distributionProcess(
 
         //Continue
         if (receiverList.length == 0) {
-            await this.lastNodeDistribution(
+            await this.distributionLastNode(
                 previousEmitterId,
                 emitterId,
                 trackId,
