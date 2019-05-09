@@ -1,11 +1,11 @@
 'use strict';
 const UUID = require('uuid/v1');
-const methods = require('../../methods.js');
+const methods = require('../../requestsConnectionServer.js');
 
 //FAILING
 async function example3() {
 
-      //INIT DATA////////////////////////////////////////////////////////////// 
+      //INIT DATA//////////////////////////////////////////////////////////////
       let trackId = 'example3';
       await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
 
@@ -45,7 +45,7 @@ async function example3() {
       console.log('TOKEN TRADER 3');
       await methods.getTokenAccount(trader3);
       console.log('TOKEN TRADER 4');
-      await methods.getTokenAccount(trader4);   
+      await methods.getTokenAccount(trader4);
 }
 
 example3();

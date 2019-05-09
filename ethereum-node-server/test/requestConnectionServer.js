@@ -164,7 +164,7 @@ exports.createAllTracksFromFile= async function(uploaderId) {
 exports.uploadPaymentForArray=async function (uploaderId) {
     let listTracks = [];
 
-    //We make the transaction related with the upload   
+    //We make the transaction related with the upload
     AppleTrackData.forEach((element) => {
         //We save the artists first
         var currentTrack = new TrackModel(
@@ -240,8 +240,8 @@ exports.updateTrack=async function (isrc, revenueTotal) {
 
 /**
  * @description This is a method for make the automatic distribution
- * @param {string} isrc 
- * @param {string} uploader 
+ * @param {string} isrc
+ * @param {string} uploader
  */
 exports.paymentDist=async function (isrc, uploader) {
     //DATA FOR TX DISTRIBUTION
@@ -332,8 +332,8 @@ exports.getTokenAccount=async function (tokenAccountId) {
 
 /**
  * This is a generic method for post request
- * @param {Its the name of the endpoint or method at the end} endpoint 
- * @param {Its the data, usually should be a json object} data 
+ * @param {Its the name of the endpoint or method at the end} endpoint
+ * @param {Its the data, usually should be a json object} data
  */
 async function requestPost(endpoint, data, extraInfo) {
     let result;
@@ -361,7 +361,7 @@ async function requestPost(endpoint, data, extraInfo) {
 }
 /**
  * This is a generic method for get request
- * @param {Its the name of the endpoint or method at the end} endpoint 
+ * @param {Its the name of the endpoint or method at the end} endpoint
  */
 async function requestGet(endpoint, extraInfo) {
     let get_options = {

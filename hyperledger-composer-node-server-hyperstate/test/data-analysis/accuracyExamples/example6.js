@@ -1,11 +1,11 @@
 'use strict';
 const UUID = require('uuid/v1');
-const methods = require('../../methods.js');
+const methods = require('../../requestsConnectionServer.js');
 
-//must be seend in the distribution analysis in react app 
+//must be seend in the distribution analysis in react app
 async function example6() {
 
-    //INIT DATA////////////////////////////////////////////////////////////// 
+    //INIT DATA//////////////////////////////////////////////////////////////
     let trackId = 'example6';
     await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'trader4', 'author', 'MUSICIAN');
 

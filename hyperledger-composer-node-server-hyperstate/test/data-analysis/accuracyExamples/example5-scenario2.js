@@ -1,11 +1,11 @@
 'use strict';
 const UUID = require('uuid/v1');
-const methods = require('../../methods.js');
+const methods = require('../../requestsConnectionServer.js');
 
 async function example5() {
     var startDate = new Date();
 
-    //INIT DATA////////////////////////////////////////////////////////////// 
+    //INIT DATA//////////////////////////////////////////////////////////////
     let trackId =UUID();
     await methods.createTrack(trackId, 'track', 100, 'vendorIdentifier', 'label', 'author', 'MUSICIAN');
 
@@ -22,7 +22,7 @@ async function example5() {
     let trader6 = UUID();
     await methods.createParticipant(trader6, 'trader6', 'trader6', 0.00, 'ARTIST', trader6);
 
-    //EXAMPLE 5//////////////////////////////////////////////////////////////////////// IS WORKING 
+    //EXAMPLE 5//////////////////////////////////////////////////////////////////////// IS WORKING
     //Track1
     let agreement1Id = UUID();
     await methods.createAgreement(agreement1Id, trader1, trader2, 0.25, 'PENDING', trackId, 'trader1', 'trader2');
@@ -43,7 +43,7 @@ async function example5() {
     await methods.distribution(trackId, trader1, String(new Date().toISOString()));
     await methods.updateTrack(trackId, 10);
     await methods.distribution(trackId, trader1, String(new Date().toISOString()));
-    
+
     console.log('TOKEN TRADER 1');
     await methods.getTokenAccount(trader1);
     console.log('TOKEN TRADER 2');
