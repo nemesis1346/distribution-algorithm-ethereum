@@ -1,6 +1,6 @@
 'use strict';
+const port = 3111;
 //This is very necessary to the data analysis. Must be replicated in both platforms
-const port = 3011
 //Imports
 const express = require('express');
 const bodyParser = require('body-parser');
