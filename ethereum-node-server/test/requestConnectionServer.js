@@ -2,28 +2,28 @@
 const http = require('http');
 const superagent = require('superagent');
 const TokenAccountModel = require('../models/tokenAccountModel.js');
-const UserModel = require('../models/userModel.js');
 const DistributionRequest = require('../models/distributionRequest.js');
-const TrackModel = require('../models/trackModel.js');
 const TraderModel = require('../models/traderModel.js');
 const AgreementModel = require('../models/agreementModel.js');
-var PORT = '3011';
+const CreateTrackRequest = require('../models/createTrackRequest.js');
+var PORT = '3111';
 //const PORT = '3019';
 var HOST = 'localhost';
 //const HOST = '104.196.55.102';
-const AppleTrackData = require('../data/processedData/Apple_Streams_S1_80032046_1117_AU_for_201710_exampleJSON');
-const OnHoldDistributionRequest = require('../models/onHoldDistributionRequest.js');
 
-exports.getPort=()=>{
+exports.getPort = () => {
     return PORT;
 }
-exports.setPort=(port)=>{
+exports.setPort = (port) => {
     PORT = port;
 }
 
 exports.distribution = async function (isrc, uploaderId, date) {
     try {
-        let distributionRequest = new DistributionRequest(isrc, uploaderId, date);
+        let distributionRequest = new DistributionRequest(
+            isrc, 
+            uploaderId, 
+            date);
         await requestPost('/distributionAlgorithm', JSON.stringify(distributionRequest), 'DISTRIBUTION');
     } catch (error) {
         console.log('/distributionAlgorithm ERROR');
@@ -31,99 +31,27 @@ exports.distribution = async function (isrc, uploaderId, date) {
         return new Error(error);
     }
 }
-
-
-
-exports.createTrack = async function (trackId, title, revenue, vendorIdentifier, label, author, authorType) {
+exports.createTrack = async function (trackId, isrc,title, revenue, fromAddress,gasLimit) {
     //DATA FOR CREATING TRACK
-    var trackModel = new TrackModel(
+    var createTrackRequest = new CreateTrackRequest(
         trackId,
+        isrc,
         title,
         revenue,
-        vendorIdentifier,
-        label,
-        author,
-        authorType
+        fromAddress,
+        gasLimit
     );
     try {
-        await requestPost('/createTrack', JSON.stringify(trackModel), 'TRACK');
+        await requestPost('/createTrack', JSON.stringify(createTrackRequest), 'TRACK');
     } catch (error) {
         console.log('/createTrack ERROR');
         console.error(error);
         throw new Error(error);
     }
 }
-
-exports.createAllTracksFromFile= async function(uploaderId) {
-    try {
-        let listTracks = [];
-        AppleTrackData.forEach((element) => {
-            //We save the artists first
-            var currentTrack = new TrackModel(
-                element.isrc,
-                element.title,
-                parseFloat(element.revenueTotal),
-                element.vendorIdentifier,
-                'Apple',
-                element.author,
-                'MUSICIAN',
-                uploaderId
-            );
-            listTracks.push(currentTrack);
-        });
-        let newlistTracks = listTracks.slice(0, 40);
-        console.log(newlistTracks);
-
-        //for (const element of newlistTracks) {
-        newlistTracks.forEach(async element => {
-            await this.createTrack(
-                element.isrc,
-                element.title,
-                element.revenueTotal,
-                "vendorIdentifier",
-                element.label,
-                element.author,
-                element.ownerType
-            );
-        });
-
-    } catch (error) {
-        console.log('/createAllTracksFromFile ERROR');
-        console.error(error);
-        throw new Error(error);
-    }
-}
-
-/**
- * @description This is very customizable, must be improved
- */
-exports.uploadPaymentForArray=async function (uploaderId) {
-    let listTracks = [];
-
-    //We make the transaction related with the upload
-    AppleTrackData.forEach((element) => {
-        //We save the artists first
-        var currentTrack = new TrackModel(
-            element.isrc,
-            element.title,
-            parseFloat(element.revenueTotal),
-            element.vendorIdentifier,
-            'Apple',
-            element.author,
-            'MUSICIAN',
-            uploaderId,
-        );
-        listTracks.push(currentTrack);
-    });
-    let newlistTracks = listTracks.slice(0, 1)
-
-    for (const element of newlistTracks) {
-        paymentDist(element.isrc, uploaderId);
-    }
-}
-
-exports.createAgreement=async function (agreementId, traderEmiterId, traderReceiverId, percentage, status, isrc, traderEmiterName, traderReceiverName) {
+exports.createAgreement = async function (agreementId, traderEmiterId, traderReceiverId, percentage, status, isrc, traderEmiterName, traderReceiverName) {
     //DATA FOR TX CREATE GENERIC AGREEMENT
+    //TODO: change the request
     var agreementModel = new AgreementModel(
         agreementId,
         traderEmiterId,
@@ -144,22 +72,28 @@ exports.createAgreement=async function (agreementId, traderEmiterId, traderRecei
     }
 }
 
-exports.manualPayment=async function (isrc, traderId) {
-    var manualPaymentRequest = JSON.stringify({
-        "isrc": isrc,
-        "traderId": traderId
-    });
+exports.getTraderContractAddress = async function () {
     try {
-        await requestPost('/manualPayment', manualPaymentRequest, 'MANUAL PAYMENT');
+
     } catch (error) {
-        console.log('/manualPayment ERROR');
+        console.log('/updateTrack ERROR');
         console.error(error);
         throw new Error(error);
     }
-
 }
 
-exports.updateTrack=async function (isrc, revenueTotal) {
+exports.getTrackContractAddress = async function () {
+    try {
+
+    } catch (error) {
+        console.log('/updateTrack ERROR');
+        console.error(error);
+        throw new Error(error);
+    }
+}
+
+
+exports.updateTrack = async function (isrc, revenueTotal) {
     var updateRequest = JSON.stringify({
         "isrc": isrc,
         "revenueTotal": revenueTotal
@@ -174,25 +108,6 @@ exports.updateTrack=async function (isrc, revenueTotal) {
 
 }
 
-/**
- * @description This is a method for make the automatic distribution
- * @param {string} isrc
- * @param {string} uploader
- */
-exports.paymentDist=async function (isrc, uploader) {
-    //DATA FOR TX DISTRIBUTION
-    var dataPaymentDistAuto = JSON.stringify({
-        "isrc": isrc,
-        "uploaderId": uploader
-    });
-    try {
-        await requestPost('/paymentDistributionAutomatic', dataPaymentDistAuto, 'PAYMENT DISTRIBUTION');
-    } catch (error) {
-        console.log('/paymentDistributionAutomatic ERROR');
-        console.error(error);
-        throw new Error(error);
-    }
-}
 
 exports.createParticipant = async function (participantId, name, email, balance, traderType, tokenAccountId) {
     //DATA FOR CREATE A GENERIC PARTICIPANT
@@ -214,18 +129,7 @@ exports.createParticipant = async function (participantId, name, email, balance,
         throw new Error(error);
     }
 }
-exports.onHoldDistribution=async function (isrc, uploaderId) {
-    try {
 
-        let onHoldDistributionRequest = new OnHoldDistributionRequest(isrc, uploaderId);
-        await requestPost('/onHoldDistribution', JSON.stringify(onHoldDistributionRequest), 'HOLD DISTRIBUTION');
-
-    } catch (error) {
-        console.log('/onHoldDistribution ERROR');
-        console.error(error);
-        throw new Error(error);
-    }
-}
 
 exports.getTraderDetail = async function (traderId) {
     try {
@@ -239,23 +143,7 @@ exports.getTraderDetail = async function (traderId) {
     }
 }
 
-exports.evaluateEmiters =async function(isrc, uploaderId) {
-    try {
-        var evaluateEmitersRequest = JSON.stringify({
-            "isrc": isrc,
-            "uploaderId": uploaderId
-        });
-        let result = await requestPost('/evaluateEmiters', JSON.stringify(evaluateEmitersRequest), 'EVALUATE RECEIVERS');
-
-        return result;
-    } catch (error) {
-        console.log('/evaluateEmiters ERROR');
-        console.error(error);
-        throw new Error(error);
-    }
-}
-
-exports.getTokenAccount=async function (tokenAccountId) {
+exports.getTokenAccount = async function (tokenAccountId) {
     try {
         await requestPost('/getTokenAccountDetail', JSON.stringify(tokenAccountId), 'TOKEN ACCOUNT ID' + tokenAccountId);
 
