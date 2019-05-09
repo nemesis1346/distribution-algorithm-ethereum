@@ -29,8 +29,10 @@
     "express": "^4.16.2",
     "ganache-cli": "^6.4.3",
     "jquery": "^3.3.1",
+    "morgan": "^1.9.1",
     "nodemon": "^1.14.12",
     "solc": "^0.5.5",
+    "superagent": "^5.0.5",
     "truffle-contract": "^4.0.10"
   }
 }
