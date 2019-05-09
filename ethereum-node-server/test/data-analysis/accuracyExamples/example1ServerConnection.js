@@ -1,11 +1,7 @@
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-const trackEndpoint = require('../connection/trackEndpoint.js');
-const traderEndpoint = require('../connection/traderEndpoint.js');
-const tokenAccountEndpoint = require('../connection/tokenAccountEndpoint.js');
-const agreementEndpoint = require('../connection/agreementEndpoint.js');
-const distributionEndpoint = require('../connection/distributionEndPoint');
 const gasLimit = '6721975';
+const methods = require('../../requestConnectionServer.js');
 
 async function example1() {
     try {
@@ -26,7 +22,7 @@ async function example1() {
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
-        await trackEndpoint.createTrack(
+        await methods.createTrack(
             trackId,
             traderIsrc,
             'track',
@@ -35,79 +31,79 @@ async function example1() {
             gasLimit);
 
         //Creating Traders
-        await traderEndpoint.createTrader(
+        await methods.createTrader(
             trader1,
             "trader1",
             trader1,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            await methods.getTAContractAddress(),
             trader1,
             gasLimit);
 
-        await traderEndpoint.createTrader(
+        await methods.createTrader(
             trader2,
             "trader2",
             trader2,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            await methods.getTAContractAddress(),
             trader2,
             gasLimit);
 
-        await traderEndpoint.createTrader(
+        await methods.createTrader(
             trader3,
             "trader3",
             trader3,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            await methods.getTAContractAddress(),
             trader3,
             gasLimit);
 
 
-        await traderEndpoint.createTrader(
+        await methods.createTrader(
             trader4,
             "trader4",
             trader4,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            await methods.getTAContractAddress(),
             trader4,
             gasLimit);
 
         //Agreement 1
-        await agreementEndpoint.createAgreement(
+        await methods.createAgreement(
             agreement1Id,
             trader1,
             trader2,
             30,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            await methods.getTraderContractAddress(), //TODO: fix this
+            await methods.getTrackContractAddress(),
             trader1,
             gasLimit
         );
 
         //Agreement 2
-        await agreementEndpoint.createAgreement(
+        await methods.createAgreement(
             agreement2Id,
             trader1,
             trader3,
             50,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            await methods.getTraderContractAddress(),
+            await methods.getTrackContractAddress(),
             trader1,
             gasLimit
         );
 
         //Agreement 3
-        await agreementEndpoint.createAgreement(
+        await methods.createAgreement(
             agreement3Id,
             trader3,
             trader4,
             90,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            await methods.getTraderContractAddress(),
+            await methods.getTrackContractAddress(),
             trader1,
             gasLimit
         );
 
-        await distributionEndpoint.distribution(
+        await methods.distribution(
             trackId,
             trader1,
             new Date().getTime(),
@@ -118,12 +114,12 @@ async function example1() {
         console.log('TRADERS OUTPUT----------------------');
             console.log(trader1);
         //Trader1
-        let trader1Result = await traderEndpoint.getTrader(
+        let trader1Result = await methods.getTrader(
             trader1,
             trader1,
             gasLimit);
 
-        let tokenTrader1Result = await tokenAccountEndpoint.getTokenAccount(
+        let tokenTrader1Result = await methods.getTokenAccount(
             trader1,
             trader1,
             gasLimit
@@ -136,12 +132,12 @@ async function example1() {
         console.log(tokenTrader1Result.balanceEnabled);
 
         //Trader2
-        let trader2Result = await traderEndpoint.getTrader(
+        let trader2Result = await methods.getTrader(
             trader2,
             trader2,
             gasLimit);
 
-        let tokenTrader2Result = await traderEndpoint.getTrader(
+        let tokenTrader2Result = await methods.getTrader(
             trader2,
             trader2,
             gasLimit
@@ -154,12 +150,12 @@ async function example1() {
         console.log(tokenTrader2Result.balanceEnabled);
 
         //Trader 3
-        let trader3Result = await traderEndpoint.getTrader(
+        let trader3Result = await methods.getTrader(
             trader3,
             trader3,
             gasLimit);
 
-        let tokenTrader3Result = await traderEndpoint.getTrader(
+        let tokenTrader3Result = await methods.getTrader(
             trader3,
             trader3,
             gasLimit
@@ -171,12 +167,12 @@ async function example1() {
         console.log(tokenTrader3Result.balanceEnabled);
 
         //Trader4
-        let trader4Result = await traderEndpoint.getTrader(
+        let trader4Result = await methods.getTrader(
             trader4,
             trader4,
             gasLimit);
 
-        let tokenTrader4Result = await traderEndpoint.getTrader(
+        let tokenTrader4Result = await methods.getTrader(
             trader4,
             trader4,
             gasLimit

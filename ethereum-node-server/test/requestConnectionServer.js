@@ -21,36 +21,6 @@ exports.setPort=(port)=>{
     PORT = port;
 }
 
-exports.getTxByTrackForDiagram = async function (isrc) {
-    try {
-        await requestPost('/getTxByTrackForDiagram', JSON.stringify(isrc), 'GetTxByTrackForDiagram');
-    } catch (error) {
-        console.log('/getTxByTrackForDiagram ERROR');
-        console.error(error);
-        return new Error(error);
-    }
-}
-
-exports.getTxByEmiterForBalance = async function (traderId) {
-    try {
-        await requestPost('/getTxByEmiterForBalance', JSON.stringify(traderId), 'GetTxByEmiterForBalance');
-    } catch (error) {
-        console.log('/getTxByEmiterForBalance ERROR');
-        console.error(error);
-        return new Error(error);
-    }
-}
-
-exports.getTxByReceiverForBalance = async function (traderId) {
-    try {
-        await requestPost('/getTxByReceiverForBalance', JSON.stringify(traderId), 'GetTxByReceiverForBalance');
-    } catch (error) {
-        console.log('/getTxByReceiverForBalance ERROR');
-        console.error(error);
-        return new Error(error);
-    }
-}
-
 exports.distribution = async function (isrc, uploaderId, date) {
     try {
         let distributionRequest = new DistributionRequest(isrc, uploaderId, date);
@@ -62,41 +32,7 @@ exports.distribution = async function (isrc, uploaderId, date) {
     }
 }
 
-exports.cascadeDistribution = async function (agreementId, emiterId, receiverId, ammount, isrc) {
-    try {
-        var cascadeDistributionRequest = JSON.stringify({
-            "traderReceiverId": receiverId,
-            "ammount": ammount,
-            "isrc": isrc,
-            "emiterId": emiterId,
-            "agreementId": agreementId
-        });
-        await requestPost('/cascadeDistribution', JSON.stringify(cascadeDistributionRequest), 'CASCADE DISTRIBUTION');
-    } catch (error) {
-        console.log('/cascadeDistribution ERROR');
-        console.error(error);
-        return new Error(error);
-    }
-}
 
-exports.createUser= async function(name, email, pwd, organizationType, traderId) {
-    //DATA FOR CREATING AN ADMIN UER
-    var adminModel = new UserModel(
-        name,
-        email,
-        pwd,
-        organizationType,
-        traderId
-    );
-    // we set a delay just in case composer has MVVC problem
-    try {
-        await requestPost('/createOrganization', JSON.stringify(adminModel), 'ADMIN');
-    } catch (error) {
-        console.log('/createOrganization ERROR');
-        console.error(error);
-        throw new Error(error);
-    }
-}
 
 exports.createTrack = async function (trackId, title, revenue, vendorIdentifier, label, author, authorType) {
     //DATA FOR CREATING TRACK
