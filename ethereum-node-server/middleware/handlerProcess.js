@@ -1,10 +1,10 @@
 const DataModel = require("../models/dataModel");
-const TraderEndpoint = require('../chaincode/traderEndpoint.js');
-const TrackEndpoint = require('../chaincode/trackEndpoint.js');
-const ReceiptEndpoint = require('../chaincode/receiptEndpoint.js');
-const AgreementEndpoint = require('../chaincode/agreementEndpoint.js');
-const DistributionEndpoint = require('../chaincode/distributionEndpoint.js');
-//TODO: Testing Endpoint
+const TraderEndpoint = require('../connection/traderEndpoint.js');
+const TrackEndpoint = require('../connection/trackEndpoint.js');
+const ReceiptEndpoint = require('../connection/receiptEndpoint.js');
+const AgreementEndpoint = require('../connection/agreementEndpoint.js');
+const DistributionEndpoint = require('../connection/distributionEndpoint.js');
+const testingEndpoint=require('../connection/testingEndpoint.js');
 
 process.on('message', async function (input) {
     //Call method
@@ -38,73 +38,70 @@ process.on('message', async function (input) {
                 result = await trackEndpoint.getTrackDetail(JSON.parse(bufferContent));
                 break;
             case '/getTraderDetail':
-                result = await traderChaincode.getTraderDetail(JSON.parse(bufferContent));
+                result = await traderEndpoint.getTraderDetail(JSON.parse(bufferContent));
                 break;
             case '/getTokenAccountDetail':
-                result = await traderChaincode.getTokenAccountDetail(JSON.parse(bufferContent));
+                result = await traderEndpoint.getTokenAccountDetail(JSON.parse(bufferContent));
                 break;
             case '/paymentDistributionAutomatic':
-                result = await transactionChaincode.paymentDistributionAutomatic(JSON.parse(bufferContent));
+                result = await receiptEndpoint.paymentDistributionAutomatic(JSON.parse(bufferContent));
                 break;
             case '/getAgreementsByTrack':
-                result = await agreementChaincode.getAgreementByTrack(JSON.parse(bufferContent));
+                result = await agreementEndpoint.getAgreementByTrack(JSON.parse(bufferContent));
                 break;
             case '/removeAgreement':
-                result = await agreementChaincode.removeAgreement(JSON.parse(bufferContent));
+                result = await agreementEndpoint.removeAgreement(JSON.parse(bufferContent));
                 break;
             case '/getTransactionsByTrader':
-                result = await transactionChaincode.getTransactionsByTrader(JSON.parse(bufferContent));
+                result = await receiptEndpoint.getTransactionsByTrader(JSON.parse(bufferContent));
                 break;
             case '/updateTrack':
-                result = await trackChaincode.updateTrack(JSON.parse(bufferContent));
+                result = await trackEndpoint.updateTrack(JSON.parse(bufferContent));
                 break;
             case '/getEarnedDistTransactionsByTraderAndISRC':
-                result = await agreementChaincode.getEarnedDistTransactionsByTraderAndISRC(JSON.parse(bufferContent));
-                break;
-            case '/manualPayment':
-                result = await manualPaymentChaincode.manualPayment(JSON.parse(bufferContent));
+                result = await agreementEndpoint.getEarnedDistTransactionsByTraderAndISRC(JSON.parse(bufferContent));
                 break;
             case '/getTxByStatusTypeTrader':
-                result = await transactionChaincode.getTxByStatusTypeTrader(JSON.parse(bufferContent));
+                result = await receiptEndpoint.getTxByStatusTypeTrader(JSON.parse(bufferContent));
                 break;
             case '/getTransactions':
-                result = await transactionChaincode.getTransactions();
+                result = await receiptEndpoint.getTransactions();
                 break;
             case '/getTxByReceiverForBalance':
-                result = await transactionChaincode.getTxByReceiverForBalance(JSON.parse(bufferContent));
+                result = await receiptEndpoint.getTxByReceiverForBalance(JSON.parse(bufferContent));
                 break;
             case '/withdrawalByTrader':
-                result = await transactionChaincode.withdrawalByTrader(JSON.parse(bufferContent));
+                result = await receiptEndpoint.withdrawalByTrader(JSON.parse(bufferContent));
                 break;
             case '/getTxByEmiterForBalance':
-                result = await transactionChaincode.getTxByEmiterForBalance(JSON.parse(bufferContent));
+                result = await receiptEndpoint.getTxByEmiterForBalance(JSON.parse(bufferContent));
                 break;
             case '/distributionAlgorithm':
-                result = await distributionAlgorithmChaincode.distribution(JSON.parse(bufferContent));
+                result = await distributionEndpoint.distribution(JSON.parse(bufferContent));
                 break;
             case '/getAgreements':
-                result = await agreementChaincode.getAgreements();
+                result = await agreementEndpoint.getAgreements();
                 break;
             case '/getTxByTrackForDiagram':
-                result = await transactionChaincode.getTxByTrackForDiagram(JSON.parse(bufferContent));
+                result = await receiptEndpoint.getTxByTrackForDiagram(JSON.parse(bufferContent));
                 break;
             case '/testing_example1':
-                result = await testingChaincode.example1();
+                result = await testingEndpoint.example1();
                 break;
             case '/testing_example2':
-                result = await testingChaincode.example2();
+                result = await testingEndpoint.example2();
                 break;
             case '/testing_example3':
-                result = await testingChaincode.example3_scenario3();
+                result = await testingEndpoint.example3_scenario3();
                 break;
             case '/testing_example4':
-                result = await testingChaincode.example4_scenario1();
+                result = await testingEndpoint.example4_scenario1();
                 break;
             case '/testing_example5':
-                result = await testingChaincode.example5_scenario2();
+                result = await testingEndpoint.example5_scenario2();
                 break;
             case '/testing_example6':
-                result = await testingChaincode.example6();
+                result = await testingEndpoint.example6();
                 break;
             default:
                 dataModel.message = "Method not found";
