@@ -1,9 +1,9 @@
 const DataModel = require("../models/dataModel");
-const TraderEndpoint = require('../connection/traderEndpoint.js');
-const TrackEndpoint = require('../connection/trackEndpoint.js');
-const ReceiptEndpoint = require('../connection/receiptEndpoint.js');
-const AgreementEndpoint = require('../connection/agreementEndpoint.js');
-const DistributionEndpoint = require('../connection/distributionEndpoint.js');
+const traderEndpoint = require('../connection/traderEndpoint.js');
+const trackEndpoint = require('../connection/trackEndpoint.js');
+const receiptEndpoint = require('../connection/receiptEndpoint.js');
+const agreementEndpoint = require('../connection/agreementEndpoint.js');
+const distributionEndpoint = require('../connection/distributionEndPoint.js');
 const testingEndpoint=require('../connection/testingEndpoint.js');
 
 process.on('message', async function (input) {
@@ -115,14 +115,14 @@ process.on('message', async function (input) {
 
         //Executing the promise , maybe need POST and GET
         if (result != null) {
-            console.log(result);
+            //console.log(result);
             //This is status 200 , everything ok
             if (result) {
                 if (result.status == "200") {
                     dataModel.data = result;
                     dataModel.status = "200";
                 } else {
-                    console.log(dataModel);
+                   // console.log(dataModel);
                     dataModel.message = result;
                     dataModel.status = "300";
                 }

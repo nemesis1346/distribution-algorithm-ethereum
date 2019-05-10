@@ -1,7 +1,6 @@
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-const TrackModel = require('../models/trackModel.js');
 //Artifacts
 const tracks_artifact = require('../build/contracts/Tracks.json');
 //Contract
@@ -9,20 +8,43 @@ const TracksContract = contractTruffle(tracks_artifact);
 //Setting Providers
 TracksContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
+//Models
+const DataModel = require("../models/dataModel");
+const TrackModel = require('../models/trackModel');
 
-async function createTrack(trackId, isrc, title, revenue, fromAddress, gasLimit) {
+async function createTrack(request) {
+  let dataModel = new DataModel(null, null, null);
+  console.log('************************************');
+  console.log('Request Track in Composer.js: ');
+  console.log(request);
   try {
+
+    let trackModel = new TrackModel(
+      request.trackId,
+      request.isrc,
+      request.title,
+      request.revenue,
+      request.fromAddress
+    );
+
     const tracksInterface = await TracksContract.deployed();
+
     await tracksInterface.createTrack(
-      trackId,
-      isrc,
-      title,
-      revenue,
+      request.trackId,
+      request.isrc,
+      request.title,
+      request.revenue,
       {
-        from: fromAddress,
-        gasLimit: gasLimit
+        from: request.fromAddress,
+        gasLimit: request.gasLimit
       });
-    console.log('TRACK CREATION SUCCESFUL');
+    console.log('Track added succesfully in Chaincode: ');
+    console.log(request.isrc);
+
+    dataModel.data = JSON.stringify(trackModel);
+    dataModel.status = '200';
+
+    return dataModel;
 
   } catch (error) {
     console.log(error);

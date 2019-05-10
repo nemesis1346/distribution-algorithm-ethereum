@@ -4,13 +4,13 @@ class TrackModel {
         trackId,
         isrc,
         title,
-        revenueTotal,
+        revenue,
         uploaderId) {
 
         this.trackId = trackId;
         this.isrc = isrc;
         this.title = title;
-        this.revenueTotal = revenueTotal;
+        this.revenue = revenue;
         this.uploaderId = uploaderId
     }
 }

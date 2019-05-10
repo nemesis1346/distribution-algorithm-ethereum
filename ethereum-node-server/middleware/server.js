@@ -21,7 +21,7 @@ const handler = async (request, response) => {
         buffer.push(chunk);
     }).on('end', async () => {
         let bufferContent = Buffer.concat(buffer).toString();
-        console.log(bufferContent);
+        //console.log(bufferContent);
 
         //Set response
         response.statusCode = 200;
@@ -49,9 +49,7 @@ const handler = async (request, response) => {
     });
 }
 
-app.post('/login', handler);
 app.post('/createTrader', handler);
-app.post('/createOrganization', handler);
 app.post('/createTrack', handler);
 app.post('/createAgreement', handler);
 app.post('/getAgreementsByTrack', handler);
@@ -69,7 +67,6 @@ app.post('/withdraw', handler);
 app.post('/getTransactionsByTrader', handler);
 app.post('/updateTrack', handler);
 app.post('/manualPayment', handler);
-app.post('/getEarnedDistTransactionsByTraderAndISRC', handler);
 app.post('/getTransactions', handler);
 app.post('/getTxByStatusTypeTrader', handler);
 app.post('/onHoldDistribution', handler);
