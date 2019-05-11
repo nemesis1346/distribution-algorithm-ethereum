@@ -25,19 +25,26 @@ async function listenTraderEvents(){
 }
 
 
-async function createTrader(traderId, name, tokenAccountId, tokenAccountAdd, fromAddress, gasLimit) {
+async function createTrader(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('************************************');
+    console.log('Request Create Trader in Composer.js: ');
+    console.log(request);
     try {
         const tradersInterface = await TradersContract.deployed();
         await tradersInterface.createTrader(
-            traderId,
-            name,
-            tokenAccountId,
-            tokenAccountAdd,
+            request.traderId,
+            request.name,
+            request.tokenAccountId,
+            request.tokenAccountAdd,
             {
-                from: fromAddress,
-                gasLimit: gasLimit
+                from: request.fromAddress,
+                gasLimit: request.gasLimit
             });
-        console.log('TRADER CREATION SUCCESFUL');
+            dataModel.data = JSON.stringify('Participant ' + request.traderId + ' created succesfully');
+            dataModel.status = '200';
+
+            return dataModel;
 
     } catch (error) {
         console.log(error)
@@ -45,28 +52,37 @@ async function createTrader(traderId, name, tokenAccountId, tokenAccountAdd, fro
 }
 module.exports.createTrader = createTrader;
 
-async function getTrader(traderId, fromAddress, gasLimit) {
-    let traderModel = new TraderModel(null, null, null);
-    const traderInterface = await TradersContract.deployed();
-    let traderResult = await traderInterface.getTrader(
-        traderId,
-        {
-            from: fromAddress,
-            gasLimit: gasLimit
-        });
-    traderModel.traderId = traderResult[0];
-    traderModel.name = traderResult[1];
-    traderModel.tokenAccountId = traderResult[2];
-
-    console.log('TRADER '+traderModel.name+" GOTTEN");
-
-    return traderModel;
+async function getTrader(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('*******************************');
+    console.log("Request Trader Detail in Composer.js: ");
+    console.log(request.traderId);
+    try{
+        let traderModel = new TraderModel(null, null, null);
+        const traderInterface = await TradersContract.deployed();
+    
+        let traderResult = await traderInterface.getTrader(
+            request.traderId,
+            {
+                from: request.fromAddress,
+                gasLimit: request.gasLimit
+            });
+        traderModel.traderId = traderResult[0];
+        traderModel.name = traderResult[1];
+        traderModel.tokenAccountId = traderResult[2];
+    
+        dataModel.data = JSON.stringify(traderModel);
+        dataModel.status = '200';
+    
+        return dataModel;
+    }catch(error){
+        throw new Error(error);
+    }
 }
 module.exports.getTrader = getTrader;
 
 async function getTraderContractAddress() {
     const traderInterface = await TradersContract.deployed();
-
     return traderInterface.address;
 }
 module.exports.getTraderContractAddress = getTraderContractAddress;

@@ -6,6 +6,8 @@ const DistributionRequest = require('../models/distributionRequest.js');
 const TraderModel = require('../models/traderModel.js');
 const AgreementModel = require('../models/agreementModel.js');
 const CreateTrackRequest = require('../models/createTrackRequest.js');
+const CreateAgreementRequest =require('../models/createAgreementRequest.js');
+
 var PORT = '3111';
 //const PORT = '3019';
 var HOST = 'localhost';
@@ -52,19 +54,20 @@ exports.createTrack = async function (trackId, isrc,title, revenue, fromAddress,
 exports.createAgreement = async function (agreementId, traderEmiterId, traderReceiverId, percentage, status, isrc, traderEmiterName, traderReceiverName) {
     //DATA FOR TX CREATE GENERIC AGREEMENT
     //TODO: change the request
-    var agreementModel = new AgreementModel(
+    var createAgreementRequest = new CreateAgreementRequest(
         agreementId,
         traderEmiterId,
         traderReceiverId,
         percentage,
-        status,
-        isrc,
-        traderEmiterName,
-        traderReceiverName
+        trackId,
+        tradersCtrAddr,
+        tracksCtrAddr,
+        fromAddress,
+        gasLimit
     );
 
     try {
-        await requestPost('/createAgreement', JSON.stringify(agreementModel), 'CREATE AGREEMENT');
+        await requestPost('/createAgreement', JSON.stringify(createAgreementRequest), 'CREATE AGREEMENT');
     } catch (error) {
         console.log('/createAgreement ERROR');
         console.error(error);

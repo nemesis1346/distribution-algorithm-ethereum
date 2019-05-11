@@ -2,6 +2,7 @@ const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 const AgreementModel = require('../models/agreementModel.js');
+const DataModel = require('../models/dataModel.js');
 //Artifacts
 const agreements_artifact = require('../build/contracts/Agreements.json');
 //Contract
@@ -10,26 +11,37 @@ const AgreementsContract = contractTruffle(agreements_artifact);
 AgreementsContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
 
-async function createAgreement(agreementId, emitterId, receiverId, percentage, trackId, tradersCtrAddr, tracksCtrAddr, fromAddress, gasLimit) {
+
+async function createAgreement(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('************************************');
+    console.log('Request Create Agreement in Composer.js: ');
+    console.log(request);
     try {
         const agreementsInterface = await AgreementsContract.deployed();
 
         await agreementsInterface.createAgreement(
-            agreementId,
-            emitterId,
-            receiverId,
-            percentage,
-            trackId,
-            tradersCtrAddr,
-            tracksCtrAddr,
+            request.agreementId,
+            request.emitterId,
+            request.receiverId,
+            request.percentage,
+            request.trackId,
+            request.tradersCtrAddr,
+            request.tracksCtrAddr,
             {
-                from: fromAddress,
-                gasLimit: gasLimit
+                from: request.fromAddress,
+                gasLimit: request.gasLimit
             });
-        console.log('AGREEMENT CREATION SUCCESFUL');
+            //TODO: Validation
 
+        dataModel.data = JSON.stringify("Agreement Created Correctly");
+        dataModel.status = '200';
+
+        return dataModel;
     } catch (error) {
-        console.log(error)
+        console.log('ERROR IN AGREEMENT CREATION');
+        console.log(error);
+        throw new Error(error);
     }
 }
 module.exports.createAgreement = createAgreement;
