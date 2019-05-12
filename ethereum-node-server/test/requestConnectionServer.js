@@ -7,6 +7,7 @@ const TraderModel = require('../models/traderModel.js');
 const AgreementModel = require('../models/agreementModel.js');
 const CreateTrackRequest = require('../models/createTrackRequest.js');
 const CreateAgreementRequest =require('../models/createAgreementRequest.js');
+const CreateTraderRequest = require('../models/createTraderRequest.js');
 
 var PORT = '3111';
 //const PORT = '3019';
@@ -51,7 +52,7 @@ exports.createTrack = async function (trackId, isrc,title, revenue, fromAddress,
         throw new Error(error);
     }
 }
-exports.createAgreement = async function (agreementId, traderEmiterId, traderReceiverId, percentage, status, isrc, traderEmiterName, traderReceiverName) {
+exports.createAgreement = async function (agreementId, traderEmiterId, traderReceiverId, percentage, trackId,tradersCtrAddr,tracksCtrAddr,fromAddress,gasLimit) {
     //DATA FOR TX CREATE GENERIC AGREEMENT
     //TODO: change the request
     var createAgreementRequest = new CreateAgreementRequest(
@@ -70,31 +71,39 @@ exports.createAgreement = async function (agreementId, traderEmiterId, traderRec
         await requestPost('/createAgreement', JSON.stringify(createAgreementRequest), 'CREATE AGREEMENT');
     } catch (error) {
         console.log('/createAgreement ERROR');
-        console.error(error);
         throw new Error(error);
     }
 }
 
 exports.getTraderContractAddress = async function () {
     try {
-
+       let result = await requestPost('/getTraderContractAddress',"",'GET TRADER CONTRACT ADDRESS');
+       return result;
     } catch (error) {
-        console.log('/updateTrack ERROR');
-        console.error(error);
+        console.log('/getTraderContractAddress ERROR');
         throw new Error(error);
     }
 }
 
 exports.getTrackContractAddress = async function () {
     try {
-
+        let result = await requestPost('/getTrackContractAddress',"",'GET TRACK CONTRACT ADDRESS');
+        return result;
     } catch (error) {
-        console.log('/updateTrack ERROR');
-        console.error(error);
+        console.log('/getTrackContractAddress ERROR');
         throw new Error(error);
     }
 }
 
+exports.getTAContractAddress=async function(){
+    try {
+        let result = await requestPost('/getTAContractAddress',"getTAContractAddress",'GET TOKEN ACCOUNT CONTRACT ADDRESS');
+        return result;
+    } catch (error) {
+        console.log('/getTAContractAddress ERROR');
+        throw new Error(error);
+    }
+}
 
 exports.updateTrack = async function (isrc, revenueTotal) {
     var updateRequest = JSON.stringify({
@@ -105,30 +114,23 @@ exports.updateTrack = async function (isrc, revenueTotal) {
         await requestPost('/updateTrack', updateRequest, 'UPDATE TRACK');
     } catch (error) {
         console.log('/updateTrack ERROR');
-        console.error(error);
         throw new Error(error);
     }
-
 }
-
-
-exports.createParticipant = async function (participantId, name, email, balance, traderType, tokenAccountId) {
+exports.createTrader = async function (traderId, name, tokenAccountId,TAContractAddress, fromAddress, gasLimit) {
     //DATA FOR CREATE A GENERIC PARTICIPANT
-    let participantModel = new TraderModel(
-        participantId,
+    let createTraderRequest = new CreateTraderRequest(
+        traderId,
         name,
-        email,
-        balance,
-        traderType,
         tokenAccountId,
+        TAContractAddress,
+        fromAddress,
+        gasLimit
     );
-
     try {
-        await requestPost('/createTrader', JSON.stringify(participantModel), 'PARTICIPANT ' + name);
-        await requestPost('/createNewTokenAccount', JSON.stringify(tokenAccountId), 'TOKEN ACCOUNT ' + name);
+        await requestPost('/createTrader', JSON.stringify(createTraderRequest), 'TRADER ' + name);
     } catch (error) {
-        console.log('/createParticipant ERROR');
-        console.error(error);
+        console.log('/createTrader ERROR');
         throw new Error(error);
     }
 }

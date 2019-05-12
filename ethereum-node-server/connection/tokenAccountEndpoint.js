@@ -2,6 +2,7 @@ const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 const TokenAccountModel = require('../models/tokenAccountModel');
+const DataModel = require('../models/dataModel.js');
 //Artifacts
 const tokenAccounts_artifacts = require('../build/contracts/TokenAccounts.json');
 //Contract
@@ -47,12 +48,15 @@ async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit
 }
 module.exports.addDisabledBalance = addDisabledBalance;
 async function getTAContractAddress() {
+    let dataModel = new DataModel(null, null, null);
     try {
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
-        return tokenAccountsInterface.address;
+        dataModel.data = JSON.stringify(tokenAccountsInterface.address);
+        dataModel.status = '200';
+        return dataModel;
     }
     catch (error) {
-        console.log(error);
+        throw new Error(error);
     }
 
 }

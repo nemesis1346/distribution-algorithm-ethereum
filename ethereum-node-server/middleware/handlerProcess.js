@@ -4,7 +4,8 @@ const trackEndpoint = require('../connection/trackEndpoint.js');
 const receiptEndpoint = require('../connection/receiptEndpoint.js');
 const agreementEndpoint = require('../connection/agreementEndpoint.js');
 const distributionEndpoint = require('../connection/distributionEndPoint.js');
-const testingEndpoint=require('../connection/testingEndpoint.js');
+const testingEndpoint = require('../connection/testingEndpoint.js');
+const tokenAccountEndpoint = require('../connection/tokenAccountEndpoint.js');
 
 process.on('message', async function (input) {
     //Call method
@@ -43,38 +44,11 @@ process.on('message', async function (input) {
             case '/getTokenAccountDetail':
                 result = await traderEndpoint.getTokenAccountDetail(JSON.parse(bufferContent));
                 break;
-            case '/paymentDistributionAutomatic':
-                result = await receiptEndpoint.paymentDistributionAutomatic(JSON.parse(bufferContent));
-                break;
-            case '/getAgreementsByTrack':
-                result = await agreementEndpoint.getAgreementByTrack(JSON.parse(bufferContent));
-                break;
-            case '/removeAgreement':
-                result = await agreementEndpoint.removeAgreement(JSON.parse(bufferContent));
-                break;
-            case '/getTransactionsByTrader':
-                result = await receiptEndpoint.getTransactionsByTrader(JSON.parse(bufferContent));
-                break;
             case '/updateTrack':
                 result = await trackEndpoint.updateTrack(JSON.parse(bufferContent));
                 break;
-            case '/getEarnedDistTransactionsByTraderAndISRC':
-                result = await agreementEndpoint.getEarnedDistTransactionsByTraderAndISRC(JSON.parse(bufferContent));
-                break;
-            case '/getTxByStatusTypeTrader':
-                result = await receiptEndpoint.getTxByStatusTypeTrader(JSON.parse(bufferContent));
-                break;
             case '/getTransactions':
                 result = await receiptEndpoint.getTransactions();
-                break;
-            case '/getTxByReceiverForBalance':
-                result = await receiptEndpoint.getTxByReceiverForBalance(JSON.parse(bufferContent));
-                break;
-            case '/withdrawalByTrader':
-                result = await receiptEndpoint.withdrawalByTrader(JSON.parse(bufferContent));
-                break;
-            case '/getTxByEmiterForBalance':
-                result = await receiptEndpoint.getTxByEmiterForBalance(JSON.parse(bufferContent));
                 break;
             case '/distributionAlgorithm':
                 result = await distributionEndpoint.distribution(JSON.parse(bufferContent));
@@ -103,6 +77,15 @@ process.on('message', async function (input) {
             case '/testing_example6':
                 result = await testingEndpoint.example6();
                 break;
+            case '/getTAContractAddress':
+                result = await tokenAccountEndpoint.getTAContractAddress();
+                break;
+            case '/getTraderContractAddress':
+                result = await traderEndpoint.getTraderContractAddress();
+                break;
+            case '/getTrackContractAddress':
+                result = await trackEndpoint.getTrackContractAddress();
+                break;
             default:
                 dataModel.message = "Method not found";
                 dataModel.status = "405";
@@ -122,7 +105,7 @@ process.on('message', async function (input) {
                     dataModel.data = result;
                     dataModel.status = "200";
                 } else {
-                   // console.log(dataModel);
+                    // console.log(dataModel);
                     dataModel.message = result;
                     dataModel.status = "300";
                 }
@@ -136,7 +119,7 @@ process.on('message', async function (input) {
             process.send(body);
         }
     } catch (error) {
-        console.log("ERROR IN GATE");
+        console.log("ERROR IN HANDLER PROCESS");
         dataModel.message = error.message.toString();
         dataModel.status = "400";
         let body = JSON.stringify(dataModel);

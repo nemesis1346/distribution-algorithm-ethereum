@@ -15,7 +15,7 @@ AgreementsContract.setProvider(web3Provider.currentProvider);
 async function createAgreement(request) {
     let dataModel = new DataModel(null, null, null);
     console.log('************************************');
-    console.log('Request Create Agreement in Composer.js: ');
+    console.log('Request Create Agreement in AgreementEndpoint.js: ');
     console.log(request);
     try {
         const agreementsInterface = await AgreementsContract.deployed();
@@ -26,8 +26,8 @@ async function createAgreement(request) {
             request.receiverId,
             request.percentage,
             request.trackId,
-            request.tradersCtrAddr,
-            request.tracksCtrAddr,
+            request.traderContractAddress,
+            request.trackContractAddress,
             {
                 from: request.fromAddress,
                 gasLimit: request.gasLimit
@@ -40,30 +40,37 @@ async function createAgreement(request) {
         return dataModel;
     } catch (error) {
         console.log('ERROR IN AGREEMENT CREATION');
-        console.log(error);
         throw new Error(error);
     }
 }
 module.exports.createAgreement = createAgreement;
 
 async function getAgreement(agreementId, fromAddress, gasLimit) {
-    let agreementModel = new AgreementModel(null, null, null, null, null);
-    const agreementInterface = await AgreementsContract.deployed();
-    let agreementResult = await agreementInterface.getAgreement(
-        agreementId,
-        {
-            from: fromAddress,
-            gasLimit: gasLimit
-        });
-    agreementModel.agreementId = agreementResult[0];
-    agreementModel.traderEmiterId = agreementResult[1];
-    agreementModel.traderReceiverId = agreementResult[2];
-    agreementModel.percentage = parseFloat(agreementResult[3].toString())/100;
-    agreementModel.trackId = agreementResult[4];
-
-    console.log('AGREEMENT '+agreementModel.agreementId+" GOTTEN");
-
-    return agreementModel;
+    let dataModel = new DataModel(null, null, null);
+    console.log('************************************');
+    console.log('Request Get Agreement in AgreementEndpoint.js: ');
+    console.log(request);
+    try{
+        let agreementModel = new AgreementModel(null, null, null, null, null);
+        const agreementInterface = await AgreementsContract.deployed();
+        let agreementResult = await agreementInterface.getAgreement(
+            agreementId,
+            {
+                from: fromAddress,
+                gasLimit: gasLimit
+            });
+        agreementModel.agreementId = agreementResult[0];
+        agreementModel.traderEmiterId = agreementResult[1];
+        agreementModel.traderReceiverId = agreementResult[2];
+        agreementModel.percentage = parseFloat(agreementResult[3].toString())/100;
+        agreementModel.trackId = agreementResult[4];
+        console.log('AGREEMENT '+agreementModel.agreementId+" GOTTEN");
+        return agreementModel;
+    }catch(error){
+        console.log('ERROR IN GET AGREEMENT');
+        throw new Error(error);
+    }
+ 
 }
 module.exports.getAgreement = getAgreement;
 

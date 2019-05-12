@@ -77,11 +77,14 @@ async function getTrack(trackId, fromAddress, gasLimit) {
 module.exports.getTrack = getTrack;
 
 async function getTrackContractAddress() {
+  let dataModel = new DataModel(null, null, null);
   try {
     const tracksInterface = await TracksContract.deployed();
-    return tracksInterface.address;
+    dataModel.data = JSON.stringify(tracksInterface.address);
+    dataModel.status = '200';
+    return dataModel;
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 
 }

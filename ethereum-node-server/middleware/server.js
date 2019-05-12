@@ -52,7 +52,6 @@ const handler = async (request, response) => {
 app.post('/createTrader', handler);
 app.post('/createTrack', handler);
 app.post('/createAgreement', handler);
-app.post('/getAgreementsByTrack', handler);
 //app.post('/getAgreementDetail', handler); //it is not posible to query concepts
 app.get('/getTraders', handler);
 app.get('/getOrganizations', handler);
@@ -61,23 +60,15 @@ app.post('/createNewTokenAccount', handler);
 app.post('/getTrackDetail', handler);
 app.post('/getTraderDetail', handler);
 app.post('/getTokenAccountDetail', handler);
-app.post('/paymentDistributionAutomatic', handler);
-app.post('/removeAgreement', handler);
-app.post('/withdraw', handler);
 app.post('/getTransactionsByTrader', handler);
 app.post('/updateTrack', handler);
-app.post('/manualPayment', handler);
 app.post('/getTransactions', handler);
-app.post('/getTxByStatusTypeTrader', handler);
-app.post('/onHoldDistribution', handler);
-app.post('/cascadeDistribution', handler);
-app.post('/evaluateEmiters', handler);
-app.post('/getTxByReceiverForBalance', handler);
-app.post('/withdrawalByTrader', handler);
-app.post('/getTxByEmiterForBalance', handler);
 app.post('/distributionAlgorithm', handler);
 app.post('/getAgreements', handler);
 app.post('/getTxByTrackForDiagram', handler);
+app.post('/getTAContractAddress',handler);
+app.post('/getTraderContractAddress',handler);
+app.post('/getTrackContractAddress',handler);
 app.post('/testing_example1', handler);
 app.post('/testing_example2', handler);
 app.post('/testing_example3', handler);
@@ -94,6 +85,5 @@ app.listen(port, async (err) => {
     if (err) {
         return console.log('something bad happened', err)
     }
-
     console.log('server is listening on: ', port);
 });

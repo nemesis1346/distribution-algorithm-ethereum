@@ -1,7 +1,7 @@
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 const gasLimit = '6721975';
-const methods = require('../../requestConnectionServer.js');
+const connection = require('../../requestConnectionServer.js');
 
 async function example1() {
     try {
@@ -22,7 +22,7 @@ async function example1() {
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
-        await methods.createTrack(
+        await connection.createTrack(
             trackId,
             traderIsrc,
             'track',
@@ -30,80 +30,91 @@ async function example1() {
             trader1,
             gasLimit);
 
-        //Creating Traders
-        // await methods.createTrader(
-        //     trader1,
-        //     "trader1",
-        //     trader1,
-        //     await methods.getTAContractAddress(),
-        //     trader1,
-        //     gasLimit);
+        //ContractAddresses
+        let TAContractAddressData = await connection.getTAContractAddress();
+        let TAContractAddress = (JSON.parse(TAContractAddressData.body).data.data).replace(/\"/g, "");
 
-        // await methods.createTrader(
-        //     trader2,
-        //     "trader2",
-        //     trader2,
-        //     await methods.getTAContractAddress(),
-        //     trader2,
-        //     gasLimit);
+        let traderContractAddressData = await connection.getTraderContractAddress();
+        let traderContractAddress = (JSON.parse(traderContractAddressData.body).data.data).replace(/\"/g, "");
 
-        // await methods.createTrader(
-        //     trader3,
-        //     "trader3",
-        //     trader3,
-        //     await methods.getTAContractAddress(),
-        //     trader3,
-        //     gasLimit);
+        let trackContractAddressData = await connection.getTrackContractAddress();
+        let trackContractAddress = (JSON.parse(trackContractAddressData.body).data.data).replace(/\"/g, "");
+
+        //  Creating Traders
+        await connection.createTrader(
+            trader1,
+            "trader1",
+            trader1,
+            TAContractAddress,
+            trader1,
+            gasLimit);
+
+        await connection.createTrader(
+            trader2,
+            "trader2",
+            trader2,
+            TAContractAddress,
+            trader2,
+            gasLimit);
+
+        await connection.createTrader(
+            trader3,
+            "trader3",
+            trader3,
+            TAContractAddress,
+            trader3,
+            gasLimit);
 
 
-        // await methods.createTrader(
-        //     trader4,
-        //     "trader4",
-        //     trader4,
-        //     await methods.getTAContractAddress(),
-        //     trader4,
-        //     gasLimit);
+        await connection.createTrader(
+            trader4,
+            "trader4",
+            trader4,
+            TAContractAddress,
+            trader4,
+            gasLimit);
+
 
         // //Agreement 1
-        // await methods.createAgreement(
-        //     agreement1Id,
-        //     trader1,
-        //     trader2,
-        //     30,
-        //     trackId,
-        //     await methods.getTraderContractAddress(), //TODO: fix this
-        //     await methods.getTrackContractAddress(),
-        //     trader1,
-        //     gasLimit
-        // );
+        await connection.createAgreement(
+            agreement1Id,
+            trader1,
+            trader2,
+            30,
+            trackId,
+            traderContractAddress, //TODO: fix this
+            trackContractAddress,
+            trader1,
+            gasLimit
+        );
 
-        // //Agreement 2
-        // await methods.createAgreement(
-        //     agreement2Id,
-        //     trader1,
-        //     trader3,
-        //     50,
-        //     trackId,
-        //     await methods.getTraderContractAddress(),
-        //     await methods.getTrackContractAddress(),
-        //     trader1,
-        //     gasLimit
-        // );
+        //Agreement 2
+        await connection.createAgreement(
+            agreement2Id,
+            trader1,
+            trader3,
+            50,
+            trackId,
+            traderContractAddress,
+            trackContractAddress,
+            trader1,
+            gasLimit
+        );
 
-        // //Agreement 3
-        // await methods.createAgreement(
-        //     agreement3Id,
-        //     trader3,
-        //     trader4,
-        //     90,
-        //     trackId,
-        //     await methods.getTraderContractAddress(),
-        //     await methods.getTrackContractAddress(),
-        //     trader1,
-        //     gasLimit
-        // );
+        //Agreement 3
+        await connection.createAgreement(
+            agreement3Id,
+            trader3,
+            trader4,
+            90,
+            trackId,
+            traderContractAddress,
+            trackContractAddress,
+            trader1,
+            gasLimit
+        );
 
-        // await methods.distribution(
+        // await connection.distribution(
         //     trackId,
         //     trader1,
         //     new Date().getTime(),
@@ -114,12 +125,12 @@ async function example1() {
         // console.log('TRADERS OUTPUT----------------------');
         //     console.log(trader1);
         // //Trader1
-        // let trader1Result = await methods.getTrader(
+        // let trader1Result = await connection.getTrader(
         //     trader1,
         //     trader1,
         //     gasLimit);
 
-        // let tokenTrader1Result = await methods.getTokenAccount(
+        // let tokenTrader1Result = await connection.getTokenAccount(
         //     trader1,
         //     trader1,
         //     gasLimit
@@ -132,12 +143,12 @@ async function example1() {
         // console.log(tokenTrader1Result.balanceEnabled);
 
         // //Trader2
-        // let trader2Result = await methods.getTrader(
+        // let trader2Result = await connection.getTrader(
         //     trader2,
         //     trader2,
         //     gasLimit);
 
-        // let tokenTrader2Result = await methods.getTrader(
+        // let tokenTrader2Result = await connection.getTrader(
         //     trader2,
         //     trader2,
         //     gasLimit
@@ -150,12 +161,12 @@ async function example1() {
         // console.log(tokenTrader2Result.balanceEnabled);
 
         // //Trader 3
-        // let trader3Result = await methods.getTrader(
+        // let trader3Result = await connection.getTrader(
         //     trader3,
         //     trader3,
         //     gasLimit);
 
-        // let tokenTrader3Result = await methods.getTrader(
+        // let tokenTrader3Result = await connection.getTrader(
         //     trader3,
         //     trader3,
         //     gasLimit
@@ -167,12 +178,12 @@ async function example1() {
         // console.log(tokenTrader3Result.balanceEnabled);
 
         // //Trader4
-        // let trader4Result = await methods.getTrader(
+        // let trader4Result = await connection.getTrader(
         //     trader4,
         //     trader4,
         //     gasLimit);
 
-        // let tokenTrader4Result = await methods.getTrader(
+        // let tokenTrader4Result = await connection.getTrader(
         //     trader4,
         //     trader4,
         //     gasLimit
