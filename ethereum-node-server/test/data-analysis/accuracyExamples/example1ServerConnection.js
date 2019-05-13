@@ -113,13 +113,13 @@ async function example1() {
             trader1,
             gasLimit
         );
-
-        // await connection.distribution(
-        //     trackId,
-        //     trader1,
-        //     new Date().getTime(),
-        //     trader1,
-        //     gasLimit);
+            //Starts distribution
+        await connection.distribution(
+            trackId,
+            trader1,
+            new Date().getTime(),
+            trader1,
+            gasLimit);
 
         // //Results after
         // console.log('TRADERS OUTPUT----------------------');

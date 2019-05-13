@@ -15,7 +15,7 @@ const TrackModel = require('../models/trackModel');
 async function createTrack(request) {
   let dataModel = new DataModel(null, null, null);
   console.log('************************************');
-  console.log('Request Track in Composer.js: ');
+  console.log('Request Track in trackEndpoint.js: ');
   console.log(request);
   try {
 
@@ -53,6 +53,9 @@ async function createTrack(request) {
 module.exports.createTrack = createTrack;
 
 async function getTrack(trackId, fromAddress, gasLimit) {
+  console.log('************************************');
+  console.log('Request Get Track in trackEndpoint.js: ');
+  console.log(trackId);
   try {
     let trackModel = new TrackModel(null, null, null, null, null);
     const tracksInterface = await TracksContract.deployed();

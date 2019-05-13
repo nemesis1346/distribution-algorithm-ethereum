@@ -1,13 +1,17 @@
-class DistributionProcessRequest {
+class DistributionRequest {
     constructor(
-        isrc,
+        trackId,
         uploaderId,
-        datetime
+        datetime,
+        fromAddress,
+        gasLimit
     ) {
-        this.isrc = isrc;
+        this.trackId = trackId;
         this.uploaderId = uploaderId;
         this.datetime=datetime;
+        this.fromAddress=fromAddress;
+        this.gasLimit=gasLimit;
     }
 }
 
-module.exports = DistributionProcessRequest;
+module.exports = DistributionRequest;

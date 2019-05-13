@@ -21,22 +21,23 @@ exports.setPort = (port) => {
     PORT = port;
 }
 
-exports.distribution = async function (isrc, uploaderId, date) {
+exports.distribution = async function (trackId, uploaderId, date,fromAddress,gasLimit) {
     try {
         let distributionRequest = new DistributionRequest(
-            isrc, 
+            trackId, 
             uploaderId, 
-            date);
+            date,
+            fromAddress,
+            gasLimit);
         await requestPost('/distributionAlgorithm', JSON.stringify(distributionRequest), 'DISTRIBUTION');
     } catch (error) {
         console.log('/distributionAlgorithm ERROR');
-        console.error(error);
         return new Error(error);
     }
 }
 exports.createTrack = async function (trackId, isrc,title, revenue, fromAddress,gasLimit) {
     //DATA FOR CREATING TRACK
-    var createTrackRequest = new CreateTrackRequest(
+    let createTrackRequest = new CreateTrackRequest(
         trackId,
         isrc,
         title,
@@ -55,7 +56,7 @@ exports.createTrack = async function (trackId, isrc,title, revenue, fromAddress,
 exports.createAgreement = async function (agreementId, traderEmiterId, traderReceiverId, percentage, trackId,tradersCtrAddr,tracksCtrAddr,fromAddress,gasLimit) {
     //DATA FOR TX CREATE GENERIC AGREEMENT
     //TODO: change the request
-    var createAgreementRequest = new CreateAgreementRequest(
+    let createAgreementRequest = new CreateAgreementRequest(
         agreementId,
         traderEmiterId,
         traderReceiverId,

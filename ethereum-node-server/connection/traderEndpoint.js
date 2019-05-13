@@ -56,8 +56,8 @@ module.exports.createTrader = createTrader;
 async function getTrader(request) {
     let dataModel = new DataModel(null, null, null);
     console.log('*******************************');
-    console.log("Request Trader Detail in TraderEndpoint.js: ");
-    console.log(request.traderId);
+    console.log("Request Get Trader in TraderEndpoint.js: ");
+    console.log(request);
     try {
         let traderModel = new TraderModel(null, null, null);
         const traderInterface = await TradersContract.deployed();
