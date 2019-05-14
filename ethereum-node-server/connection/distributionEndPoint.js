@@ -57,30 +57,34 @@ async function distribution(requestDistribution) {
         console.log('RESULT RECEIVERS SHARE FIRST TIME');
         console.log(receiverShareFirstTimeList);
 
-        // if (receiverShareFirstTimeList.length == 0) {
-        //     await this.onHoldDistribution(
-        //         trackId,
-        //         uploaderId,
-        //         datetime,
-        //         track.revenueTotal
-        //     );
+        if (receiverShareFirstTimeList.length == 0) {
+            let onHoldDistributionRequest = new OnHoldDistributionRequest(
+                trackId,
+                uploaderId,
+                datetime,
+                track.revenue,
+                fromAddress,
+                gasLimit
+            );
+            await this.onHoldDistribution(onHoldDistributionRequest);
 
-        // } else if (receiverShareFirstTimeList.length >= 1) {
-        //     for (const element of receiverShareFirstTimeList) {
-        //         await this.distributionProcess(
-        //             trackId,
-        //             element.agreementId,
-        //             element.traderReceiverId,
-        //             datetime,
-        //             track.revenueTotal,
-        //             uploaderId,
-        //             uploaderId,
-        //             element.percentageReceiver,
-        //             fromAddress,
-        //             gasLimit,
-        //         );
-        //     }
-        // }
+        } else if (receiverShareFirstTimeList.length >= 1) {
+            for (const element of receiverShareFirstTimeList) {
+               let distributionProcessRequest = new DistributionProcessRequest(
+                   trackId,
+                   element.agreementId,
+                   element.traderReceiverId,
+                   datetime,
+                   track.revenueTotal,
+                   uploaderId,
+                   uploaderId,
+                   element.percentageReceiver,
+                   fromAddress,
+                   gasLimit
+               );
+                await this.distributionProcess(distributionProcessRequest);
+            }
+        }
         console.log('PROCESS FINISHED');
     } catch (error) {
         console.log('ERROR IN TRANSACTION CHAINCODE');
@@ -92,24 +96,27 @@ module.exports.distribution = distribution;
 
 
 async function distributionProcess(
-    trackId,
-    previousAgreementId,
-    emitterId,
-    datetime,
-    ammount,
-    previousEmitterId,
-    uploaderId,
-    percentageReceiver,
-    fromAddress,
-    gasLimit
+    distributionProcessRequest
 ) {
     console.log('*****************************************');
     console.log('Request Distribution Process in Distribution Endpoint');
-
+    console.log(distributionProcessRequest);
+    
     try {
+        let trackId = distributionProcessRequest.trackId;
+        let previousAgreementId=distributionProcessRequest.previousAgreementId;
+        let emitterId = distributionProcessRequest.emitterId;
+        let datetime = distributionProcessRequest.datetime;
+        let ammount = distributionProcessRequest.shareAmmount;
+        let previousEmitterId = distributionProcessRequest.previousEmitterId;
+        let uploaderId = distributionProcessRequest.uploaderId;
+        let percentageReceiver=distributionProcessRequest.percentageReceiver;
+        let fromAddress =distributionProcessRequest.fromAddress;
+        let gasLimit = distributionProcessRequest.gasLimit;
         console.log('PREVIOUS EMITTERS');
         console.log(previousEmitterId);
         //assuming there is just one previous emitter
+        console.log('AQUI ME QUEDE----------------------');
         let receiverList = await this.evaluateReceivers(
             trackId,
             emitterId,
@@ -271,14 +278,20 @@ async function evaluateReceipt(
 module.exports.evaluateReceipt = evaluateReceipt;
 
 async function onHoldDistribution(
-    trackId,
-    uploaderId,
-    datetime,
-    revenueTotal,
-    fromAddress,
-    agreementId
+  requestOnHoldDistribution
 ) {
+    console.log('************************************');
+    console.log('Request On Hold Distribution in Composer.js: ');
+    console.log(requestOnHoldDistribution);
+    
     try {
+        let trackId = requestOnHoldDistribution.trackId;
+        let uploaderId = requestOnHoldDistribution.uploaderId;
+        let datetime=requestOnHoldDistribution.datetime;
+        let revenueTotal = requestOnHoldDistribution.ammount;
+        let fromAddress = requestOnHoldDistribution.fromAddress;
+        let gasLimit = requestOnHoldDistribution.gasLimit;
+
         await tokenAccountEndpoint.addDisabledBalance(
             uploaderId,
             revenueTotal,

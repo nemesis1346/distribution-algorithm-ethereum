@@ -1,14 +1,18 @@
 class OnHoldDistributionRequest {
 
     constructor(
-        isrc,
+        trackId,
         uploaderId,
         datetime,
-        ammount) {
-        this.isrc = isrc;
+        ammount,
+        fromAddress,
+        gasLimit) {
+        this.trackId = trackId;
         this.uploaderId = uploaderId;
         this.datetime=  datetime;
         this.ammount=ammount;
+        this.fromAddress = fromAddress;
+        this.gasLimit =gasLimit;
     }
 }
 module.exports = OnHoldDistributionRequest;
