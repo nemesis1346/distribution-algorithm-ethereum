@@ -26,6 +26,7 @@ const EvaluateReceiptRequest = require('../models/evaluateReceiptRequest.js');
 const DistributionLastNodeRequest = require('../models/distributionLastNodeRequest.js');
 const EvaluateReceiversRequest = require('../models/evaluateReceiversRequest.js');
 const GetTraderRequest = require('../models/getTraderRequest.js');
+const GetTARequest = require('../models/getTARequest.js');
 
 async function distribution(requestDistribution) {
     let dataModel = new DataModel(null, null, null);
@@ -241,11 +242,16 @@ async function distributionLastNode(distributionLastNodeRequest) {
         //validate last time emitter and receiver 
         //TODO:
         //We get the receiver token account
-        let tokenAccountReceiver = await tokenAccountEndpoint.getTokenAccount(
+        let getTARequest = new GetTARequest(
             receiverId,
             fromAddress,
             gasLimit
         );
+        let tokenAccountReceiverRaw = await tokenAccountEndpoint.getTokenAccount(
+            getTARequest
+        );
+        console.log(tokenAccountReceiverRaw);
+        let tokenAccountReceiver=JSON.parse(tokenAccountReceiverRaw.data);
         console.log(tokenAccountReceiver);
         console.log('**************LAST NODE DISTRIBUTION*********************');
         console.log('Trader: ' + receiverId);

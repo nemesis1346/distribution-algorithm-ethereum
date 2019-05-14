@@ -39,10 +39,10 @@ process.on('message', async function (input) {
                 result = await trackEndpoint.getTrackDetail(JSON.parse(bufferContent));
                 break;
             case '/getTraderDetail':
-                result = await traderEndpoint.getTraderDetail(JSON.parse(bufferContent));
+                result = await traderEndpoint.getTrader(JSON.parse(bufferContent));
                 break;
             case '/getTokenAccountDetail':
-                result = await traderEndpoint.getTokenAccountDetail(JSON.parse(bufferContent));
+                result = await tokenAccountEndpoint.getTokenAccount(JSON.parse(bufferContent));
                 break;
             case '/updateTrack':
                 result = await trackEndpoint.updateTrack(JSON.parse(bufferContent));

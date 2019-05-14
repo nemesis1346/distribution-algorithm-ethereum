@@ -8,6 +8,8 @@ const AgreementModel = require('../models/agreementModel.js');
 const CreateTrackRequest = require('../models/createTrackRequest.js');
 const CreateAgreementRequest =require('../models/createAgreementRequest.js');
 const CreateTraderRequest = require('../models/createTraderRequest.js');
+const GetTraderRequest = require('../models/getTraderRequest.js');
+const GetTARequest =require('../models/getTARequest.js');
 
 var PORT = '3111';
 //const PORT = '3019';
@@ -137,21 +139,29 @@ exports.createTrader = async function (traderId, name, tokenAccountId,TAContract
 }
 
 
-exports.getTraderDetail = async function (traderId) {
+exports.getTraderDetail = async function (traderId,fromAddress, gasLimit) {
+    let getTraderRequest = new GetTraderRequest(
+        traderId,
+        fromAddress,
+        gasLimit
+    );
     try {
-        let result = await requestPost('/getTraderDetail', JSON.stringify(traderId), 'GET TRADER DETAIL');
-
+        let result = await requestPost('/getTraderDetail', JSON.stringify(getTraderRequest), 'GET TRADER DETAIL');
         return result;
     } catch (error) {
         console.log('/getTraderDetail ERROR');
-        console.error(error);
         throw new Error(error);
     }
 }
 
-exports.getTokenAccount = async function (tokenAccountId) {
+exports.getTokenAccount = async function (tokenAccountId,fromAddress,gasLimit) {
+    let getTARequest = new GetTARequest(
+        tokenAccountId,
+        fromAddress,
+        gasLimit
+    );
     try {
-        await requestPost('/getTokenAccountDetail', JSON.stringify(tokenAccountId), 'TOKEN ACCOUNT ID' + tokenAccountId);
+        await requestPost('/getTokenAccountDetail', JSON.stringify(getTARequest), 'TOKEN ACCOUNT ID' + tokenAccountId);
 
     } catch (error) {
         console.log('/getTokenAccountDetail ERROR');

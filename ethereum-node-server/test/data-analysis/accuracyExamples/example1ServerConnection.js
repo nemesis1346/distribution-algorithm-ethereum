@@ -130,17 +130,24 @@ async function example1() {
             trader1,
             gasLimit);
 
+            let trader1Model = JSON.parse(JSON.parse(trader1Result.body).data.data);
+
         let tokenTrader1Result = await connection.getTokenAccount(
             trader1,
             trader1,
             gasLimit
         );
+        console.log('Converting');
+        console.log(tokenTrader1Result);
 
-        console.log('TRADER ' + trader1Result.name + ' *******');
-        console.log('BALANCE DISABLED:');
-        console.log(tokenTrader1Result.balanceDisabled);
-        console.log('BALANCE ENABLED');
-        console.log(tokenTrader1Result.balanceEnabled);
+        // let tokenTrader1Model = JSON.parse(tokenTrader1Result.body).data.data;
+        // console.log(tokenTrader1Model);
+
+        // console.log('TRADER ' + trader1Model.name + ' *******');
+        // console.log('BALANCE DISABLED:');
+        // console.log(tokenTrader1Model.balanceDisabled);
+        // console.log('BALANCE ENABLED');
+        // console.log(tokenTrader1Model.balanceEnabled);
 
         //Trader2
         let trader2Result = await connection.getTraderDetail(

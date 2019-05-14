@@ -62,8 +62,16 @@ async function getTAContractAddress() {
 }
 module.exports.getTAContractAddress = getTAContractAddress;
 
-async function getTokenAccount(tokenAccountId, fromAddress, gasLimit) {
+async function getTokenAccount(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('*************************************');
+    console.log('Get Token Account Request in Composer.js');
+    console.log(request);
     try {
+        let tokenAccountId = request.tokenAccountId;
+        let fromAddress = request.fromAddress;
+        let gasLimit = request.gasLimit;
+
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
         let tokenAccountModel = new TokenAccountModel(null, null, null);
         let tokenAccountResult = await tokenAccountsInterface.getTokenAccount(
@@ -77,9 +85,12 @@ async function getTokenAccount(tokenAccountId, fromAddress, gasLimit) {
         tokenAccountModel.balanceEnabled = tokenAccountResult[1].toString();
         tokenAccountModel.balanceDisabled = tokenAccountResult[2].toString();
 
-        return tokenAccountModel;
+        dataModel.data = JSON.stringify(tokenAccountModel);
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log(error);
+        throw new Error(dataModel)''
     }
 }
 module.exports.getTokenAccount = getTokenAccount;
