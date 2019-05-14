@@ -9,7 +9,8 @@ class EvaluateReceiversRequest {
         previousAgreementId,
         uploaderId,
         fromAddress,
-        gasLimit
+        gasLimit,
+        firstDistFlag
     ) {
         this.trackId = trackId;
         this.emitterId = emitterId;
@@ -20,6 +21,7 @@ class EvaluateReceiversRequest {
         this.uploaderId=uploaderId;
         this.fromAddress = fromAddress;
         this.gasLimit=gasLimit;
+        this.firstDistFlag=firstDistFlag;
     }
 }
 module.exports = EvaluateReceiversRequest;

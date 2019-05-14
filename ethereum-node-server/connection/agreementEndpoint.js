@@ -46,10 +46,10 @@ async function createAgreement(request) {
 module.exports.createAgreement = createAgreement;
 
 async function getAgreement(agreementId, fromAddress, gasLimit) {
-    let dataModel = new DataModel(null, null, null);
+   // let dataModel = new DataModel(null, null, null);
     console.log('************************************');
     console.log('Request Get Agreement in AgreementEndpoint.js: ');
-    console.log(request);
+    console.log(agreementId);
     try{
         let agreementModel = new AgreementModel(null, null, null, null, null);
         const agreementInterface = await AgreementsContract.deployed();

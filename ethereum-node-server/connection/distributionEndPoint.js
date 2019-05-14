@@ -49,7 +49,8 @@ async function distribution(requestDistribution) {
             "none",
             uploaderId,
             fromAddress,
-            gasLimit
+            gasLimit,
+            true
         );
 
         let receiverShareFirstTimeList = await this.evaluateReceivers(evaluateReceiversFirstTimeRequest);
@@ -319,13 +320,15 @@ async function evaluateReceivers(request) {
         let datetime = request.datetime;
         let previousAgreementId = request.previousAgreementId;
         let revenueTotalInput = request.revenue;
+        let trackId = request.trackId;
         let getTraderRequest;
 
+
         getTraderRequest = new GetTraderRequest(emitterId, fromAddress, gasLimit);
-        let emitter = await traderEndpoint.getTrader(
+        
+        let emitterRaw = await traderEndpoint.getTrader(
             getTraderRequest
         );
-
         if (previousReceiverId && previousReceiverId != "none") {
             getTraderRequest = new GetTraderRequest(previousReceiverId, fromAddress, gasLimit);
             previousReceiverModel = await traderEndpoint.getTrader(
@@ -336,13 +339,17 @@ async function evaluateReceivers(request) {
         } else {
             previousReceiverId = fromAddress;
         }
+        let emitterModel = JSON.parse(emitterRaw.data);
+        console.log(emitterModel);
         //Get all agreements between emitter and receiver
         let agreements = await agreementEndpoint.getAgreementsByEmitter(
-            emitter.traderId,
+            emitterModel.traderId,
             fromAddress,
             gasLimit
         );
-        //TODO: For each agremeent get the entire structure
+
+        //TODO: For each agremeent get the entire structure 
+        //TODO: DataModel Response
         console.log("LIST OF AGREEMENTS**************************");
         console.log(agreements);
 
@@ -356,7 +363,7 @@ async function evaluateReceivers(request) {
                 );
                 shareTotal =
                     parseFloat(shareTotal) - parseFloat(currentAgreement.percentage);
-                if (shareTotal < 0) {
+                    if (shareTotal < 0) {
                     throw "Total percentage exceded permited share";
                 }
 
@@ -377,6 +384,7 @@ async function evaluateReceivers(request) {
             //Now we distribute the emitter its share
             let ammountToAddEmitter =
                 parseFloat(shareTotal) * parseFloat(revenueTotalInput);
+               
 
             await tokenAccountEndpoint.addEnabledBalance(
                 emitterId,
@@ -384,18 +392,22 @@ async function evaluateReceivers(request) {
                 fromAddress,
                 gasLimit
             );
-            let receiptUniqueId = new Date().getUTCMilliseconds();
 
+            let receiptUniqueId = new Date().getUTCMilliseconds();
+          
             //Now we create the receipt
-            await receiptEndpoint.createReceipt(
-                receiptUniqueId,
-                tracKId,
-                Math.round(ammountToAddEmitter),
-                previousAgreementId, //lets test this
-                String(datetime),
-                fromAddress,
-                gasLimit
-            );
+            if(!request.firstDistFlag){
+                await receiptEndpoint.createReceipt(
+                    receiptUniqueId,
+                    trackId,
+                    Math.round(ammountToAddEmitter),
+                    previousAgreementId, //lets test this
+                    String(datetime),
+                    fromAddress,
+                    gasLimit
+                );
+            }
+           
         } else {
             console.log("No receivers for this trader: " + emitter.name);
         }

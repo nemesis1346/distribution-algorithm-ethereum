@@ -65,10 +65,11 @@ async function getTrack(trackId, fromAddress, gasLimit) {
         from: fromAddress,
         gasLimit: gasLimit
       });
+     
     trackModel.trackId = trackResult[0];
     trackModel.isrc = trackResult[1].toString();
     trackModel.title = trackResult[2];
-    trackModel.revenueTotal = trackResult[3].toString();
+    trackModel.revenue = trackResult[3].toString();
     trackModel.uploaderId = trackResult[4];
     console.log('TRACK ' + trackModel.title + " GOTTEN");
     return trackModel;
