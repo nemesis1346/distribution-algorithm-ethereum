@@ -74,7 +74,6 @@ async function validateReceipt(
     gasLimit) {
     try {
         const receiptsInterface = await ReceiptsContract.deployed();
-
         let result = await receiptsInterface.validateReceipt(
             agreementId,
             traderEmitterId,
@@ -91,7 +90,6 @@ async function validateReceipt(
     } catch (error) {
         console.log(error);
     }
-
 }
 module.exports.validateReceipt = validateReceipt;
 async function getReceiptsContractAddress() {

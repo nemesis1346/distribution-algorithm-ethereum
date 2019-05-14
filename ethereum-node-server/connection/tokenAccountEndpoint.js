@@ -15,7 +15,7 @@ TokenAccountsContract.setProvider(web3Provider.currentProvider);
 async function addEnabledBalance(tokenAccountId, ammount, fromAddress, gasLimit) {
     try {
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
-        await tokenAccountsInterface.addEnabledBalance(
+        let resultAddEnabledBalance = await tokenAccountsInterface.addEnabledBalance(
             tokenAccountId,
             ammount,
             {
@@ -23,6 +23,7 @@ async function addEnabledBalance(tokenAccountId, ammount, fromAddress, gasLimit)
                 gasLimit: gasLimit
             });
         console.log('BALANCE ENABLED ADDED');
+        return resultAddEnabledBalance;
     }
     catch (error) {
         console.log(error);
@@ -32,7 +33,7 @@ module.exports.addEnabledBalance = addEnabledBalance;
 async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit) {
     try {
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
-        await tokenAccountsInterface.addDisabledBalance(
+        let resultAddDisabledBalance = await tokenAccountsInterface.addDisabledBalance(
             tokenAccountId,
             ammount,
             {
@@ -40,7 +41,7 @@ async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit
                 gasLimit: gasLimit
             });
         console.log('BALANCE DISABLED ADDED');
-
+        return resultAddDisabledBalance;
     }
     catch (error) {
         console.log(error);
