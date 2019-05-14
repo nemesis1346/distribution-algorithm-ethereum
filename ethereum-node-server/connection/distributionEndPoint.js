@@ -75,12 +75,12 @@ async function distribution(requestDistribution) {
                    element.agreementId,
                    element.traderReceiverId,
                    datetime,
-                   track.revenueTotal,
+                   element.ammount,
                    uploaderId,
                    uploaderId,
                    element.percentageReceiver,
                    fromAddress,
-                   gasLimit
+                   gasLimit,
                );
                 await this.distributionProcess(distributionProcessRequest);
             }
@@ -117,7 +117,7 @@ async function distributionProcess(
         console.log(previousEmitterId);
         //assuming there is just one previous emitter
         console.log('AQUI ME QUEDE----------------------');
-        let receiverList = await this.evaluateReceivers(
+        let evaluateReceiversRequest = new EvaluateReceiversRequest(
             trackId,
             emitterId,
             ammount,
@@ -126,72 +126,74 @@ async function distributionProcess(
             previousAgreementId,
             uploaderId,
             fromAddress,
-            gasLimit
+            gasLimit,
+            false
         );
+        let receiverList = await this.evaluateReceivers(evaluateReceiversRequest);
         console.log('EVALUATE RECEIVERS SHARE IN DISTRIBUTION PROCESS');
         console.log(receiverList);
 
         //Continue
-        if (receiverList.length == 0) {
-            await this.distributionLastNode(
-                previousEmitterId,
-                emitterId,
-                trackId,
-                percentageReceiver,
-                ammount,
-                datetime,
-                uploaderId,
-                fromAddress, //TODO: Mention how we had to use constantly address and gas
-                gasLimit
-            );
-        } else if (receiverList == 1) {
-            let uniqueShare = receiverList[0];
-            let receiptsBackwards = this.evaluateReceipts(
-                uniqueShare.agreementId,
-                uniqueShare.traderEmitterId,
-                uniqueShare.traderReceiverId,
-                trackId,
-                datetime
-            );
+        // if (receiverList.length == 0) {
+        //     await this.distributionLastNode(
+        //         previousEmitterId,
+        //         emitterId,
+        //         trackId,
+        //         percentageReceiver,
+        //         ammount,
+        //         datetime,
+        //         uploaderId,
+        //         fromAddress, //TODO: Mention how we had to use constantly address and gas
+        //         gasLimit
+        //     );
+        // } else if (receiverList == 1) {
+        //     let uniqueShare = receiverList[0];
+        //     let receiptsBackwards = this.evaluateReceipts(
+        //         uniqueShare.agreementId,
+        //         uniqueShare.traderEmitterId,
+        //         uniqueShare.traderReceiverId,
+        //         trackId,
+        //         datetime
+        //     );
 
-            let receiptsForwards = this.evaluateReceipts(
-                uniqueShare.agreementId,
-                uniqueShare.traderEmitterId,
-                uniqueShare.traderReceiverId
-            );
-            if (!(receiptsBackwards + receiptsForwards) > 1) {
-                this.distributionProcess(
-                    trackId,
-                    uniqueShare.previousAgreementId,
-                    uniqueShare.traderReceiverId,
-                    datetime,
-                    uniqueShare.ammount,
-                    uniqueShare.traderEmitterId,
-                    uploaderId,
-                    uniqueShare.percentageReceiver,
-                    fromAddress,
-                    gasLimit
-                );
-            } else {
-                console.log('NODE FINISHED**********************************');
-            }
-        } else if (receiverList.length > 1) {
-            let uniqueShare = receiverShareList[0];
-            for (const element of receiverShareList) {
-                this.distributionProcess(
-                    trackId,
-                    element.agreementId,
-                    element.traderReceiverId,
-                    datetime,
-                    element.ammount,
-                    uniqueShare.traderEmitterId,
-                    uploaderId,
-                    element.percentageReceiver,
-                    fromAddress,
-                    gasLimit
-                );
-            }
-        }
+        //     let receiptsForwards = this.evaluateReceipts(
+        //         uniqueShare.agreementId,
+        //         uniqueShare.traderEmitterId,
+        //         uniqueShare.traderReceiverId
+        //     );
+        //     if (!(receiptsBackwards + receiptsForwards) > 1) {
+        //         this.distributionProcess(
+        //             trackId,
+        //             uniqueShare.previousAgreementId,
+        //             uniqueShare.traderReceiverId,
+        //             datetime,
+        //             uniqueShare.ammount,
+        //             uniqueShare.traderEmitterId,
+        //             uploaderId,
+        //             uniqueShare.percentageReceiver,
+        //             fromAddress,
+        //             gasLimit
+        //         );
+        //     } else {
+        //         console.log('NODE FINISHED**********************************');
+        //     }
+        // } else if (receiverList.length > 1) {
+        //     let uniqueShare = receiverShareList[0];
+        //     for (const element of receiverShareList) {
+        //         this.distributionProcess(
+        //             trackId,
+        //             element.agreementId,
+        //             element.traderReceiverId,
+        //             datetime,
+        //             element.ammount,
+        //             uniqueShare.traderEmitterId,
+        //             uploaderId,
+        //             element.percentageReceiver,
+        //             fromAddress,
+        //             gasLimit
+        //         );
+        //     }
+        // }
     } catch (error) {
         console.log('ERROR IN TRANSACTION DISTRIBUTION PROCESS');
         console.log(error);
@@ -350,6 +352,7 @@ async function evaluateReceivers(request) {
             previousReceiverId = previousReceiverModel.traderId;
 
         } else {
+            console.log('FIRST RECEIVER*******************');
             previousReceiverId = fromAddress;
         }
         let emitterModel = JSON.parse(emitterRaw.data);
@@ -394,10 +397,17 @@ async function evaluateReceivers(request) {
                 receiverShareListResult.push(currentShareModel);
             }
 
+            console.log('SHARE TOTAL');
+            console.log(shareTotal);
+            console.log("REVENUE");
+            console.log(revenueTotalInput);
             //Now we distribute the emitter its share
             let ammountToAddEmitter =
                 parseFloat(shareTotal) * parseFloat(revenueTotalInput);
                
+                console.log('AMMOUNT TO ADD');
+                console.log(ammountToAddEmitter);
+
 
             await tokenAccountEndpoint.addEnabledBalance(
                 emitterId,
@@ -405,6 +415,7 @@ async function evaluateReceivers(request) {
                 fromAddress,
                 gasLimit
             );
+            console.log('GETTING HERE');
 
             let receiptUniqueId = new Date().getUTCMilliseconds();
           
@@ -422,7 +433,7 @@ async function evaluateReceivers(request) {
             }
            
         } else {
-            console.log("No receivers for this trader: " + emitter.name);
+            console.log("No receivers for this trader: " + emitterModel.name);
         }
         return receiverShareListResult;
     } catch (error) {
