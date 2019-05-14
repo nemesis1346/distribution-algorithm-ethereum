@@ -113,7 +113,7 @@ async function example1() {
             trader1,
             gasLimit
         );
-            //Starts distribution
+        //Starts distribution
         await connection.distribution(
             trackId,
             trader1,
@@ -123,31 +123,28 @@ async function example1() {
 
         //Results after
         console.log('TRADERS OUTPUT----------------------');
-            console.log(trader1);
+        console.log(trader1);
         //Trader1
         let trader1Result = await connection.getTraderDetail(
             trader1,
             trader1,
             gasLimit);
 
-            let trader1Model = JSON.parse(JSON.parse(trader1Result.body).data.data);
+        let trader1Model = JSON.parse(JSON.parse(trader1Result.body).data.data);
 
         let tokenTrader1Result = await connection.getTokenAccount(
             trader1,
             trader1,
             gasLimit
         );
-        console.log('Converting');
-        console.log(tokenTrader1Result);
 
-        // let tokenTrader1Model = JSON.parse(tokenTrader1Result.body).data.data;
-        // console.log(tokenTrader1Model);
+        let tokenTrader1Model = JSON.parse(JSON.parse(tokenTrader1Result.body).data.data);
 
-        // console.log('TRADER ' + trader1Model.name + ' *******');
-        // console.log('BALANCE DISABLED:');
-        // console.log(tokenTrader1Model.balanceDisabled);
-        // console.log('BALANCE ENABLED');
-        // console.log(tokenTrader1Model.balanceEnabled);
+        console.log('TRADER ' + trader1Model.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader1Model.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader1Model.balanceEnabled);
 
         //Trader2
         let trader2Result = await connection.getTraderDetail(
@@ -155,17 +152,21 @@ async function example1() {
             trader2,
             gasLimit);
 
+        let trader2Model = JSON.parse(JSON.parse(trader2Result.body).data.data);
+
         let tokenTrader2Result = await connection.getTokenAccount(
             trader2,
             trader2,
             gasLimit
         );
 
-        console.log('TRADER ' + trader2Result.name + ' *******');
+        let tokenTrader2Model = JSON.parse(JSON.parse(tokenTrader2Result.body).data.data);
+
+        console.log('TRADER ' + trader2Model.name + ' *******');
         console.log('BALANCE DISABLED:');
-        console.log(tokenTrader2Result.balanceDisabled);
+        console.log(tokenTrader2Model.balanceDisabled);
         console.log('BALANCE ENABLED');
-        console.log(tokenTrader2Result.balanceEnabled);
+        console.log(tokenTrader2Model.balanceEnabled);
 
         //Trader 3
         let trader3Result = await connection.getTraderDetail(
@@ -173,16 +174,21 @@ async function example1() {
             trader3,
             gasLimit);
 
+        let trader3Model = JSON.parse(JSON.parse(trader3Result.body).data.data);
+
         let tokenTrader3Result = await connection.getTokenAccount(
             trader3,
             trader3,
             gasLimit
         );
-        console.log('TRADER ' + trader3Result.name + ' *******');
+
+        let tokenTrader3Model = JSON.parse(JSON.parse(tokenTrader3Result.body).data.data);
+
+        console.log('TRADER ' + trader3Model.name + ' *******');
         console.log('BALANCE DISABLED:');
-        console.log(tokenTrader3Result.balanceDisabled);
+        console.log(tokenTrader3Model.balanceDisabled);
         console.log('BALANCE ENABLED');
-        console.log(tokenTrader3Result.balanceEnabled);
+        console.log(tokenTrader3Model.balanceEnabled);
 
         //Trader4
         let trader4Result = await connection.getTraderDetail(
@@ -190,17 +196,21 @@ async function example1() {
             trader4,
             gasLimit);
 
+        let trader4Model = JSON.parse(JSON.parse(trader4Result.body).data.data);
+
         let tokenTrader4Result = await connection.getTokenAccount(
             trader4,
             trader4,
             gasLimit
         );
 
-        console.log('TRADER ' + trader4Result.name + ' *******');
+        let tokenTrader4Model = JSON.parse(JSON.parse(tokenTrader4Result.body).data.data);
+
+        console.log('TRADER ' + trader4Model.name + ' *******');
         console.log('BALANCE DISABLED:');
-        console.log(tokenTrader4Result.balanceDisabled);
+        console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
-        console.log(tokenTrader4Result.balanceEnabled);
+        console.log(tokenTrader4Model.balanceEnabled);
     } catch (error) {
         console.log(error)
     }

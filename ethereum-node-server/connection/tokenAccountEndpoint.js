@@ -90,7 +90,7 @@ async function getTokenAccount(request) {
         return dataModel;
     } catch (error) {
         console.log(error);
-        throw new Error(dataModel)''
+        throw new Error(dataModel);
     }
 }
 module.exports.getTokenAccount = getTokenAccount;

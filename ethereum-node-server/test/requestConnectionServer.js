@@ -161,8 +161,8 @@ exports.getTokenAccount = async function (tokenAccountId,fromAddress,gasLimit) {
         gasLimit
     );
     try {
-        await requestPost('/getTokenAccountDetail', JSON.stringify(getTARequest), 'TOKEN ACCOUNT ID' + tokenAccountId);
-
+       let result= await requestPost('/getTokenAccountDetail', JSON.stringify(getTARequest), 'TOKEN ACCOUNT ID' + tokenAccountId);
+        return result;
     } catch (error) {
         console.log('/getTokenAccountDetail ERROR');
         console.error(error);
@@ -186,7 +186,7 @@ async function requestPost(endpoint, data, extraInfo) {
 
         result = JSON.parse(res.res.text)
         console.log('RESPONSE IN: ' + extraInfo);
-        console.log(result);
+        //console.log(result);
         return result;
     } catch (error) {
         console.log('THERE WAS AN ERROR IN: ' + extraInfo);
