@@ -121,79 +121,79 @@ async function example1() {
             trader1,
             gasLimit);
 
-        // //Results after
-        // console.log('TRADERS OUTPUT----------------------');
-        //     console.log(trader1);
-        // //Trader1
-        // let trader1Result = await connection.getTrader(
-        //     trader1,
-        //     trader1,
-        //     gasLimit);
+        //Results after
+        console.log('TRADERS OUTPUT----------------------');
+            console.log(trader1);
+        //Trader1
+        let trader1Result = await connection.getTraderDetail(
+            trader1,
+            trader1,
+            gasLimit);
 
-        // let tokenTrader1Result = await connection.getTokenAccount(
-        //     trader1,
-        //     trader1,
-        //     gasLimit
-        // );
+        let tokenTrader1Result = await connection.getTokenAccount(
+            trader1,
+            trader1,
+            gasLimit
+        );
 
-        // console.log('TRADER ' + trader1Result.name + ' *******');
-        // console.log('BALANCE DISABLED:');
-        // console.log(tokenTrader1Result.balanceDisabled);
-        // console.log('BALANCE ENABLED');
-        // console.log(tokenTrader1Result.balanceEnabled);
+        console.log('TRADER ' + trader1Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader1Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader1Result.balanceEnabled);
 
-        // //Trader2
-        // let trader2Result = await connection.getTrader(
-        //     trader2,
-        //     trader2,
-        //     gasLimit);
+        //Trader2
+        let trader2Result = await connection.getTraderDetail(
+            trader2,
+            trader2,
+            gasLimit);
 
-        // let tokenTrader2Result = await connection.getTrader(
-        //     trader2,
-        //     trader2,
-        //     gasLimit
-        // );
+        let tokenTrader2Result = await connection.getTokenAccount(
+            trader2,
+            trader2,
+            gasLimit
+        );
 
-        // console.log('TRADER ' + trader2Result.name + ' *******');
-        // console.log('BALANCE DISABLED:');
-        // console.log(tokenTrader2Result.balanceDisabled);
-        // console.log('BALANCE ENABLED');
-        // console.log(tokenTrader2Result.balanceEnabled);
+        console.log('TRADER ' + trader2Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader2Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader2Result.balanceEnabled);
 
-        // //Trader 3
-        // let trader3Result = await connection.getTrader(
-        //     trader3,
-        //     trader3,
-        //     gasLimit);
+        //Trader 3
+        let trader3Result = await connection.getTraderDetail(
+            trader3,
+            trader3,
+            gasLimit);
 
-        // let tokenTrader3Result = await connection.getTrader(
-        //     trader3,
-        //     trader3,
-        //     gasLimit
-        // );
-        // console.log('TRADER ' + trader3Result.name + ' *******');
-        // console.log('BALANCE DISABLED:');
-        // console.log(tokenTrader3Result.balanceDisabled);
-        // console.log('BALANCE ENABLED');
-        // console.log(tokenTrader3Result.balanceEnabled);
+        let tokenTrader3Result = await connection.getTokenAccount(
+            trader3,
+            trader3,
+            gasLimit
+        );
+        console.log('TRADER ' + trader3Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader3Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader3Result.balanceEnabled);
 
-        // //Trader4
-        // let trader4Result = await connection.getTrader(
-        //     trader4,
-        //     trader4,
-        //     gasLimit);
+        //Trader4
+        let trader4Result = await connection.getTraderDetail(
+            trader4,
+            trader4,
+            gasLimit);
 
-        // let tokenTrader4Result = await connection.getTrader(
-        //     trader4,
-        //     trader4,
-        //     gasLimit
-        // );
+        let tokenTrader4Result = await connection.getTokenAccount(
+            trader4,
+            trader4,
+            gasLimit
+        );
 
-        // console.log('TRADER ' + trader4Result.name + ' *******');
-        // console.log('BALANCE DISABLED:');
-        // console.log(tokenTrader4Result.balanceDisabled);
-        // console.log('BALANCE ENABLED');
-        // console.log(tokenTrader4Result.balanceEnabled);
+        console.log('TRADER ' + trader4Result.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader4Result.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader4Result.balanceEnabled);
     } catch (error) {
         console.log(error)
     }

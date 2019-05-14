@@ -1,20 +1,26 @@
 class DistributionlastNodeRequest {
     constructor(
-        listEmiters,
-        traderReceiverId,
+        emitterId,
+        receiverId,
+        trackId,
         percentageReceiver,
         ammount,
-        isrc,
         datetime,
-        uploaderId
+        uploaderId,
+        previousAgreementId,
+        fromAddress,
+        gasLimit
     ) {
-        this.listEmiters = listEmiters;
-        this.traderReceiverId = traderReceiverId;
+        this.emitterId = emitterId;
+        this.receiverId = receiverId;
+        this.trackId=trackId;
         this.percentageReceiver = percentageReceiver;
         this.ammount = ammount;
-        this.isrc=isrc;
         this.datetime=datetime;
         this.uploaderId=uploaderId;
+        this.previousAgreementId=previousAgreementId;
+        this.fromAddress=fromAddress;
+        this.gasLimit = gasLimit;
     }
 }
 

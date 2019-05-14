@@ -28,6 +28,8 @@ const EvaluateReceiversRequest = require('../models/evaluateReceiversRequest.js'
 const GetTraderRequest = require('../models/getTraderRequest.js');
 
 async function distribution(requestDistribution) {
+    let dataModel = new DataModel(null, null, null);
+
     console.log('****************************');
     console.log('Request Distribution in Distribution EndPoint');
     console.log(requestDistribution);
@@ -70,22 +72,25 @@ async function distribution(requestDistribution) {
 
         } else if (receiverShareFirstTimeList.length >= 1) {
             for (const element of receiverShareFirstTimeList) {
-               let distributionProcessRequest = new DistributionProcessRequest(
-                   trackId,
-                   element.agreementId,
-                   element.traderReceiverId,
-                   datetime,
-                   element.ammount,
-                   uploaderId,
-                   uploaderId,
-                   element.percentageReceiver,
-                   fromAddress,
-                   gasLimit,
-               );
+                let distributionProcessRequest = new DistributionProcessRequest(
+                    trackId,
+                    element.agreementId,
+                    element.traderReceiverId,
+                    datetime,
+                    element.ammount,
+                    uploaderId,
+                    uploaderId,
+                    element.percentageReceiver,
+                    fromAddress,
+                    gasLimit,
+                );
                 await this.distributionProcess(distributionProcessRequest);
             }
         }
-        console.log('PROCESS FINISHED');
+
+         dataModel.data = JSON.stringify("Process finished");
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log('ERROR IN TRANSACTION CHAINCODE');
         console.log(error);
@@ -101,18 +106,19 @@ async function distributionProcess(
     console.log('*****************************************');
     console.log('Request Distribution Process in Distribution Endpoint');
     console.log(distributionProcessRequest);
-    
+
     try {
         let trackId = distributionProcessRequest.trackId;
-        let previousAgreementId=distributionProcessRequest.previousAgreementId;
+        let previousAgreementId = distributionProcessRequest.previousAgreementId;
         let emitterId = distributionProcessRequest.emitterId;
         let datetime = distributionProcessRequest.datetime;
         let ammount = distributionProcessRequest.shareAmmount;
         let previousEmitterId = distributionProcessRequest.previousEmitterId;
         let uploaderId = distributionProcessRequest.uploaderId;
-        let percentageReceiver=distributionProcessRequest.percentageReceiver;
-        let fromAddress =distributionProcessRequest.fromAddress;
+        let percentageReceiver = distributionProcessRequest.percentageReceiver;
+        let fromAddress = distributionProcessRequest.fromAddress;
         let gasLimit = distributionProcessRequest.gasLimit;
+        let distributionProcessNewRequest;
         console.log('PREVIOUS EMITTERS');
         console.log(previousEmitterId);
         //assuming there is just one previous emitter
@@ -134,94 +140,104 @@ async function distributionProcess(
         console.log(receiverList);
 
         //Continue
-        // if (receiverList.length == 0) {
-        //     await this.distributionLastNode(
-        //         previousEmitterId,
-        //         emitterId,
-        //         trackId,
-        //         percentageReceiver,
-        //         ammount,
-        //         datetime,
-        //         uploaderId,
-        //         fromAddress, //TODO: Mention how we had to use constantly address and gas
-        //         gasLimit
-        //     );
-        // } else if (receiverList == 1) {
-        //     let uniqueShare = receiverList[0];
-        //     let receiptsBackwards = this.evaluateReceipts(
-        //         uniqueShare.agreementId,
-        //         uniqueShare.traderEmitterId,
-        //         uniqueShare.traderReceiverId,
-        //         trackId,
-        //         datetime
-        //     );
+        if (receiverList.length == 0) {
+            let distributionLastNodeRequest = new DistributionLastNodeRequest(
+                previousEmitterId,
+                emitterId,
+                trackId,
+                percentageReceiver,
+                ammount,
+                datetime,
+                uploaderId,
+                previousAgreementId,
+                fromAddress, //TODO: Mention how we had to use constantly address and gas
+                gasLimit
+            );
+            await this.distributionLastNode(distributionLastNodeRequest);
 
-        //     let receiptsForwards = this.evaluateReceipts(
-        //         uniqueShare.agreementId,
-        //         uniqueShare.traderEmitterId,
-        //         uniqueShare.traderReceiverId
-        //     );
-        //     if (!(receiptsBackwards + receiptsForwards) > 1) {
-        //         this.distributionProcess(
-        //             trackId,
-        //             uniqueShare.previousAgreementId,
-        //             uniqueShare.traderReceiverId,
-        //             datetime,
-        //             uniqueShare.ammount,
-        //             uniqueShare.traderEmitterId,
-        //             uploaderId,
-        //             uniqueShare.percentageReceiver,
-        //             fromAddress,
-        //             gasLimit
-        //         );
-        //     } else {
-        //         console.log('NODE FINISHED**********************************');
-        //     }
-        // } else if (receiverList.length > 1) {
-        //     let uniqueShare = receiverShareList[0];
-        //     for (const element of receiverShareList) {
-        //         this.distributionProcess(
-        //             trackId,
-        //             element.agreementId,
-        //             element.traderReceiverId,
-        //             datetime,
-        //             element.ammount,
-        //             uniqueShare.traderEmitterId,
-        //             uploaderId,
-        //             element.percentageReceiver,
-        //             fromAddress,
-        //             gasLimit
-        //         );
-        //     }
-        // }
+        } else if (receiverList == 1) {
+
+            // let uniqueShare = receiverList[0];
+            // let evaluateReceiptRequestBackward = new EvaluateReceiptRequest(
+            //     uniqueShare.agreementId,
+            //     uniqueShare.traderEmitterId,
+            //     uniqueShare.traderReceiverId,
+            //     trackId,
+            //     datetime
+            // );
+            // let receiptsBackwards = this.evaluateReceipts(evaluateReceiptRequestBackward);
+
+            // let evaluateReceiptRequestForward = new EvaluateReceiptRequest(
+            //     uniqueShare.agreementId,
+            //     uniqueShare.traderEmitterId,
+            //     uniqueShare.traderReceiverId,
+            //     trackId,
+            //     datetime
+            // );
+            // let receiptsForwards = this.evaluateReceipts(evaluateReceiptRequestForward);
+
+            // if (!(receiptsBackwards + receiptsForwards) > 1) {
+            //     this.distributionProcess(
+            //         trackId,
+            //         uniqueShare.previousAgreementId,
+            //         uniqueShare.traderReceiverId,
+            //         datetime,
+            //         uniqueShare.ammount,
+            //         uniqueShare.traderEmitterId,
+            //         uploaderId,
+            //         uniqueShare.percentageReceiver,
+            //         fromAddress,
+            //         gasLimit
+            //     );
+            // } else {
+            //     console.log('NODE FINISHED**********************************');
+            // }
+        } else if (receiverList.length > 1) {
+            let uniqueShare = receiverShareList[0];
+            for (const element of receiverShareList) {
+                distributionProcessNewRequest = new DistributionProcessRequest(
+                    trackId,
+                    element.agreementId,
+                    element.traderReceiverId,
+                    datetime,
+                    element.ammount,
+                    uniqueShare.traderEmitterId,
+                    uploaderId,
+                    element.percentageReceiver,
+                    fromAddress,
+                    gasLimit
+                );
+                this.distributionProcess(distributionProcessNewRequest);
+            }
+        }
     } catch (error) {
         console.log('ERROR IN TRANSACTION DISTRIBUTION PROCESS');
         console.log(error);
         throw new Error(error);
     }
-
 }
 module.exports.distributionProcess = distributionProcess;
 
 /**
  *All the parameters must come from a result from the blockchain call   
  */
-async function distributionLastNode(
-    emitterId,
-    receiverId,
-    trackId,
-    percentageReceiver,
-    ammount,
-    datetime,
-    uploaderId,
-    fromAddress,
-    gasLimit
-) {
+async function distributionLastNode(distributionLastNodeRequest) {
+   
     console.log('*************************************');
     console.log('Distribution Last Node in Composer.js');
-    console.log('Emitter: ' + emitterId);
+    console.log(distributionLastNodeRequest);
     //TODO: Improve logs
     try {
+        let emitterId = distributionLastNodeRequest.emitterId;
+        let receiverId = distributionLastNodeRequest.receiverId;
+        let trackId = distributionLastNodeRequest.trackId;
+        let percentageReceiver = distributionLastNodeRequest.percentageReceiver;
+        let ammount = distributionLastNodeRequest.ammount;
+        let datetime = distributionLastNodeRequest.datetime;
+        let previousAgreementId = distributionLastNodeRequest.previousAgreementId;
+        let fromAddress = distributionLastNodeRequest.fromAddress;
+        let gasLimit = distributionLastNodeRequest.gasLimit;
+    
         //validate last time emitter and receiver 
         //TODO:
         //We get the receiver token account
@@ -231,16 +247,35 @@ async function distributionLastNode(
             gasLimit
         );
         console.log(tokenAccountReceiver);
-        console.log('PREVIOUS STATE***********************************');
-        console.log("Trader Receiver Balance Enabled: ");
+        console.log('**************LAST NODE DISTRIBUTION*********************');
+        console.log('Trader: ' + receiverId);
+        console.log("Previous Trader Receiver Balance Enabled: ");
+        console.log(tokenAccountReceiver.balanceEnabled);
 
-        //let ammountToAddReceiver =parseFloat()+parseFloat(ammount);
-        // await tokenAccountEndpoint.addEnabledBalance(
-        //     receiverId,
-        //     Math.round(ammountToAddReceiver),
-        //     fromAddress,
-        //     gasLimit
-        // );
+        let ammountToAddReceiver = parseFloat(percentageReceiver) * parseFloat(ammount);
+        let flagBalanceAdded = await tokenAccountEndpoint.addEnabledBalance(
+            receiverId,
+            Math.round(ammountToAddReceiver),
+            fromAddress,
+            gasLimit
+        );
+        if (flagBalanceAdded) {
+            console.log("Update Trader Receiver Balance Enabled: ");
+            console.log(parseFloat(tokenAccountReceiver.balanceEnabled) + parseFloat(ammountToAddReceiver));
+            let receiptUniqueId = new Date().getUTCMilliseconds();
+
+            await receiptEndpoint.createReceipt(
+                receiptUniqueId,
+                trackId,
+                Math.round(ammountToAddReceiver),
+                previousAgreementId,
+                String(datetime),
+                fromAddress,
+                gasLimit
+            );
+        } else {
+            console.log('Balance not added something went wrong');
+        }
     } catch (error) {
         console.log('ERROR IN TRANSACTION EVALUATE RECEIPT');
         console.log(error);
@@ -280,16 +315,16 @@ async function evaluateReceipt(
 module.exports.evaluateReceipt = evaluateReceipt;
 
 async function onHoldDistribution(
-  requestOnHoldDistribution
+    requestOnHoldDistribution
 ) {
     console.log('************************************');
     console.log('Request On Hold Distribution in Composer.js: ');
     console.log(requestOnHoldDistribution);
-    
+
     try {
         let trackId = requestOnHoldDistribution.trackId;
         let uploaderId = requestOnHoldDistribution.uploaderId;
-        let datetime=requestOnHoldDistribution.datetime;
+        let datetime = requestOnHoldDistribution.datetime;
         let revenueTotal = requestOnHoldDistribution.ammount;
         let fromAddress = requestOnHoldDistribution.fromAddress;
         let gasLimit = requestOnHoldDistribution.gasLimit;
@@ -340,7 +375,7 @@ async function evaluateReceivers(request) {
 
 
         getTraderRequest = new GetTraderRequest(emitterId, fromAddress, gasLimit);
-        
+
         let emitterRaw = await traderEndpoint.getTrader(
             getTraderRequest
         );
@@ -379,7 +414,7 @@ async function evaluateReceivers(request) {
                 );
                 shareTotal =
                     parseFloat(shareTotal) - parseFloat(currentAgreement.percentage);
-                    if (shareTotal < 0) {
+                if (shareTotal < 0) {
                     throw "Total percentage exceded permited share";
                 }
 
@@ -404,9 +439,9 @@ async function evaluateReceivers(request) {
             //Now we distribute the emitter its share
             let ammountToAddEmitter =
                 parseFloat(shareTotal) * parseFloat(revenueTotalInput);
-               
-                console.log('AMMOUNT TO ADD');
-                console.log(ammountToAddEmitter);
+
+            console.log('AMMOUNT TO ADD');
+            console.log(ammountToAddEmitter);
 
 
             await tokenAccountEndpoint.addEnabledBalance(
@@ -418,9 +453,9 @@ async function evaluateReceivers(request) {
             console.log('GETTING HERE');
 
             let receiptUniqueId = new Date().getUTCMilliseconds();
-          
+
             //Now we create the receipt
-            if(!request.firstDistFlag){
+            if (!request.firstDistFlag) {
                 await receiptEndpoint.createReceipt(
                     receiptUniqueId,
                     trackId,
@@ -431,7 +466,6 @@ async function evaluateReceivers(request) {
                     gasLimit
                 );
             }
-           
         } else {
             console.log("No receivers for this trader: " + emitterModel.name);
         }
