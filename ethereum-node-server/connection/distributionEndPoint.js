@@ -207,8 +207,8 @@ async function distributionProcess(
                 console.log('NODE FINISHED**********************************');
             }
         } else if (receiverList.length > 1) {
-            let uniqueShare = receiverShareList[0];
-            for (const element of receiverShareList) {
+            let uniqueShare = receiverList[0];
+            for (const element of receiverList) {
                 distributionProcessNewRequest = new DistributionProcessRequest(
                     trackId,
                     element.agreementId,
@@ -518,18 +518,23 @@ module.exports.evaluateReceivers = evaluateReceivers;
 async function removeAgreementsByTrack(agreementList) {
     try {
         let result = [];
+        let filteredListByTrack=[];
         console.log('GETTING HERE********');
         let filteredListByReceiver = Utils.removeDuplicatesProp(agreementList, "traderReceiverId");
 
         if (filteredListByReceiver.length < agreementList.length) {
             //validate remove duplicates
-            let filteredListByTrack = Utils.removeDuplicatesProp(agreementList, 'trackId');
+            console.log('different length');
+            filteredListByTrack = Utils.removeDuplicatesProp(agreementList, 'trackId');
+            console.log('DEFENITE FILTERED LIST******************************');
+           console.log(filteredListByTrack);
             if (filteredListByTrack.length < agreementList.length) {
                 result = filteredListByTrack;
             } else {
-                result = agreementList;
+                result = filteredListByReceiver;
             }
         } else {
+            console.log('SAME LENGTH');
             result = agreementList;
         }
         return result;

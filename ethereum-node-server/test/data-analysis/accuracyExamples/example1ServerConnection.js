@@ -6,8 +6,6 @@ const connection = require('../../requestConnectionServer.js');
 async function example1() {
     try {
         const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        console.log(accounts)
 
         //Delegating accounts addresses/ids
         let trackId = accounts[1];
