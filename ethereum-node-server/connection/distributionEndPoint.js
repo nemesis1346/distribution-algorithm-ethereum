@@ -90,7 +90,7 @@ async function distribution(requestDistribution) {
             }
         }
 
-         dataModel.data = JSON.stringify("Process finished");
+        dataModel.data = JSON.stringify("Process finished");
         dataModel.status = '200';
         return dataModel;
     } catch (error) {
@@ -162,7 +162,7 @@ async function distributionProcess(
             //We get the agreement contract address
             let agreementContractAddressData = await agreementEndpoint.getAgreementContractAddress();
             let agreementContractAddress = agreementContractAddressData.data.replace(/\"/g, "");
-    
+
             let evaluateReceiptRequestBackward = new EvaluateReceiptRequest(
                 uniqueShare.agreementId,
                 previousEmitterId,
@@ -174,7 +174,7 @@ async function distributionProcess(
                 gasLimit
             );
             //TODO:Get receipt by other parameters, maybe is not necesary receiptId
-            let receiptsBackwards =await this.evaluateReceipt(evaluateReceiptRequestBackward);
+            let receiptsBackwards = await this.evaluateReceipt(evaluateReceiptRequestBackward);
 
             let evaluateReceiptRequestForward = new EvaluateReceiptRequest(
                 uniqueShare.agreementId,
@@ -186,7 +186,7 @@ async function distributionProcess(
                 fromAddress,
                 gasLimit
             );
-            let receiptsForwards =await this.evaluateReceipt(evaluateReceiptRequestForward);
+            let receiptsForwards = await this.evaluateReceipt(evaluateReceiptRequestForward);
 
             if (!((receiptsBackwards + receiptsForwards) > 1)) {
                 distributionProcessNewRequest = new DistributionProcessRequest(
@@ -236,7 +236,7 @@ module.exports.distributionProcess = distributionProcess;
  *All the parameters must come from a result from the blockchain call   
  */
 async function distributionLastNode(distributionLastNodeRequest) {
-   
+
     console.log('*************************************');
     console.log('Distribution Last Node in Composer.js');
     console.log(distributionLastNodeRequest);
@@ -251,7 +251,7 @@ async function distributionLastNode(distributionLastNodeRequest) {
         let previousAgreementId = distributionLastNodeRequest.previousAgreementId;
         let fromAddress = distributionLastNodeRequest.fromAddress;
         let gasLimit = distributionLastNodeRequest.gasLimit;
-    
+
         //validate last time emitter and receiver 
         //TODO:
         //We get the receiver token account
@@ -264,7 +264,7 @@ async function distributionLastNode(distributionLastNodeRequest) {
             getTARequest
         );
         console.log(tokenAccountReceiverRaw);
-        let tokenAccountReceiver=JSON.parse(tokenAccountReceiverRaw.data);
+        let tokenAccountReceiver = JSON.parse(tokenAccountReceiverRaw.data);
         console.log(tokenAccountReceiver);
         console.log('**************LAST NODE DISTRIBUTION*********************');
         console.log('Trader: ' + receiverId);
@@ -303,21 +303,21 @@ async function distributionLastNode(distributionLastNodeRequest) {
 module.exports.distributionLastNode = distributionLastNode;
 
 async function evaluateReceipt(
-   evaluateReceiptRequest
+    evaluateReceiptRequest
 ) {
     console.log('************************************');
     console.log('Evaluate Receipt in Composer.js: ');
     console.log(evaluateReceiptRequest);
-   
+
     try {
         let agreementId = evaluateReceiptRequest.agreementId;
-        let traderEmitterId= evaluateReceiptRequest.traderEmitterId;
-        let traderReceiverId=evaluateReceiptRequest.traderReceiverId;
-        let trackId=evaluateReceiptRequest.trackId;
-        let datetime=evaluateReceiptRequest.datetime;
-        let agreementCtrAddr=evaluateReceiptRequest.agreementCtrAddr;
-        let fromAddress=evaluateReceiptRequest.fromAddress;
-        let gasLimit=evaluateReceiptRequest.gasLimit;
+        let traderEmitterId = evaluateReceiptRequest.traderEmitterId;
+        let traderReceiverId = evaluateReceiptRequest.traderReceiverId;
+        let trackId = evaluateReceiptRequest.trackId;
+        let datetime = evaluateReceiptRequest.datetime;
+        let agreementCtrAddr = evaluateReceiptRequest.agreementCtrAddr;
+        let fromAddress = evaluateReceiptRequest.fromAddress;
+        let gasLimit = evaluateReceiptRequest.gasLimit;
 
         let result = await receiptEndpoint.validateReceipt(
             agreementId,
@@ -437,16 +437,17 @@ async function evaluateReceivers(request) {
                 );
                 rawListAgreements.push(currentAgreement);
             }
+            console.log('PREVIOUS LIST');
+            console.log(rawListAgreements);
             //Now we filter by possible duplicated tracks
-            let filteredAgreements = Utils.removeDuplicatesProp(rawListAgreements,'trackId');
-            filteredAgreements = Utils.removeDuplicatesProp(filteredAgreements,'traderEmitterId');
-            filteredAgreements = Utils.removeDuplicatesProp(filteredAgreements,'traderReceiverId');
+            let filteredAgreements = await this.removeAgreementsByTrack(rawListAgreements);
+            //filteredAgreements = Utils.removeDuplicatesProp(filteredAgreements, 'traderReceiverId');
 
             console.log('NEW FILTERED LIST');
             console.log(filteredAgreements);
-            
+
             for (const element of filteredAgreements) {
-                let currentAgreement =element;
+                let currentAgreement = element;
                 console.log('CURRENT AGREEMENT******************');
                 console.log(currentAgreement);
                 shareTotal =
@@ -514,15 +515,27 @@ async function evaluateReceivers(request) {
 module.exports.evaluateReceivers = evaluateReceivers;
 
 
-// async function removeAgreementsByTrack(agreementList){
-// try{
+async function removeAgreementsByTrack(agreementList) {
+    try {
+        let result = [];
+        console.log('GETTING HERE********');
+        let filteredListByReceiver = Utils.removeDuplicatesProp(agreementList, "traderReceiverId");
 
-//     agreementList.forEach(element => {
-        
-//     });
-// }catch(error){
-//     console.log('ERROR IN REMOVE AGREEMENTS BY TRACK');
-//     throw new Error(error);
-// }
-// }
-// module.exports.removeAgreementsByTrack= removeAgreementsByTrack;
+        if (filteredListByReceiver.length < agreementList.length) {
+            //validate remove duplicates
+            let filteredListByTrack = Utils.removeDuplicatesProp(agreementList, 'trackId');
+            if (filteredListByTrack.length < agreementList.length) {
+                result = filteredListByTrack;
+            } else {
+                result = agreementList;
+            }
+        } else {
+            result = agreementList;
+        }
+        return result;
+    } catch (error) {
+        console.log('ERROR IN REMOVE AGREEMENTS BY TRACK');
+        throw new Error(error);
+    }
+}
+module.exports.removeAgreementsByTrack = removeAgreementsByTrack;

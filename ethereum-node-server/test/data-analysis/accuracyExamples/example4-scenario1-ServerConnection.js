@@ -15,12 +15,14 @@ async function example1() {
         let trader2 = accounts[3];
         let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
         let trader4 = accounts[5];
+        let trader5 = accounts[6];
         //Delegating agreements addresses
         //track1
-        let agreement1Id = accounts[6];
-        let agreement2Id = accounts[7];
-        let agreement3Id = accounts[8];
-        let agreement4Id = accounts[9];
+        let agreement1Id = accounts[7];
+        let agreement2Id = accounts[8];
+        let agreement3Id = accounts[9];
+        let agreement4Id = accounts[10];
+        let agreement5Id = accounts[11];
 
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
@@ -68,7 +70,6 @@ async function example1() {
             trader3,
             gasLimit);
 
-
         await connection.createTrader(
             trader4,
             "trader4",
@@ -77,13 +78,20 @@ async function example1() {
             trader4,
             gasLimit);
 
+        await connection.createTrader(
+            trader5,
+            "trader5",
+            trader5,
+            TAContractAddress,
+            trader5,
+            gasLimit);
 
         // //Agreement 1
         await connection.createAgreement(
             agreement1Id,
             trader1,
             trader2,
-            50,
+            25,
             trackId1,
             traderContractAddress, //TODO: fix this
             trackContractAddress,
@@ -94,9 +102,9 @@ async function example1() {
         //Agreement 2
         await connection.createAgreement(
             agreement2Id,
-            trader2,
+            trader1,
             trader3,
-            50,
+            25,
             trackId1,
             traderContractAddress,
             trackContractAddress,
@@ -107,9 +115,9 @@ async function example1() {
         //Agreement 3
         await connection.createAgreement(
             agreement3Id,
-            trader3,
-            trader1,
-            25,
+            trader2,
+            trader4,
+            50,
             trackId1,
             traderContractAddress,
             trackContractAddress,
@@ -122,7 +130,19 @@ async function example1() {
             agreement4Id,
             trader3,
             trader4,
-            25,
+            50,
+            trackId1,
+            traderContractAddress,
+            trackContractAddress,
+            trader1,
+            gasLimit
+        );
+
+        await connection.createAgreement(
+            agreement5Id,
+            trader4,
+            trader5,
+            50,
             trackId1,
             traderContractAddress,
             trackContractAddress,
@@ -133,29 +153,30 @@ async function example1() {
         //Starts distribution
         await connection.distribution(
             trackId1,
-            trader2,
+            trader1,
             new Date().getTime(),
-            trader2,
+            trader1,
             gasLimit);
+
         await connection.distribution(
             trackId1,
-            trader2,
+            trader1,
             new Date().getTime(),
-            trader2,
+            trader1,
             gasLimit
         );
         await connection.distribution(
             trackId1,
-            trader2,
+            trader1,
             new Date().getTime(),
-            trader2,
+            trader1,
             gasLimit
         );
         await connection.distribution(
             trackId1,
-            trader2,
+            trader1,
             new Date().getTime(),
-            trader2,
+            trader1,
             gasLimit
         );
 
@@ -249,6 +270,29 @@ async function example1() {
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
+
+        //trader 5 
+         //Trader4
+         let trader5Result = await connection.getTraderDetail(
+            trader5,
+            trader5,
+            gasLimit);
+
+        let trader5Model = JSON.parse(JSON.parse(trader5Result.body).data.data);
+
+        let tokenTrader5Result = await connection.getTokenAccount(
+            trader5,
+            trader5,
+            gasLimit
+        );
+
+        let tokenTrader5Model = JSON.parse(JSON.parse(tokenTrader5Result.body).data.data);
+
+        console.log('TRADER ' + trader5Model.name + ' *******');
+        console.log('BALANCE DISABLED:');
+        console.log(tokenTrader5Model.balanceDisabled);
+        console.log('BALANCE ENABLED');
+        console.log(tokenTrader5Model.balanceEnabled);
     } catch (error) {
         console.log(error)
     }
