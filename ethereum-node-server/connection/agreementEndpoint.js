@@ -60,7 +60,7 @@ async function getAgreement(agreementId, fromAddress, gasLimit) {
                 gasLimit: gasLimit
             });
         agreementModel.agreementId = agreementResult[0];
-        agreementModel.traderEmiterId = agreementResult[1];
+        agreementModel.traderEmitterId = agreementResult[1];
         agreementModel.traderReceiverId = agreementResult[2];
         agreementModel.percentage = parseFloat(agreementResult[3].toString())/100;
         agreementModel.trackId = agreementResult[4];

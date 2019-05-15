@@ -138,7 +138,6 @@ async function distributionProcess(
         let receiverList = await this.evaluateReceivers(evaluateReceiversRequest);
         console.log('EVALUATE RECEIVERS SHARE IN DISTRIBUTION PROCESS');
         console.log(receiverList);
-
         //Continue
         if (receiverList.length == 0) {
             let distributionLastNodeRequest = new DistributionLastNodeRequest(
@@ -155,7 +154,7 @@ async function distributionProcess(
             );
             await this.distributionLastNode(distributionLastNodeRequest);
 
-        } else if (receiverList == 1) {
+        } else if (receiverList.length == 1) {
             console.log('ENTERED EVALUATION OF RECEIPTS********************');
             let uniqueShare = receiverList[0];
 
@@ -168,7 +167,9 @@ async function distributionProcess(
                 fromAddress,
                 gasLimit
             );
-            let receiptsBackwards = this.evaluateReceipts(evaluateReceiptRequestBackward);
+            console.log('AQUI ME QUEDE**********************************');
+            //TODO:Get receipt by other parameters, maybe is not necesary receiptId
+            let receiptsBackwards = this.evaluateReceipt(evaluateReceiptRequestBackward);
 
             let evaluateReceiptRequestForward = new EvaluateReceiptRequest(
                 uniqueShare.agreementId,
@@ -179,7 +180,7 @@ async function distributionProcess(
                 fromAddress,
                 gasLimit
             );
-            let receiptsForwards = this.evaluateReceipts(evaluateReceiptRequestForward);
+            let receiptsForwards = this.evaluateReceipt(evaluateReceiptRequestForward);
 
             if (!(receiptsBackwards + receiptsForwards) > 1) {
                 distributionProcessNewRequest = new DistributionProcessRequest(
@@ -290,7 +291,6 @@ async function distributionLastNode(distributionLastNodeRequest) {
         }
     } catch (error) {
         console.log('ERROR IN TRANSACTION EVALUATE RECEIPT');
-        console.log(error);
         throw new Error(error);
     }
 }
@@ -361,7 +361,6 @@ async function onHoldDistribution(
         );
     } catch (error) {
         console.log('ERROR IN TRANSACTION ON HOLD DISTRIBUTION');
-        console.log(error);
         throw new Error(error);
     }
 }
@@ -384,7 +383,6 @@ async function evaluateReceivers(request) {
         let trackId = request.trackId;
         let getTraderRequest;
 
-
         getTraderRequest = new GetTraderRequest(emitterId, fromAddress, gasLimit);
 
         let emitterRaw = await traderEndpoint.getTrader(
@@ -402,7 +400,6 @@ async function evaluateReceivers(request) {
             previousReceiverId = fromAddress;
         }
         let emitterModel = JSON.parse(emitterRaw.data);
-        console.log(emitterModel);
         //Get all agreements between emitter and receiver
         let agreements = await agreementEndpoint.getAgreementsByEmitter(
             emitterModel.traderId,
@@ -423,6 +420,8 @@ async function evaluateReceivers(request) {
                     fromAddress,
                     gasLimit
                 );
+                console.log('CURRENT AGREEMENT******************');
+                console.log(currentAgreement);
                 shareTotal =
                     parseFloat(shareTotal) - parseFloat(currentAgreement.percentage);
                 if (shareTotal < 0) {
@@ -482,7 +481,6 @@ async function evaluateReceivers(request) {
         return receiverShareListResult;
     } catch (error) {
         console.log('ERROR IN TRANSACTION EVALUATE RECEIVERS');
-        console.log(error);
         throw new Error(error);
     }
 }

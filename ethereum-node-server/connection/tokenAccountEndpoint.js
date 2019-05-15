@@ -65,9 +65,9 @@ module.exports.getTAContractAddress = getTAContractAddress;
 
 async function getTokenAccount(request) {
     let dataModel = new DataModel(null, null, null);
-    console.log('*************************************');
-    console.log('Get Token Account Request in Composer.js');
-    console.log(request);
+    // console.log('*************************************');
+    // console.log('Get Token Account Request in Composer.js');
+    // console.log(request);
     try {
         let tokenAccountId = request.tokenAccountId;
         let fromAddress = request.fromAddress;
