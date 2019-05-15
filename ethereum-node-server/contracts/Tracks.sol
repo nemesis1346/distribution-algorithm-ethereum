@@ -50,5 +50,10 @@ contract Tracks{
                 trackStructList[id].uploaderEOA,
                 trackStructList[id].isTrack);
     }
+
+    function updateTrackRevenue(address trackId, uint revenue) public{
+        trackStructList[trackId].revenueTotal = revenue;
+    }
     event LogTrack(string message);
+
 }    

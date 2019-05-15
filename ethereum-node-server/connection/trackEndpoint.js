@@ -15,7 +15,7 @@ const TrackModel = require('../models/trackModel');
 async function createTrack(request) {
   let dataModel = new DataModel(null, null, null);
   console.log('************************************');
-  console.log('Request Track in trackEndpoint.js: ');
+  console.log('Request Create Track in trackEndpoint.js: ');
   console.log(request);
   try {
 
@@ -47,7 +47,8 @@ async function createTrack(request) {
     return dataModel;
 
   } catch (error) {
-    console.log(error);
+    console.log('ERROR IN CREATE TRACK IN TRACK ENDPOINT');
+    throw new Error(error);
   }
 }
 module.exports.createTrack = createTrack;
@@ -75,7 +76,9 @@ async function getTrack(trackId, fromAddress, gasLimit) {
     return trackModel;
 
   } catch (error) {
-    console.log(error);
+    console.log('ERROR IN GET TRACK IN TRACK ENDPOINT');
+    throw new Error(error);
+
   }
 }
 module.exports.getTrack = getTrack;
@@ -90,6 +93,30 @@ async function getTrackContractAddress() {
   } catch (error) {
     throw new Error(error);
   }
-
 }
 module.exports.getTrackContractAddress = getTrackContractAddress;
+
+async function updateTrackRevenue(updateTrackRevenueRequest){
+  console.log('************************************');
+  console.log('Request Update Track Revenue in trackEndpoint.js: ');
+  console.log(updateTrackRevenueRequest); 
+  try{
+    let trackId = updateTrackRevenueRequest.trackId;
+    let revenue = updateTrackRevenueRequest.revenue;
+    let fromAddress= updateTrackRevenueRequest.fromAddress;
+    let gasLimit = updateTrackRevenueRequest.gasLimit;
+    const tracksInterface = await TracksContract.deployed();
+    let result  =tracksInterface.updateTrackRevenue(
+      trackId,
+      revenue,
+      {
+        from: fromAddress,
+        gasLimit: gasLimit
+      });
+    return result
+  }catch(error){
+    console.log('ERROR IN GET TRACK IN TRACK ENDPOINT');
+    throw new Error(error);
+  }
+}
+module.exports.updateTrackRevenue= updateTrackRevenue;

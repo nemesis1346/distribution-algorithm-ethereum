@@ -45,7 +45,7 @@ process.on('message', async function (input) {
                 result = await tokenAccountEndpoint.getTokenAccount(JSON.parse(bufferContent));
                 break;
             case '/updateTrack':
-                result = await trackEndpoint.updateTrack(JSON.parse(bufferContent));
+                result = await trackEndpoint.updateTrackRevenue(JSON.parse(bufferContent));
                 break;
             case '/getTransactions':
                 result = await receiptEndpoint.getTransactions();

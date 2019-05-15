@@ -27,6 +27,7 @@ const DistributionLastNodeRequest = require('../models/distributionLastNodeReque
 const EvaluateReceiversRequest = require('../models/evaluateReceiversRequest.js');
 const GetTraderRequest = require('../models/getTraderRequest.js');
 const GetTARequest = require('../models/getTARequest.js');
+const Utils = require('../resources/Utils.js');
 
 async function distribution(requestDistribution) {
     let dataModel = new DataModel(null, null, null);
@@ -160,9 +161,6 @@ async function distributionProcess(
 
             //We get the agreement contract address
             let agreementContractAddressData = await agreementEndpoint.getAgreementContractAddress();
-            console.log('RESPONSE');
-            console.log(agreementContractAddressData);
-
             let agreementContractAddress = agreementContractAddressData.data.replace(/\"/g, "");
     
             let evaluateReceiptRequestBackward = new EvaluateReceiptRequest(
@@ -191,8 +189,6 @@ async function distributionProcess(
             let receiptsForwards =await this.evaluateReceipt(evaluateReceiptRequestForward);
 
             if (!((receiptsBackwards + receiptsForwards) > 1)) {
-                console.log('GETS HERE PASSING RECEIPT**********************************');
-
                 distributionProcessNewRequest = new DistributionProcessRequest(
                     trackId,
                     uniqueShare.agreementId,
@@ -430,12 +426,27 @@ async function evaluateReceivers(request) {
 
         let receiverShareListResult = [];
         if (agreements && agreements.length > 0) {
+            //first we create a raw list of agreements
+            let rawListAgreements = [];
+
             for (const element of agreements) {
                 let currentAgreement = await agreementEndpoint.getAgreement(
                     element,
                     fromAddress,
                     gasLimit
                 );
+                rawListAgreements.push(currentAgreement);
+            }
+            //Now we filter by possible duplicated tracks
+            let filteredAgreements = Utils.removeDuplicatesProp(rawListAgreements,'trackId');
+            filteredAgreements = Utils.removeDuplicatesProp(filteredAgreements,'traderEmitterId');
+            filteredAgreements = Utils.removeDuplicatesProp(filteredAgreements,'traderReceiverId');
+
+            console.log('NEW FILTERED LIST');
+            console.log(filteredAgreements);
+            
+            for (const element of filteredAgreements) {
+                let currentAgreement =element;
                 console.log('CURRENT AGREEMENT******************');
                 console.log(currentAgreement);
                 shareTotal =
@@ -501,3 +512,17 @@ async function evaluateReceivers(request) {
     }
 }
 module.exports.evaluateReceivers = evaluateReceivers;
+
+
+// async function removeAgreementsByTrack(agreementList){
+// try{
+
+//     agreementList.forEach(element => {
+        
+//     });
+// }catch(error){
+//     console.log('ERROR IN REMOVE AGREEMENTS BY TRACK');
+//     throw new Error(error);
+// }
+// }
+// module.exports.removeAgreementsByTrack= removeAgreementsByTrack;

@@ -22,6 +22,7 @@ contract Agreements{
     struct AgreementByEmitter{
         address emitter;
         address[] agreements;
+        address trackId;
     }
     mapping(address=>Agreement) public agreementStructList;
     mapping(address=> AgreementByEmitter) agreementsByEmitter; //query
@@ -43,7 +44,8 @@ contract Agreements{
         //This is just some testing
         agreementsByEmitter[traderEmitterId].emitter=traderEmitterId;
         agreementsByEmitter[traderEmitterId].agreements.push(id);//This is for query the agreement by receiver
-               
+        agreementsByEmitter[traderEmitterId].trackId = trackId;
+
         Traders tradersContract= Traders(tradersContractAddr);
         Tracks tracksContract = Tracks(tracksContractAddr);
 
