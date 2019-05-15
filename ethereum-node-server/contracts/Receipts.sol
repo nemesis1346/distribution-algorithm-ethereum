@@ -47,7 +47,7 @@ contract Receipts{
     }
 
     function validateReceipt(
-        uint receiptId,
+     //   uint receiptId,
         address agreementId,
         address traderEmitterId,
         address traderReceiverId,

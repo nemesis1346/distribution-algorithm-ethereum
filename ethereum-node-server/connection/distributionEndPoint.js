@@ -158,18 +158,25 @@ async function distributionProcess(
             console.log('ENTERED EVALUATION OF RECEIPTS********************');
             let uniqueShare = receiverList[0];
 
+            //We get the agreement contract address
+            let agreementContractAddressData = await agreementEndpoint.getAgreementContractAddress();
+            console.log('RESPONSE');
+            console.log(agreementContractAddressData);
+
+            let agreementContractAddress = agreementContractAddressData.data.replace(/\"/g, "");
+    
             let evaluateReceiptRequestBackward = new EvaluateReceiptRequest(
                 uniqueShare.agreementId,
                 previousEmitterId,
                 uniqueShare.traderEmitterId,
                 trackId,
                 datetime,
+                agreementContractAddress,
                 fromAddress,
                 gasLimit
             );
-            console.log('AQUI ME QUEDE**********************************');
             //TODO:Get receipt by other parameters, maybe is not necesary receiptId
-            let receiptsBackwards = this.evaluateReceipt(evaluateReceiptRequestBackward);
+            let receiptsBackwards =await this.evaluateReceipt(evaluateReceiptRequestBackward);
 
             let evaluateReceiptRequestForward = new EvaluateReceiptRequest(
                 uniqueShare.agreementId,
@@ -177,15 +184,18 @@ async function distributionProcess(
                 uniqueShare.traderReceiverId,
                 trackId,
                 datetime,
+                agreementContractAddress,
                 fromAddress,
                 gasLimit
             );
-            let receiptsForwards = this.evaluateReceipt(evaluateReceiptRequestForward);
+            let receiptsForwards =await this.evaluateReceipt(evaluateReceiptRequestForward);
 
-            if (!(receiptsBackwards + receiptsForwards) > 1) {
+            if (!((receiptsBackwards + receiptsForwards) > 1)) {
+                console.log('GETS HERE PASSING RECEIPT**********************************');
+
                 distributionProcessNewRequest = new DistributionProcessRequest(
                     trackId,
-                    uniqueShare.previousAgreementId,
+                    uniqueShare.agreementId,
                     uniqueShare.traderReceiverId,
                     datetime,
                     uniqueShare.ammount,
@@ -297,16 +307,22 @@ async function distributionLastNode(distributionLastNodeRequest) {
 module.exports.distributionLastNode = distributionLastNode;
 
 async function evaluateReceipt(
-    agreementId,
-    traderEmitterId,
-    traderReceiverId,
-    trackId,
-    datetime,
-    agreementCtrAddr,
-    fromAddress,
-    gasLimit
+   evaluateReceiptRequest
 ) {
+    console.log('************************************');
+    console.log('Evaluate Receipt in Composer.js: ');
+    console.log(evaluateReceiptRequest);
+   
     try {
+        let agreementId = evaluateReceiptRequest.agreementId;
+        let traderEmitterId= evaluateReceiptRequest.traderEmitterId;
+        let traderReceiverId=evaluateReceiptRequest.traderReceiverId;
+        let trackId=evaluateReceiptRequest.trackId;
+        let datetime=evaluateReceiptRequest.datetime;
+        let agreementCtrAddr=evaluateReceiptRequest.agreementCtrAddr;
+        let fromAddress=evaluateReceiptRequest.fromAddress;
+        let gasLimit=evaluateReceiptRequest.gasLimit;
+
         let result = await receiptEndpoint.validateReceipt(
             agreementId,
             traderEmitterId,

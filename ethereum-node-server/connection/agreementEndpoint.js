@@ -85,3 +85,16 @@ async function getAgreementsByEmitter(emitterId, fromAddress, gasLimit) {
     return agreementsResult;
 }
 module.exports.getAgreementsByEmitter = getAgreementsByEmitter;
+
+async function getAgreementContractAddress(){
+    let dataModel = new DataModel(null, null, null);
+    try {
+        const agreementInterface = await AgreementsContract.deployed();
+        dataModel.data = JSON.stringify(agreementInterface.address);
+        dataModel.status = '200';
+        return dataModel;
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+module.exports.getAgreementContractAddress = getAgreementContractAddress;

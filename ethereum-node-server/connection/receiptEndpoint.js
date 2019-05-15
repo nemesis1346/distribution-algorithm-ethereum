@@ -64,7 +64,6 @@ async function getReceipt(receiptId, fromAddress, gasLimit) {
 module.exports.getReceipt = getReceipt;
 
 async function validateReceipt(
-    receiptId,
     agreementId,
     traderEmitterId,
     traderReceiverId,
@@ -76,12 +75,11 @@ async function validateReceipt(
     try {
         const receiptsInterface = await ReceiptsContract.deployed();
         let result = await receiptsInterface.validateReceipt(
-            receiptId,
             agreementId,
             traderEmitterId,
             traderReceiverId,
             trackId,
-            datetime,
+            String(datetime),
             agreementCtrAddr,
             {
                 from: fromAddress,

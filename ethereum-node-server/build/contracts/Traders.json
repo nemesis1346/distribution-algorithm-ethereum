@@ -182,17 +182,17 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/Traders.sol",
     "exportedSymbols": {
       "TokenAccounts": [
-        922
+        920
       ],
       "Traders": [
-        1067
+        1065
       ]
     },
-    "id": 1068,
+    "id": 1066,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 915,
+        "id": 913,
         "literals": [
           "solidity",
           "^",
@@ -208,37 +208,37 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 922,
+        "id": 920,
         "linearizedBaseContracts": [
-          922
+          920
         ],
         "name": "TokenAccounts",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 920,
+              "id": 918,
               "nodeType": "Block",
               "src": "141:2:5",
               "statements": []
             },
             "documentation": null,
-            "id": 921,
+            "id": 919,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTokenAccount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 918,
+              "id": 916,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 917,
+                  "id": 915,
                   "name": "tokenAccountId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 921,
+                  "scope": 919,
                   "src": "103:22:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -247,7 +247,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 916,
+                    "id": 914,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "103:7:5",
@@ -264,19 +264,19 @@
               "src": "102:24:5"
             },
             "returnParameters": {
-              "id": 919,
+              "id": 917,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "141:0:5"
             },
-            "scope": 922,
+            "scope": 920,
             "src": "75:68:5",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1068,
+        "scope": 1066,
         "src": "47:98:5"
       },
       {
@@ -285,35 +285,35 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1067,
+        "id": 1065,
         "linearizedBaseContracts": [
-          1067
+          1065
         ],
         "name": "Traders",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 924,
+            "id": 922,
             "name": "tokenAccountsInterface",
             "nodeType": "VariableDeclaration",
-            "scope": 1067,
+            "scope": 1065,
             "src": "236:43:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_TokenAccounts_$922",
+              "typeIdentifier": "t_contract$_TokenAccounts_$920",
               "typeString": "contract TokenAccounts"
             },
             "typeName": {
               "contractScope": null,
-              "id": 923,
+              "id": 921,
               "name": "TokenAccounts",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 922,
+              "referencedDeclaration": 920,
               "src": "236:13:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                "typeIdentifier": "t_contract$_TokenAccounts_$920",
                 "typeString": "contract TokenAccounts"
               }
             },
@@ -322,14 +322,14 @@
           },
           {
             "canonicalName": "Traders.Trader",
-            "id": 933,
+            "id": 931,
             "members": [
               {
                 "constant": false,
-                "id": 926,
+                "id": 924,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "308:10:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -338,7 +338,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 925,
+                  "id": 923,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "308:7:5",
@@ -353,10 +353,10 @@
               },
               {
                 "constant": false,
-                "id": 928,
+                "id": 926,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "328:11:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -365,7 +365,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 927,
+                  "id": 925,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "328:6:5",
@@ -379,10 +379,10 @@
               },
               {
                 "constant": false,
-                "id": 930,
+                "id": 928,
                 "name": "tokenAccountId",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "349:22:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -391,7 +391,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 929,
+                  "id": 927,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "349:7:5",
@@ -406,10 +406,10 @@
               },
               {
                 "constant": false,
-                "id": 932,
+                "id": 930,
                 "name": "isTrader",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "381:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -418,7 +418,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 931,
+                  "id": 929,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "381:4:5",
@@ -433,27 +433,27 @@
             ],
             "name": "Trader",
             "nodeType": "StructDefinition",
-            "scope": 1067,
+            "scope": 1065,
             "src": "285:116:5",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 937,
+            "id": 935,
             "name": "traderStructList",
             "nodeType": "VariableDeclaration",
-            "scope": 1067,
+            "scope": 1065,
             "src": "407:48:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
               "typeString": "mapping(address => struct Traders.Trader)"
             },
             "typeName": {
-              "id": 936,
+              "id": 934,
               "keyType": {
-                "id": 934,
+                "id": 932,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "415:7:5",
@@ -465,18 +465,18 @@
               "nodeType": "Mapping",
               "src": "407:24:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                 "typeString": "mapping(address => struct Traders.Trader)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 935,
+                "id": 933,
                 "name": "Trader",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 933,
+                "referencedDeclaration": 931,
                 "src": "424:6:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Trader_$933_storage_ptr",
+                  "typeIdentifier": "t_struct$_Trader_$931_storage_ptr",
                   "typeString": "struct Traders.Trader"
                 }
               }
@@ -486,10 +486,10 @@
           },
           {
             "constant": false,
-            "id": 940,
+            "id": 938,
             "name": "traderAddressList",
             "nodeType": "VariableDeclaration",
-            "scope": 1067,
+            "scope": 1065,
             "src": "461:34:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -499,7 +499,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 938,
+                "id": 936,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "461:7:5",
@@ -509,7 +509,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 939,
+              "id": 937,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "461:9:5",
@@ -523,7 +523,7 @@
           },
           {
             "body": {
-              "id": 952,
+              "id": 950,
               "nodeType": "Block",
               "src": "562:53:5",
               "statements": [
@@ -534,25 +534,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 947,
+                        "id": 945,
                         "name": "traderStructList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 937,
+                        "referencedDeclaration": 935,
                         "src": "579:16:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                           "typeString": "mapping(address => struct Traders.Trader storage ref)"
                         }
                       },
-                      "id": 949,
+                      "id": 947,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 948,
+                        "id": 946,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 942,
+                        "referencedDeclaration": 940,
                         "src": "596:2:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -566,48 +566,48 @@
                       "nodeType": "IndexAccess",
                       "src": "579:20:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Trader_$933_storage",
+                        "typeIdentifier": "t_struct$_Trader_$931_storage",
                         "typeString": "struct Traders.Trader storage ref"
                       }
                     },
-                    "id": 950,
+                    "id": 948,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isTrader",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 932,
+                    "referencedDeclaration": 930,
                     "src": "579:29:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 946,
-                  "id": 951,
+                  "functionReturnParameters": 944,
+                  "id": 949,
                   "nodeType": "Return",
                   "src": "572:36:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 953,
+            "id": 951,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isTrader",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 943,
+              "id": 941,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 942,
+                  "id": 940,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 953,
+                  "scope": 951,
                   "src": "525:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -616,7 +616,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 941,
+                    "id": 939,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "525:7:5",
@@ -633,15 +633,15 @@
               "src": "524:12:5"
             },
             "returnParameters": {
-              "id": 946,
+              "id": 944,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 945,
+                  "id": 943,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 953,
+                  "scope": 951,
                   "src": "557:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -650,7 +650,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 944,
+                    "id": 942,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "557:4:5",
@@ -665,7 +665,7 @@
               ],
               "src": "556:6:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "507:108:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -673,7 +673,7 @@
           },
           {
             "body": {
-              "id": 1026,
+              "id": 1024,
               "nodeType": "Block",
               "src": "732:617:5",
               "statements": [
@@ -683,11 +683,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 965,
+                        "id": 963,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 955,
+                        "referencedDeclaration": 953,
                         "src": "754:2:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -702,18 +702,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 964,
+                      "id": 962,
                       "name": "isTrader",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 953,
+                      "referencedDeclaration": 951,
                       "src": "745:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-                    "id": 966,
+                    "id": 964,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -728,7 +728,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 971,
+                  "id": 969,
                   "nodeType": "IfStatement",
                   "src": "742:49:5",
                   "trueBody": {
@@ -738,7 +738,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "54726164657220616c72656164792063726561746564",
-                          "id": 968,
+                          "id": 966,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -761,21 +761,21 @@
                             "typeString": "literal_string \"Trader already created\""
                           }
                         ],
-                        "id": 967,
+                        "id": 965,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1553,
-                          1554
+                          1551,
+                          1552
                         ],
-                        "referencedDeclaration": 1554,
+                        "referencedDeclaration": 1552,
                         "src": "759:6:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
                           "typeString": "function (string memory) pure"
                         }
                       },
-                      "id": 969,
+                      "id": 967,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -789,7 +789,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 970,
+                    "id": 968,
                     "nodeType": "ExpressionStatement",
                     "src": "759:32:5"
                   }
@@ -797,7 +797,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 977,
+                    "id": 975,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -808,25 +808,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 972,
+                          "id": 970,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "801:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 974,
+                        "id": 972,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 973,
+                          "id": 971,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "818:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -840,18 +840,18 @@
                         "nodeType": "IndexAccess",
                         "src": "801:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 975,
+                      "id": 973,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "id",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 926,
+                      "referencedDeclaration": 924,
                       "src": "801:23:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -862,11 +862,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 976,
+                      "id": 974,
                       "name": "id",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 955,
+                      "referencedDeclaration": 953,
                       "src": "827:2:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -879,14 +879,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 978,
+                  "id": 976,
                   "nodeType": "ExpressionStatement",
                   "src": "801:28:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 984,
+                    "id": 982,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -897,25 +897,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 979,
+                          "id": 977,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "838:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 981,
+                        "id": 979,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 980,
+                          "id": 978,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "855:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -929,18 +929,18 @@
                         "nodeType": "IndexAccess",
                         "src": "838:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 982,
+                      "id": 980,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "name",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 928,
+                      "referencedDeclaration": 926,
                       "src": "838:25:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -951,11 +951,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 983,
+                      "id": 981,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 957,
+                      "referencedDeclaration": 955,
                       "src": "866:4:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -968,14 +968,14 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 985,
+                  "id": 983,
                   "nodeType": "ExpressionStatement",
                   "src": "838:32:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 991,
+                    "id": 989,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -986,25 +986,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 986,
+                          "id": 984,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "879:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 988,
+                        "id": 986,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 987,
+                          "id": 985,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "896:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1018,18 +1018,18 @@
                         "nodeType": "IndexAccess",
                         "src": "879:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 989,
+                      "id": 987,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "tokenAccountId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 930,
+                      "referencedDeclaration": 928,
                       "src": "879:35:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1040,11 +1040,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 990,
+                      "id": 988,
                       "name": "tokenAccountId",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 959,
+                      "referencedDeclaration": 957,
                       "src": "915:14:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1057,14 +1057,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 992,
+                  "id": 990,
                   "nodeType": "ExpressionStatement",
                   "src": "879:50:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 998,
+                    "id": 996,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1075,25 +1075,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 993,
+                          "id": 991,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "939:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 995,
+                        "id": 993,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 994,
+                          "id": 992,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "956:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1107,18 +1107,18 @@
                         "nodeType": "IndexAccess",
                         "src": "939:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 996,
+                      "id": 994,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isTrader",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 932,
+                      "referencedDeclaration": 930,
                       "src": "939:29:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1130,7 +1130,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 997,
+                      "id": 995,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1151,7 +1151,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 999,
+                  "id": 997,
                   "nodeType": "ExpressionStatement",
                   "src": "939:35:5"
                 },
@@ -1161,11 +1161,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1003,
+                        "id": 1001,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 955,
+                        "referencedDeclaration": 953,
                         "src": "1016:2:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1182,18 +1182,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1000,
+                        "id": 998,
                         "name": "traderAddressList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 940,
+                        "referencedDeclaration": 938,
                         "src": "993:17:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 1002,
+                      "id": 1000,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1207,7 +1207,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 1004,
+                    "id": 1002,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1221,7 +1221,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1005,
+                  "id": 1003,
                   "nodeType": "ExpressionStatement",
                   "src": "993:26:5"
                 },
@@ -1232,7 +1232,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "547261646572205761732043726561746564",
-                        "id": 1007,
+                        "id": 1005,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1255,18 +1255,18 @@
                           "typeString": "literal_string \"Trader Was Created\""
                         }
                       ],
-                      "id": 1006,
+                      "id": 1004,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1066,
+                      "referencedDeclaration": 1064,
                       "src": "1034:10:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 1008,
+                    "id": 1006,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1280,28 +1280,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1009,
+                  "id": 1007,
                   "nodeType": "EmitStatement",
                   "src": "1029:37:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1014,
+                    "id": 1012,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 1010,
+                      "id": 1008,
                       "name": "tokenAccountsInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 924,
+                      "referencedDeclaration": 922,
                       "src": "1144:22:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                        "typeIdentifier": "t_contract$_TokenAccounts_$920",
                         "typeString": "contract TokenAccounts"
                       }
                     },
@@ -1312,11 +1312,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 1012,
+                          "id": 1010,
                           "name": "tokenAccountCtrAdd",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 961,
+                          "referencedDeclaration": 959,
                           "src": "1183:18:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1331,18 +1331,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 1011,
+                        "id": 1009,
                         "name": "TokenAccounts",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 922,
+                        "referencedDeclaration": 920,
                         "src": "1169:13:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_TokenAccounts_$922_$",
+                          "typeIdentifier": "t_type$_t_contract$_TokenAccounts_$920_$",
                           "typeString": "type(contract TokenAccounts)"
                         }
                       },
-                      "id": 1013,
+                      "id": 1011,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1352,17 +1352,17 @@
                       "nodeType": "FunctionCall",
                       "src": "1169:33:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                        "typeIdentifier": "t_contract$_TokenAccounts_$920",
                         "typeString": "contract TokenAccounts"
                       }
                     },
                     "src": "1144:58:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                      "typeIdentifier": "t_contract$_TokenAccounts_$920",
                       "typeString": "contract TokenAccounts"
                     }
                   },
-                  "id": 1015,
+                  "id": 1013,
                   "nodeType": "ExpressionStatement",
                   "src": "1144:58:5"
                 },
@@ -1372,11 +1372,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1019,
+                        "id": 1017,
                         "name": "tokenAccountId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 959,
+                        "referencedDeclaration": 957,
                         "src": "1254:14:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1393,32 +1393,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1016,
+                        "id": 1014,
                         "name": "tokenAccountsInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 924,
+                        "referencedDeclaration": 922,
                         "src": "1212:22:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                          "typeIdentifier": "t_contract$_TokenAccounts_$920",
                           "typeString": "contract TokenAccounts"
                         }
                       },
-                      "id": 1018,
+                      "id": 1016,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "createTokenAccount",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 921,
+                      "referencedDeclaration": 919,
                       "src": "1212:41:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_payable$_t_address_$returns$__$",
                         "typeString": "function (address) payable external"
                       }
                     },
-                    "id": 1020,
+                    "id": 1018,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1432,7 +1432,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1021,
+                  "id": 1019,
                   "nodeType": "ExpressionStatement",
                   "src": "1212:57:5"
                 },
@@ -1443,7 +1443,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "546f6b656e204163636f756e7420576173204372656174656420696e2054726164657220436f6e7472616374",
-                        "id": 1023,
+                        "id": 1021,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1466,18 +1466,18 @@
                           "typeString": "literal_string \"Token Account Was Created in Trader Contract\""
                         }
                       ],
-                      "id": 1022,
+                      "id": 1020,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1066,
+                      "referencedDeclaration": 1064,
                       "src": "1284:10:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 1024,
+                    "id": 1022,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1491,29 +1491,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1025,
+                  "id": 1023,
                   "nodeType": "EmitStatement",
                   "src": "1279:63:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 1027,
+            "id": 1025,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTrader",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 962,
+              "id": 960,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 955,
+                  "id": 953,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "643:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1522,7 +1522,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 954,
+                    "id": 952,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "643:7:5",
@@ -1537,10 +1537,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 957,
+                  "id": 955,
                   "name": "name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "655:18:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1549,7 +1549,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 956,
+                    "id": 954,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "655:6:5",
@@ -1563,10 +1563,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 959,
+                  "id": 957,
                   "name": "tokenAccountId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "675:22:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1575,7 +1575,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 958,
+                    "id": 956,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "675:7:5",
@@ -1590,10 +1590,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 961,
+                  "id": 959,
                   "name": "tokenAccountCtrAdd",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "698:26:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1602,7 +1602,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 960,
+                    "id": 958,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "698:7:5",
@@ -1619,12 +1619,12 @@
               "src": "642:83:5"
             },
             "returnParameters": {
-              "id": 963,
+              "id": 961,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "732:0:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "621:728:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1632,7 +1632,7 @@
           },
           {
             "body": {
-              "id": 1035,
+              "id": 1033,
               "nodeType": "Block",
               "src": "1418:48:5",
               "statements": [
@@ -1641,18 +1641,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1032,
+                      "id": 1030,
                       "name": "traderAddressList",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 940,
+                      "referencedDeclaration": 938,
                       "src": "1435:17:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 1033,
+                    "id": 1031,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -1666,36 +1666,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1031,
-                  "id": 1034,
+                  "functionReturnParameters": 1029,
+                  "id": 1032,
                   "nodeType": "Return",
                   "src": "1428:31:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 1036,
+            "id": 1034,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTraderCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1028,
+              "id": 1026,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1383:2:5"
             },
             "returnParameters": {
-              "id": 1031,
+              "id": 1029,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1030,
+                  "id": 1028,
                   "name": "count",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1036,
+                  "scope": 1034,
                   "src": "1406:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1704,7 +1704,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1029,
+                    "id": 1027,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1406:4:5",
@@ -1719,7 +1719,7 @@
               ],
               "src": "1405:12:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "1360:106:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -1727,7 +1727,7 @@
           },
           {
             "body": {
-              "id": 1061,
+              "id": 1059,
               "nodeType": "Block",
               "src": "1559:130:5",
               "statements": [
@@ -1741,25 +1741,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1047,
+                            "id": 1045,
                             "name": "traderStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 937,
+                            "referencedDeclaration": 935,
                             "src": "1577:16:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                               "typeString": "mapping(address => struct Traders.Trader storage ref)"
                             }
                           },
-                          "id": 1049,
+                          "id": 1047,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1048,
+                            "id": 1046,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1038,
+                            "referencedDeclaration": 1036,
                             "src": "1594:2:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1773,18 +1773,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1577:20:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Trader_$933_storage",
+                            "typeIdentifier": "t_struct$_Trader_$931_storage",
                             "typeString": "struct Traders.Trader storage ref"
                           }
                         },
-                        "id": 1050,
+                        "id": 1048,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "id",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 926,
+                        "referencedDeclaration": 924,
                         "src": "1577:23:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1797,25 +1797,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1051,
+                            "id": 1049,
                             "name": "traderStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 937,
+                            "referencedDeclaration": 935,
                             "src": "1611:16:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                               "typeString": "mapping(address => struct Traders.Trader storage ref)"
                             }
                           },
-                          "id": 1053,
+                          "id": 1051,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1052,
+                            "id": 1050,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1038,
+                            "referencedDeclaration": 1036,
                             "src": "1628:2:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1829,18 +1829,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1611:20:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Trader_$933_storage",
+                            "typeIdentifier": "t_struct$_Trader_$931_storage",
                             "typeString": "struct Traders.Trader storage ref"
                           }
                         },
-                        "id": 1054,
+                        "id": 1052,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "name",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 928,
+                        "referencedDeclaration": 926,
                         "src": "1611:25:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -1853,25 +1853,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1055,
+                            "id": 1053,
                             "name": "traderStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 937,
+                            "referencedDeclaration": 935,
                             "src": "1646:16:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                               "typeString": "mapping(address => struct Traders.Trader storage ref)"
                             }
                           },
-                          "id": 1057,
+                          "id": 1055,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1056,
+                            "id": 1054,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1038,
+                            "referencedDeclaration": 1036,
                             "src": "1663:2:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1885,18 +1885,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1646:20:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Trader_$933_storage",
+                            "typeIdentifier": "t_struct$_Trader_$931_storage",
                             "typeString": "struct Traders.Trader storage ref"
                           }
                         },
-                        "id": 1058,
+                        "id": 1056,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "tokenAccountId",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 930,
+                        "referencedDeclaration": 928,
                         "src": "1646:35:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1904,7 +1904,7 @@
                         }
                       }
                     ],
-                    "id": 1059,
+                    "id": 1057,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -1917,30 +1917,30 @@
                       "typeString": "tuple(address,string storage ref,address)"
                     }
                   },
-                  "functionReturnParameters": 1046,
-                  "id": 1060,
+                  "functionReturnParameters": 1044,
+                  "id": 1058,
                   "nodeType": "Return",
                   "src": "1569:113:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 1062,
+            "id": 1060,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTrader",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1039,
+              "id": 1037,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1038,
+                  "id": 1036,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1495:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1949,7 +1949,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1037,
+                    "id": 1035,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1495:7:5",
@@ -1966,15 +1966,15 @@
               "src": "1494:12:5"
             },
             "returnParameters": {
-              "id": 1046,
+              "id": 1044,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1041,
+                  "id": 1039,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1527:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1983,7 +1983,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1040,
+                    "id": 1038,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1527:7:5",
@@ -1998,10 +1998,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1043,
+                  "id": 1041,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1536:13:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2010,7 +2010,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1042,
+                    "id": 1040,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1536:6:5",
@@ -2024,10 +2024,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1045,
+                  "id": 1043,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1550:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2036,7 +2036,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1044,
+                    "id": 1042,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1550:7:5",
@@ -2052,7 +2052,7 @@
               ],
               "src": "1526:32:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "1476:213:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -2061,20 +2061,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1066,
+            "id": 1064,
             "name": "stringLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1065,
+              "id": 1063,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1064,
+                  "id": 1062,
                   "indexed": false,
                   "name": "logs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1066,
+                  "scope": 1064,
                   "src": "1713:11:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2083,7 +2083,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1063,
+                    "id": 1061,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1713:6:5",
@@ -2101,7 +2101,7 @@
             "src": "1696:30:5"
           }
         ],
-        "scope": 1068,
+        "scope": 1066,
         "src": "214:1514:5"
       }
     ],
@@ -2111,17 +2111,17 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/Traders.sol",
     "exportedSymbols": {
       "TokenAccounts": [
-        922
+        920
       ],
       "Traders": [
-        1067
+        1065
       ]
     },
-    "id": 1068,
+    "id": 1066,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 915,
+        "id": 913,
         "literals": [
           "solidity",
           "^",
@@ -2137,37 +2137,37 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 922,
+        "id": 920,
         "linearizedBaseContracts": [
-          922
+          920
         ],
         "name": "TokenAccounts",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 920,
+              "id": 918,
               "nodeType": "Block",
               "src": "141:2:5",
               "statements": []
             },
             "documentation": null,
-            "id": 921,
+            "id": 919,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTokenAccount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 918,
+              "id": 916,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 917,
+                  "id": 915,
                   "name": "tokenAccountId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 921,
+                  "scope": 919,
                   "src": "103:22:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2176,7 +2176,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 916,
+                    "id": 914,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "103:7:5",
@@ -2193,19 +2193,19 @@
               "src": "102:24:5"
             },
             "returnParameters": {
-              "id": 919,
+              "id": 917,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "141:0:5"
             },
-            "scope": 922,
+            "scope": 920,
             "src": "75:68:5",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1068,
+        "scope": 1066,
         "src": "47:98:5"
       },
       {
@@ -2214,35 +2214,35 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1067,
+        "id": 1065,
         "linearizedBaseContracts": [
-          1067
+          1065
         ],
         "name": "Traders",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 924,
+            "id": 922,
             "name": "tokenAccountsInterface",
             "nodeType": "VariableDeclaration",
-            "scope": 1067,
+            "scope": 1065,
             "src": "236:43:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_TokenAccounts_$922",
+              "typeIdentifier": "t_contract$_TokenAccounts_$920",
               "typeString": "contract TokenAccounts"
             },
             "typeName": {
               "contractScope": null,
-              "id": 923,
+              "id": 921,
               "name": "TokenAccounts",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 922,
+              "referencedDeclaration": 920,
               "src": "236:13:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                "typeIdentifier": "t_contract$_TokenAccounts_$920",
                 "typeString": "contract TokenAccounts"
               }
             },
@@ -2251,14 +2251,14 @@
           },
           {
             "canonicalName": "Traders.Trader",
-            "id": 933,
+            "id": 931,
             "members": [
               {
                 "constant": false,
-                "id": 926,
+                "id": 924,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "308:10:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2267,7 +2267,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 925,
+                  "id": 923,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "308:7:5",
@@ -2282,10 +2282,10 @@
               },
               {
                 "constant": false,
-                "id": 928,
+                "id": 926,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "328:11:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2294,7 +2294,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 927,
+                  "id": 925,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "328:6:5",
@@ -2308,10 +2308,10 @@
               },
               {
                 "constant": false,
-                "id": 930,
+                "id": 928,
                 "name": "tokenAccountId",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "349:22:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2320,7 +2320,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 929,
+                  "id": 927,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "349:7:5",
@@ -2335,10 +2335,10 @@
               },
               {
                 "constant": false,
-                "id": 932,
+                "id": 930,
                 "name": "isTrader",
                 "nodeType": "VariableDeclaration",
-                "scope": 933,
+                "scope": 931,
                 "src": "381:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2347,7 +2347,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 931,
+                  "id": 929,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "381:4:5",
@@ -2362,27 +2362,27 @@
             ],
             "name": "Trader",
             "nodeType": "StructDefinition",
-            "scope": 1067,
+            "scope": 1065,
             "src": "285:116:5",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 937,
+            "id": 935,
             "name": "traderStructList",
             "nodeType": "VariableDeclaration",
-            "scope": 1067,
+            "scope": 1065,
             "src": "407:48:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
               "typeString": "mapping(address => struct Traders.Trader)"
             },
             "typeName": {
-              "id": 936,
+              "id": 934,
               "keyType": {
-                "id": 934,
+                "id": 932,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "415:7:5",
@@ -2394,18 +2394,18 @@
               "nodeType": "Mapping",
               "src": "407:24:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                 "typeString": "mapping(address => struct Traders.Trader)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 935,
+                "id": 933,
                 "name": "Trader",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 933,
+                "referencedDeclaration": 931,
                 "src": "424:6:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Trader_$933_storage_ptr",
+                  "typeIdentifier": "t_struct$_Trader_$931_storage_ptr",
                   "typeString": "struct Traders.Trader"
                 }
               }
@@ -2415,10 +2415,10 @@
           },
           {
             "constant": false,
-            "id": 940,
+            "id": 938,
             "name": "traderAddressList",
             "nodeType": "VariableDeclaration",
-            "scope": 1067,
+            "scope": 1065,
             "src": "461:34:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2428,7 +2428,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 938,
+                "id": 936,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "461:7:5",
@@ -2438,7 +2438,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 939,
+              "id": 937,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "461:9:5",
@@ -2452,7 +2452,7 @@
           },
           {
             "body": {
-              "id": 952,
+              "id": 950,
               "nodeType": "Block",
               "src": "562:53:5",
               "statements": [
@@ -2463,25 +2463,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 947,
+                        "id": 945,
                         "name": "traderStructList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 937,
+                        "referencedDeclaration": 935,
                         "src": "579:16:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                           "typeString": "mapping(address => struct Traders.Trader storage ref)"
                         }
                       },
-                      "id": 949,
+                      "id": 947,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 948,
+                        "id": 946,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 942,
+                        "referencedDeclaration": 940,
                         "src": "596:2:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2495,48 +2495,48 @@
                       "nodeType": "IndexAccess",
                       "src": "579:20:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Trader_$933_storage",
+                        "typeIdentifier": "t_struct$_Trader_$931_storage",
                         "typeString": "struct Traders.Trader storage ref"
                       }
                     },
-                    "id": 950,
+                    "id": 948,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isTrader",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 932,
+                    "referencedDeclaration": 930,
                     "src": "579:29:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 946,
-                  "id": 951,
+                  "functionReturnParameters": 944,
+                  "id": 949,
                   "nodeType": "Return",
                   "src": "572:36:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 953,
+            "id": 951,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isTrader",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 943,
+              "id": 941,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 942,
+                  "id": 940,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 953,
+                  "scope": 951,
                   "src": "525:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2545,7 +2545,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 941,
+                    "id": 939,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "525:7:5",
@@ -2562,15 +2562,15 @@
               "src": "524:12:5"
             },
             "returnParameters": {
-              "id": 946,
+              "id": 944,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 945,
+                  "id": 943,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 953,
+                  "scope": 951,
                   "src": "557:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2579,7 +2579,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 944,
+                    "id": 942,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "557:4:5",
@@ -2594,7 +2594,7 @@
               ],
               "src": "556:6:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "507:108:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -2602,7 +2602,7 @@
           },
           {
             "body": {
-              "id": 1026,
+              "id": 1024,
               "nodeType": "Block",
               "src": "732:617:5",
               "statements": [
@@ -2612,11 +2612,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 965,
+                        "id": 963,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 955,
+                        "referencedDeclaration": 953,
                         "src": "754:2:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2631,18 +2631,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 964,
+                      "id": 962,
                       "name": "isTrader",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 953,
+                      "referencedDeclaration": 951,
                       "src": "745:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-                    "id": 966,
+                    "id": 964,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2657,7 +2657,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 971,
+                  "id": 969,
                   "nodeType": "IfStatement",
                   "src": "742:49:5",
                   "trueBody": {
@@ -2667,7 +2667,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "54726164657220616c72656164792063726561746564",
-                          "id": 968,
+                          "id": 966,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2690,21 +2690,21 @@
                             "typeString": "literal_string \"Trader already created\""
                           }
                         ],
-                        "id": 967,
+                        "id": 965,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1553,
-                          1554
+                          1551,
+                          1552
                         ],
-                        "referencedDeclaration": 1554,
+                        "referencedDeclaration": 1552,
                         "src": "759:6:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
                           "typeString": "function (string memory) pure"
                         }
                       },
-                      "id": 969,
+                      "id": 967,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2718,7 +2718,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 970,
+                    "id": 968,
                     "nodeType": "ExpressionStatement",
                     "src": "759:32:5"
                   }
@@ -2726,7 +2726,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 977,
+                    "id": 975,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2737,25 +2737,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 972,
+                          "id": 970,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "801:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 974,
+                        "id": 972,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 973,
+                          "id": 971,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "818:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2769,18 +2769,18 @@
                         "nodeType": "IndexAccess",
                         "src": "801:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 975,
+                      "id": 973,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "id",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 926,
+                      "referencedDeclaration": 924,
                       "src": "801:23:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2791,11 +2791,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 976,
+                      "id": 974,
                       "name": "id",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 955,
+                      "referencedDeclaration": 953,
                       "src": "827:2:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2808,14 +2808,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 978,
+                  "id": 976,
                   "nodeType": "ExpressionStatement",
                   "src": "801:28:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 984,
+                    "id": 982,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2826,25 +2826,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 979,
+                          "id": 977,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "838:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 981,
+                        "id": 979,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 980,
+                          "id": 978,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "855:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2858,18 +2858,18 @@
                         "nodeType": "IndexAccess",
                         "src": "838:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 982,
+                      "id": 980,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "name",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 928,
+                      "referencedDeclaration": 926,
                       "src": "838:25:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -2880,11 +2880,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 983,
+                      "id": 981,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 957,
+                      "referencedDeclaration": 955,
                       "src": "866:4:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -2897,14 +2897,14 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 985,
+                  "id": 983,
                   "nodeType": "ExpressionStatement",
                   "src": "838:32:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 991,
+                    "id": 989,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2915,25 +2915,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 986,
+                          "id": 984,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "879:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 988,
+                        "id": 986,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 987,
+                          "id": 985,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "896:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2947,18 +2947,18 @@
                         "nodeType": "IndexAccess",
                         "src": "879:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 989,
+                      "id": 987,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "tokenAccountId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 930,
+                      "referencedDeclaration": 928,
                       "src": "879:35:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2969,11 +2969,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 990,
+                      "id": 988,
                       "name": "tokenAccountId",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 959,
+                      "referencedDeclaration": 957,
                       "src": "915:14:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2986,14 +2986,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 992,
+                  "id": 990,
                   "nodeType": "ExpressionStatement",
                   "src": "879:50:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 998,
+                    "id": 996,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3004,25 +3004,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 993,
+                          "id": 991,
                           "name": "traderStructList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 937,
+                          "referencedDeclaration": 935,
                           "src": "939:16:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                             "typeString": "mapping(address => struct Traders.Trader storage ref)"
                           }
                         },
-                        "id": 995,
+                        "id": 993,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 994,
+                          "id": 992,
                           "name": "id",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 955,
+                          "referencedDeclaration": 953,
                           "src": "956:2:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3036,18 +3036,18 @@
                         "nodeType": "IndexAccess",
                         "src": "939:20:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Trader_$933_storage",
+                          "typeIdentifier": "t_struct$_Trader_$931_storage",
                           "typeString": "struct Traders.Trader storage ref"
                         }
                       },
-                      "id": 996,
+                      "id": 994,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isTrader",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 932,
+                      "referencedDeclaration": 930,
                       "src": "939:29:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -3059,7 +3059,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 997,
+                      "id": 995,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3080,7 +3080,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 999,
+                  "id": 997,
                   "nodeType": "ExpressionStatement",
                   "src": "939:35:5"
                 },
@@ -3090,11 +3090,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1003,
+                        "id": 1001,
                         "name": "id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 955,
+                        "referencedDeclaration": 953,
                         "src": "1016:2:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3111,18 +3111,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1000,
+                        "id": 998,
                         "name": "traderAddressList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 940,
+                        "referencedDeclaration": 938,
                         "src": "993:17:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 1002,
+                      "id": 1000,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3136,7 +3136,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 1004,
+                    "id": 1002,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3150,7 +3150,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1005,
+                  "id": 1003,
                   "nodeType": "ExpressionStatement",
                   "src": "993:26:5"
                 },
@@ -3161,7 +3161,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "547261646572205761732043726561746564",
-                        "id": 1007,
+                        "id": 1005,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3184,18 +3184,18 @@
                           "typeString": "literal_string \"Trader Was Created\""
                         }
                       ],
-                      "id": 1006,
+                      "id": 1004,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1066,
+                      "referencedDeclaration": 1064,
                       "src": "1034:10:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 1008,
+                    "id": 1006,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3209,28 +3209,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1009,
+                  "id": 1007,
                   "nodeType": "EmitStatement",
                   "src": "1029:37:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1014,
+                    "id": 1012,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 1010,
+                      "id": 1008,
                       "name": "tokenAccountsInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 924,
+                      "referencedDeclaration": 922,
                       "src": "1144:22:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                        "typeIdentifier": "t_contract$_TokenAccounts_$920",
                         "typeString": "contract TokenAccounts"
                       }
                     },
@@ -3241,11 +3241,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 1012,
+                          "id": 1010,
                           "name": "tokenAccountCtrAdd",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 961,
+                          "referencedDeclaration": 959,
                           "src": "1183:18:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3260,18 +3260,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 1011,
+                        "id": 1009,
                         "name": "TokenAccounts",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 922,
+                        "referencedDeclaration": 920,
                         "src": "1169:13:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_TokenAccounts_$922_$",
+                          "typeIdentifier": "t_type$_t_contract$_TokenAccounts_$920_$",
                           "typeString": "type(contract TokenAccounts)"
                         }
                       },
-                      "id": 1013,
+                      "id": 1011,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3281,17 +3281,17 @@
                       "nodeType": "FunctionCall",
                       "src": "1169:33:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                        "typeIdentifier": "t_contract$_TokenAccounts_$920",
                         "typeString": "contract TokenAccounts"
                       }
                     },
                     "src": "1144:58:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                      "typeIdentifier": "t_contract$_TokenAccounts_$920",
                       "typeString": "contract TokenAccounts"
                     }
                   },
-                  "id": 1015,
+                  "id": 1013,
                   "nodeType": "ExpressionStatement",
                   "src": "1144:58:5"
                 },
@@ -3301,11 +3301,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1019,
+                        "id": 1017,
                         "name": "tokenAccountId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 959,
+                        "referencedDeclaration": 957,
                         "src": "1254:14:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3322,32 +3322,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1016,
+                        "id": 1014,
                         "name": "tokenAccountsInterface",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 924,
+                        "referencedDeclaration": 922,
                         "src": "1212:22:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_TokenAccounts_$922",
+                          "typeIdentifier": "t_contract$_TokenAccounts_$920",
                           "typeString": "contract TokenAccounts"
                         }
                       },
-                      "id": 1018,
+                      "id": 1016,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "createTokenAccount",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 921,
+                      "referencedDeclaration": 919,
                       "src": "1212:41:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_payable$_t_address_$returns$__$",
                         "typeString": "function (address) payable external"
                       }
                     },
-                    "id": 1020,
+                    "id": 1018,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3361,7 +3361,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1021,
+                  "id": 1019,
                   "nodeType": "ExpressionStatement",
                   "src": "1212:57:5"
                 },
@@ -3372,7 +3372,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "546f6b656e204163636f756e7420576173204372656174656420696e2054726164657220436f6e7472616374",
-                        "id": 1023,
+                        "id": 1021,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3395,18 +3395,18 @@
                           "typeString": "literal_string \"Token Account Was Created in Trader Contract\""
                         }
                       ],
-                      "id": 1022,
+                      "id": 1020,
                       "name": "stringLogs",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1066,
+                      "referencedDeclaration": 1064,
                       "src": "1284:10:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 1024,
+                    "id": 1022,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3420,29 +3420,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1025,
+                  "id": 1023,
                   "nodeType": "EmitStatement",
                   "src": "1279:63:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 1027,
+            "id": 1025,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createTrader",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 962,
+              "id": 960,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 955,
+                  "id": 953,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "643:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3451,7 +3451,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 954,
+                    "id": 952,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "643:7:5",
@@ -3466,10 +3466,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 957,
+                  "id": 955,
                   "name": "name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "655:18:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3478,7 +3478,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 956,
+                    "id": 954,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "655:6:5",
@@ -3492,10 +3492,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 959,
+                  "id": 957,
                   "name": "tokenAccountId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "675:22:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3504,7 +3504,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 958,
+                    "id": 956,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "675:7:5",
@@ -3519,10 +3519,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 961,
+                  "id": 959,
                   "name": "tokenAccountCtrAdd",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1027,
+                  "scope": 1025,
                   "src": "698:26:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3531,7 +3531,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 960,
+                    "id": 958,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "698:7:5",
@@ -3548,12 +3548,12 @@
               "src": "642:83:5"
             },
             "returnParameters": {
-              "id": 963,
+              "id": 961,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "732:0:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "621:728:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3561,7 +3561,7 @@
           },
           {
             "body": {
-              "id": 1035,
+              "id": 1033,
               "nodeType": "Block",
               "src": "1418:48:5",
               "statements": [
@@ -3570,18 +3570,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1032,
+                      "id": 1030,
                       "name": "traderAddressList",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 940,
+                      "referencedDeclaration": 938,
                       "src": "1435:17:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 1033,
+                    "id": 1031,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -3595,36 +3595,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1031,
-                  "id": 1034,
+                  "functionReturnParameters": 1029,
+                  "id": 1032,
                   "nodeType": "Return",
                   "src": "1428:31:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 1036,
+            "id": 1034,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTraderCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1028,
+              "id": 1026,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1383:2:5"
             },
             "returnParameters": {
-              "id": 1031,
+              "id": 1029,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1030,
+                  "id": 1028,
                   "name": "count",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1036,
+                  "scope": 1034,
                   "src": "1406:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3633,7 +3633,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1029,
+                    "id": 1027,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1406:4:5",
@@ -3648,7 +3648,7 @@
               ],
               "src": "1405:12:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "1360:106:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -3656,7 +3656,7 @@
           },
           {
             "body": {
-              "id": 1061,
+              "id": 1059,
               "nodeType": "Block",
               "src": "1559:130:5",
               "statements": [
@@ -3670,25 +3670,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1047,
+                            "id": 1045,
                             "name": "traderStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 937,
+                            "referencedDeclaration": 935,
                             "src": "1577:16:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                               "typeString": "mapping(address => struct Traders.Trader storage ref)"
                             }
                           },
-                          "id": 1049,
+                          "id": 1047,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1048,
+                            "id": 1046,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1038,
+                            "referencedDeclaration": 1036,
                             "src": "1594:2:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -3702,18 +3702,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1577:20:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Trader_$933_storage",
+                            "typeIdentifier": "t_struct$_Trader_$931_storage",
                             "typeString": "struct Traders.Trader storage ref"
                           }
                         },
-                        "id": 1050,
+                        "id": 1048,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "id",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 926,
+                        "referencedDeclaration": 924,
                         "src": "1577:23:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3726,25 +3726,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1051,
+                            "id": 1049,
                             "name": "traderStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 937,
+                            "referencedDeclaration": 935,
                             "src": "1611:16:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                               "typeString": "mapping(address => struct Traders.Trader storage ref)"
                             }
                           },
-                          "id": 1053,
+                          "id": 1051,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1052,
+                            "id": 1050,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1038,
+                            "referencedDeclaration": 1036,
                             "src": "1628:2:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -3758,18 +3758,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1611:20:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Trader_$933_storage",
+                            "typeIdentifier": "t_struct$_Trader_$931_storage",
                             "typeString": "struct Traders.Trader storage ref"
                           }
                         },
-                        "id": 1054,
+                        "id": 1052,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "name",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 928,
+                        "referencedDeclaration": 926,
                         "src": "1611:25:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -3782,25 +3782,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 1055,
+                            "id": 1053,
                             "name": "traderStructList",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 937,
+                            "referencedDeclaration": 935,
                             "src": "1646:16:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$933_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Trader_$931_storage_$",
                               "typeString": "mapping(address => struct Traders.Trader storage ref)"
                             }
                           },
-                          "id": 1057,
+                          "id": 1055,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 1056,
+                            "id": 1054,
                             "name": "id",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1038,
+                            "referencedDeclaration": 1036,
                             "src": "1663:2:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -3814,18 +3814,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1646:20:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Trader_$933_storage",
+                            "typeIdentifier": "t_struct$_Trader_$931_storage",
                             "typeString": "struct Traders.Trader storage ref"
                           }
                         },
-                        "id": 1058,
+                        "id": 1056,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "tokenAccountId",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 930,
+                        "referencedDeclaration": 928,
                         "src": "1646:35:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3833,7 +3833,7 @@
                         }
                       }
                     ],
-                    "id": 1059,
+                    "id": 1057,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -3846,30 +3846,30 @@
                       "typeString": "tuple(address,string storage ref,address)"
                     }
                   },
-                  "functionReturnParameters": 1046,
-                  "id": 1060,
+                  "functionReturnParameters": 1044,
+                  "id": 1058,
                   "nodeType": "Return",
                   "src": "1569:113:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 1062,
+            "id": 1060,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTrader",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1039,
+              "id": 1037,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1038,
+                  "id": 1036,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1495:10:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3878,7 +3878,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1037,
+                    "id": 1035,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1495:7:5",
@@ -3895,15 +3895,15 @@
               "src": "1494:12:5"
             },
             "returnParameters": {
-              "id": 1046,
+              "id": 1044,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1041,
+                  "id": 1039,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1527:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3912,7 +3912,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1040,
+                    "id": 1038,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1527:7:5",
@@ -3927,10 +3927,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1043,
+                  "id": 1041,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1536:13:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3939,7 +3939,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1042,
+                    "id": 1040,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1536:6:5",
@@ -3953,10 +3953,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1045,
+                  "id": 1043,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1062,
+                  "scope": 1060,
                   "src": "1550:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3965,7 +3965,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1044,
+                    "id": 1042,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1550:7:5",
@@ -3981,7 +3981,7 @@
               ],
               "src": "1526:32:5"
             },
-            "scope": 1067,
+            "scope": 1065,
             "src": "1476:213:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -3990,20 +3990,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1066,
+            "id": 1064,
             "name": "stringLogs",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1065,
+              "id": 1063,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1064,
+                  "id": 1062,
                   "indexed": false,
                   "name": "logs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1066,
+                  "scope": 1064,
                   "src": "1713:11:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4012,7 +4012,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1063,
+                    "id": 1061,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1713:6:5",
@@ -4030,7 +4030,7 @@
             "src": "1696:30:5"
           }
         ],
-        "scope": 1068,
+        "scope": 1066,
         "src": "214:1514:5"
       }
     ],
@@ -4044,8 +4044,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x89a8E14CBB873317e20f81C39dB91219D43c1462",
-      "transactionHash": "0xebba51408f558d885d3d814d157bbef5303366baf0a77cba2ebc2db601fd3ccf"
+      "address": "0x60f20d7c0c72e63E489b6Ba4ae3224abe6Cd1FaA",
+      "transactionHash": "0x66b3c12fb4af8d11361b242d4d336a6022da40b3a3bd1d5b33409fc3394fded9"
     },
     "1553622166986": {
       "events": {},
@@ -4055,7 +4055,7 @@
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-05-15T00:03:34.384Z",
+  "updatedAt": "2019-05-15T17:44:21.533Z",
   "devdoc": {
     "methods": {}
   },
