@@ -189,7 +189,60 @@ async function example1() {
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Result.balanceEnabled);
     } catch (error) {
-        console.log(error)
+        console.log('ERROR IN EXAMPLE 1 IN TESTING ENDPOINT');
+        throw new Error(error);
     }
 }
+module.exports.example1 = example1;
+
+async function example2(){
+    try{
+
+    }catch(error){
+        console.log('ERROR IN EXAMPLE 2 IN TESTING ENDPOINT');
+        throw new Error(error);
+    }
+}
+module.exports.example2 = example2;
+
+async function example3_scenario3(){
+    try{
+
+    }catch(error){
+        console.log('ERROR IN EXAMPLE 3 IN TESTING ENDPOINT');
+        throw new Error(error);
+    }
+}
+module.exports.example3_scenario3 = example3_scenario3;
+
+
+async function example4_scenario1(){
+    try{
+
+    }catch(error){
+        console.log('ERROR IN EXAMPLE 4 IN TESTING ENDPOINT');
+        throw new Error(error);
+    }
+}
+module.exports.example4_scenario1 = example4_scenario1;
+
+async function example5_scenario2(){
+    try{
+
+    }catch(error){
+        console.log('ERROR IN EXAMPLE 5 IN TESTING ENDPOINT');
+        throw new Error(error);
+    }
+}
+module.exports.example5_scenario2 = example5_scenario2;
+
+async function example6(){
+    try{
+
+    }catch(error){
+        console.log('ERROR IN EXAMPLE 6 IN TESTING ENDPOINT');
+        throw new Error(error);
+    }
+}
+module.exports.example6 = example6;
 
