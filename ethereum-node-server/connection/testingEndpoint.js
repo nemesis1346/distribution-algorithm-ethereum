@@ -1,18 +1,12 @@
 'use strict';
 const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-const trackEndpoint = require('../connection/trackEndpoint.js');
-const traderEndpoint = require('../connection/traderEndpoint.js');
-const tokenAccountEndpoint = require('../connection/tokenAccountEndpoint.js');
-const agreementEndpoint = require('../connection/agreementEndpoint.js');
-const distributionEndpoint = require('../connection/distributionEndPoint');
 const gasLimit = '6721975'; //this must come from the front end
+const connection = require('../test/requestConnectionServer.js');
 
 async function example1() {
     try {
         const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        console.log(accounts)
 
         //Delegating accounts addresses/ids
         let trackId = accounts[1];
@@ -27,7 +21,7 @@ async function example1() {
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
-        await trackEndpoint.createTrack(
+        await connection.createTrack(
             trackId,
             traderIsrc,
             'track',
@@ -35,80 +29,91 @@ async function example1() {
             trader1,
             gasLimit);
 
-        //Creating Traders
-        await traderEndpoint.createTrader(
+        //ContractAddresses
+        let TAContractAddressData = await connection.getTAContractAddress();
+        let TAContractAddress = (JSON.parse(TAContractAddressData.body).data.data).replace(/\"/g, "");
+
+        let traderContractAddressData = await connection.getTraderContractAddress();
+        let traderContractAddress = (JSON.parse(traderContractAddressData.body).data.data).replace(/\"/g, "");
+
+        let trackContractAddressData = await connection.getTrackContractAddress();
+        let trackContractAddress = (JSON.parse(trackContractAddressData.body).data.data).replace(/\"/g, "");
+
+        //  Creating Traders
+        await connection.createTrader(
             trader1,
             "trader1",
             trader1,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader1,
             gasLimit);
 
-        await traderEndpoint.createTrader(
+        await connection.createTrader(
             trader2,
             "trader2",
             trader2,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader2,
             gasLimit);
 
-        await traderEndpoint.createTrader(
+        await connection.createTrader(
             trader3,
             "trader3",
             trader3,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader3,
             gasLimit);
 
 
-        await traderEndpoint.createTrader(
+        await connection.createTrader(
             trader4,
             "trader4",
             trader4,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader4,
             gasLimit);
 
-        //Agreement 1
-        await agreementEndpoint.createAgreement(
+
+        // //Agreement 1
+        await connection.createAgreement(
             agreement1Id,
             trader1,
             trader2,
             30,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            traderContractAddress, //TODO: fix this
+            trackContractAddress,
             trader1,
             gasLimit
         );
 
         //Agreement 2
-        await agreementEndpoint.createAgreement(
+        await connection.createAgreement(
             agreement2Id,
             trader1,
             trader3,
             50,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            traderContractAddress,
+            trackContractAddress,
             trader1,
             gasLimit
         );
 
         //Agreement 3
-        await agreementEndpoint.createAgreement(
+        await connection.createAgreement(
             agreement3Id,
             trader3,
             trader4,
             90,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            traderContractAddress,
+            trackContractAddress,
             trader1,
             gasLimit
         );
-
-        await distributionEndpoint.distribution(
+        //Starts distribution
+        await connection.distribution(
             trackId,
             trader1,
             new Date().getTime(),
@@ -117,77 +122,94 @@ async function example1() {
 
         //Results after
         console.log('TRADERS OUTPUT----------------------');
-            console.log(trader1);
+        console.log(trader1);
         //Trader1
-        let trader1Result = await traderEndpoint.getTrader(
+        let trader1Result = await connection.getTraderDetail(
             trader1,
             trader1,
             gasLimit);
 
-        let tokenTrader1Result = await tokenAccountEndpoint.getTokenAccount(
+        let trader1Model = JSON.parse(JSON.parse(trader1Result.body).data.data);
+
+        let tokenTrader1Result = await connection.getTokenAccount(
             trader1,
             trader1,
             gasLimit
         );
 
-        console.log('TRADER ' + trader1Result.name + ' *******');
+        let tokenTrader1Model = JSON.parse(JSON.parse(tokenTrader1Result.body).data.data);
+
+        console.log('TRADER ' + trader1Model.name + ' *******');
         console.log('BALANCE DISABLED:');
-        console.log(tokenTrader1Result.balanceDisabled);
+        console.log(tokenTrader1Model.balanceDisabled);
         console.log('BALANCE ENABLED');
-        console.log(tokenTrader1Result.balanceEnabled);
+        console.log(tokenTrader1Model.balanceEnabled);
 
         //Trader2
-        let trader2Result = await traderEndpoint.getTrader(
+        let trader2Result = await connection.getTraderDetail(
             trader2,
             trader2,
             gasLimit);
 
-        let tokenTrader2Result = await traderEndpoint.getTrader(
+        let trader2Model = JSON.parse(JSON.parse(trader2Result.body).data.data);
+
+        let tokenTrader2Result = await connection.getTokenAccount(
             trader2,
             trader2,
             gasLimit
         );
 
-        console.log('TRADER ' + trader2Result.name + ' *******');
+        let tokenTrader2Model = JSON.parse(JSON.parse(tokenTrader2Result.body).data.data);
+
+        console.log('TRADER ' + trader2Model.name + ' *******');
         console.log('BALANCE DISABLED:');
-        console.log(tokenTrader2Result.balanceDisabled);
+        console.log(tokenTrader2Model.balanceDisabled);
         console.log('BALANCE ENABLED');
-        console.log(tokenTrader2Result.balanceEnabled);
+        console.log(tokenTrader2Model.balanceEnabled);
 
         //Trader 3
-        let trader3Result = await traderEndpoint.getTrader(
+        let trader3Result = await connection.getTraderDetail(
             trader3,
             trader3,
             gasLimit);
 
-        let tokenTrader3Result = await traderEndpoint.getTrader(
+        let trader3Model = JSON.parse(JSON.parse(trader3Result.body).data.data);
+
+        let tokenTrader3Result = await connection.getTokenAccount(
             trader3,
             trader3,
             gasLimit
         );
-        console.log('TRADER ' + trader3Result.name + ' *******');
+
+        let tokenTrader3Model = JSON.parse(JSON.parse(tokenTrader3Result.body).data.data);
+
+        console.log('TRADER ' + trader3Model.name + ' *******');
         console.log('BALANCE DISABLED:');
-        console.log(tokenTrader3Result.balanceDisabled);
+        console.log(tokenTrader3Model.balanceDisabled);
         console.log('BALANCE ENABLED');
-        console.log(tokenTrader3Result.balanceEnabled);
+        console.log(tokenTrader3Model.balanceEnabled);
 
         //Trader4
-        let trader4Result = await traderEndpoint.getTrader(
+        let trader4Result = await connection.getTraderDetail(
             trader4,
             trader4,
             gasLimit);
 
-        let tokenTrader4Result = await traderEndpoint.getTrader(
+        let trader4Model = JSON.parse(JSON.parse(trader4Result.body).data.data);
+
+        let tokenTrader4Result = await connection.getTokenAccount(
             trader4,
             trader4,
             gasLimit
         );
 
-        console.log('TRADER ' + trader4Result.name + ' *******');
+        let tokenTrader4Model = JSON.parse(JSON.parse(tokenTrader4Result.body).data.data);
+
+        console.log('TRADER ' + trader4Model.name + ' *******');
         console.log('BALANCE DISABLED:');
-        console.log(tokenTrader4Result.balanceDisabled);
+        console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
-        console.log(tokenTrader4Result.balanceEnabled);
+        console.log(tokenTrader4Model.balanceEnabled);
     } catch (error) {
         console.log('ERROR IN EXAMPLE 1 IN TESTING ENDPOINT');
         throw new Error(error);
@@ -195,9 +217,9 @@ async function example1() {
 }
 module.exports.example1 = example1;
 
-async function example2(){
-    try{
- const accounts = await web3Provider.eth.accounts;
+async function example2() {
+    try {
+        const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
         //console.log(accounts)
 
@@ -496,16 +518,16 @@ async function example2(){
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
-    }catch(error){
+    } catch (error) {
         console.log('ERROR IN EXAMPLE 2 IN TESTING ENDPOINT');
         throw new Error(error);
     }
 }
 module.exports.example2 = example2;
 
-async function example3_scenario3(){
-    try{
- const accounts = await web3Provider.eth.accounts;
+async function example3_scenario3() {
+    try {
+        const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
         //console.log(accounts)
 
@@ -749,7 +771,7 @@ async function example3_scenario3(){
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
-    }catch(error){
+    } catch (error) {
         console.log('ERROR IN EXAMPLE 3 IN TESTING ENDPOINT');
         throw new Error(error);
     }
@@ -757,9 +779,9 @@ async function example3_scenario3(){
 module.exports.example3_scenario3 = example3_scenario3;
 
 
-async function example4_scenario1(){
-    try{
- const accounts = await web3Provider.eth.accounts;
+async function example4_scenario1() {
+    try {
+        const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
         //console.log(accounts)
 
@@ -1026,8 +1048,8 @@ async function example4_scenario1(){
         console.log(tokenTrader4Model.balanceEnabled);
 
         //trader 5
-         //Trader4
-         let trader5Result = await connection.getTraderDetail(
+        //Trader4
+        let trader5Result = await connection.getTraderDetail(
             trader5,
             trader5,
             gasLimit);
@@ -1047,16 +1069,16 @@ async function example4_scenario1(){
         console.log(tokenTrader5Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader5Model.balanceEnabled);
-    }catch(error){
+    } catch (error) {
         console.log('ERROR IN EXAMPLE 4 IN TESTING ENDPOINT');
         throw new Error(error);
     }
 }
 module.exports.example4_scenario1 = example4_scenario1;
 
-async function example5_scenario2(){
-    try{
-  const accounts = await web3Provider.eth.accounts;
+async function example5_scenario2() {
+    try {
+        const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
         //console.log(accounts)
 
@@ -1138,13 +1160,13 @@ async function example5_scenario2(){
             trader5,
             gasLimit);
 
-            await connection.createTrader(
-                trader6,
-                "trader6",
-                trader6,
-                TAContractAddress,
-                trader6,
-                gasLimit);
+        await connection.createTrader(
+            trader6,
+            "trader6",
+            trader6,
+            TAContractAddress,
+            trader6,
+            gasLimit);
 
         // //Agreement 1
         await connection.createAgreement(
@@ -1332,7 +1354,7 @@ async function example5_scenario2(){
         console.log(tokenTrader4Model.balanceEnabled);
 
         //trader 5
-         let trader5Result = await connection.getTraderDetail(
+        let trader5Result = await connection.getTraderDetail(
             trader5,
             trader5,
             gasLimit);
@@ -1374,16 +1396,16 @@ async function example5_scenario2(){
         console.log(tokenTrader6Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader6Model.balanceEnabled);
-    }catch(error){
+    } catch (error) {
         console.log('ERROR IN EXAMPLE 5 IN TESTING ENDPOINT');
         throw new Error(error);
     }
 }
 module.exports.example5_scenario2 = example5_scenario2;
 
-async function example6(){
-    try{
-  const accounts = await web3Provider.eth.accounts;
+async function example6() {
+    try {
+        const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
         //console.log(accounts)
 
@@ -1723,7 +1745,7 @@ async function example6(){
         console.log(tokenTrader7Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader7Model.balanceEnabled);
-    }catch(error){
+    } catch (error) {
         console.log('ERROR IN EXAMPLE 6 IN TESTING ENDPOINT');
         throw new Error(error);
     }

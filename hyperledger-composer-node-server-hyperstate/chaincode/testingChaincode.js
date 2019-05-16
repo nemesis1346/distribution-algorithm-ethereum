@@ -1,7 +1,7 @@
 'use strict';
 const UUID = require('uuid/v1');
 const DataModel = require('../models/dataModel.js');
-const methods = require('../test/methods.js');
+const methods = require('../test/requestsConnectionServer,js');
 
 class TestingChaincode {
     constructor() {
