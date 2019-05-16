@@ -34,7 +34,7 @@ async function distribution(requestDistribution) {
 
     console.log('****************************');
     console.log('Request Distribution in Distribution EndPoint');
-    console.log(requestDistribution);
+   // console.log(requestDistribution);
     try {
         let trackId = requestDistribution.trackId;
         let uploaderId = requestDistribution.uploaderId;
@@ -107,7 +107,7 @@ async function distributionProcess(
 ) {
     console.log('*****************************************');
     console.log('Request Distribution Process in Distribution Endpoint');
-    console.log(distributionProcessRequest);
+  //  console.log(distributionProcessRequest);
 
     try {
         let trackId = distributionProcessRequest.trackId;
@@ -239,7 +239,7 @@ async function distributionLastNode(distributionLastNodeRequest) {
 
     console.log('*************************************');
     console.log('Distribution Last Node in Composer.js');
-    console.log(distributionLastNodeRequest);
+  //  console.log(distributionLastNodeRequest);
     //TODO: Improve logs
     try {
         let emitterId = distributionLastNodeRequest.emitterId;
@@ -307,7 +307,7 @@ async function evaluateReceipt(
 ) {
     console.log('************************************');
     console.log('Evaluate Receipt in Composer.js: ');
-    console.log(evaluateReceiptRequest);
+   // console.log(evaluateReceiptRequest);
 
     try {
         let agreementId = evaluateReceiptRequest.agreementId;
@@ -342,7 +342,7 @@ async function onHoldDistribution(
 ) {
     console.log('************************************');
     console.log('Request On Hold Distribution in Composer.js: ');
-    console.log(requestOnHoldDistribution);
+    //console.log(requestOnHoldDistribution);
 
     try {
         let trackId = requestOnHoldDistribution.trackId;
@@ -381,7 +381,7 @@ module.exports.onHoldDistribution = onHoldDistribution;
 async function evaluateReceivers(request) {
     console.log('*************************************');
     console.log('Request Evaluate Receivers in Distribution Endpoint.js');
-    console.log(request);
+   // console.log(request);
     try {
         let shareTotal = 1;
         let previousReceiverId = request.previousReceiverId;
@@ -437,19 +437,14 @@ async function evaluateReceivers(request) {
                 );
                 rawListAgreements.push(currentAgreement);
             }
-            console.log('PREVIOUS LIST');
-            console.log(rawListAgreements);
+  
             //Now we filter by possible duplicated tracks
             let filteredAgreements = await this.removeAgreementsByTrack(rawListAgreements);
             //filteredAgreements = Utils.removeDuplicatesProp(filteredAgreements, 'traderReceiverId');
 
-            console.log('NEW FILTERED LIST');
-            console.log(filteredAgreements);
 
             for (const element of filteredAgreements) {
                 let currentAgreement = element;
-                console.log('CURRENT AGREEMENT******************');
-                console.log(currentAgreement);
                 shareTotal =
                     parseFloat(shareTotal) - parseFloat(currentAgreement.percentage);
                 if (shareTotal < 0) {
@@ -519,22 +514,18 @@ async function removeAgreementsByTrack(agreementList) {
     try {
         let result = [];
         let filteredListByTrack=[];
-        console.log('GETTING HERE********');
         let filteredListByReceiver = Utils.removeDuplicatesProp(agreementList, "traderReceiverId");
 
         if (filteredListByReceiver.length < agreementList.length) {
             //validate remove duplicates
-            console.log('different length');
             filteredListByTrack = Utils.removeDuplicatesProp(agreementList, 'trackId');
-            console.log('DEFENITE FILTERED LIST******************************');
-           console.log(filteredListByTrack);
+
             if (filteredListByTrack.length < agreementList.length) {
                 result = filteredListByTrack;
             } else {
                 result = filteredListByReceiver;
             }
         } else {
-            console.log('SAME LENGTH');
             result = agreementList;
         }
         return result;

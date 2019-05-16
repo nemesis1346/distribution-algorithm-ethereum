@@ -6,7 +6,7 @@ const connection = require('../../requestConnectionServer.js');
 async function example1() {
     try {
         const accounts = await web3Provider.eth.accounts;
-
+       
         //Delegating accounts addresses/ids
         let trackId = accounts[1];
         let trader1 = accounts[2]; //Artist
@@ -209,6 +209,7 @@ async function example1() {
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
+        return;
     } catch (error) {
         console.log(error)
     }

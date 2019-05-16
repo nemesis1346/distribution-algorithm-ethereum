@@ -1,11 +1,12 @@
 'use strict';
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+//const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 const gasLimit = '6721975'; //this must come from the front end
 const connection = require('../test/requestConnectionServer.js');
 
 async function example1() {
     try {
+        
         const accounts = await web3Provider.eth.accounts;
 
         //Delegating accounts addresses/ids
@@ -17,6 +18,9 @@ async function example1() {
         let agreement1Id = accounts[6];
         let agreement2Id = accounts[7];
         let agreement3Id = accounts[8];
+
+        console.log('IS GETTING ACCOUNTS');
+        console.log(accounts);
 
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
@@ -781,9 +785,12 @@ module.exports.example3_scenario3 = example3_scenario3;
 
 async function example4_scenario1() {
     try {
+        const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+        //TODO: Try metamask.
+
         const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
-        //console.log(accounts)
+        console.log(accounts)
 
         //Delegating accounts addresses/ids
         let trackId1 = accounts[1];
@@ -1080,7 +1087,7 @@ async function example5_scenario2() {
     try {
         const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
-        //console.log(accounts)
+        console.log(accounts)
 
         //Delegating accounts addresses/ids
         let trackId1 = accounts[1];
