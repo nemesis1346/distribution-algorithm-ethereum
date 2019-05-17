@@ -12,7 +12,7 @@ const GetTraderRequest = require('../models/getTraderRequest.js');
 const GetTARequest = require('../models/getTARequest.js');
 const UpdateTrackRevenueRequest = require('../models/updateTrackRevenueRequest.js');
 
-var PORT = '3111';
+var PORT = '3122';
 //const PORT = '3019';
 var HOST = 'localhost';
 //const HOST = '104.196.55.102';
