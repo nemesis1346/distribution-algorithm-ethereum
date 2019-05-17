@@ -6,8 +6,10 @@ const tokenAccountEndpoint = require('../../../connection/tokenAccountEndpoint.j
 const agreementEndpoint = require('../../../connection/agreementEndpoint.js');
 const distributionEndpoint = require('../../../connection/distributionEndPoint');
 const gasLimit = '6721975';
+const counter = 0;
 
 async function example1() {
+    console.log('GETS HERE');
     try {
         const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
@@ -187,9 +189,13 @@ async function example1() {
         console.log(tokenTrader4Result.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Result.balanceEnabled);
+        counter++;
     } catch (error) {
         console.log(error)
     }
 }
 
 example1();
+//example1();
+//example1();
+console.log(counter);

@@ -1,11 +1,12 @@
 const contractTruffle = require('truffle-contract');
-
+const ganache =require('ganache-core');
 const DataModel = require("../models/dataModel");
 const Web3 = require('web3');
-//const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(Web3.givenProvider || new Web3.providers.HttpProvider('http://localhost:7545'));
 //const web3Provider = new Web3(new Web3.providers.WebsocketProvider('ws://localhost:7545'));
 //const web3Provider = new Web3('ws://localhost:7545');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('https://ropstein.infura.io/2d93c5115ef6481693ef04e42f6bcba8'));
+//const web3Provider = new Web3(new Web3.providers.HttpProvider('https://ropstein.infura.io/2d93c5115ef6481693ef04e42f6bcba8'));
+//const web3Provider = new Web3(Web3.givenProvider ||'http://localhost:7545');
 
 const trackEndpoint = require('../connection/trackEndpoint.js');
 const TrackModel = require('../models/trackModel');

@@ -17,6 +17,12 @@ async function createTrack(request) {
   console.log('************************************');
   console.log('Request Create Track in trackEndpoint.js: ');
   console.log(request);
+
+//   //////////////////////////////////
+//   const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+//   TracksContract.setProvider(web3Provider.currentProvider);
+
+// /////////////////////////////////////////////
   try {
 
     let trackModel = new TrackModel(
