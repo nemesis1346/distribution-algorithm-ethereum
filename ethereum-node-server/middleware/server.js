@@ -75,6 +75,7 @@ app.post('/testing_example3', handler);
 app.post('/testing_example4', handler);
 app.post('/testing_example5', handler);
 app.post('/testing_example6', handler);
+app.post('/socketError',handler);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
