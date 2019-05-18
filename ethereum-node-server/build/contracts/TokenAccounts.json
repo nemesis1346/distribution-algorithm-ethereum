@@ -4532,10 +4532,16 @@
       "links": {},
       "address": "0xD6A19C9858A880b4BCE00Fda1d71Be62Dc940a01",
       "transactionHash": "0xd1954371b889eb77e5677d3a62eae21e6c5722ff53e15937f2663a17590c37fa"
+    },
+    "1558211569593": {
+      "events": {},
+      "links": {},
+      "address": "0x886A19cCA9B052E56395E500A96ff241a8b0a14d",
+      "transactionHash": "0x23a3e60331fa71c00f8427c569c2c26ef8a5bf975ef98203ce7c026c9c14771c"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-05-18T18:48:36.922Z",
+  "updatedAt": "2019-05-18T21:09:24.319Z",
   "devdoc": {
     "methods": {}
   },

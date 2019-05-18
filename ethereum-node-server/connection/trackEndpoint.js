@@ -1,6 +1,6 @@
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 //Artifacts
 const tracks_artifact = require('../build/contracts/Tracks.json');
 //Contract

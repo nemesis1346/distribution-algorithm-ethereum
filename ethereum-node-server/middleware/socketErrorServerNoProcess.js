@@ -71,28 +71,45 @@ const handler = async (request, response) => {
         try {
             switch (url) {
                 case '/socketError':
-                    let web3Provider = new Web3(Web3.givenProvider || new Web3.providers.HttpProvider('http://localhost:7545'));
+                    let web3Provider = new Web3(Web3.givenProvider || new Web3.providers.HttpProvider('http://localhost:8545'));
                     TracksContract.setProvider(web3Provider.currentProvider);
 
-                    console.log('SUCCESSFUL CONNECTIONS');
+                //New way of doing things
                     const accounts = await web3Provider.eth.accounts;
-                    console.log('NETWORK ACCOUNTS');
-                    console.log(accounts)
                     let trackId1 = accounts[1];
                     let track1Isrc = new Date().getUTCMilliseconds(); 
                     let trader1 = accounts[2]; 
+                   let newContract = new web3Provider.eth.Contract(tracks_artifact,);
+                   console.log(newContract);
 
-                    const tracksInterface = await TracksContract.deployed();
+                   await newContract.createTrack(
+                    trackId1,
+                    track1Isrc,
+                    'trackId',
+                    10,
+                    {
+                      from: trader1,
+                      gasLimit: gasLimit
+                    });
+                    // console.log('SUCCESSFUL CONNECTIONS');
+                    // const accounts = await web3Provider.eth.accounts;
+                    // console.log('NETWORK ACCOUNTS');
+                    // console.log(accounts)
+                    // let trackId1 = accounts[1];
+                    // let track1Isrc = new Date().getUTCMilliseconds(); 
+                    // let trader1 = accounts[2]; 
 
-                    await tracksInterface.createTrack(
-                      trackId1,
-                      track1Isrc,
-                      'trackId',
-                      10,
-                      {
-                        from: trader1,
-                        gasLimit: gasLimit
-                      });
+                    // const tracksInterface = await TracksContract.deployed();
+
+                    // await tracksInterface.createTrack(
+                    //   trackId1,
+                    //   track1Isrc,
+                    //   'trackId',
+                    //   10,
+                    //   {
+                    //     from: trader1,
+                    //     gasLimit: gasLimit
+                    //   });
 
                     dataModel.data = JSON.stringify('Created successfully');
                     dataModel.status = '200';

@@ -26,7 +26,6 @@ async function socketError() {
             let TAContractAddressData = await connection.getTAContractAddress();
             let TAContractAddress = (JSON.parse(TAContractAddressData.body).data.data).replace(/\"/g, "");
 
-
             //  Creating Traders
             await connection.createTrader(
                 trader1,
