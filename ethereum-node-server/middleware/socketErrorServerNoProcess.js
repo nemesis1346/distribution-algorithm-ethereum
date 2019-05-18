@@ -79,18 +79,8 @@ const handler = async (request, response) => {
                     console.log('NETWORK ACCOUNTS');
                     console.log(accounts)
                     let trackId1 = accounts[1];
-                    let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
-                    let trader1 = accounts[2]; //Artist
-                    // let createTrackRequest = new CreateTrackRequest(
-                    //     trackId1,
-                    //     track1Isrc,
-                    //     'track1',
-                    //     10,
-                    //     trader1,
-                    //     gasLimit
-                    // );
-                    // await trackEndpoint.createTrack(
-                    //     createTrackRequest);
+                    let track1Isrc = new Date().getUTCMilliseconds(); 
+                    let trader1 = accounts[2]; 
 
                     const tracksInterface = await TracksContract.deployed();
 

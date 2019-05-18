@@ -215,3 +215,4 @@ async function example1() {
 }
 
 example1();
+example1();
