@@ -20,9 +20,6 @@ async function example1() {
         let trader1 = accounts[2]; //Artist
         let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
-        //Creating and testing tracks
-        let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
-
         let createTrackRequest = new CreateTrackRequest(
             trackId1,
             track1Isrc,

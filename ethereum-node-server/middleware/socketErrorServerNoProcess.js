@@ -6,12 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const cors = require('cors');
-
-//const { exec, spawn, fork, execFile } = require('promisify-child-process')
-const { fork } = require('child_process');
-
 const app = express();
-
 const contractTruffle = require('truffle-contract');
 //const ganache =require('ganache-core');
 const DataModel = require("../models/dataModel");
@@ -32,6 +27,24 @@ const CreateTrackRequest = require('../models/createTrackRequest.js');
 const gasLimit = '6721975'; //this must come from the front end
 const connection = require('../test/requestConnectionServer.js');
 
+async function stop() {
+    console.log('Shutting down...')
+  
+    if (process.env.DEBUG) console.log(process._getActiveHandles())
+  //console.log(process._getActiveHandles());
+    process.exit(0)
+  }
+  
+  process.on('SIGTERM', async () => {
+    console.log('Received SIGTERM')
+    await stop()
+  })
+  
+  process.on('SIGINT', async () => {
+    console.log('Received SIGINT')
+    await stop();
+  })
+
 const handler = async (request, response) => {
     const { headers, method, url } = request;
     let buffer = [];
@@ -41,7 +54,6 @@ const handler = async (request, response) => {
         buffer.push(chunk);
     }).on('end', async () => {
         let bufferContent = Buffer.concat(buffer).toString();
-
         //Set response
         response.statusCode = 200;
         response.setHeader('Content-Type', 'application/json');
@@ -53,10 +65,12 @@ const handler = async (request, response) => {
         });
         //Call method
         let promise;
+        let responseBody;
+        let body;
         let dataModel = new DataModel(null, null, null);
         try {
             switch (url) {
-                    case '/socketError':
+                case '/socketError':
                     let web3Provider = new Web3(Web3.givenProvider || new Web3.providers.HttpProvider('http://localhost:7545'));
                     TracksContract.setProvider(web3Provider.currentProvider);
 
@@ -67,82 +81,56 @@ const handler = async (request, response) => {
                     let trackId1 = accounts[1];
                     let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
                     let trader1 = accounts[2]; //Artist
-                    let createTrackRequest = new CreateTrackRequest(
-                        trackId1,
-                        track1Isrc,
-                        'track1',
-                        10,
-                        trader1,
-                        gasLimit
-                    );
-                    await trackEndpoint.createTrack(
-                        createTrackRequest);
-                    
-                    //web3Provider.
-                    //web3Provider.providers.WebsocketProvider.discon
-                  //  process.exit(0);
-                  dataModel.data = JSON.stringify(createTrackRequest);
-                dataModel.status = '200';
+                    // let createTrackRequest = new CreateTrackRequest(
+                    //     trackId1,
+                    //     track1Isrc,
+                    //     'track1',
+                    //     10,
+                    //     trader1,
+                    //     gasLimit
+                    // );
+                    // await trackEndpoint.createTrack(
+                    //     createTrackRequest);
+
+                    const tracksInterface = await TracksContract.deployed();
+
+                    await tracksInterface.createTrack(
+                      trackId1,
+                      track1Isrc,
+                      'trackId',
+                      10,
+                      {
+                        from: trader1,
+                        gasLimit: gasLimit
+                      });
+
+                    dataModel.data = JSON.stringify('Created successfully');
+                    dataModel.status = '200';
+                    body = JSON.stringify(dataModel);
+                    console.log('STATUS 200: ');
+                    console.log(body);
+                    responseBody = { headers, method, url, body };
+
+                    response.statusCode = 200;
+                    response.write(JSON.stringify(responseBody));
+                    response.end();
                     break;
                 default:
                     dataModel.message = 'Method not found';
                     dataModel.status = '405';
-                    let body = JSON.stringify(dataModel);
+                    body = JSON.stringify(dataModel);
 
                     console.log('STATUS 405: ');
                     console.log('Method not found');
-                    const responseBody = { headers, method, url, body };
+                    responseBody = { headers, method, url, body };
 
                     response.statusCode = 405;
                     response.write(JSON.stringify(responseBody));
                     response.end();
                     break;
             }
-
-            //Executing the promise , maybe need POST and GET
-            if (promise != null) {
-                promise.then(function (result) {
-                    console.log(result);
-                    //This is status 200 , everything ok
-                    if (result) {
-                        if (result.status == '200') {
-                            dataModel.data = result;
-                            dataModel.status = '200';
-                        } else {
-                            console.log(dataModel)
-                            dataModel.message = result;
-                            dataModel.status = '300';
-                        }
-                    } else {
-                        console.log('Something went wrong');
-                        console.log(result);
-                    }
-                    let body = JSON.stringify(dataModel);
-                    console.log('STATUS 200: ');
-                    console.log(body);
-                    const responseBody = { headers, method, url, body };
-
-                    response.statusCode = 200;
-                    response.write(JSON.stringify(responseBody));
-                    response.end();
-                }).catch((error) => {
-                    console.log('ERROR IN GATE');
-
-                    dataModel.message = error.message.toString();
-                    dataModel.status = '400';
-                    let body = JSON.stringify(dataModel);
-                    console.log('ERROR 400:');
-                    console.log(dataModel);
-                    const responseBody = { headers, method, url, body };
-
-                    response.statusCode = 300;
-                    response.write(JSON.stringify(responseBody));
-                    response.end();
-                    
-                });
-            }
-          //  process.exit(0);
-
+            //process.exit(0);
+            //process.kill(process.pid, "SIGINT");
         } catch (error) {
             dataModel.message = error.message.toString();
             dataModel.status = '500';
@@ -154,14 +142,13 @@ const handler = async (request, response) => {
             response.statusCode = 500;
             response.write(JSON.stringify(responseBody));
             response.end();
-        //    process.exit(0);
-
+            // process.exit(0);
+            //process.kill(process.pid, "SIGINT");
         }
     });
 }
 
-
-app.post('/socketError',handler);
+app.post('/socketError', handler);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -18,11 +18,11 @@ async function createTrack(request) {
   console.log('Request Create Track in trackEndpoint.js: ');
   console.log(request);
 
-//   //////////////////////////////////
-//   const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-//   TracksContract.setProvider(web3Provider.currentProvider);
+  //   //////////////////////////////////
+    // const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+    // TracksContract.setProvider(web3Provider.currentProvider);
 
-// /////////////////////////////////////////////
+  // /////////////////////////////////////////////
   try {
 
     let trackModel = new TrackModel(
@@ -72,7 +72,7 @@ async function getTrack(trackId, fromAddress, gasLimit) {
         from: fromAddress,
         gasLimit: gasLimit
       });
-     
+
     trackModel.trackId = trackResult[0];
     trackModel.isrc = trackResult[1].toString();
     trackModel.title = trackResult[2];
@@ -102,17 +102,17 @@ async function getTrackContractAddress() {
 }
 module.exports.getTrackContractAddress = getTrackContractAddress;
 
-async function updateTrackRevenue(updateTrackRevenueRequest){
+async function updateTrackRevenue(updateTrackRevenueRequest) {
   console.log('************************************');
   console.log('Request Update Track Revenue in trackEndpoint.js: ');
-  console.log(updateTrackRevenueRequest); 
-  try{
+  console.log(updateTrackRevenueRequest);
+  try {
     let trackId = updateTrackRevenueRequest.trackId;
     let revenue = updateTrackRevenueRequest.revenue;
-    let fromAddress= updateTrackRevenueRequest.fromAddress;
+    let fromAddress = updateTrackRevenueRequest.fromAddress;
     let gasLimit = updateTrackRevenueRequest.gasLimit;
     const tracksInterface = await TracksContract.deployed();
-    let result  =tracksInterface.updateTrackRevenue(
+    let result = tracksInterface.updateTrackRevenue(
       trackId,
       revenue,
       {
@@ -120,9 +120,11 @@ async function updateTrackRevenue(updateTrackRevenueRequest){
         gasLimit: gasLimit
       });
     return result
-  }catch(error){
+  } catch (error) {
     console.log('ERROR IN GET TRACK IN TRACK ENDPOINT');
     throw new Error(error);
   }
 }
-module.exports.updateTrackRevenue= updateTrackRevenue;
+module.exports.updateTrackRevenue = updateTrackRevenue;
+
+//process.exit();

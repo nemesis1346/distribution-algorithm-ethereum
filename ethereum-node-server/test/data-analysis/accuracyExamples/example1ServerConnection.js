@@ -34,7 +34,6 @@ async function example1() {
 
         let traderContractAddressData = await connection.getTraderContractAddress();
         let traderContractAddress = (JSON.parse(traderContractAddressData.body).data.data).replace(/\"/g, "");
-
         let trackContractAddressData = await connection.getTrackContractAddress();
         let trackContractAddress = (JSON.parse(trackContractAddressData.body).data.data).replace(/\"/g, "");
 
