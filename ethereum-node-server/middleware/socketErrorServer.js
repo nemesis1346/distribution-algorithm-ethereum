@@ -49,7 +49,6 @@ const handler = async (request, response) => {
     });
 }
 
-app.post('/createTrack', handler);
 app.post('/socketError',handler);
 app.use(logger('dev'));
 app.use(bodyParser.json());

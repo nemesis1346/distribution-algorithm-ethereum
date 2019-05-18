@@ -1,6 +1,5 @@
 'use strict';
 const port = 3123;
-//This is very necessary to the data analysis. Must be replicated in both platforms
 //Imports
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -11,11 +10,6 @@ const contractTruffle = require('truffle-contract');
 //const ganache =require('ganache-core');
 const DataModel = require("../models/dataModel");
 const Web3 = require('web3');
-//const web3Provider = new Web3(Web3.givenProvider || new Web3.providers.HttpProvider('http://localhost:7545'));
-//const web3Provider = new Web3(new Web3.providers.WebsocketProvider('ws://localhost:7545'));
-//const web3Provider = new Web3('ws://localhost:7545');
-//const web3Provider = new Web3(new Web3.providers.HttpProvider('https://ropstein.infura.io/2d93c5115ef6481693ef04e42f6bcba8'));
-//const web3Provider = new Web3(Web3.givenProvider ||'http://localhost:7545');
 
 const trackEndpoint = require('../connection/trackEndpoint.js');
 const TrackModel = require('../models/trackModel');
@@ -136,8 +130,7 @@ const handler = async (request, response) => {
                     response.end();
                     break;
             }
-            //process.exit(0);
-            //process.kill(process.pid, "SIGINT");
+      
         } catch (error) {
             dataModel.message = error.message.toString();
             dataModel.status = '500';
@@ -149,8 +142,7 @@ const handler = async (request, response) => {
             response.statusCode = 500;
             response.write(JSON.stringify(responseBody));
             response.end();
-            // process.exit(0);
-            //process.kill(process.pid, "SIGINT");
+           
         }
     });
 }
@@ -160,7 +152,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-
 
 app.listen(port, async (err) => {
     if (err) {
