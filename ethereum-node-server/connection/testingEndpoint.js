@@ -1,26 +1,24 @@
 'use strict';
 const Web3 = require('web3');
-//const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 const gasLimit = '6721975'; //this must come from the front end
 const connection = require('../test/requestConnectionServer.js');
+const DataModel = require('../models/dataModel.js');
 
-async function example1() {
+async function example1(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('REQUEST EXMAMPLE 1***********************');
+    console.log(request);
     try {
-        
-        const accounts = await web3Provider.eth.accounts;
-
         //Delegating accounts addresses/ids
-        let trackId = accounts[1];
-        let trader1 = accounts[2]; //Artist
-        let trader2 = accounts[3];
-        let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[5];
-        let agreement1Id = accounts[6];
-        let agreement2Id = accounts[7];
-        let agreement3Id = accounts[8];
-
-        console.log('IS GETTING ACCOUNTS');
-        console.log(accounts);
+        let trackId = request.trackId;
+        let trader1 = request.trader1; //Artist
+        let trader2 = request.trader2;
+        let trader3 = request.trader3; //this is the design, the accounts of balances are separated from the traders
+        let trader4 = request.trader4;
+        let agreement1Id = request.agreement1Id;
+        let agreement2Id = request.agreement2Id;
+        let agreement3Id = request.agreement3Id;
 
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
@@ -33,8 +31,12 @@ async function example1() {
             trader1,
             gasLimit);
 
+            console.log('GETS HERE BEFORE');
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
+        console.log('GETS HERE');
+        console.log(TAContractAddressData);
+
         let TAContractAddress = (JSON.parse(TAContractAddressData.body).data.data).replace(/\"/g, "");
 
         let traderContractAddressData = await connection.getTraderContractAddress();
@@ -214,6 +216,10 @@ async function example1() {
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
+
+        dataModel.data = 'PROCESS TERMINATED';
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 1 IN TESTING ENDPOINT');
         throw new Error(error);
@@ -221,32 +227,30 @@ async function example1() {
 }
 module.exports.example1 = example1;
 
-async function example2() {
+async function example2(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('REQUEST EXMAMPLE 1***********************');
+    console.log(request);
     try {
-        const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        //console.log(accounts)
-
         //Delegating accounts addresses/ids
-        let trackId1 = accounts[1];
-        let trackId2 = accounts[2];
-        let trader1 = accounts[3]; //Artist
-        let trader2 = accounts[4];
-        let trader3 = accounts[5]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[6];
+        let trackId1 = request.trackId1;
+        let trackId2 = request.trackId2;
+        let trader1 = request.trader1; //Artist
+        let trader2 = request.trader2;
+        let trader3 = request.trader3; //this is the design, the accounts of balances are separated from the traders
+        let trader4 = request.trader4;
         //Delegating agreements addresses
         //track1
-        let agreement1Id = accounts[7];
-        let agreement2Id = accounts[8];
-        let agreement3Id = accounts[9];
+        let agreement1Id = request.agreement1Id;
+        let agreement2Id = request.agreement2Id;
+        let agreement3Id = request.agreement3Id;
         //track2
-        let agreement4Id = accounts[10];
-        let agreement5Id = accounts[11];
-        let agreement6Id = accounts[12];
+        let agreement4Id = request.agreement4Id;
+        let agreement5Id = request.agreement5Id;
+        let agreement6Id = request.agreement6Id;
 
         //Creating and testing tracks
         let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
-
         await connection.createTrack(
             trackId1,
             track1Isrc,
@@ -256,7 +260,6 @@ async function example2() {
             gasLimit);
 
         let track2Isrc = new Date().getUTCMilliseconds();
-
         await connection.createTrack(
             trackId2,
             track2Isrc,
@@ -522,6 +525,10 @@ async function example2() {
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
+
+        dataModel.data = 'PROCESS TERMINATED';
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 2 IN TESTING ENDPOINT');
         throw new Error(error);
@@ -529,24 +536,23 @@ async function example2() {
 }
 module.exports.example2 = example2;
 
-async function example3_scenario3() {
+async function example3_scenario3(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('REQUEST EXMAMPLE 3_SCENARIO3***********************');
+    console.log(request);
     try {
-        const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        //console.log(accounts)
-
         //Delegating accounts addresses/ids
-        let trackId1 = accounts[1];
-        let trader1 = accounts[2]; //Artist
-        let trader2 = accounts[3];
-        let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[5];
+        let trackId = request.trackId1;
+        let trader1 = request.trader1; //Artist
+        let trader2 = request.trader2;
+        let trader3 = request.trader3; //this is the design, the accounts of balances are separated from the traders
+        let trader4 = request.trader4;
         //Delegating agreements addresses
         //track1
-        let agreement1Id = accounts[6];
-        let agreement2Id = accounts[7];
-        let agreement3Id = accounts[8];
-        let agreement4Id = accounts[9];
+        let agreement1Id = request.agreement1Id;
+        let agreement2Id = request.agreement2Id;
+        let agreement3Id = request.agreement3Id;
+        let agreement4Id = request.agreement4Id;
 
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
@@ -562,7 +568,7 @@ async function example3_scenario3() {
         let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
         await connection.createTrack(
-            trackId1,
+            trackId,
             track1Isrc,
             'track1',
             10,
@@ -610,7 +616,7 @@ async function example3_scenario3() {
             trader1,
             trader2,
             50,
-            trackId1,
+            trackId,
             traderContractAddress, //TODO: fix this
             trackContractAddress,
             trader1,
@@ -623,7 +629,7 @@ async function example3_scenario3() {
             trader2,
             trader3,
             50,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -636,7 +642,7 @@ async function example3_scenario3() {
             trader3,
             trader1,
             25,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -649,7 +655,7 @@ async function example3_scenario3() {
             trader3,
             trader4,
             25,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -658,27 +664,27 @@ async function example3_scenario3() {
 
         //Starts distribution
         await connection.distribution(
-            trackId1,
+            trackId,
             trader2,
             new Date().getTime(),
             trader2,
             gasLimit);
         await connection.distribution(
-            trackId1,
+            trackId,
             trader2,
             new Date().getTime(),
             trader2,
             gasLimit
         );
         await connection.distribution(
-            trackId1,
+            trackId,
             trader2,
             new Date().getTime(),
             trader2,
             gasLimit
         );
         await connection.distribution(
-            trackId1,
+            trackId,
             trader2,
             new Date().getTime(),
             trader2,
@@ -775,6 +781,10 @@ async function example3_scenario3() {
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
+
+        dataModel.data = 'PROCESS TERMINATED';
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 3 IN TESTING ENDPOINT');
         throw new Error(error);
@@ -783,29 +793,25 @@ async function example3_scenario3() {
 module.exports.example3_scenario3 = example3_scenario3;
 
 
-async function example4_scenario1() {
+async function example4_scenario1(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('REQUEST EXMAMPLE 1***********************');
+    console.log(request);
     try {
-        const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-        //TODO: Try metamask.
-
-        const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        console.log(accounts)
-
         //Delegating accounts addresses/ids
-        let trackId1 = accounts[1];
-        let trader1 = accounts[2]; //Artist
-        let trader2 = accounts[3];
-        let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[5];
-        let trader5 = accounts[6];
+        let trackId = request.trackId;
+        let trader1 = request.trader1; //Artist
+        let trader2 = request.trader2;
+        let trader3 = request.trader3; //this is the design, the accounts of balances are separated from the traders
+        let trader4 = request.trader4;
+        let trader5 = request.trader5;
         //Delegating agreements addresses
         //track1
-        let agreement1Id = accounts[7];
-        let agreement2Id = accounts[8];
-        let agreement3Id = accounts[9];
-        let agreement4Id = accounts[10];
-        let agreement5Id = accounts[11];
+        let agreement1Id = request.agreement1Id;
+        let agreement2Id = request.agreement2Id;
+        let agreement3Id = request.agreement3Id;
+        let agreement4Id = request.agreement4Id;
+        let agreement5Id = request.agreement5Id;
 
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
@@ -821,7 +827,7 @@ async function example4_scenario1() {
         let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
         await connection.createTrack(
-            trackId1,
+            trackId,
             track1Isrc,
             'track1',
             10,
@@ -875,7 +881,7 @@ async function example4_scenario1() {
             trader1,
             trader2,
             25,
-            trackId1,
+            trackId,
             traderContractAddress, //TODO: fix this
             trackContractAddress,
             trader1,
@@ -888,7 +894,7 @@ async function example4_scenario1() {
             trader1,
             trader3,
             25,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -901,7 +907,7 @@ async function example4_scenario1() {
             trader2,
             trader4,
             50,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -914,7 +920,7 @@ async function example4_scenario1() {
             trader3,
             trader4,
             50,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -926,7 +932,7 @@ async function example4_scenario1() {
             trader4,
             trader5,
             50,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -935,28 +941,28 @@ async function example4_scenario1() {
 
         //Starts distribution
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
             gasLimit);
 
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
             gasLimit
         );
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
             gasLimit
         );
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
@@ -1076,6 +1082,10 @@ async function example4_scenario1() {
         console.log(tokenTrader5Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader5Model.balanceEnabled);
+
+        dataModel.data = 'PROCESS TERMINATED';
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 4 IN TESTING ENDPOINT');
         throw new Error(error);
@@ -1084,26 +1094,25 @@ async function example4_scenario1() {
 module.exports.example4_scenario1 = example4_scenario1;
 
 async function example5_scenario2() {
+    let dataModel = new DataModel(null, null, null);
+    console.log('REQUEST EXMAMPLE 1***********************');
+    console.log(request);
     try {
-        const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        console.log(accounts)
-
         //Delegating accounts addresses/ids
-        let trackId1 = accounts[1];
-        let trader1 = accounts[2]; //Artist
-        let trader2 = accounts[3];
-        let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[5];
-        let trader5 = accounts[6];
-        let trader6 = accounts[7];
+        let trackId = request.trackId;
+        let trader1 = request.trader1; //Artist
+        let trader2 = request.trader2;
+        let trader3 = request.trader3; //this is the design, the accounts of balances are separated from the traders
+        let trader4 = request.trader4;
+        let trader5 = request.trader5;
+        let trader6 = request.trader6;
         //Delegating agreements addresses
         //track1
-        let agreement1Id = accounts[8];
-        let agreement2Id = accounts[9];
-        let agreement3Id = accounts[10];
-        let agreement4Id = accounts[11];
-        let agreement5Id = accounts[12];
+        let agreement1Id = request.agreement1Id;
+        let agreement2Id = request.agreement2Id;
+        let agreement3Id = request.agreement3Id;
+        let agreement4Id = request.agreement4Id;
+        let agreement5Id = request.agreement5Id;
 
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
@@ -1119,7 +1128,7 @@ async function example5_scenario2() {
         let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
         await connection.createTrack(
-            trackId1,
+            trackId,
             track1Isrc,
             'track1',
             10,
@@ -1181,7 +1190,7 @@ async function example5_scenario2() {
             trader1,
             trader2,
             25,
-            trackId1,
+            trackId,
             traderContractAddress, //TODO: fix this
             trackContractAddress,
             trader1,
@@ -1194,7 +1203,7 @@ async function example5_scenario2() {
             trader1,
             trader3,
             25,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1207,7 +1216,7 @@ async function example5_scenario2() {
             trader2,
             trader4,
             50,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1220,7 +1229,7 @@ async function example5_scenario2() {
             trader3,
             trader5,
             50,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1232,7 +1241,7 @@ async function example5_scenario2() {
             trader4,
             trader6,
             50,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1241,28 +1250,28 @@ async function example5_scenario2() {
 
         //Starts distribution
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
             gasLimit);
 
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
             gasLimit
         );
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
             gasLimit
         );
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
@@ -1403,6 +1412,10 @@ async function example5_scenario2() {
         console.log(tokenTrader6Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader6Model.balanceEnabled);
+
+        dataModel.data = 'PROCESS TERMINATED';
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 5 IN TESTING ENDPOINT');
         throw new Error(error);
@@ -1411,28 +1424,27 @@ async function example5_scenario2() {
 module.exports.example5_scenario2 = example5_scenario2;
 
 async function example6() {
+    let dataModel = new DataModel(null, null, null);
+    console.log('REQUEST EXMAMPLE 1***********************');
+    console.log(request);
     try {
-        const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        //console.log(accounts)
-
         //Delegating accounts addresses/ids
-        let trackId1 = accounts[1];
-        let trader1 = accounts[2]; //Artist
-        let trader2 = accounts[3];
-        let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[5];
-        let trader5 = accounts[6];
-        let trader6 = accounts[7];
-        let trader7 = accounts[8];
+        let trackId = request.trackId;
+        let trader1 = request.trader1; //Artist
+        let trader2 = request.trader2;
+        let trader3 = request.trader3; //this is the design, the accounts of balances are separated from the traders
+        let trader4 = request.trader4;
+        let trader5 = request.trader5;
+        let trader6 = request.trader6;
+        let trader7 = request.trader7;
         //Delegating agreements addresses
         //track1
-        let agreement1Id = accounts[9];
-        let agreement2Id = accounts[10];
-        let agreement3Id = accounts[11];
-        let agreement4Id = accounts[12];
-        let agreement5Id = accounts[13];
-        let agreement6Id = accounts[14];
+        let agreement1Id = request.agreement1Id;
+        let agreement2Id = request.agreement2Id;
+        let agreement3Id = request.agreement3Id;
+        let agreement4Id = request.agreement4Id;
+        let agreement5Id = request.agreement5Id;
+        let agreement6Id = request.agreement6Id;
 
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
@@ -1448,7 +1460,7 @@ async function example6() {
         let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
 
         await connection.createTrack(
-            trackId1,
+            trackId,
             track1Isrc,
             'track1',
             1000,
@@ -1518,7 +1530,7 @@ async function example6() {
             trader1,
             trader2,
             90,
-            trackId1,
+            trackId,
             traderContractAddress, //TODO: fix this
             trackContractAddress,
             trader1,
@@ -1531,7 +1543,7 @@ async function example6() {
             trader2,
             trader3,
             5,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1544,7 +1556,7 @@ async function example6() {
             trader2,
             trader4,
             5,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1557,7 +1569,7 @@ async function example6() {
             trader2,
             trader5,
             5,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1569,7 +1581,7 @@ async function example6() {
             trader4,
             trader6,
             44,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1581,7 +1593,7 @@ async function example6() {
             trader4,
             trader7,
             44,
-            trackId1,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -1590,7 +1602,7 @@ async function example6() {
 
         //Starts distribution
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
@@ -1752,6 +1764,10 @@ async function example6() {
         console.log(tokenTrader7Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader7Model.balanceEnabled);
+
+        dataModel.data = 'PROCESS TERMINATED';
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 6 IN TESTING ENDPOINT');
         throw new Error(error);

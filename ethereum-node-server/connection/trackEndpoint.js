@@ -1,6 +1,6 @@
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 //Artifacts
 const tracks_artifact = require('../build/contracts/Tracks.json');
 //Contract
@@ -16,13 +16,6 @@ async function createTrack(request) {
   let dataModel = new DataModel(null, null, null);
   console.log('************************************');
   console.log('Request Create Track in trackEndpoint.js: ');
-  console.log(request);
-
-  //   //////////////////////////////////
-    // const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-    // TracksContract.setProvider(web3Provider.currentProvider);
-
-  // /////////////////////////////////////////////
   try {
 
     let trackModel = new TrackModel(

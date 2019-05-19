@@ -86,3 +86,5 @@ ionic-front-end/yarn.lock
 
 *~
 ethereum-node-server/middleware/~
+
+.vscode/*

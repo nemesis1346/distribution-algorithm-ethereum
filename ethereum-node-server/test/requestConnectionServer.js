@@ -48,6 +48,7 @@ exports.createTrack = async function (trackId, isrc, title, revenue, fromAddress
         fromAddress,
         gasLimit
     );
+
     try {
         await requestPost('/createTrack', JSON.stringify(createTrackRequest), 'TRACK');
     } catch (error) {
