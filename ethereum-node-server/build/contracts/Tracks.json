@@ -4918,10 +4918,16 @@
       "links": {},
       "address": "0x63D226BBB27f99223b383a478ed8bfBC764213Da",
       "transactionHash": "0x3c8aa8e6dc9abf934d52afbee4169ea6c1f1503eb49f174ee51d31a747dc52e1"
+    },
+    "1558378357010": {
+      "events": {},
+      "links": {},
+      "address": "0xF52C90138EBd7D5073F527D328Fe012F3A408a5f",
+      "transactionHash": "0x33f8b59f802c195b3ead768aa98ef245bacb06491ca7eec2ed04c212cb340b5d"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-05-19T21:17:24.655Z",
+  "updatedAt": "2019-05-20T21:59:18.019Z",
   "devdoc": {
     "methods": {}
   },

@@ -9197,10 +9197,16 @@
       "links": {},
       "address": "0xCAdBb54F1334256E29A3971Facac48c763E8C54F",
       "transactionHash": "0x1bfa12c5b901f616fcaef17e757957b9576bda2846137932a574063475064969"
+    },
+    "1558378357010": {
+      "events": {},
+      "links": {},
+      "address": "0xc263342a15771eA19BdF4d764E9C442a1B923bf0",
+      "transactionHash": "0x5becbd9a018b70437855924f5cdd750a4690e5697241ee0d1a032baf3c0a2e50"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-05-19T21:17:24.665Z",
+  "updatedAt": "2019-05-20T21:59:18.029Z",
   "devdoc": {
     "methods": {}
   },

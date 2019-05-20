@@ -39,7 +39,7 @@ async function distribution(requestDistribution) {
 
     console.log('****************************');
     console.log('Request Distribution in Distribution EndPoint');
-   // console.log(requestDistribution);
+    //console.log(requestDistribution);
     try {
         let trackId = requestDistribution.trackId;
         let uploaderId = requestDistribution.uploaderId;
@@ -244,7 +244,7 @@ async function distributionLastNode(distributionLastNodeRequest) {
 
     console.log('*************************************');
     console.log('Distribution Last Node in Composer.js');
-  //  console.log(distributionLastNodeRequest);
+   // console.log(distributionLastNodeRequest);
     //TODO: Improve logs
     try {
         let emitterId = distributionLastNodeRequest.emitterId;
@@ -265,9 +265,11 @@ async function distributionLastNode(distributionLastNodeRequest) {
             fromAddress,
             gasLimit
         );
+       
         let tokenAccountReceiverRaw = await tokenAccountEndpoint.getTokenAccount(
             getTARequest
         );
+
         console.log(tokenAccountReceiverRaw);
         let tokenAccountReceiver = JSON.parse(tokenAccountReceiverRaw.data);
         console.log(tokenAccountReceiver);

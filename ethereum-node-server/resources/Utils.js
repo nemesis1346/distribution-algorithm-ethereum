@@ -74,3 +74,9 @@ function makeid(length) {
     return result;
  }
  module.exports.makeid= makeid;
+
+ function getRandomItem(items){
+    let result = items[Math.floor(Math.random()*items.length)];
+    return result;
+ }
+ module.exports.getRandomItem = getRandomItem;

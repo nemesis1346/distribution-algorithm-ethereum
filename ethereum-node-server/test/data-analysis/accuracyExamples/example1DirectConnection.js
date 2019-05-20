@@ -22,6 +22,7 @@ const DistributionRequest = require('../../../models/distributionRequest.js');
 const GetTraderRequest = require('../../../models/getTraderRequest.js');
 const GetTARequest = require('../../../models/getTARequest.js');
 const gasLimit = '6721975';
+const Utils = require('../../../resources/Utils.js');
 
 async function example1() {
 
@@ -29,14 +30,22 @@ async function example1() {
         const accounts = await web3Provider.eth.accounts;
 
         //Delegating accounts addresses/ids
-        let trackId = accounts[1];
-        let trader1 = accounts[2]; //Artist
-        let trader2 = accounts[3];
-        let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[5];
-        let agreement1Id = accounts[6];
-        let agreement2Id = accounts[7];
-        let agreement3Id = accounts[8];
+        let trackId = Utils.getRandomItem(accounts);
+        let trader1 = Utils.getRandomItem(accounts);
+        let trader2 = Utils.getRandomItem(accounts);
+        let trader3 = Utils.getRandomItem(accounts);
+        let trader4 = Utils.getRandomItem(accounts);
+        let agreement1Id = Utils.getRandomItem(accounts);
+        let agreement2Id = Utils.getRandomItem(accounts);
+        let agreement3Id = Utils.getRandomItem(accounts);
+
+        let TAContractAddressData = await tokenAccountEndpoint.getTAContractAddress();
+        let TAContractAddress = TAContractAddressData.data.replace(/\"/g, "");
+        let traderContractAddressData = await traderEndpoint.getTraderContractAddress();
+        let traderContractAddress = traderContractAddressData.data.replace(/\"/g, "");
+        let trackContractAddressData = await trackEndpoint.getTrackContractAddress();
+        let trackContractAddress = trackContractAddressData.data.replace(/\"/g, "");
+
 
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
@@ -55,7 +64,7 @@ async function example1() {
             trader1,
             "trader1",
             trader1,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader1,
             gasLimit
         );
@@ -68,7 +77,7 @@ async function example1() {
             trader2,
             "trader2",
             trader2,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader2,
             gasLimit
         );
@@ -80,7 +89,7 @@ async function example1() {
             trader3,
             "trader3",
             trader3,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader3,
             gasLimit
         );
@@ -92,7 +101,7 @@ async function example1() {
             trader4,
             "trader4",
             trader4,
-            await tokenAccountEndpoint.getTAContractAddress(),
+            TAContractAddress,
             trader4,
             gasLimit
         );
@@ -107,8 +116,8 @@ async function example1() {
             trader2,
             30,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            traderContractAddress,
+            trackContractAddress,
             trader1,
             gasLimit
         );
@@ -124,8 +133,8 @@ async function example1() {
             trader3,
             50,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            traderContractAddress,
+            trackContractAddress,
             trader1,
             gasLimit
         );
@@ -140,8 +149,8 @@ async function example1() {
             trader4,
             90,
             trackId,
-            await traderEndpoint.getTraderContractAddress(),
-            await trackEndpoint.getTrackContractAddress(),
+            traderContractAddress,
+            trackContractAddress,
             trader1,
             gasLimit
         );
@@ -160,17 +169,18 @@ async function example1() {
         await distributionEndpoint.distribution(
             distributionRequest);
 
-        //Results after
         console.log('TRADERS OUTPUT----------------------');
-        console.log(trader1);
         //Trader1
         let getTrader1Req = new GetTraderRequest(
             trader1,
             trader1,
             gasLimit
         );
-        let trader1Result = await traderEndpoint.getTrader(
+        let trader1ResultRaw = await traderEndpoint.getTrader(
             getTrader1Req);
+
+        let trader1Result = JSON.parse(trader1ResultRaw.data);
+
 
         let getTA1Req = new GetTARequest(
             trader1,
@@ -178,10 +188,13 @@ async function example1() {
             gasLimit
         );
 
-        let tokenTrader1Result = await tokenAccountEndpoint.getTokenAccount(
+        let tokenTrader1ResultRaw = await tokenAccountEndpoint.getTokenAccount(
             getTA1Req
         );
 
+        let tokenTrader1Result = JSON.parse(tokenTrader1ResultRaw.data);
+
+        console.log('TRADER RESULT --------------------------');
         console.log('TRADER ' + trader1Result.name + ' *******');
         console.log('BALANCE DISABLED:');
         console.log(tokenTrader1Result.balanceDisabled);
@@ -194,8 +207,10 @@ async function example1() {
             trader2,
             gasLimit
         );
-        let trader2Result = await traderEndpoint.getTrader(
+        let trader2ResultRaw = await traderEndpoint.getTrader(
             getTrader2Req);
+
+        let trader2Result = JSON.parse(trader2ResultRaw.data);
 
         let getTA2Req = new GetTARequest(
             trader2,
@@ -203,9 +218,11 @@ async function example1() {
             gasLimit
         );
 
-        let tokenTrader2Result = await traderEndpoint.getTrader(
+        let tokenTrader2ResultRaw = await tokenAccountEndpoint.getTokenAccount(
             getTA2Req
         );
+
+        let tokenTrader2Result = JSON.parse(tokenTrader2ResultRaw.data);
 
         console.log('TRADER ' + trader2Result.name + ' *******');
         console.log('BALANCE DISABLED:');
@@ -213,15 +230,17 @@ async function example1() {
         console.log('BALANCE ENABLED');
         console.log(tokenTrader2Result.balanceEnabled);
 
-        //Trader 3
+        // Trader 3
         let getTrader3Req = new GetTraderRequest(
             trader3,
             trader3,
             gasLimit
         );
 
-        let trader3Result = await traderEndpoint.getTrader(
+        let trader3ResultRaw = await traderEndpoint.getTrader(
             getTrader3Req);
+
+        let trader3Result = JSON.parse(trader3ResultRaw.data);
 
         let getTA3Req = new GetTARequest(
             trader3,
@@ -229,24 +248,29 @@ async function example1() {
             gasLimit
         );
 
-        let tokenTrader3Result = await traderEndpoint.getTrader(
+        let tokenTrader3ResultRaw = await tokenAccountEndpoint.getTokenAccount(
             getTA3Req
         );
+
+        let tokenTrader3Result = JSON.parse(tokenTrader3ResultRaw.data);
+
         console.log('TRADER ' + trader3Result.name + ' *******');
         console.log('BALANCE DISABLED:');
         console.log(tokenTrader3Result.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader3Result.balanceEnabled);
 
-        //Trader4
+        // Trader4
         let getTrader4Req = new GetTraderRequest(
             trader4,
             trader4,
             gasLimit
         );
 
-        let trader4Result = await traderEndpoint.getTrader(
+        let trader4ResultRaw = await traderEndpoint.getTrader(
             getTrader4Req);
+
+        let trader4Result = JSON.parse(trader4ResultRaw.data);
 
         let getTA4Req = new GetTARequest(
             trader4,
@@ -254,19 +278,21 @@ async function example1() {
             gasLimit
         );
 
-        let tokenTrader4Result = await traderEndpoint.getTrader(
+        let tokenTrader4ResultRaw = await tokenAccountEndpoint.getTokenAccount(
             getTA4Req
         );
+
+        let tokenTrader4Result = JSON.parse(tokenTrader4ResultRaw.data);
 
         console.log('TRADER ' + trader4Result.name + ' *******');
         console.log('BALANCE DISABLED:');
         console.log(tokenTrader4Result.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Result.balanceEnabled);
-        counter++;
     } catch (error) {
         console.log(error)
     }
 }
 
 example1();
+// example1();
