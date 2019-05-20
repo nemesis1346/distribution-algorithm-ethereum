@@ -1,6 +1,10 @@
+const truffleConfiguration = require('../truffle.js');
+const PORT = truffleConfiguration.networks.development.port;
+const HOST = truffleConfiguration.networks.development.host;
+
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 const TraderModel = require('../models/traderModel.js');
 const DataModel = require('../models/dataModel.js');
 //Artifacts
@@ -9,22 +13,6 @@ const trader_artifact = require('../build/contracts/Traders.json');
 const TradersContract = contractTruffle(trader_artifact);
 //Setting Providers
 TradersContract.setProvider(web3Provider.currentProvider);
-//Getting the interface of the deployed contract
-
-//Event listening
-async function listenTraderEvents() {
-    const tradersInterface = await TradersContract.deployed();
-    //console.log(tradersInterface);
-    let traderLogsEvent = tradersInterface.contract.events.stringLogs();
-    console.log(traderLogsEvent);
-    traderLogsEvent.watch(function (error, result) {
-        if (!error) {
-            console.log('Traders EVENT');
-            console.log(result);
-        }
-    });
-}
-
 
 async function createTrader(request) {
     let dataModel = new DataModel(null, null, null);

@@ -1,6 +1,11 @@
+//Truffle Configuration
+const truffleConfiguration = require('../truffle.js');
+const PORT = truffleConfiguration.networks.development.port;
+const HOST = truffleConfiguration.networks.development.host;
+
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 //Artifacts
 const receipts_artifacts = require('../build/contracts/Receipts.json');
 //Contract
@@ -92,9 +97,9 @@ async function validateReceipt(
     }
 }
 module.exports.validateReceipt = validateReceipt;
+
 async function getReceiptsContractAddress() {
     const receiptsInterface = await ReceiptsContract.deployed();
     return receiptsInterface.address;
 }
-
 module.exports.getReceiptsContractAddress = getReceiptsContractAddress;

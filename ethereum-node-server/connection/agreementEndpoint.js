@@ -1,6 +1,11 @@
+//Truffle COnfiguration
+const truffleConfiguration=require('../truffle.js');
+const PORT = truffleConfiguration.networks.development.port;
+const HOST = truffleConfiguration.networks.development.host;
+
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 const AgreementModel = require('../models/agreementModel.js');
 const DataModel = require('../models/dataModel.js');
 //Artifacts

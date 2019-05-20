@@ -1,6 +1,12 @@
 'use strict';
+
+//Truffle Configuration
+const truffleConfiguration = require('../truffle.js');
+const PORT = truffleConfiguration.networks.development.port;
+const HOST = truffleConfiguration.networks.development.host;
+
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 const gasLimit = '6721975'; //this must come from the front end
 const connection = require('../test/requestConnectionServer.js');
 const DataModel = require('../models/dataModel.js');
