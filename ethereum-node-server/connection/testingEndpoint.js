@@ -1,30 +1,34 @@
 'use strict';
+require("regenerator-runtime/runtime");
 
 //Truffle Configuration
 const truffleConfiguration = require('../truffle.js');
 const PORT = truffleConfiguration.networks.development.port;
 const HOST = truffleConfiguration.networks.development.host;
 
-const Web3 = require('web3');
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 const gasLimit = '6721975'; //this must come from the front end
 const connection = require('../test/requestConnectionServer.js');
 const DataModel = require('../models/dataModel.js');
+const Utils = require('../resources/Utils.js');
 
 async function example1(request) {
     let dataModel = new DataModel(null, null, null);
     console.log('REQUEST EXMAMPLE 1***********************');
     console.log(request);
     try {
+
+        const accounts = await web3Provider.eth.accounts;
+
         //Delegating accounts addresses/ids
-        let trackId = request.trackId;
-        let trader1 = request.trader1; //Artist
-        let trader2 = request.trader2;
-        let trader3 = request.trader3; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = request.trader4;
-        let agreement1Id = request.agreement1Id;
-        let agreement2Id = request.agreement2Id;
-        let agreement3Id = request.agreement3Id;
+        let trackId = Utils.getRandomItem(accounts);
+        let trader1 = Utils.getRandomItem(accounts); //Artist
+        let trader2 = Utils.getRandomItem(accounts);
+        let trader3 = Utils.getRandomItem(accounts); //this is the design, the accounts of balances are separated from the traders
+        let trader4 = Utils.getRandomItem(accounts);
+        let agreement1Id = Utils.getRandomItem(accounts);
+        let agreement2Id = Utils.getRandomItem(accounts);
+        let agreement3Id = Utils.getRandomItem(accounts);
 
         //Creating and testing tracks
         let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS

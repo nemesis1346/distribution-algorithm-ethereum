@@ -6,6 +6,7 @@ const PORT = truffleConfiguration.networks.development.port;
 const HOST = truffleConfiguration.networks.development.host;
 
 const Web3 = require('web3');
+console.log(Web3);
 const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 
 //Endpoints
@@ -28,6 +29,8 @@ async function example1() {
 
     try {
         const accounts = await web3Provider.eth.accounts;
+        console.log('accounts*******************');
+        console.log(accounts);
 
         //Delegating accounts addresses/ids
         let trackId = Utils.getRandomItem(accounts);

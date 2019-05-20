@@ -6,7 +6,6 @@ const agreementEndpoint = require('../connection/agreementEndpoint.js');
 const distributionEndpoint = require('../connection/distributionEndPoint.js');
 const testingEndpoint = require('../connection/testingEndpoint.js');
 const tokenAccountEndpoint = require('../connection/tokenAccountEndpoint.js');
-const socketErrorTesting = require('../connection/socketErrorTesting.js');
 
 async function stop() {
     console.log('Shutting down...')
@@ -103,9 +102,7 @@ process.on('message', async function (input) {
             case '/getTrackContractAddress':
                 result = await trackEndpoint.getTrackContractAddress();
                 break;
-            case '/socketError':
-                result = await socketErrorTesting.socketError();
-                break;
+
             default:
                 dataModel.message = "Method not found";
                 dataModel.status = "405";

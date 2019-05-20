@@ -1,3 +1,5 @@
+require("regenerator-runtime/runtime");
+
 //Truffle COnfiguration
 const truffleConfiguration=require('../truffle.js');
 const PORT = truffleConfiguration.networks.development.port;
