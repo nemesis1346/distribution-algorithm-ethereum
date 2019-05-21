@@ -1,7 +1,7 @@
 require("regenerator-runtime/runtime");
 
 //Truffle Configuration
-const truffleConfiguration  =require('../../../truffle.js');
+const truffleConfiguration = require('../../../truffle.js');
 const PORT = truffleConfiguration.networks.development.port;
 const HOST = truffleConfiguration.networks.development.host;
 
@@ -10,7 +10,7 @@ const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST +
 const gasLimit = '6721975';
 const connection = require('../../requestConnectionServer.js');
 
-async function example1() {
+async function example5() {
     try {
         const accounts = await web3Provider.eth.accounts;
         console.log('NETWORK ACCOUNTS');
@@ -18,16 +18,42 @@ async function example1() {
 
         //Delegating accounts addresses/ids
         let trackId1 = accounts[1];
-        let trader1 = accounts[2]; //Artist
-        let trader2 = accounts[3];
-        let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
-        let trader4 = accounts[5];
+        let trackId2 = accounts[2];
+        let trader1 = accounts[3]; //Artist
+        let trader2 = accounts[4];
+        let trader3 = accounts[5]; //this is the design, the accounts of balances are separated from the traders
+        let trader4 = accounts[6];
         //Delegating agreements addresses
         //track1
-        let agreement1Id = accounts[6];
-        let agreement2Id = accounts[7];
-        let agreement3Id = accounts[8];
-        let agreement4Id = accounts[9];
+        let agreement1Id = accounts[7];
+        let agreement2Id = accounts[8];
+        let agreement3Id = accounts[9];
+        //track2
+        let agreement4Id = accounts[10];
+        let agreement5Id = accounts[11];
+        let agreement6Id = accounts[12];
+
+        //Creating and testing tracks
+        let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
+
+        await connection.createTrack(
+            trackId1,
+            track1Isrc,
+            'track1',
+            100,
+            trader2,
+            gasLimit);
+
+        let track2Isrc = new Date().getUTCMilliseconds();
+        
+        await connection.createTrack(
+            trackId2,
+            track2Isrc,
+            'track2',
+            100,
+            trader1,
+            gasLimit
+        );
 
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
@@ -38,17 +64,6 @@ async function example1() {
 
         let trackContractAddressData = await connection.getTrackContractAddress();
         let trackContractAddress = (JSON.parse(trackContractAddressData.body).data.data).replace(/\"/g, "");
-
-        //Creating and testing tracks
-        let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
-
-        await connection.createTrack(
-            trackId1,
-            track1Isrc,
-            'track1',
-            10,
-            trader1,
-            gasLimit);
 
         //  Creating Traders
         await connection.createTrader(
@@ -88,55 +103,88 @@ async function example1() {
         // //Agreement 1
         await connection.createAgreement(
             agreement1Id,
-            trader1,
             trader2,
-            50,
+            trader3,
+            80,
             trackId1,
             traderContractAddress, //TODO: fix this
             trackContractAddress,
-            trader1,
+            trader2,
             gasLimit
         );
 
         //Agreement 2
         await connection.createAgreement(
             agreement2Id,
-            trader2,
             trader3,
-            50,
+            trader4,
+            75,
             trackId1,
             traderContractAddress,
             trackContractAddress,
-            trader1,
+            trader2,
             gasLimit
         );
 
         //Agreement 3
         await connection.createAgreement(
             agreement3Id,
-            trader3,
             trader1,
-            25,
+            trader2,
+            90,
             trackId1,
             traderContractAddress,
             trackContractAddress,
-            trader1,
+            trader2,
             gasLimit
         );
 
         //Agreement 4
         await connection.createAgreement(
             agreement4Id,
+            trader2,
+            trader3,
+            80,
+            trackId2,
+            traderContractAddress,
+            trackContractAddress,
+            trader1,
+            gasLimit
+        );    
+
+        //Agreement 5
+        await connection.createAgreement(
+            agreement5Id,
             trader3,
             trader4,
-            25,
-            trackId1,
+            75,
+            trackId2,
+            traderContractAddress,
+            trackContractAddress,
+            trader1,
+            gasLimit
+        );
+        //Agreement 6
+        await connection.createAgreement(
+            agreement6Id,
+            trader1,
+            trader2,
+            90,
+            trackId2,
             traderContractAddress,
             trackContractAddress,
             trader1,
             gasLimit
         );
 
+        //We update the track revenue first
+        await connection.updateTrackRevenue(
+            trackId1,
+            100,
+            trader1, //doesnt matter
+            gasLimit
+        );
+            
         //Starts distribution
         await connection.distribution(
             trackId1,
@@ -144,28 +192,35 @@ async function example1() {
             new Date().getTime(),
             trader2,
             gasLimit);
-        await connection.distribution(
+
+        await connection.updateTrackRevenue(
             trackId1,
-            trader2,
-            new Date().getTime(),
-            trader2,
-            gasLimit
-        );
-        await connection.distribution(
-            trackId1,
-            trader2,
-            new Date().getTime(),
-            trader2,
-            gasLimit
-        );
-        await connection.distribution(
-            trackId1,
-            trader2,
-            new Date().getTime(),
-            trader2,
+            200,
+            trader1,
             gasLimit
         );
 
+        await connection.distribution(
+            trackId1,
+            trader1,
+            new Date().getTime(),
+            trader2,
+            gasLimit
+        );
+        await connection.updateTrackRevenue(
+            trackId2,
+            500,
+            trader2,
+            gasLimit
+        );
+         
+        await connection.distribution(
+            trackId2,
+            trader2,
+            new Date().getTime(),
+            trader2,
+            gasLimit
+        );
         //Results after
         console.log('TRADERS OUTPUT----------------------');
         console.log(trader1);
@@ -261,4 +316,4 @@ async function example1() {
     }
 }
 
-example1();
+example5();

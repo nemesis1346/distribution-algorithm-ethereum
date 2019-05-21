@@ -10,21 +10,19 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.22.2",
-    "babel-core": "^6.26.3",
+    "babel-core": "^6.22.1",
     "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.4.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.26.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.1.8",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-es2015": "^6.22.0",
     "babel-register": "^6.22.0",
     "css-loader": "^0.26.1",
     "dotenv": "^4.0.0",
     "json-loader": "^0.5.4",
     "style-loader": "^0.13.1",
     "truffle-hdwallet-provider": "0.0.5",
-    "web3": "^1.0.0-beta.55"
+    "web3": "^0.20.7"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -33,7 +31,6 @@
     "jquery": "^3.3.1",
     "morgan": "^1.9.1",
     "nodemon": "^1.14.12",
-    "regenerator-runtime": "^0.13.2",
     "solc": "^0.5.5",
     "superagent": "^5.0.5",
     "truffle-contract": "^4.0.10"

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="example1" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
@@ -33,7 +34,7 @@
           <stringProp name="HTTPSampler.port">3111</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/testing_example1</stringProp>
+          <stringProp name="HTTPSampler.path">/testing_example2</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -66,7 +67,7 @@
           <stringProp name="HTTPSampler.port">3111</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/testing_example1</stringProp>
+          <stringProp name="HTTPSampler.path">/testing_example2</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -99,7 +100,7 @@
           <stringProp name="HTTPSampler.port">3111</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/testing_example1</stringProp>
+          <stringProp name="HTTPSampler.path">/testing_example2</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -132,7 +133,7 @@
           <stringProp name="HTTPSampler.port">3111</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/testing_example1</stringProp>
+          <stringProp name="HTTPSampler.path">/testing_example2</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -165,7 +166,7 @@
           <stringProp name="HTTPSampler.port">3111</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/testing_example1</stringProp>
+          <stringProp name="HTTPSampler.path">/testing_example2</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -198,7 +199,7 @@
           <stringProp name="HTTPSampler.port">3111</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/testing_example1</stringProp>
+          <stringProp name="HTTPSampler.path">/testing_example2</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -231,7 +232,7 @@
           <stringProp name="HTTPSampler.port">3111</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/testing_example1</stringProp>
+          <stringProp name="HTTPSampler.path">/testing_example2</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -277,7 +278,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example1/example1_results_tree.csv</stringProp>
+        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example2/example2_results_tree.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
@@ -314,7 +315,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example1/example1_results_table.csv</stringProp>
+        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example2/example2_results_table.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
@@ -351,7 +352,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example1/example1_report.csv</stringProp>
+        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example2/example2_report.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
@@ -388,7 +389,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example1/example1_graph.csv</stringProp>
+        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/exampl2/example2_graph.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -427,10 +428,10 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example1/example1_agregate_report.csv</stringProp>
+        <stringProp name="filename">/home/nemesis1346/Documents/jmeter/example2/example2_agregate_report.csv</stringProp>
       </ResultCollector>
       <hashTree/>
-      <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="example1_graph_generator" enabled="true">
+      <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="example2_graph_generator" enabled="true">
         <boolProp name="aggregateRows">false</boolProp>
         <boolProp name="autoScaleRows">false</boolProp>
         <stringProp name="endOffset"></stringProp>
@@ -447,12 +448,12 @@
         <stringProp name="limitRows">150</stringProp>
         <stringProp name="lineWeight"></stringProp>
         <stringProp name="lowCountLimit"></stringProp>
-        <stringProp name="outputBaseFolder">/home/nemesis1346/Documents/jmeter/example1</stringProp>
+        <stringProp name="outputBaseFolder">/home/nemesis1346/Documents/jmeter/example2</stringProp>
         <boolProp name="paintGradient">true</boolProp>
         <boolProp name="paintZeroing">true</boolProp>
         <boolProp name="preventOutliers">false</boolProp>
         <boolProp name="relativeTimes">false</boolProp>
-        <stringProp name="resultsFileName">/home/nemesis1346/Documents/jmeter/example1/example1_tree.csv</stringProp>
+        <stringProp name="resultsFileName">/home/nemesis1346/Documents/jmeter/example2/example2_tree.csv</stringProp>
         <stringProp name="startOffset"></stringProp>
         <stringProp name="successFilter"></stringProp>
       </kg.apc.jmeter.listener.GraphsGeneratorListener>

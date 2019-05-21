@@ -76,22 +76,22 @@ process.on('message', async function (input) {
                 result = await receiptEndpoint.getTxByTrackForDiagram(JSON.parse(bufferContent));
                 break;
             case '/testing_example1':
-                result = await testingEndpoint.example1(JSON.parse(bufferContent));
+                result = await testingEndpoint.example1();
                 break;
             case '/testing_example2':
-                result = await testingEndpoint.example2(JSON.parse(bufferContent));
+                result = await testingEndpoint.example2();
                 break;
             case '/testing_example3':
-                result = await testingEndpoint.example3_scenario3(JSON.parse(bufferContent));
+                result = await testingEndpoint.example3();
                 break;
             case '/testing_example4':
-                result = await testingEndpoint.example4_scenario1(JSON.parse(bufferContent));
+                result = await testingEndpoint.example4();
                 break;
             case '/testing_example5':
-                result = await testingEndpoint.example5_scenario2(JSON.parse(bufferContent));
+                result = await testingEndpoint.example5();
                 break;
             case '/testing_example6':
-                result = await testingEndpoint.example6(JSON.parse(bufferContent));
+                result = await testingEndpoint.example6();
                 break;
             case '/getTAContractAddress':
                 result = await tokenAccountEndpoint.getTAContractAddress();

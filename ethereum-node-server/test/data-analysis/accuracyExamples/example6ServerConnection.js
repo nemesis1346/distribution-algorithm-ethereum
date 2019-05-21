@@ -10,50 +10,38 @@ const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST +
 const gasLimit = '6721975';
 const connection = require('../../requestConnectionServer.js');
 
-async function example1() {
+async function example6() {
     try {
         const accounts = await web3Provider.eth.accounts;
-        console.log('NETWORK ACCOUNTS');
-        //console.log(accounts)
-
+       
         //Delegating accounts addresses/ids
-        let trackId1 = accounts[1];
+        let trackId = accounts[1];
         let trader1 = accounts[2]; //Artist
         let trader2 = accounts[3];
         let trader3 = accounts[4]; //this is the design, the accounts of balances are separated from the traders
         let trader4 = accounts[5];
-        let trader5 = accounts[6];
-        let trader6 = accounts[7];
-        let trader7 = accounts[8];
-        //Delegating agreements addresses
-        //track1
-        let agreement1Id = accounts[9];
-        let agreement2Id = accounts[10];
-        let agreement3Id = accounts[11];
-        let agreement4Id = accounts[12];
-        let agreement5Id = accounts[13];
-        let agreement6Id = accounts[14];
+        let agreement1Id = accounts[6];
+        let agreement2Id = accounts[7];
+        let agreement3Id = accounts[8];
+
+        //Creating and testing tracks
+        let traderIsrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
+
+        await connection.createTrack(
+            trackId,
+            traderIsrc,
+            'track',
+            100,
+            trader1,
+            gasLimit);
 
         //ContractAddresses
         let TAContractAddressData = await connection.getTAContractAddress();
         let TAContractAddress = (JSON.parse(TAContractAddressData.body).data.data).replace(/\"/g, "");
-
         let traderContractAddressData = await connection.getTraderContractAddress();
         let traderContractAddress = (JSON.parse(traderContractAddressData.body).data.data).replace(/\"/g, "");
-
         let trackContractAddressData = await connection.getTrackContractAddress();
         let trackContractAddress = (JSON.parse(trackContractAddressData.body).data.data).replace(/\"/g, "");
-
-        //Creating and testing tracks
-        let track1Isrc = new Date().getUTCMilliseconds(); //OTHER WAY OF RANDOM IDENTIFIERS
-
-        await connection.createTrack(
-            trackId1,
-            track1Isrc,
-            'track1',
-            1000,
-            trader1,
-            gasLimit);
 
         //  Creating Traders
         await connection.createTrader(
@@ -80,6 +68,7 @@ async function example1() {
             trader3,
             gasLimit);
 
+
         await connection.createTrader(
             trader4,
             "trader4",
@@ -88,37 +77,14 @@ async function example1() {
             trader4,
             gasLimit);
 
-        await connection.createTrader(
-            trader5,
-            "trader5",
-            trader5,
-            TAContractAddress,
-            trader5,
-            gasLimit);
-
-        await connection.createTrader(
-            trader6,
-            "trader6",
-            trader6,
-            TAContractAddress,
-            trader6,
-            gasLimit);
-
-        await connection.createTrader(
-            trader7,
-            "trader7",
-            trader7,
-            TAContractAddress,
-            trader7,
-            gasLimit);
 
         // //Agreement 1
         await connection.createAgreement(
             agreement1Id,
             trader1,
             trader2,
-            90,
-            trackId1,
+            30,
+            trackId,
             traderContractAddress, //TODO: fix this
             trackContractAddress,
             trader1,
@@ -128,10 +94,10 @@ async function example1() {
         //Agreement 2
         await connection.createAgreement(
             agreement2Id,
-            trader2,
+            trader1,
             trader3,
-            5,
-            trackId1,
+            50,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
@@ -141,56 +107,18 @@ async function example1() {
         //Agreement 3
         await connection.createAgreement(
             agreement3Id,
-            trader2,
+            trader3,
             trader4,
-            5,
-            trackId1,
+            90,
+            trackId,
             traderContractAddress,
             trackContractAddress,
             trader1,
             gasLimit
         );
-
-        //Agreement 4
-        await connection.createAgreement(
-            agreement4Id,
-            trader2,
-            trader5,
-            5,
-            trackId1,
-            traderContractAddress,
-            trackContractAddress,
-            trader1,
-            gasLimit
-        );
-        //Agreement 5
-        await connection.createAgreement(
-            agreement5Id,
-            trader4,
-            trader6,
-            44,
-            trackId1,
-            traderContractAddress,
-            trackContractAddress,
-            trader1,
-            gasLimit
-        );
-        //Agreement 6
-        await connection.createAgreement(
-            agreement6Id,
-            trader4,
-            trader7,
-            44,
-            trackId1,
-            traderContractAddress,
-            trackContractAddress,
-            trader1,
-            gasLimit
-        );
-
         //Starts distribution
         await connection.distribution(
-            trackId1,
+            trackId,
             trader1,
             new Date().getTime(),
             trader1,
@@ -286,75 +214,10 @@ async function example1() {
         console.log(tokenTrader4Model.balanceDisabled);
         console.log('BALANCE ENABLED');
         console.log(tokenTrader4Model.balanceEnabled);
-
-        //trader 5 
-        let trader5Result = await connection.getTraderDetail(
-            trader5,
-            trader5,
-            gasLimit);
-
-        let trader5Model = JSON.parse(JSON.parse(trader5Result.body).data.data);
-
-        let tokenTrader5Result = await connection.getTokenAccount(
-            trader5,
-            trader5,
-            gasLimit
-        );
-
-        let tokenTrader5Model = JSON.parse(JSON.parse(tokenTrader5Result.body).data.data);
-
-        console.log('TRADER ' + trader5Model.name + ' *******');
-        console.log('BALANCE DISABLED:');
-        console.log(tokenTrader5Model.balanceDisabled);
-        console.log('BALANCE ENABLED');
-        console.log(tokenTrader5Model.balanceEnabled);
-
-        //trader 6
-        let trader6Result = await connection.getTraderDetail(
-            trader6,
-            trader6,
-            gasLimit);
-
-        let trader6Model = JSON.parse(JSON.parse(trader6Result.body).data.data);
-
-        let tokenTrader6Result = await connection.getTokenAccount(
-            trader6,
-            trader6,
-            gasLimit
-        );
-
-        let tokenTrader6Model = JSON.parse(JSON.parse(tokenTrader6Result.body).data.data);
-
-        console.log('TRADER ' + trader6Model.name + ' *******');
-        console.log('BALANCE DISABLED:');
-        console.log(tokenTrader6Model.balanceDisabled);
-        console.log('BALANCE ENABLED');
-        console.log(tokenTrader6Model.balanceEnabled);
-
-        //trader 7
-        let trader7Result = await connection.getTraderDetail(
-            trader7,
-            trader7,
-            gasLimit);
-
-        let trader7Model = JSON.parse(JSON.parse(trader7Result.body).data.data);
-
-        let tokenTrader7Result = await connection.getTokenAccount(
-            trader7,
-            trader7,
-            gasLimit
-        );
-
-        let tokenTrader7Model = JSON.parse(JSON.parse(tokenTrader7Result.body).data.data);
-
-        console.log('TRADER ' + trader7Model.name + ' *******');
-        console.log('BALANCE DISABLED:');
-        console.log(tokenTrader7Model.balanceDisabled);
-        console.log('BALANCE ENABLED');
-        console.log(tokenTrader7Model.balanceEnabled);
+        return;
     } catch (error) {
         console.log(error)
     }
 }
 
-example1();
+example6();

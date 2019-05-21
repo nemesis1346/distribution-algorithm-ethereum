@@ -25,7 +25,7 @@ const GetTARequest = require('../../../models/getTARequest.js');
 const gasLimit = '6721975';
 const Utils = require('../../../resources/Utils.js');
 
-async function example1() {
+async function example6() {
 
     try {
         const accounts = await web3Provider.eth.accounts;
@@ -297,5 +297,4 @@ async function example1() {
     }
 }
 
-example1();
-// example1();
+example6();
