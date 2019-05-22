@@ -1,14 +1,14 @@
 require("regenerator-runtime/runtime");
 
 //Truffle Configuration
-const truffleConfiguration =require('../truffle.js');
+const truffleConfiguration = require('../truffle.js');
 const PORT = truffleConfiguration.networks.development.port;
 const HOST = truffleConfiguration.networks.development.host;
 
 //Libraries
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://'+HOST+':'+PORT));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 //Artifacts
 const tracks_artifact = require('../build/contracts/Tracks.json');
 //Contract
@@ -56,7 +56,10 @@ async function createTrack(request) {
 
   } catch (error) {
     console.log('ERROR IN CREATE TRACK IN TRACK ENDPOINT');
-    throw new Error(error);
+    console.log(error);
+    dataModel.message = JSON.stringify(error);
+    dataModel.status = '400';
+    return dataModel;
   }
 }
 module.exports.createTrack = createTrack;
@@ -85,7 +88,10 @@ async function getTrack(trackId, fromAddress, gasLimit) {
 
   } catch (error) {
     console.log('ERROR IN GET TRACK IN TRACK ENDPOINT');
-    throw new Error(error);
+    console.log(error);
+    dataModel.message = JSON.stringify(error);
+    dataModel.status = '400';
+    return dataModel;
 
   }
 }
@@ -99,7 +105,10 @@ async function getTrackContractAddress() {
     dataModel.status = '200';
     return dataModel;
   } catch (error) {
-    throw new Error(error);
+    console.log(error);
+    dataModel.message = JSON.stringify(error);
+    dataModel.status = '400';
+    return dataModel;
   }
 }
 module.exports.getTrackContractAddress = getTrackContractAddress;
@@ -124,7 +133,10 @@ async function updateTrackRevenue(updateTrackRevenueRequest) {
     return result
   } catch (error) {
     console.log('ERROR IN GET TRACK IN TRACK ENDPOINT');
-    throw new Error(error);
+    console.log(error);
+    dataModel.message = JSON.stringify(error);
+    dataModel.status = '400';
+    return dataModel;
   }
 }
 module.exports.updateTrackRevenue = updateTrackRevenue;

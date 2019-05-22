@@ -34,6 +34,9 @@ async function addEnabledBalance(tokenAccountId, ammount, fromAddress, gasLimit)
     }
     catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.addEnabledBalance = addEnabledBalance;
@@ -52,6 +55,9 @@ async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit
     }
     catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.addDisabledBalance = addDisabledBalance;
@@ -64,7 +70,10 @@ async function getTAContractAddress() {
         return dataModel;
     }
     catch (error) {
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 
 }
@@ -98,7 +107,9 @@ async function getTokenAccount(request) {
         return dataModel;
     } catch (error) {
         console.log(error);
-        throw new Error(dataModel);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.getTokenAccount = getTokenAccount;

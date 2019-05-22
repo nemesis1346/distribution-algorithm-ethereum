@@ -311,7 +311,10 @@ async function example1() {
         return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 1 IN TESTING ENDPOINT');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.example1 = example1;
@@ -643,7 +646,10 @@ async function example2() {
         return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 2 IN TESTING ENDPOINT');
-        throw new Error(error);
+         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.example2 = example2;
@@ -900,7 +906,10 @@ async function example3() {
         return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 3 IN TESTING ENDPOINT');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.example3 = example3;
@@ -1254,7 +1263,10 @@ async function example4() {
         return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 4 IN TESTING ENDPOINT');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.example4 = example4;
@@ -1564,7 +1576,10 @@ async function example5() {
         return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 5 IN TESTING ENDPOINT');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.example5 = example5;
@@ -1788,7 +1803,10 @@ async function example6() {
         return dataModel;
     } catch (error) {
         console.log('ERROR IN EXAMPLE 6 IN TESTING ENDPOINT');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.example6 = example6;

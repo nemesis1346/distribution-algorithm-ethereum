@@ -38,7 +38,10 @@ async function createTrader(request) {
         return dataModel;
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.createTrader = createTrader;
@@ -67,7 +70,10 @@ async function getTrader(request) {
 
         return dataModel;
     } catch (error) {
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.getTrader = getTrader;
@@ -80,7 +86,10 @@ async function getTraderContractAddress() {
         dataModel.status = '200';
         return dataModel;
     } catch (error) {
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.getTraderContractAddress = getTraderContractAddress;

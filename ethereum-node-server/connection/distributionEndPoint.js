@@ -103,7 +103,9 @@ async function distribution(requestDistribution) {
     } catch (error) {
         console.log('ERROR IN TRANSACTION CHAINCODE');
         console.log(error);
-        throw new Error(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.distribution = distribution;
@@ -112,9 +114,10 @@ module.exports.distribution = distribution;
 async function distributionProcess(
     distributionProcessRequest
 ) {
+    let dataModel = new DataModel(null, null, null);
     console.log('*****************************************');
     console.log('Request Distribution Process in Distribution Endpoint');
-  //  console.log(distributionProcessRequest);
+    //  console.log(distributionProcessRequest);
 
     try {
         let trackId = distributionProcessRequest.trackId;
@@ -234,7 +237,9 @@ async function distributionProcess(
     } catch (error) {
         console.log('ERROR IN TRANSACTION DISTRIBUTION PROCESS');
         console.log(error);
-        throw new Error(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.distributionProcess = distributionProcess;
@@ -243,10 +248,10 @@ module.exports.distributionProcess = distributionProcess;
  *All the parameters must come from a result from the blockchain call   
  */
 async function distributionLastNode(distributionLastNodeRequest) {
-
+    let dataModel = new DataModel(null, null, null);
     console.log('*************************************');
     console.log('Distribution Last Node in Composer.js');
-   // console.log(distributionLastNodeRequest);
+    // console.log(distributionLastNodeRequest);
     //TODO: Improve logs
     try {
         let emitterId = distributionLastNodeRequest.emitterId;
@@ -267,7 +272,7 @@ async function distributionLastNode(distributionLastNodeRequest) {
             fromAddress,
             gasLimit
         );
-       
+
         let tokenAccountReceiverRaw = await tokenAccountEndpoint.getTokenAccount(
             getTARequest
         );
@@ -306,7 +311,10 @@ async function distributionLastNode(distributionLastNodeRequest) {
         }
     } catch (error) {
         console.log('ERROR IN TRANSACTION EVALUATE RECEIPT');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.distributionLastNode = distributionLastNode;
@@ -314,9 +322,10 @@ module.exports.distributionLastNode = distributionLastNode;
 async function evaluateReceipt(
     evaluateReceiptRequest
 ) {
+    let dataModel = new DataModel(null, null, null);
     console.log('************************************');
     console.log('Evaluate Receipt in Composer.js: ');
-   // console.log(evaluateReceiptRequest);
+    // console.log(evaluateReceiptRequest);
 
     try {
         let agreementId = evaluateReceiptRequest.agreementId;
@@ -341,7 +350,10 @@ async function evaluateReceipt(
         return result;
     } catch (error) {
         console.log('ERROR IN TRANSACTION EVALUATE RECEIPT');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.evaluateReceipt = evaluateReceipt;
@@ -349,6 +361,7 @@ module.exports.evaluateReceipt = evaluateReceipt;
 async function onHoldDistribution(
     requestOnHoldDistribution
 ) {
+    let dataModel = new DataModel(null, null, null);
     console.log('************************************');
     console.log('Request On Hold Distribution in Composer.js: ');
     //console.log(requestOnHoldDistribution);
@@ -382,15 +395,19 @@ async function onHoldDistribution(
         );
     } catch (error) {
         console.log('ERROR IN TRANSACTION ON HOLD DISTRIBUTION');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.onHoldDistribution = onHoldDistribution;
 
 async function evaluateReceivers(request) {
+    let dataModel = new DataModel(null, null, null);
     console.log('*************************************');
     console.log('Request Evaluate Receivers in Distribution Endpoint.js');
-   // console.log(request);
+    // console.log(request);
     try {
         let shareTotal = 1;
         let previousReceiverId = request.previousReceiverId;
@@ -446,7 +463,7 @@ async function evaluateReceivers(request) {
                 );
                 rawListAgreements.push(currentAgreement);
             }
-  
+
             //Now we filter by possible duplicated tracks
             let filteredAgreements = await this.removeAgreementsByTrack(rawListAgreements);
             //filteredAgreements = Utils.removeDuplicatesProp(filteredAgreements, 'traderReceiverId');
@@ -513,16 +530,20 @@ async function evaluateReceivers(request) {
         return receiverShareListResult;
     } catch (error) {
         console.log('ERROR IN TRANSACTION EVALUATE RECEIVERS');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.evaluateReceivers = evaluateReceivers;
 
 
 async function removeAgreementsByTrack(agreementList) {
+    let dataModel = new DataModel(null, null, null);
     try {
         let result = [];
-        let filteredListByTrack=[];
+        let filteredListByTrack = [];
         let filteredListByReceiver = Utils.removeDuplicatesProp(agreementList, "traderReceiverId");
 
         if (filteredListByReceiver.length < agreementList.length) {
@@ -540,7 +561,10 @@ async function removeAgreementsByTrack(agreementList) {
         return result;
     } catch (error) {
         console.log('ERROR IN REMOVE AGREEMENTS BY TRACK');
-        throw new Error(error);
+        console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.removeAgreementsByTrack = removeAgreementsByTrack;

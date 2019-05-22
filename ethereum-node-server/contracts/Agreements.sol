@@ -39,7 +39,7 @@ contract Agreements{
                             address tradersContractAddr,
                             address tracksContractAddr
                             ) public{
-        if(isAgreement(id)) revert("Agreement already exists");
+       // if(isAgreement(id)) revert("Agreement already exists");
 
         //This is just some testing
         agreementsByEmitter[traderEmitterId].emitter=traderEmitterId;

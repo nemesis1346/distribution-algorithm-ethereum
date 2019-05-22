@@ -16,6 +16,7 @@ const ReceiptsContract = contractTruffle(receipts_artifacts);
 ReceiptsContract.setProvider(web3Provider.currentProvider);
 //Getting the interface of the deployed contract
 const ReceiptModel = require('../models/receiptModel.js');
+const DataModel = require('../models/dataModel.js');
 
 async function createReceipt(
     receiptId,
@@ -25,6 +26,7 @@ async function createReceipt(
     datetime,
     fromAddress,
     gasLimit) {
+    let dataModel = new DataModel(null, null, null);
     try {
         const receiptsInterface = await ReceiptsContract.deployed();
 
@@ -42,11 +44,16 @@ async function createReceipt(
         console.log('RECEIPT CREATION SUCCESFUL');
     } catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.createReceipt = createReceipt;
 
 async function getReceipt(receiptId, fromAddress, gasLimit) {
+    let dataModel = new DataModel(null, null, null);
+
     try {
         let receiptModel = new ReceiptModel(null, null, null, null, null);
         const receiptsInterface = await ReceiptsContract.deployed();
@@ -66,6 +73,9 @@ async function getReceipt(receiptId, fromAddress, gasLimit) {
         return receiptModel;
     } catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.getReceipt = getReceipt;
@@ -79,6 +89,8 @@ async function validateReceipt(
     agreementCtrAddr,
     fromAddress,
     gasLimit) {
+    let dataModel = new DataModel(null, null, null);
+
     try {
         const receiptsInterface = await ReceiptsContract.deployed();
         let result = await receiptsInterface.validateReceipt(
@@ -96,6 +108,9 @@ async function validateReceipt(
         return result;
     } catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.validateReceipt = validateReceipt;
