@@ -65,6 +65,8 @@ async function createTrack(request) {
 module.exports.createTrack = createTrack;
 
 async function getTrack(trackId, fromAddress, gasLimit) {
+  let dataModel = new DataModel(null, null, null);
+
   console.log('************************************');
   console.log('Request Get Track in trackEndpoint.js: ');
   console.log(trackId);
