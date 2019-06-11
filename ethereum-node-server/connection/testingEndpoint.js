@@ -1538,8 +1538,7 @@ async function example5() {
         let tokenTrader3Result = await connection.getTokenAccount(
             trader3,
             trader3,
-            gasLimit
-        );
+            gasLimit);
 
         let tokenTrader3Model = JSON.parse(JSON.parse(tokenTrader3Result.body).data.data);
 
