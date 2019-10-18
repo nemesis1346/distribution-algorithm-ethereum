@@ -2,16 +2,22 @@ class EvaluateReceiptRequest {
 
     constructor(
         agreementId,
-        traderEmiterId,
+        traderEmitterId,
         traderReceiverId,
-        isrc,
-        datetime
+        trackId,
+        datetime,
+        agreementCtrAddr,
+        fromAddress,
+        gasLimit
         ) {
         this.agreementId = agreementId,
-        this.traderEmiterId = traderEmiterId,
+        this.traderEmitterId = traderEmitterId,
         this.traderReceiverId = traderReceiverId,
-        this.isrc = isrc;
+        this.trackId = trackId;
         this.datetime = datetime;
+        this.agreementCtrAddr  =agreementCtrAddr;
+        this.fromAddress = fromAddress;
+        this.gasLimit = gasLimit;
     }
 }
 module.exports = EvaluateReceiptRequest;

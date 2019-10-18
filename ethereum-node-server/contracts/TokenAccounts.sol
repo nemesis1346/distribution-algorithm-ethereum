@@ -20,7 +20,7 @@ contract TokenAccounts{
     }
 
     function createTokenAccount(address id) public payable{
-        if(isTokenAccount(id)) revert('Token account already exist');
+        //if(isTokenAccount(id)) revert('Token account already exist');
         address traderEOA = msg.sender; 
         tokenAccountStrucList[id].tokenAccountId=id;
         tokenAccountStrucList[id].balanceEnabled=0;

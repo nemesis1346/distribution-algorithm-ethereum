@@ -1,7 +1,15 @@
+require("regenerator-runtime/runtime");
+
+//Truffle Configuration
+const truffleConfiguration = require('../truffle.js');
+const PORT = truffleConfiguration.networks.development.port;
+const HOST = truffleConfiguration.networks.development.host;
+
 const contractTruffle = require('truffle-contract');
 const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
 const TokenAccountModel = require('../models/tokenAccountModel');
+const DataModel = require('../models/dataModel.js');
 //Artifacts
 const tokenAccounts_artifacts = require('../build/contracts/TokenAccounts.json');
 //Contract
@@ -14,7 +22,7 @@ TokenAccountsContract.setProvider(web3Provider.currentProvider);
 async function addEnabledBalance(tokenAccountId, ammount, fromAddress, gasLimit) {
     try {
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
-        await tokenAccountsInterface.addEnabledBalance(
+        let resultAddEnabledBalance = await tokenAccountsInterface.addEnabledBalance(
             tokenAccountId,
             ammount,
             {
@@ -22,16 +30,20 @@ async function addEnabledBalance(tokenAccountId, ammount, fromAddress, gasLimit)
                 gasLimit: gasLimit
             });
         console.log('BALANCE ENABLED ADDED');
+        return resultAddEnabledBalance;
     }
     catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.addEnabledBalance = addEnabledBalance;
 async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit) {
     try {
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
-        await tokenAccountsInterface.addDisabledBalance(
+        let resultAddDisabledBalance = await tokenAccountsInterface.addDisabledBalance(
             tokenAccountId,
             ammount,
             {
@@ -39,27 +51,44 @@ async function addDisabledBalance(tokenAccountId, ammount, fromAddress, gasLimit
                 gasLimit: gasLimit
             });
         console.log('BALANCE DISABLED ADDED');
-
+        return resultAddDisabledBalance;
     }
     catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.addDisabledBalance = addDisabledBalance;
 async function getTAContractAddress() {
+    let dataModel = new DataModel(null, null, null);
     try {
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
-        return tokenAccountsInterface.address;
+        dataModel.data = JSON.stringify(tokenAccountsInterface.address);
+        dataModel.status = '200';
+        return dataModel;
     }
     catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 
 }
 module.exports.getTAContractAddress = getTAContractAddress;
 
-async function getTokenAccount(tokenAccountId, fromAddress, gasLimit) {
+async function getTokenAccount(request) {
+    let dataModel = new DataModel(null, null, null);
+    console.log('*************************************');
+    console.log('Get Token Account Request in Composer.js');
+    console.log(request.tokenAccountId);
     try {
+        let tokenAccountId = request.tokenAccountId;
+        let fromAddress = request.fromAddress;
+        let gasLimit = request.gasLimit;
+
         const tokenAccountsInterface = await TokenAccountsContract.deployed();
         let tokenAccountModel = new TokenAccountModel(null, null, null);
         let tokenAccountResult = await tokenAccountsInterface.getTokenAccount(
@@ -73,9 +102,14 @@ async function getTokenAccount(tokenAccountId, fromAddress, gasLimit) {
         tokenAccountModel.balanceEnabled = tokenAccountResult[1].toString();
         tokenAccountModel.balanceDisabled = tokenAccountResult[2].toString();
 
-        return tokenAccountModel;
+        dataModel.data = JSON.stringify(tokenAccountModel);
+        dataModel.status = '200';
+        return dataModel;
     } catch (error) {
         console.log(error);
+        dataModel.message = JSON.stringify(error);
+        dataModel.status = '400';
+        return dataModel;
     }
 }
 module.exports.getTokenAccount = getTokenAccount;

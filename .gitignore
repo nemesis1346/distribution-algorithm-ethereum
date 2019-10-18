@@ -83,3 +83,8 @@ data-analysis-react/yarn.lock
 ethereum-node-server/yarn.lock
 
 ionic-front-end/yarn.lock
+
+*~
+ethereum-node-server/middleware/~
+
+.vscode/*

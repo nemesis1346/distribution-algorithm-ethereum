@@ -123,24 +123,24 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b5061034c806100206000396000f3fe6080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663070c38c0811461007c57806314887c58146100c9578063404cbffb146100fc5780634dd448bf146101425780635d1b45b51461018e578063d599fdd4146101b5575b600080fd5b34801561008857600080fd5b506100b56004803603604081101561009f57600080fd5b50600160a060020a0381351690602001356101ee565b604080519115158252519081900360200190f35b3480156100d557600080fd5b506100b5600480360360208110156100ec57600080fd5b5035600160a060020a0316610225565b34801561010857600080fd5b506101266004803603602081101561011f57600080fd5b5035610246565b60408051600160a060020a039092168252519081900360200190f35b34801561014e57600080fd5b506101756004803603602081101561016557600080fd5b5035600160a060020a031661026e565b6040805192835290151560208301528051918290030190f35b34801561019a57600080fd5b506101a361028a565b60408051918252519081900360200190f35b3480156101c157600080fd5b506101a3600480360360408110156101d857600080fd5b50600160a060020a038135169060200135610290565b60006101f983610225565b151561020457600080fd5b50600160a060020a0391909116600090815260208190526040902055600190565b600160a060020a031660009081526020819052604090206001015460ff1690565b600180548290811061025457fe5b600091825260209091200154600160a060020a0316905081565b6000602081905290815260409020805460019091015460ff1682565b60015490565b600061029b83610225565b156102a557600080fd5b50600160a060020a039190911660008181526020819052604081209283556001928301805460ff191684179055825480840184559290527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf68201805473ffffffffffffffffffffffffffffffffffffffff191690911790559056fea165627a7a72305820ae4b2880d9c47e843f06dc4ad97b42cad1f653b49a07c893183cc8b131ce400f0029",
-  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663070c38c0811461007c57806314887c58146100c9578063404cbffb146100fc5780634dd448bf146101425780635d1b45b51461018e578063d599fdd4146101b5575b600080fd5b34801561008857600080fd5b506100b56004803603604081101561009f57600080fd5b50600160a060020a0381351690602001356101ee565b604080519115158252519081900360200190f35b3480156100d557600080fd5b506100b5600480360360208110156100ec57600080fd5b5035600160a060020a0316610225565b34801561010857600080fd5b506101266004803603602081101561011f57600080fd5b5035610246565b60408051600160a060020a039092168252519081900360200190f35b34801561014e57600080fd5b506101756004803603602081101561016557600080fd5b5035600160a060020a031661026e565b6040805192835290151560208301528051918290030190f35b34801561019a57600080fd5b506101a361028a565b60408051918252519081900360200190f35b3480156101c157600080fd5b506101a3600480360360408110156101d857600080fd5b50600160a060020a038135169060200135610290565b60006101f983610225565b151561020457600080fd5b50600160a060020a0391909116600090815260208190526040902055600190565b600160a060020a031660009081526020819052604090206001015460ff1690565b600180548290811061025457fe5b600091825260209091200154600160a060020a0316905081565b6000602081905290815260409020805460019091015460ff1682565b60015490565b600061029b83610225565b156102a557600080fd5b50600160a060020a039190911660008181526020819052604081209283556001928301805460ff191684179055825480840184559290527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf68201805473ffffffffffffffffffffffffffffffffffffffff191690911790559056fea165627a7a72305820ae4b2880d9c47e843f06dc4ad97b42cad1f653b49a07c893183cc8b131ce400f0029",
+  "bytecode": "0x608060405234801561001057600080fd5b50610568806100206000396000f3fe608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063070c38c01461007d57806314887c58146100f0578063404cbffb146101595780634dd448bf146101d45780635d1b45b514610244578063d599fdd41461026f575b600080fd5b34801561008957600080fd5b506100d6600480360360408110156100a057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506102de565b604051808215151515815260200191505060405180910390f35b3480156100fc57600080fd5b5061013f6004803603602081101561011357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610344565b604051808215151515815260200191505060405180910390f35b34801561016557600080fd5b506101926004803603602081101561017c57600080fd5b810190808035906020019092919050505061039c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101e057600080fd5b50610223600480360360208110156101f757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103da565b60405180838152602001821515151581526020019250505060405180910390f35b34801561025057600080fd5b5061025961040b565b6040518082815260200191505060405180910390f35b34801561027b57600080fd5b506102c86004803603604081101561029257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610418565b6040518082815260200191505060405180910390f35b60006102e983610344565b15156102f457600080fd5b816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001819055506001905092915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900460ff169050919050565b6001818154811015156103ab57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60006020528060005260406000206000915090508060000154908060010160009054906101000a900460ff16905082565b6000600180549050905090565b600061042383610344565b1561042d57600080fd5b816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555060016000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160006101000a81548160ff0219169083151502179055506001808490806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055500390509291505056fea165627a7a723058208629cf11a0426e84433735c015e05beed320d696509cf8aa0ceb5bcb757582f10029",
+  "deployedBytecode": "0x608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063070c38c01461007d57806314887c58146100f0578063404cbffb146101595780634dd448bf146101d45780635d1b45b514610244578063d599fdd41461026f575b600080fd5b34801561008957600080fd5b506100d6600480360360408110156100a057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506102de565b604051808215151515815260200191505060405180910390f35b3480156100fc57600080fd5b5061013f6004803603602081101561011357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610344565b604051808215151515815260200191505060405180910390f35b34801561016557600080fd5b506101926004803603602081101561017c57600080fd5b810190808035906020019092919050505061039c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101e057600080fd5b50610223600480360360208110156101f757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103da565b60405180838152602001821515151581526020019250505060405180910390f35b34801561025057600080fd5b5061025961040b565b6040518082815260200191505060405180910390f35b34801561027b57600080fd5b506102c86004803603604081101561029257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610418565b6040518082815260200191505060405180910390f35b60006102e983610344565b15156102f457600080fd5b816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001819055506001905092915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900460ff169050919050565b6001818154811015156103ab57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60006020528060005260406000206000915090508060000154908060010160009054906101000a900460ff16905082565b6000600180549050905090565b600061042383610344565b1561042d57600080fd5b816000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555060016000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160006101000a81548160ff0219169083151502179055506001808490806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055500390509291505056fea165627a7a723058208629cf11a0426e84433735c015e05beed320d696509cf8aa0ceb5bcb757582f10029",
   "sourceMap": "25:1072:9:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:1072:9;;;;;;;",
-  "deployedSourceMap": "25:1072:9:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;878:217;;8:9:-1;5:2;;;30:1;27;20:12;5:2;878:217:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;878:217:9;;;;;;;;;;;;;;;;;;;;;;;;;;;342:133;;8:9:-1;5:2;;;30:1;27;20:12;5:2;342:133:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;342:133:9;-1:-1:-1;;;;;342:133:9;;;276:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;276:27:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;276:27:9;;;;;;;-1:-1:-1;;;;;276:27:9;;;;;;;;;;;;;;131:53;;8:9:-1;5:2;;;30:1;27;20:12;5:2;131:53:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;131:53:9;-1:-1:-1;;;;;131:53:9;;;;;;;;;;;;;;;;;;;;;;;;;;479:99;;8:9:-1;5:2;;;30:1;27;20:12;5:2;479:99:9;;;;;;;;;;;;;;;;;;;;582:292;;8:9:-1;5:2;;;30:1;27;20:12;5:2;582:292:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;582:292:9;;;;;;;;;878:217;955:12;979:23;988:13;979:8;:23::i;:::-;978:24;975:37;;;1004:8;;;975:37;-1:-1:-1;;;;;;1018:28:9;;;;:13;:28;;;;;;;;;;:55;1086:4;;878:217::o;342:133::-;-1:-1:-1;;;;;433:28:9;403:13;433:28;;;;;;;;;;:37;;;;;;342:133::o;276:27::-;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;276:27:9;;-1:-1:-1;276:27:9;:::o;131:53::-;;;;;;;;;;;;;;;;;;;;;;:::o;479:99::-;556:10;:17;479:99;:::o;582:292::-;656:14;681:23;690:13;681:8;:23::i;:::-;678:36;;;706:8;;;678:36;-1:-1:-1;;;;;;720:28:9;;;;:13;:28;;;;;;;;;;:52;;;818:4;778:37;;;:44;;-1:-1:-1;;778:44:9;;;;;27:10:-1;;23:18;;;45:23;;835:30:9;;;;;;;;-1:-1:-1;;835:30:9;;;;;;27:10:-1;582:292:9:o",
+  "deployedSourceMap": "25:1072:9:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;878:217;;8:9:-1;5:2;;;30:1;27;20:12;5:2;878:217:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;878:217:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;342:133;;8:9:-1;5:2;;;30:1;27;20:12;5:2;342:133:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;342:133:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;276:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;276:27:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;276:27:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:53;;8:9:-1;5:2;;;30:1;27;20:12;5:2;131:53:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;131:53:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;479:99;;8:9:-1;5:2;;;30:1;27;20:12;5:2;479:99:9;;;;;;;;;;;;;;;;;;;;;;;582:292;;8:9:-1;5:2;;;30:1;27;20:12;5:2;582:292:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;582:292:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;878:217;955:12;979:23;988:13;979:8;:23::i;:::-;978:24;975:37;;;1004:8;;;975:37;1063:10;1018:13;:28;1032:13;1018:28;;;;;;;;;;;;;;;:39;;:55;;;;1086:4;1079:11;;878:217;;;;:::o;342:133::-;403:13;433;:28;447:13;433:28;;;;;;;;;;;;;;;:37;;;;;;;;;;;;426:44;;342:133;;;:::o;276:27::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;131:53::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;479:99::-;525:16;556:10;:17;;;;549:24;;479:99;:::o;582:292::-;656:14;681:23;690:13;681:8;:23::i;:::-;678:36;;;706:8;;;678:36;762:10;720:13;:28;734:13;720:28;;;;;;;;;;;;;;;:39;;:52;;;;818:4;778:13;:28;792:13;778:28;;;;;;;;;;;;;;;:37;;;:44;;;;;;;;;;;;;;;;;;868:1;835:10;851:13;835:30;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;835:30:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:34;828:41;;582:292;;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\ncontract MappedStructsWithIndex {\n\n  struct EntityStruct {\n    uint entityData;\n    bool isEntity;\n  }\n\n  mapping(address => EntityStruct) public entityStructs; //for the rest of the data with the same ids, therefore the loop must be done by the ui\n  address[] public entityList; //for addresses handling just ids\n\n  function isEntity(address entityAddress) public view returns(bool isIndeed) {\n      return entityStructs[entityAddress].isEntity;\n  }\n\n  function getEntityCount() public view returns(uint entityCount) {\n    return entityList.length;\n  }\n\n  function newEntity(address entityAddress, uint entityData) public returns(uint rowNumber) {\n    if(isEntity(entityAddress)) revert();\n    entityStructs[entityAddress].entityData = entityData;\n    entityStructs[entityAddress].isEntity = true;\n    return entityList.push(entityAddress) - 1;\n  }\n\n  function updateEntity(address entityAddress, uint entityData) public returns(bool success) {\n    if(!isEntity(entityAddress)) revert();\n    entityStructs[entityAddress].entityData    = entityData;\n    return true;\n  }\n}",
   "sourcePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/best-practices/MappingBestPractices.sol",
   "ast": {
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/best-practices/MappingBestPractices.sol",
     "exportedSymbols": {
       "MappedStructsWithIndex": [
-        1533
+        1523
       ]
     },
-    "id": 1534,
+    "id": 1524,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1433,
+        "id": 1423,
         "literals": [
           "solidity",
           "^",
@@ -156,23 +156,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1533,
+        "id": 1523,
         "linearizedBaseContracts": [
-          1533
+          1523
         ],
         "name": "MappedStructsWithIndex",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "MappedStructsWithIndex.EntityStruct",
-            "id": 1438,
+            "id": 1428,
             "members": [
               {
                 "constant": false,
-                "id": 1435,
+                "id": 1425,
                 "name": "entityData",
                 "nodeType": "VariableDeclaration",
-                "scope": 1438,
+                "scope": 1428,
                 "src": "88:15:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -181,7 +181,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1434,
+                  "id": 1424,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "88:4:9",
@@ -195,10 +195,10 @@
               },
               {
                 "constant": false,
-                "id": 1437,
+                "id": 1427,
                 "name": "isEntity",
                 "nodeType": "VariableDeclaration",
-                "scope": 1438,
+                "scope": 1428,
                 "src": "109:13:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -207,7 +207,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1436,
+                  "id": 1426,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "109:4:9",
@@ -222,27 +222,27 @@
             ],
             "name": "EntityStruct",
             "nodeType": "StructDefinition",
-            "scope": 1533,
+            "scope": 1523,
             "src": "62:65:9",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1442,
+            "id": 1432,
             "name": "entityStructs",
             "nodeType": "VariableDeclaration",
-            "scope": 1533,
+            "scope": 1523,
             "src": "131:53:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
               "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct)"
             },
             "typeName": {
-              "id": 1441,
+              "id": 1431,
               "keyType": {
-                "id": 1439,
+                "id": 1429,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "139:7:9",
@@ -254,18 +254,18 @@
               "nodeType": "Mapping",
               "src": "131:32:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                 "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1440,
+                "id": 1430,
                 "name": "EntityStruct",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1438,
+                "referencedDeclaration": 1428,
                 "src": "150:12:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_EntityStruct_$1438_storage_ptr",
+                  "typeIdentifier": "t_struct$_EntityStruct_$1428_storage_ptr",
                   "typeString": "struct MappedStructsWithIndex.EntityStruct"
                 }
               }
@@ -275,10 +275,10 @@
           },
           {
             "constant": false,
-            "id": 1445,
+            "id": 1435,
             "name": "entityList",
             "nodeType": "VariableDeclaration",
-            "scope": 1533,
+            "scope": 1523,
             "src": "276:27:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -288,7 +288,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 1443,
+                "id": 1433,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "276:7:9",
@@ -298,7 +298,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 1444,
+              "id": 1434,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "276:9:9",
@@ -312,7 +312,7 @@
           },
           {
             "body": {
-              "id": 1457,
+              "id": 1447,
               "nodeType": "Block",
               "src": "418:57:9",
               "statements": [
@@ -323,25 +323,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 1452,
+                        "id": 1442,
                         "name": "entityStructs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1442,
+                        "referencedDeclaration": 1432,
                         "src": "433:13:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                           "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                         }
                       },
-                      "id": 1454,
+                      "id": 1444,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 1453,
+                        "id": 1443,
                         "name": "entityAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1447,
+                        "referencedDeclaration": 1437,
                         "src": "447:13:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -355,48 +355,48 @@
                       "nodeType": "IndexAccess",
                       "src": "433:28:9",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                        "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                         "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                       }
                     },
-                    "id": 1455,
+                    "id": 1445,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isEntity",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 1437,
+                    "referencedDeclaration": 1427,
                     "src": "433:37:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 1451,
-                  "id": 1456,
+                  "functionReturnParameters": 1441,
+                  "id": 1446,
                   "nodeType": "Return",
                   "src": "426:44:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1458,
+            "id": 1448,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isEntity",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1448,
+              "id": 1438,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1447,
+                  "id": 1437,
                   "name": "entityAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1458,
+                  "scope": 1448,
                   "src": "360:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -405,7 +405,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1446,
+                    "id": 1436,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "360:7:9",
@@ -422,15 +422,15 @@
               "src": "359:23:9"
             },
             "returnParameters": {
-              "id": 1451,
+              "id": 1441,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1450,
+                  "id": 1440,
                   "name": "isIndeed",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1458,
+                  "scope": 1448,
                   "src": "403:13:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -439,7 +439,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1449,
+                    "id": 1439,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "403:4:9",
@@ -454,7 +454,7 @@
               ],
               "src": "402:15:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "342:133:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -462,7 +462,7 @@
           },
           {
             "body": {
-              "id": 1466,
+              "id": 1456,
               "nodeType": "Block",
               "src": "543:35:9",
               "statements": [
@@ -471,18 +471,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1463,
+                      "id": 1453,
                       "name": "entityList",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1445,
+                      "referencedDeclaration": 1435,
                       "src": "556:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 1464,
+                    "id": 1454,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -496,36 +496,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1462,
-                  "id": 1465,
+                  "functionReturnParameters": 1452,
+                  "id": 1455,
                   "nodeType": "Return",
                   "src": "549:24:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1467,
+            "id": 1457,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getEntityCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1459,
+              "id": 1449,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "502:2:9"
             },
             "returnParameters": {
-              "id": 1462,
+              "id": 1452,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1461,
+                  "id": 1451,
                   "name": "entityCount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1467,
+                  "scope": 1457,
                   "src": "525:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -534,7 +534,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1460,
+                    "id": 1450,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "525:4:9",
@@ -549,7 +549,7 @@
               ],
               "src": "524:18:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "479:99:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -557,7 +557,7 @@
           },
           {
             "body": {
-              "id": 1504,
+              "id": 1494,
               "nodeType": "Block",
               "src": "672:202:9",
               "statements": [
@@ -567,11 +567,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1477,
+                        "id": 1467,
                         "name": "entityAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1469,
+                        "referencedDeclaration": 1459,
                         "src": "690:13:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -586,18 +586,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 1476,
+                      "id": 1466,
                       "name": "isEntity",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1458,
+                      "referencedDeclaration": 1448,
                       "src": "681:8:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-                    "id": 1478,
+                    "id": 1468,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -612,7 +612,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 1482,
+                  "id": 1472,
                   "nodeType": "IfStatement",
                   "src": "678:36:9",
                   "trueBody": {
@@ -621,21 +621,21 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 1479,
+                        "id": 1469,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1553,
-                          1554
+                          1543,
+                          1544
                         ],
-                        "referencedDeclaration": 1553,
+                        "referencedDeclaration": 1543,
                         "src": "706:6:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 1480,
+                      "id": 1470,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -649,7 +649,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1481,
+                    "id": 1471,
                     "nodeType": "ExpressionStatement",
                     "src": "706:8:9"
                   }
@@ -657,7 +657,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1488,
+                    "id": 1478,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -668,25 +668,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1483,
+                          "id": 1473,
                           "name": "entityStructs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1442,
+                          "referencedDeclaration": 1432,
                           "src": "720:13:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                             "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                           }
                         },
-                        "id": 1485,
+                        "id": 1475,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1484,
+                          "id": 1474,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1469,
+                          "referencedDeclaration": 1459,
                           "src": "734:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -700,18 +700,18 @@
                         "nodeType": "IndexAccess",
                         "src": "720:28:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                          "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                           "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                         }
                       },
-                      "id": 1486,
+                      "id": 1476,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "entityData",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1435,
+                      "referencedDeclaration": 1425,
                       "src": "720:39:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -722,11 +722,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1487,
+                      "id": 1477,
                       "name": "entityData",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1471,
+                      "referencedDeclaration": 1461,
                       "src": "762:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -739,14 +739,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1489,
+                  "id": 1479,
                   "nodeType": "ExpressionStatement",
                   "src": "720:52:9"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1495,
+                    "id": 1485,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -757,25 +757,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1490,
+                          "id": 1480,
                           "name": "entityStructs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1442,
+                          "referencedDeclaration": 1432,
                           "src": "778:13:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                             "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                           }
                         },
-                        "id": 1492,
+                        "id": 1482,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1491,
+                          "id": 1481,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1469,
+                          "referencedDeclaration": 1459,
                           "src": "792:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -789,18 +789,18 @@
                         "nodeType": "IndexAccess",
                         "src": "778:28:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                          "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                           "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                         }
                       },
-                      "id": 1493,
+                      "id": 1483,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isEntity",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1437,
+                      "referencedDeclaration": 1427,
                       "src": "778:37:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -812,7 +812,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 1494,
+                      "id": 1484,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -833,7 +833,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1496,
+                  "id": 1486,
                   "nodeType": "ExpressionStatement",
                   "src": "778:44:9"
                 },
@@ -844,7 +844,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1502,
+                    "id": 1492,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -854,11 +854,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 1499,
+                          "id": 1489,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1469,
+                          "referencedDeclaration": 1459,
                           "src": "851:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -875,18 +875,18 @@
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 1497,
+                          "id": 1487,
                           "name": "entityList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1445,
+                          "referencedDeclaration": 1435,
                           "src": "835:10:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_address_$dyn_storage",
                             "typeString": "address[] storage ref"
                           }
                         },
-                        "id": 1498,
+                        "id": 1488,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -900,7 +900,7 @@
                           "typeString": "function (address) returns (uint256)"
                         }
                       },
-                      "id": 1500,
+                      "id": 1490,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -919,7 +919,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 1501,
+                      "id": 1491,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -940,30 +940,30 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1475,
-                  "id": 1503,
+                  "functionReturnParameters": 1465,
+                  "id": 1493,
                   "nodeType": "Return",
                   "src": "828:41:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1505,
+            "id": 1495,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "newEntity",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1472,
+              "id": 1462,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1469,
+                  "id": 1459,
                   "name": "entityAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1505,
+                  "scope": 1495,
                   "src": "601:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -972,7 +972,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1468,
+                    "id": 1458,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "601:7:9",
@@ -987,10 +987,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1471,
+                  "id": 1461,
                   "name": "entityData",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1505,
+                  "scope": 1495,
                   "src": "624:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -999,7 +999,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1470,
+                    "id": 1460,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "624:4:9",
@@ -1015,15 +1015,15 @@
               "src": "600:40:9"
             },
             "returnParameters": {
-              "id": 1475,
+              "id": 1465,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1474,
+                  "id": 1464,
                   "name": "rowNumber",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1505,
+                  "scope": 1495,
                   "src": "656:14:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1032,7 +1032,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1473,
+                    "id": 1463,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "656:4:9",
@@ -1047,7 +1047,7 @@
               ],
               "src": "655:16:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "582:292:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1055,14 +1055,14 @@
           },
           {
             "body": {
-              "id": 1531,
+              "id": 1521,
               "nodeType": "Block",
               "src": "969:126:9",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
-                    "id": 1517,
+                    "id": 1507,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1076,11 +1076,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 1515,
+                          "id": 1505,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1507,
+                          "referencedDeclaration": 1497,
                           "src": "988:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1095,18 +1095,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 1514,
+                        "id": 1504,
                         "name": "isEntity",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1458,
+                        "referencedDeclaration": 1448,
                         "src": "979:8:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                           "typeString": "function (address) view returns (bool)"
                         }
                       },
-                      "id": 1516,
+                      "id": 1506,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1126,7 +1126,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 1521,
+                  "id": 1511,
                   "nodeType": "IfStatement",
                   "src": "975:37:9",
                   "trueBody": {
@@ -1135,21 +1135,21 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 1518,
+                        "id": 1508,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1553,
-                          1554
+                          1543,
+                          1544
                         ],
-                        "referencedDeclaration": 1553,
+                        "referencedDeclaration": 1543,
                         "src": "1004:6:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 1519,
+                      "id": 1509,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1163,7 +1163,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1520,
+                    "id": 1510,
                     "nodeType": "ExpressionStatement",
                     "src": "1004:8:9"
                   }
@@ -1171,7 +1171,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1527,
+                    "id": 1517,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1182,25 +1182,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1522,
+                          "id": 1512,
                           "name": "entityStructs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1442,
+                          "referencedDeclaration": 1432,
                           "src": "1018:13:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                             "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                           }
                         },
-                        "id": 1524,
+                        "id": 1514,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1523,
+                          "id": 1513,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1507,
+                          "referencedDeclaration": 1497,
                           "src": "1032:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1214,18 +1214,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1018:28:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                          "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                           "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                         }
                       },
-                      "id": 1525,
+                      "id": 1515,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "entityData",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1435,
+                      "referencedDeclaration": 1425,
                       "src": "1018:39:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1236,11 +1236,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1526,
+                      "id": 1516,
                       "name": "entityData",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1509,
+                      "referencedDeclaration": 1499,
                       "src": "1063:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1253,7 +1253,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1528,
+                  "id": 1518,
                   "nodeType": "ExpressionStatement",
                   "src": "1018:55:9"
                 },
@@ -1261,7 +1261,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 1529,
+                    "id": 1519,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -1276,30 +1276,30 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 1513,
-                  "id": 1530,
+                  "functionReturnParameters": 1503,
+                  "id": 1520,
                   "nodeType": "Return",
                   "src": "1079:11:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1532,
+            "id": 1522,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "updateEntity",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1510,
+              "id": 1500,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1507,
+                  "id": 1497,
                   "name": "entityAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1532,
+                  "scope": 1522,
                   "src": "900:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1308,7 +1308,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1506,
+                    "id": 1496,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "900:7:9",
@@ -1323,10 +1323,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1509,
+                  "id": 1499,
                   "name": "entityData",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1532,
+                  "scope": 1522,
                   "src": "923:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1335,7 +1335,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1508,
+                    "id": 1498,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "923:4:9",
@@ -1351,15 +1351,15 @@
               "src": "899:40:9"
             },
             "returnParameters": {
-              "id": 1513,
+              "id": 1503,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1512,
+                  "id": 1502,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1532,
+                  "scope": 1522,
                   "src": "955:12:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1368,7 +1368,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1511,
+                    "id": 1501,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "955:4:9",
@@ -1383,14 +1383,14 @@
               ],
               "src": "954:14:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "878:217:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1534,
+        "scope": 1524,
         "src": "25:1072:9"
       }
     ],
@@ -1400,14 +1400,14 @@
     "absolutePath": "/home/nemesis1346/Documents/UniversityProjects/distribution-algorithm-hyperledger-composer/ethereum-node-server/contracts/best-practices/MappingBestPractices.sol",
     "exportedSymbols": {
       "MappedStructsWithIndex": [
-        1533
+        1523
       ]
     },
-    "id": 1534,
+    "id": 1524,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1433,
+        "id": 1423,
         "literals": [
           "solidity",
           "^",
@@ -1423,23 +1423,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1533,
+        "id": 1523,
         "linearizedBaseContracts": [
-          1533
+          1523
         ],
         "name": "MappedStructsWithIndex",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "MappedStructsWithIndex.EntityStruct",
-            "id": 1438,
+            "id": 1428,
             "members": [
               {
                 "constant": false,
-                "id": 1435,
+                "id": 1425,
                 "name": "entityData",
                 "nodeType": "VariableDeclaration",
-                "scope": 1438,
+                "scope": 1428,
                 "src": "88:15:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1448,7 +1448,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1434,
+                  "id": 1424,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "88:4:9",
@@ -1462,10 +1462,10 @@
               },
               {
                 "constant": false,
-                "id": 1437,
+                "id": 1427,
                 "name": "isEntity",
                 "nodeType": "VariableDeclaration",
-                "scope": 1438,
+                "scope": 1428,
                 "src": "109:13:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1474,7 +1474,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1436,
+                  "id": 1426,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "109:4:9",
@@ -1489,27 +1489,27 @@
             ],
             "name": "EntityStruct",
             "nodeType": "StructDefinition",
-            "scope": 1533,
+            "scope": 1523,
             "src": "62:65:9",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1442,
+            "id": 1432,
             "name": "entityStructs",
             "nodeType": "VariableDeclaration",
-            "scope": 1533,
+            "scope": 1523,
             "src": "131:53:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
               "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct)"
             },
             "typeName": {
-              "id": 1441,
+              "id": 1431,
               "keyType": {
-                "id": 1439,
+                "id": 1429,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "139:7:9",
@@ -1521,18 +1521,18 @@
               "nodeType": "Mapping",
               "src": "131:32:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                 "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1440,
+                "id": 1430,
                 "name": "EntityStruct",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1438,
+                "referencedDeclaration": 1428,
                 "src": "150:12:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_EntityStruct_$1438_storage_ptr",
+                  "typeIdentifier": "t_struct$_EntityStruct_$1428_storage_ptr",
                   "typeString": "struct MappedStructsWithIndex.EntityStruct"
                 }
               }
@@ -1542,10 +1542,10 @@
           },
           {
             "constant": false,
-            "id": 1445,
+            "id": 1435,
             "name": "entityList",
             "nodeType": "VariableDeclaration",
-            "scope": 1533,
+            "scope": 1523,
             "src": "276:27:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1555,7 +1555,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 1443,
+                "id": 1433,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "276:7:9",
@@ -1565,7 +1565,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 1444,
+              "id": 1434,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "276:9:9",
@@ -1579,7 +1579,7 @@
           },
           {
             "body": {
-              "id": 1457,
+              "id": 1447,
               "nodeType": "Block",
               "src": "418:57:9",
               "statements": [
@@ -1590,25 +1590,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 1452,
+                        "id": 1442,
                         "name": "entityStructs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1442,
+                        "referencedDeclaration": 1432,
                         "src": "433:13:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                           "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                         }
                       },
-                      "id": 1454,
+                      "id": 1444,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 1453,
+                        "id": 1443,
                         "name": "entityAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1447,
+                        "referencedDeclaration": 1437,
                         "src": "447:13:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1622,48 +1622,48 @@
                       "nodeType": "IndexAccess",
                       "src": "433:28:9",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                        "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                         "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                       }
                     },
-                    "id": 1455,
+                    "id": 1445,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isEntity",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 1437,
+                    "referencedDeclaration": 1427,
                     "src": "433:37:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 1451,
-                  "id": 1456,
+                  "functionReturnParameters": 1441,
+                  "id": 1446,
                   "nodeType": "Return",
                   "src": "426:44:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1458,
+            "id": 1448,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isEntity",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1448,
+              "id": 1438,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1447,
+                  "id": 1437,
                   "name": "entityAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1458,
+                  "scope": 1448,
                   "src": "360:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1672,7 +1672,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1446,
+                    "id": 1436,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "360:7:9",
@@ -1689,15 +1689,15 @@
               "src": "359:23:9"
             },
             "returnParameters": {
-              "id": 1451,
+              "id": 1441,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1450,
+                  "id": 1440,
                   "name": "isIndeed",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1458,
+                  "scope": 1448,
                   "src": "403:13:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1706,7 +1706,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1449,
+                    "id": 1439,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "403:4:9",
@@ -1721,7 +1721,7 @@
               ],
               "src": "402:15:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "342:133:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -1729,7 +1729,7 @@
           },
           {
             "body": {
-              "id": 1466,
+              "id": 1456,
               "nodeType": "Block",
               "src": "543:35:9",
               "statements": [
@@ -1738,18 +1738,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1463,
+                      "id": 1453,
                       "name": "entityList",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1445,
+                      "referencedDeclaration": 1435,
                       "src": "556:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 1464,
+                    "id": 1454,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -1763,36 +1763,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1462,
-                  "id": 1465,
+                  "functionReturnParameters": 1452,
+                  "id": 1455,
                   "nodeType": "Return",
                   "src": "549:24:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1467,
+            "id": 1457,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getEntityCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1459,
+              "id": 1449,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "502:2:9"
             },
             "returnParameters": {
-              "id": 1462,
+              "id": 1452,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1461,
+                  "id": 1451,
                   "name": "entityCount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1467,
+                  "scope": 1457,
                   "src": "525:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1801,7 +1801,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1460,
+                    "id": 1450,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "525:4:9",
@@ -1816,7 +1816,7 @@
               ],
               "src": "524:18:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "479:99:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -1824,7 +1824,7 @@
           },
           {
             "body": {
-              "id": 1504,
+              "id": 1494,
               "nodeType": "Block",
               "src": "672:202:9",
               "statements": [
@@ -1834,11 +1834,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1477,
+                        "id": 1467,
                         "name": "entityAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1469,
+                        "referencedDeclaration": 1459,
                         "src": "690:13:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1853,18 +1853,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 1476,
+                      "id": 1466,
                       "name": "isEntity",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1458,
+                      "referencedDeclaration": 1448,
                       "src": "681:8:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-                    "id": 1478,
+                    "id": 1468,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1879,7 +1879,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 1482,
+                  "id": 1472,
                   "nodeType": "IfStatement",
                   "src": "678:36:9",
                   "trueBody": {
@@ -1888,21 +1888,21 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 1479,
+                        "id": 1469,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1553,
-                          1554
+                          1543,
+                          1544
                         ],
-                        "referencedDeclaration": 1553,
+                        "referencedDeclaration": 1543,
                         "src": "706:6:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 1480,
+                      "id": 1470,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1916,7 +1916,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1481,
+                    "id": 1471,
                     "nodeType": "ExpressionStatement",
                     "src": "706:8:9"
                   }
@@ -1924,7 +1924,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1488,
+                    "id": 1478,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1935,25 +1935,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1483,
+                          "id": 1473,
                           "name": "entityStructs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1442,
+                          "referencedDeclaration": 1432,
                           "src": "720:13:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                             "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                           }
                         },
-                        "id": 1485,
+                        "id": 1475,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1484,
+                          "id": 1474,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1469,
+                          "referencedDeclaration": 1459,
                           "src": "734:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1967,18 +1967,18 @@
                         "nodeType": "IndexAccess",
                         "src": "720:28:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                          "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                           "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                         }
                       },
-                      "id": 1486,
+                      "id": 1476,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "entityData",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1435,
+                      "referencedDeclaration": 1425,
                       "src": "720:39:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1989,11 +1989,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1487,
+                      "id": 1477,
                       "name": "entityData",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1471,
+                      "referencedDeclaration": 1461,
                       "src": "762:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2006,14 +2006,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1489,
+                  "id": 1479,
                   "nodeType": "ExpressionStatement",
                   "src": "720:52:9"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1495,
+                    "id": 1485,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2024,25 +2024,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1490,
+                          "id": 1480,
                           "name": "entityStructs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1442,
+                          "referencedDeclaration": 1432,
                           "src": "778:13:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                             "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                           }
                         },
-                        "id": 1492,
+                        "id": 1482,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1491,
+                          "id": 1481,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1469,
+                          "referencedDeclaration": 1459,
                           "src": "792:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2056,18 +2056,18 @@
                         "nodeType": "IndexAccess",
                         "src": "778:28:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                          "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                           "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                         }
                       },
-                      "id": 1493,
+                      "id": 1483,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isEntity",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1437,
+                      "referencedDeclaration": 1427,
                       "src": "778:37:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2079,7 +2079,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 1494,
+                      "id": 1484,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2100,7 +2100,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1496,
+                  "id": 1486,
                   "nodeType": "ExpressionStatement",
                   "src": "778:44:9"
                 },
@@ -2111,7 +2111,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1502,
+                    "id": 1492,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2121,11 +2121,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 1499,
+                          "id": 1489,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1469,
+                          "referencedDeclaration": 1459,
                           "src": "851:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2142,18 +2142,18 @@
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 1497,
+                          "id": 1487,
                           "name": "entityList",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1445,
+                          "referencedDeclaration": 1435,
                           "src": "835:10:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_address_$dyn_storage",
                             "typeString": "address[] storage ref"
                           }
                         },
-                        "id": 1498,
+                        "id": 1488,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2167,7 +2167,7 @@
                           "typeString": "function (address) returns (uint256)"
                         }
                       },
-                      "id": 1500,
+                      "id": 1490,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2186,7 +2186,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 1501,
+                      "id": 1491,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2207,30 +2207,30 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1475,
-                  "id": 1503,
+                  "functionReturnParameters": 1465,
+                  "id": 1493,
                   "nodeType": "Return",
                   "src": "828:41:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1505,
+            "id": 1495,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "newEntity",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1472,
+              "id": 1462,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1469,
+                  "id": 1459,
                   "name": "entityAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1505,
+                  "scope": 1495,
                   "src": "601:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2239,7 +2239,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1468,
+                    "id": 1458,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "601:7:9",
@@ -2254,10 +2254,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1471,
+                  "id": 1461,
                   "name": "entityData",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1505,
+                  "scope": 1495,
                   "src": "624:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2266,7 +2266,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1470,
+                    "id": 1460,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "624:4:9",
@@ -2282,15 +2282,15 @@
               "src": "600:40:9"
             },
             "returnParameters": {
-              "id": 1475,
+              "id": 1465,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1474,
+                  "id": 1464,
                   "name": "rowNumber",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1505,
+                  "scope": 1495,
                   "src": "656:14:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2299,7 +2299,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1473,
+                    "id": 1463,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "656:4:9",
@@ -2314,7 +2314,7 @@
               ],
               "src": "655:16:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "582:292:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2322,14 +2322,14 @@
           },
           {
             "body": {
-              "id": 1531,
+              "id": 1521,
               "nodeType": "Block",
               "src": "969:126:9",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
-                    "id": 1517,
+                    "id": 1507,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2343,11 +2343,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 1515,
+                          "id": 1505,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1507,
+                          "referencedDeclaration": 1497,
                           "src": "988:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2362,18 +2362,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 1514,
+                        "id": 1504,
                         "name": "isEntity",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1458,
+                        "referencedDeclaration": 1448,
                         "src": "979:8:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                           "typeString": "function (address) view returns (bool)"
                         }
                       },
-                      "id": 1516,
+                      "id": 1506,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2393,7 +2393,7 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 1521,
+                  "id": 1511,
                   "nodeType": "IfStatement",
                   "src": "975:37:9",
                   "trueBody": {
@@ -2402,21 +2402,21 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 1518,
+                        "id": 1508,
                         "name": "revert",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          1553,
-                          1554
+                          1543,
+                          1544
                         ],
-                        "referencedDeclaration": 1553,
+                        "referencedDeclaration": 1543,
                         "src": "1004:6:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_revert_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 1519,
+                      "id": 1509,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2430,7 +2430,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1520,
+                    "id": 1510,
                     "nodeType": "ExpressionStatement",
                     "src": "1004:8:9"
                   }
@@ -2438,7 +2438,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1527,
+                    "id": 1517,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2449,25 +2449,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1522,
+                          "id": 1512,
                           "name": "entityStructs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1442,
+                          "referencedDeclaration": 1432,
                           "src": "1018:13:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1438_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_EntityStruct_$1428_storage_$",
                             "typeString": "mapping(address => struct MappedStructsWithIndex.EntityStruct storage ref)"
                           }
                         },
-                        "id": 1524,
+                        "id": 1514,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1523,
+                          "id": 1513,
                           "name": "entityAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1507,
+                          "referencedDeclaration": 1497,
                           "src": "1032:13:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2481,18 +2481,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1018:28:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_EntityStruct_$1438_storage",
+                          "typeIdentifier": "t_struct$_EntityStruct_$1428_storage",
                           "typeString": "struct MappedStructsWithIndex.EntityStruct storage ref"
                         }
                       },
-                      "id": 1525,
+                      "id": 1515,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "entityData",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1435,
+                      "referencedDeclaration": 1425,
                       "src": "1018:39:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2503,11 +2503,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 1526,
+                      "id": 1516,
                       "name": "entityData",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1509,
+                      "referencedDeclaration": 1499,
                       "src": "1063:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2520,7 +2520,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1528,
+                  "id": 1518,
                   "nodeType": "ExpressionStatement",
                   "src": "1018:55:9"
                 },
@@ -2528,7 +2528,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 1529,
+                    "id": 1519,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -2543,30 +2543,30 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 1513,
-                  "id": 1530,
+                  "functionReturnParameters": 1503,
+                  "id": 1520,
                   "nodeType": "Return",
                   "src": "1079:11:9"
                 }
               ]
             },
             "documentation": null,
-            "id": 1532,
+            "id": 1522,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "updateEntity",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1510,
+              "id": 1500,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1507,
+                  "id": 1497,
                   "name": "entityAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1532,
+                  "scope": 1522,
                   "src": "900:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2575,7 +2575,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1506,
+                    "id": 1496,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "900:7:9",
@@ -2590,10 +2590,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1509,
+                  "id": 1499,
                   "name": "entityData",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1532,
+                  "scope": 1522,
                   "src": "923:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2602,7 +2602,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1508,
+                    "id": 1498,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "923:4:9",
@@ -2618,15 +2618,15 @@
               "src": "899:40:9"
             },
             "returnParameters": {
-              "id": 1513,
+              "id": 1503,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1512,
+                  "id": 1502,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1532,
+                  "scope": 1522,
                   "src": "955:12:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2635,7 +2635,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1511,
+                    "id": 1501,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "955:4:9",
@@ -2650,14 +2650,14 @@
               ],
               "src": "954:14:9"
             },
-            "scope": 1533,
+            "scope": 1523,
             "src": "878:217:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1534,
+        "scope": 1524,
         "src": "25:1072:9"
       }
     ],
@@ -2669,7 +2669,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.2",
-  "updatedAt": "2019-05-10T03:12:12.897Z",
+  "updatedAt": "2019-05-26T17:49:20.581Z",
   "devdoc": {
     "methods": {}
   },

@@ -1,13 +1,13 @@
 class AgreementModel {
     constructor(
         agreementId,
-        traderEmiterId,
+        traderEmitterId,
         traderReceiverId,
         percentage,
         trackId,
     ) {
         this.agreementId = agreementId;
-        this.traderEmiterId = traderEmiterId;
+        this.traderEmitterId = traderEmitterId;
         this.traderReceiverId = traderReceiverId;
         this.percentage = percentage;
         this.trackId=trackId;

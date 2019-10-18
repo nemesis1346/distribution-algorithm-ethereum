@@ -7,24 +7,24 @@ module.exports = {
   networks: {
     development: {
       host: '127.0.0.1',
-      port: 7545,
+      port: 8545,
       network_id: '*'
     },
-    ropsten:{
-      provider:function(){
-        return new HDWalletProvider(
-          process.env.MNEMONIC,
-          "https://ropsten.infura.io/${process.env.INFURA_API_KEY}"
-          );
-      },
-      gasPrice:25000000000,
-      network_id:3
-    }
-  },
-  solc:{
-    optimizer:{
-      enabled:true,
-      runs:200
-    }
+  //   ropsten:{
+  //     provider:function(){
+  //       return new HDWalletProvider(
+  //         process.env.MNEMONIC,
+  //         "https://ropsten.infura.io/${process.env.INFURA_API_KEY}"
+  //         );
+  //     },
+  //     gasPrice:25000000000,
+  //     network_id:3
+  //   }
+  // },
+  // solc:{
+  //   optimizer:{
+  //     enabled:true,
+  //     runs:200
+  //   }
   }
 }

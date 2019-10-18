@@ -126,13 +126,13 @@ process.on('message', async function (input) {
                 result = await testingChaincode.example2();
                 break;
             case '/testing_example3':
-                result = await testingChaincode.example3_scenario3();
+                result = await testingChaincode.example3();
                 break;
             case '/testing_example4':
-                result = await testingChaincode.example4_scenario1();
+                result = await testingChaincode.example4();
                 break;
             case '/testing_example5':
-                result = await testingChaincode.example5_scenario2();
+                result = await testingChaincode.example5();
                 break;
             case '/testing_example6':
                 result = await testingChaincode.example6();

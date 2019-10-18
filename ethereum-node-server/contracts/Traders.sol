@@ -22,7 +22,7 @@ contract Traders{
     }
 
     function createTrader(address id, string memory name, address tokenAccountId,address tokenAccountCtrAdd) public{
-        if(isTrader(id)) revert('Trader already created');
+       // if(isTrader(id)) revert('Trader already created');
 
        traderStructList[id].id = id;
        traderStructList[id].name = name;

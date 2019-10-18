@@ -46,8 +46,8 @@ contract Receipts{
         receiptStructList[id].datetime);
     }
 
-    function valdateReceipt(
-        uint receiptId,
+    function validateReceipt(
+     //   uint receiptId,
         address agreementId,
         address traderEmitterId,
         address traderReceiverId,

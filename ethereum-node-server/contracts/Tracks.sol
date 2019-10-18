@@ -22,7 +22,7 @@ contract Tracks{
 
     function createTrack(address id, uint isrc, string memory title, uint revenueTotal) public{
         //We evaluate the existence of the same entity
-        if(isTrack(id)) revert('Track already exists');
+      //  if(isTrack(id)) revert('Track already exists');
         
         address uploaderEOA = msg.sender; 
         trackStructList[id].id = id; //this is created in the network where you are in 
@@ -50,5 +50,10 @@ contract Tracks{
                 trackStructList[id].uploaderEOA,
                 trackStructList[id].isTrack);
     }
+
+    function updateTrackRevenue(address trackId, uint revenue) public{
+        trackStructList[trackId].revenueTotal = revenue;
+    }
     event LogTrack(string message);
+
 }    

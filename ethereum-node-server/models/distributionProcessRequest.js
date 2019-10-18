@@ -1,23 +1,26 @@
 class DistributionProcessRequest {
     constructor(
-        isrc,
-        emiterId,
+        trackId,
+        previousAgreementId,
+        emitterId,
         datetime,
         shareAmmount,
-        previousEmitersArray,
+        previousEmitterId,
+        uploaderId,
         percentageReceiver,
-        previousAgreementId,
-        uploaderId
+        fromAddress,
+        gasLimit
     ) {
-        this.isrc = isrc;
-        this.emiterId = emiterId;
+        this.trackId = trackId;
+        this.emitterId = emitterId;
         this.datetime=datetime;
         this.shareAmmount=shareAmmount;
-        this.previousEmitersArray=previousEmitersArray;
+        this.previousEmitterId=previousEmitterId;
         this.percentageReceiver=percentageReceiver;
         this.previousAgreementId = previousAgreementId;
         this.uploaderId=uploaderId;
+        this.fromAddress =fromAddress;
+        this.gasLimit = gasLimit;
     }
 }
-
 module.exports = DistributionProcessRequest;
