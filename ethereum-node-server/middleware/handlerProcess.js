@@ -1,18 +1,17 @@
 const DataModel = require("../models/dataModel");
-const traderEndpoint = require('../connection/traderEndpoint.js');
-const trackEndpoint = require('../connection/trackEndpoint.js');
-const receiptEndpoint = require('../connection/receiptEndpoint.js');
-const agreementEndpoint = require('../connection/agreementEndpoint.js');
-const distributionEndpoint = require('../connection/distributionEndPoint.js');
-const testingEndpoint = require('../connection/testingEndpoint.js');
-const tokenAccountEndpoint = require('../connection/tokenAccountEndpoint.js');
+const traderEndpoint = require('../controllers/traderEndpoint.js');
+const trackEndpoint = require('../controllers/trackEndpoint.js');
+const receiptEndpoint = require('../controllers/receiptEndpoint.js');
+const agreementEndpoint = require('../controllers/agreementEndpoint.js');
+const distributionEndpoint = require('../controllers/distributionEndPoint.js');
+const testingEndpoint = require('../controllers/testingEndpoint.js');
+const tokenAccountEndpoint = require('../controllers/tokenAccountEndpoint.js');
 
 async function stop() {
     console.log('Shutting down...')
-
-    if (process.env.DEBUG) console.log(process._getActiveHandles())
-
-    process.exit(0)
+    if (process.env.DEBUG) console.log(process._getActiveHandles()){
+        process.exit(0)
+    }
 }
 process.on('SIGTERM', async () => {
     console.log('Received SIGTERM')
@@ -25,7 +24,10 @@ process.on('SIGINT', async () => {
 })
 process.on('message', async function (input) {
     //Call method
-    //TODO: must change the way the methods are called
+    //TODO: must change the way the methods are called: setting correct responses. From the beginning. 
+    //TODO: Tokenized systems for the reatapp and mobiles. 
+    console.log('LISTENING MESSAGE');
+    console.log(input);
     let result;
     let dataModel = new DataModel(null, null, null);
 
@@ -105,11 +107,12 @@ process.on('message', async function (input) {
 
             default:
                 dataModel.message = "Method not found";
-                dataModel.status = "405";
+                dataModel.status = "404";
                 let body = JSON.stringify(dataModel);
-                console.log("STATUS 405: ");
+                console.log("STATUS 404: ");
                 console.log("Method not found");
-                process.send(body);
+                // process.send(body);
+                process.status(404).end();
                 break;
         }
 

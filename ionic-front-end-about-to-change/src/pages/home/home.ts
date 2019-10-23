@@ -42,7 +42,7 @@ export class HomePage {
     this.loadUsers();
 
   }
-  ionViewDidLoad() { 
+  ionViewDidLoad() {
 
   }
 
@@ -60,7 +60,13 @@ export class HomePage {
 
     let userSelected = this.search(this.usernameSelected, this.listUser);
     this.password = userSelected.pwd;
-    this.login(this.usernameSelected, this.password);
+    //this is just for passing the login
+    this.navCtrl.push(this.menuClientPage, {
+      'role': 'role',
+      'userId': 'email',
+      'traderId': 'traderId'
+    });
+    // this.login(this.usernameSelected, this.password);
   }
 
   loadUsers() {
@@ -148,7 +154,7 @@ export class HomePage {
           });
       });
     } else {
-      //TODO: Make callback for the alert 
+      //TODO: Make callback for the alert
         this.alertComponent.Alert.confirm("User or password not submitted",'Error').then();
       //this.alertLoginError("User or password not submitted");
     }

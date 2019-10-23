@@ -21,7 +21,7 @@ const handler = async (request, response) => {
         buffer.push(chunk);
     }).on('end', async () => {
         let bufferContent = Buffer.concat(buffer).toString();
-        //console.log(bufferContent);
+        console.log(bufferContent);
 
         //Set response
         response.statusCode = 200;
@@ -33,19 +33,23 @@ const handler = async (request, response) => {
             console.error(err);
         });
         await fork('./handlerProcess.js', ['message'], { encoding: 'utf8' })
-        .on("message", (body) => {
-            const responseBody = { headers, method, url, body };
-            response.statusCode = 200;
-            response.write(JSON.stringify(responseBody));
-            response.end();
-        })
-        .on('error', (error) => {
-            const responseBody = { headers, method, url, error };
-            response.statusCode = 300;
-            response.write(JSON.stringify(responseBody));
-            response.end();
-        })
-        .send({ data: JSON.stringify(bufferContent), url: url });
+            .on("message", (body) => {
+                console.log('On Message');
+                console.log(body);
+                const responseBody = { headers, method, url, body };
+                response.statusCode = 200;
+                response.write(JSON.stringify(responseBody));
+                response.end();
+            })
+            .on('error', (error) => {
+                console.log('On Error');
+                console.log(error);
+                const responseBody = { headers, method, url, error };
+                response.statusCode = 300;
+                response.write(JSON.stringify(responseBody));
+                response.end();
+            })
+            .send({ data: JSON.stringify(bufferContent), url: url });
     });
 }
 
@@ -66,20 +70,28 @@ app.post('/getTransactions', handler);
 app.post('/distributionAlgorithm', handler);
 app.post('/getAgreements', handler);
 app.post('/getTxByTrackForDiagram', handler);
-app.post('/getTAContractAddress',handler);
-app.post('/getTraderContractAddress',handler);
-app.post('/getTrackContractAddress',handler);
+app.post('/getTAContractAddress', handler);
+app.post('/getTraderContractAddress', handler);
+app.post('/getTrackContractAddress', handler);
 app.post('/testing_example1', handler);
 app.post('/testing_example2', handler);
 app.post('/testing_example3', handler);
 app.post('/testing_example4', handler);
 app.post('/testing_example5', handler);
 app.post('/testing_example6', handler);
-app.post('/socketError',handler);
+app.post('/socketError', handler);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+//this is for non existing routes
+app.get('*', function (req, res) {
+    res.send('what???', 404);
+});
+app.post('*', function (req, res) {
+    res.send('what???', 404);
+});
 
 
 app.listen(port, async (err) => {
