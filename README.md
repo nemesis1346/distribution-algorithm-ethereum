@@ -1,6 +1,6 @@
 # Distribution Algorithm for Digital Assets 
 
-This project has as main goal exploring the application of Hyperledger to execute multiple in-series accounting/statement processes simultaneously across a trustless network, while maintaining privacy for users. The system is conceived as a ledger of transactions to retrieve payments distributed by agreements. For more information about the features of the system in the business side, look for the reference in the official documentation.
+This project has as main goal exploring an Ethereum Application to execute multiple in-series accounting/statement processes simultaneously across trustless networks, while maintaining privacy for users. The system is conceived as a ledger of transactions that1 retrieves payments distributed by Smart Contracts. 
 
 HYPERLEDGER COMPOSER was the implemented official framework for development over the HYPERLEDGER FABRIC. 
 More information: https://hyperledger.github.io/composer/index.html. Hyperledger uses the chaincode, retrieved by an SDK of NodeJs that HYPERLEDGER COMPOSER HAS to use languages like javascript and speed up the development. All the versions of the chaincode, BND, queries and other components are stored in the inmutable logs of the docker instances(peers of the blockchain). See more information: (https://hyperledger-fabric.readthedocs.io/en/release/). 
@@ -173,7 +173,3 @@ A code editor of your choice, we recommend VSCode.
 Often there could be problems with broken libraries within nodejs, it's better to uninstall it and reinstall it. Some more info in the following link:
 https://stackoverflow.com/questions/11177954/how-do-i-completely-uninstall-node-js-and-reinstall-from-beginning-mac-os-x
 
-
-#### Fabric docker containers error
-docker image pull hyperledger/fabric-ccenv:1.2.0
-docker image pull hyperledger/fabric-ccenv:latest

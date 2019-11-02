@@ -1,13 +1,11 @@
 'use strict';
 const port = 3111;
-//This is very necessary to the data analysis. Must be replicated in both platforms
 //Imports
 const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const cors = require('cors');
 
-//const { exec, spawn, fork, execFile } = require('promisify-child-process')
 const { fork } = require('child_process');
 
 const app = express();
@@ -56,10 +54,7 @@ const handler = async (request, response) => {
 app.post('/createTrader', handler);
 app.post('/createTrack', handler);
 app.post('/createAgreement', handler);
-//app.post('/getAgreementDetail', handler); //it is not posible to query concepts
-app.get('/getTraders', handler);
-app.get('/getOrganizations', handler);
-app.get('/getTracks', handler);
+app.post('/getAgreementDetail', handler);
 app.post('/createNewTokenAccount', handler);
 app.post('/getTrackDetail', handler);
 app.post('/getTraderDetail', handler);
@@ -80,6 +75,9 @@ app.post('/testing_example4', handler);
 app.post('/testing_example5', handler);
 app.post('/testing_example6', handler);
 app.post('/socketError', handler);
+app.get('/getTraders', handler);
+app.get('/getOrganizations', handler);
+app.get('/getTracks', handler);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
