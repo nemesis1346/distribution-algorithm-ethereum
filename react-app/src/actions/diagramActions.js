@@ -15,7 +15,7 @@ export const getDiagramData = isrc => {
         console.log("FIRST EMITTER");
         console.log(firstEmiterId);
         receiptList.forEach(element => {
-          if (element.traderReceiverId == firstEmiterId) {
+          if (element.traderReceiverId === firstEmiterId) {
             //We extract the Id of the first trader
             finalResult = element;
           }
@@ -51,7 +51,7 @@ export const getDiagramData = isrc => {
 const getNestedChildren = (arr, traderEmiterId) => {
   var out = [];
   for (var i in arr) {
-    if (arr[i].traderEmiterId == traderEmiterId) {
+    if (arr[i].traderEmiterId === traderEmiterId) {
       var children = getNestedChildren(arr, arr[i].traderReceiverId);
       if (children.length) {
         arr[i].children = children;

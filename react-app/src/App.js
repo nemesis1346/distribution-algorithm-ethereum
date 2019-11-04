@@ -16,30 +16,30 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-
-          {/* <div>
-            <NavBar onLogoutNavBarCallback={this.onLogoutNavBarCallback}></NavBar>
-          </div>
-
           <div>
-            <GenericModal
-              modalTitle={modalTitle}
-              modalDescription={modalDescription}
-              modalShow={modalShow}
-              modalNegativeButton={modalNegativeButton}
-              modalPositiveButton={modalPositiveButton}
-              modalNegativeButtonCallback={this.onLogoutNegativeModal}
-              modalPositiveButtonCallback={this.onLogoutPositiveModal}
-              modalOnHideCallback={this.modalOnHide}
-            >
-            </GenericModal>
-          </div> */}
+
+            <div>
+              <NavBar onLogoutNavBarCallback={this.onLogoutNavBarCallback}></NavBar>
+            </div>
+
+            <div>
+              <GenericModal
+                modalTitle={modalTitle}
+                modalDescription={modalDescription}
+                modalShow={modalShow}
+                modalNegativeButton={modalNegativeButton}
+                modalPositiveButton={modalPositiveButton}
+                modalNegativeButtonCallback={this.onLogoutNegativeModal}
+                modalPositiveButtonCallback={this.onLogoutPositiveModal}
+                modalOnHideCallback={this.modalOnHide}
+              >
+              </GenericModal>
+            </div>
 
 
-          <div>
-            
-            <Route path="/" exact component={DiagramPage}></Route>
-
+            <main>
+              <Route path="/" exact component={DiagramPage}></Route>  
+            </main>
           </div>
 
         </BrowserRouter>
