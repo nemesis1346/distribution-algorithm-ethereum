@@ -4,8 +4,12 @@ import DiagramPage from '../src/components/pages/DiagramPage';
 import GenericModal from './components/modals/GenericModal';
 import NavBar from './components/navigation/NavBar';
 import CreateAssetPage from "./components/pages/CreateAssetPage";
-import {HamburgerButton} from 'react-hamburger-button';
-import {toggleHamburgerMenu} from './actions/appActions';
+import { HamburgerButton } from 'react-hamburger-button';
+import {
+  toggleHamburgerMenu,
+  closeHamburgerMenu,
+  handleStateChangeHamburgerBurger
+} from './actions/appActions';
 import { connect } from "react-redux";
 
 
@@ -13,22 +17,22 @@ class App extends Component {
 
   constructor(props) {
     super(props)
-    
+
     this.handleStateChange = this.handleStateChange.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
-    this.toggleMenu =this.toggleMenu.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
 
   }
 
   // This keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
   handleStateChange(state) {
-    this.setState({ menuOpen: state.isOpen })
+    this.props.handleStateChangeHamburgerBurger();
   }
 
   // This can be used to close the menu, e.g. when a user clicks a menu item
   closeMenu() {
-    this.setState({ menuOpen: false })
+    this.props.closeHamburgerMenu();
   }
 
   // This can be used to toggle the menu, e.g. when using a custom icon
@@ -54,12 +58,12 @@ class App extends Component {
           <div>
 
             <div>
-              <NavBar 
-              onLogoutNavBarCallback={this.onLogoutNavBarCallback}
-              isOpen={menuOpen}></NavBar>
+              <NavBar
+                onLogoutNavBarCallback={this.onLogoutNavBarCallback}
+                isOpen={menuOpen}></NavBar>
 
               <HamburgerButton
-                open={this.state.menuOpen}
+                open={menuOpen}
                 onClick={this.toggleMenu}
                 width={18}
                 height={15}
@@ -101,7 +105,7 @@ class App extends Component {
 //these are props
 const mapStateToPropsApp = state => {
   return {
-      menuOpen: state.appReducer.menuOpen,
+    menuOpen: state.appReducer.menuOpen,
   };
 };
 
