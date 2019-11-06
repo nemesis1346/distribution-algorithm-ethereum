@@ -40,7 +40,7 @@
 /* General sidebar styles */
 .bm-menu {
   background: var(--menu-background);
-  padding: 2.5em 1.5em 0;
+  /* padding: 2.5em 1.5em 0; */
   font-size: 1.15em;
 }
 
@@ -53,11 +53,14 @@
 .bm-item-list {
   color: var(--item-list-color);
   padding: 0.8em;
+  background: var(--menu-background-inside);
+
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  background: var(--menu-background-inside);
 }
 
 /* Styling of overlay */

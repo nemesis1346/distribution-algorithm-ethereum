@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-color:#a90000;
     --primary-variant-color: #373a47;
     --secondary-color:  #bdc3c7;
@@ -10,4 +10,22 @@
     --item-list-color:#b8b7ad;
     --menu-morph-shape:#373a47;
     --menu-overlay:rgba(0, 0, 0, 0.3);
+  } */
+
+
+  :root {
+    --primary-color:#6200EE;
+    --primary-variant-color: #3700B3;
+    --secondary-color:  #03DAC5;
+    --light-background-color:#bdc3c7;
+    --overlay-color:#0000004d;
+
+    --burger-bars:var(--primary-variant-color);
+    --burger-bars-hover:var(--primary-color);
+    --burger-cross:var(--light-background-color);
+    --menu-background:var(--primary-color);
+    --item-list-colorvar:var(--light-background-color);
+    --menu-morph-shape:var(--secondary-color);
+    --menu-overlay:var(--overlay-color);
+    --menu-background-inside:var(--primary-color);
   }
