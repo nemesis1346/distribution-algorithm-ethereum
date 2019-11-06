@@ -3,15 +3,50 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import DiagramPage from '../src/components/pages/DiagramPage';
 import GenericModal from './components/modals/GenericModal';
 import NavBar from './components/navigation/NavBar';
+import CreateAssetPage from "./components/pages/CreateAssetPage";
+import {HamburgerButton} from 'react-hamburger-button';
+import {toggleHamburgerMenu} from './actions/appActions';
+import { connect } from "react-redux";
+
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    
+    this.handleStateChange = this.handleStateChange.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+    this.toggleMenu =this.toggleMenu.bind(this);
+
+  }
+
+  // This keeps your state in sync with the opening/closing of the menu
+  // via the default means, e.g. clicking the X, pressing the ESC key etc.
+  handleStateChange(state) {
+    this.setState({ menuOpen: state.isOpen })
+  }
+
+  // This can be used to close the menu, e.g. when a user clicks a menu item
+  closeMenu() {
+    this.setState({ menuOpen: false })
+  }
+
+  // This can be used to toggle the menu, e.g. when using a custom icon
+  // Tip: You probably want to hide either/both default icons if using a custom icon
+  // See https://github.com/negomi/react-burger-menu#custom-icons
+  toggleMenu() {
+    this.props.toggleHamburgerMenu();
+  }
+
+
   render() {
     const {
       modalTitle,
       modalDescription,
       modalShow,
       modalNegativeButton,
-      modalPositiveButton
+      modalPositiveButton,
+      menuOpen
     } = this.props;
     return (
       <div>
@@ -19,7 +54,18 @@ class App extends Component {
           <div>
 
             <div>
-              <NavBar onLogoutNavBarCallback={this.onLogoutNavBarCallback}></NavBar>
+              <NavBar 
+              onLogoutNavBarCallback={this.onLogoutNavBarCallback}
+              isOpen={menuOpen}></NavBar>
+
+              <HamburgerButton
+                open={this.state.menuOpen}
+                onClick={this.toggleMenu}
+                width={18}
+                height={15}
+                strokeWidth={1}
+                animationDuration={0.5}
+              />
             </div>
 
             <div>
@@ -38,7 +84,9 @@ class App extends Component {
 
 
             <main>
-              <Route path="/" exact component={DiagramPage}></Route>  
+              <Route path="/diagramPage" exact component={DiagramPage}></Route>
+              <Route path="/createAssetPage" exact component={CreateAssetPage}></Route>
+
             </main>
           </div>
 
@@ -49,6 +97,22 @@ class App extends Component {
   }
 }
 
-export default App;
+
+//these are props
+const mapStateToPropsApp = state => {
+  return {
+      menuOpen: state.appReducer.menuOpen,
+  };
+};
+
+//these are actions
+const mapDispatchToPropsApp = {
+  toggleHamburgerMenu: toggleHamburgerMenu,
+}
+
+export default connect(
+  mapStateToPropsApp,
+  mapDispatchToPropsApp
+)(App);
 
 

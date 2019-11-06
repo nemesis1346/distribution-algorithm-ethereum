@@ -13,6 +13,7 @@
     "react-burger-menu": "^2.6.11",
     "react-d3-tree": "^1.12.2",
     "react-dom": "^16.7.0",
+    "react-hamburger-button": "^0.0.1",
     "react-native": "0.52.0",
     "react-native-web": "^0.10.0",
     "react-redux": "^7.1.1",
