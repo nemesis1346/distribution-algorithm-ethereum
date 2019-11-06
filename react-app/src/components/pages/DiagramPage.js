@@ -2,6 +2,8 @@ import React from 'react';
 import BarChart from "../charts/BarChart";
 import { connect } from 'react-redux';
 import { getDiagramData } from '../../actions/diagramActions';
+import '../../styles/DiagramPage.css';
+import '../../styles/MainPage.css';
 
 class DiagramPage extends React.Component {
 
@@ -21,7 +23,7 @@ class DiagramPage extends React.Component {
         console.log(this.props);
         const { diagramData } = this.props;
         return (
-            <div className="App">
+            <div className="main-container-page">
                 <form >
                     <input type="text" name="isrc" placeholder="Track ISRC" value={this.state.isrc} onChange={this.handleChange} />
                     <button type="submit" onClick={this.onClick}>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import '../../styles/CreateAssetPage.css';
 import '../../styles/MainPage.css';
 
-class CreateAssetPage extends React.Component {
+class CreateTraderPage extends React.Component {
 
     state = {
         isrc: ""
@@ -20,14 +20,14 @@ class CreateAssetPage extends React.Component {
         console.log(this.props);
         const { diagramData } = this.props;
         return (
-            <div className="main-container-create-page">
-              Create Asset Page
+            <div className="main-container-page">
+              Create Trader Page
             </div>
         );
     }
 }
 
-const mapStateToPropsCreateAssetPage = state => {
+const mapStateToPropsCreateTraderPage = state => {
     //In this case objects is gonna be applied to the props of the component
     return {
         diagramData: state.diagramReducer.diagramData,
@@ -35,4 +35,4 @@ const mapStateToPropsCreateAssetPage = state => {
 };
 
 
-export default connect(mapStateToPropsCreateAssetPage, null)(CreateAssetPage);
+export default connect(mapStateToPropsCreateTraderPage, null)(CreateTraderPage);

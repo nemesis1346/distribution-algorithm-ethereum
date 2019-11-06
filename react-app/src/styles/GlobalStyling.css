@@ -1,0 +1,13 @@
+:root {
+    --primary-color:#a90000;
+    --primary-variant-color: #373a47;
+    --secondary-color:  #bdc3c7;
+
+    --burger-bars:#373a47;
+    --burger-bars-hover:#a90000;
+    --burger-cross:#bdc3c7;
+    --menu-background:#373a47;
+    --item-list-color:#b8b7ad;
+    --menu-morph-shape:#373a47;
+    --menu-overlay:rgba(0, 0, 0, 0.3);
+  }

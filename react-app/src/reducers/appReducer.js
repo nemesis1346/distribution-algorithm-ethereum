@@ -14,6 +14,7 @@ const appReducer = (state = initState, action = {}) => {
                 menuOpen: true
             }
         case ACTIONS.CLOSE_HAMBURGER_MENU:
+            console.log('REDUCER SETTING TO CLOSE MENU');
             return {
                 ...state,
                 menuOpen: false

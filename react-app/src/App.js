@@ -4,14 +4,15 @@ import DiagramPage from '../src/components/pages/DiagramPage';
 import GenericModal from './components/modals/GenericModal';
 import NavBar from './components/navigation/NavBar';
 import CreateAssetPage from "./components/pages/CreateAssetPage";
-import { HamburgerButton } from 'react-hamburger-button';
+import CreateTraderPage from './components/pages/CreateTraderPage';
+import CreateAgreementPage from './components/pages/CreateAgreementPage';
 import {
   toggleHamburgerMenu,
   closeHamburgerMenu,
   handleStateChangeHamburgerBurger
 } from './actions/appActions';
 import { connect } from "react-redux";
-
+import './styles/GlobalStyling.css';
 
 class App extends Component {
 
@@ -21,17 +22,17 @@ class App extends Component {
     this.handleStateChange = this.handleStateChange.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
-
   }
 
   // This keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
-  handleStateChange(state) {
+  handleStateChange() {
     this.props.handleStateChangeHamburgerBurger();
   }
 
   // This can be used to close the menu, e.g. when a user clicks a menu item
   closeMenu() {
+    console.log('on close menu');
     this.props.closeHamburgerMenu();
   }
 
@@ -44,6 +45,8 @@ class App extends Component {
 
 
   render() {
+    console.log('NEW PROPS IN APP');
+    console.log(this.props);
     const {
       modalTitle,
       modalDescription,
@@ -53,23 +56,15 @@ class App extends Component {
       menuOpen
     } = this.props;
     return (
-      <div>
+      <div class=''>
         <BrowserRouter>
           <div>
 
             <div>
               <NavBar
                 onLogoutNavBarCallback={this.onLogoutNavBarCallback}
-                isOpen={menuOpen}></NavBar>
-
-              <HamburgerButton
-                open={menuOpen}
-                onClick={this.toggleMenu}
-                width={18}
-                height={15}
-                strokeWidth={1}
-                animationDuration={0.5}
-              />
+                isOpen={menuOpen}
+                closeMenuCallback={this.closeMenu}></NavBar>
             </div>
 
             <div>
@@ -90,6 +85,8 @@ class App extends Component {
             <main>
               <Route path="/diagramPage" exact component={DiagramPage}></Route>
               <Route path="/createAssetPage" exact component={CreateAssetPage}></Route>
+              <Route path="/createTraderPage" exact component={CreateTraderPage}></Route>
+              <Route path="/createAgreementPage" exact component={CreateAgreementPage}></Route>
 
             </main>
           </div>
@@ -112,6 +109,8 @@ const mapStateToPropsApp = state => {
 //these are actions
 const mapDispatchToPropsApp = {
   toggleHamburgerMenu: toggleHamburgerMenu,
+  closeHamburgerMenu: closeHamburgerMenu,
+  handleStateChangeHamburgerBurger: handleStateChangeHamburgerBurger
 }
 
 export default connect(
