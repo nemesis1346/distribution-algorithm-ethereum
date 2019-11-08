@@ -7,3 +7,10 @@ export const HANDLE_STATE_CHANGE_HAMBURGER_BURGER = 'HANGLE_STATE_CHANGE_HAMBURG
 //modal actions
 export const LOGOUT_MODAL = 'LOGOUT_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+//Asset Actions
+export const CREATE_ASSET_SUCCESS="CREATE_ASSET_SUCCESS";
+
+
+//diagram actions
+export const GET_DIAGRAM_DATA_SUCCESS= 'GET_DIAGRAM_DATA_SUCCESS';

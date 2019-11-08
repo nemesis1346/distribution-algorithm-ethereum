@@ -10,6 +10,7 @@ import LocalStorage from 'redux-persist/lib/storage'
 import { persistReducer, persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+require('dotenv').config()
 
 
 //Store Configuration

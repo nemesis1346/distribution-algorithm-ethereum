@@ -1,6 +1,6 @@
 const DataModel = require("../models/dataModel");
 const traderEndpoint = require('../controllers/traderEndpoint.js');
-const trackEndpoint = require('../controllers/trackEndpoint.js');
+const assetController = require('../controllers/assetController.js');
 const receiptEndpoint = require('../controllers/receiptEndpoint.js');
 const agreementEndpoint = require('../controllers/agreementEndpoint.js');
 const distributionEndpoint = require('../controllers/distributionEndPoint.js');
@@ -38,8 +38,8 @@ process.on('message', async function (input) {
             case '/createTrader':
                 result = await traderEndpoint.createTrader(JSON.parse(bufferContent));
                 break;
-            case '/createTrack':
-                result = await trackEndpoint.createTrack(JSON.parse(bufferContent));
+            case '/createAsset':
+                result = await assetController.createAsset(JSON.parse(bufferContent));
                 break;
             case '/createAgreement':
                 result = await agreementEndpoint.createAgreement(JSON.parse(bufferContent));

@@ -2,13 +2,10 @@ import axios from 'axios';
 import { store } from '../index';
 import { parseResponse } from '../utils/Utils'; //must be changed
 //import {saveTokenObject, logout} from '../actions/authActions'; 
-//import * as CONFIG from '../constants/config';
+import * as CONFIG from '../constants/config';
 
-//INSTANCE OF AXIOS FOR LARAVEL
-//const instanceDefault = axios.create({ baseURL: "http://localhost:3011" }); // this is for firebase
-//const instanceDefault = axios.create({ baseURL: "http://104.196.55.102:3011" }); 
-
-export const instanceWithInterceptors = axios.create({ baseURL: process.env.MIX_BASE_URL });
+//INSTANCE OF AXIOS 
+export const instanceWithInterceptors = axios.create({ baseURL: CONFIG.DEV_URL }); 
 
 instanceWithInterceptors.defaults.headers.common.Accept = 'application/json';
 instanceWithInterceptors.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -46,7 +43,7 @@ instanceWithInterceptors.interceptors.request.use(function (config) {
     console.log('USING REQUEST INTERCEPTOR');
     let state = store.getState();
     console.log('TOKEN OBJECT');
-    console.log(state.userReducer.tokenObject);
+   // console.log(state.userReducer.tokenObject);
     
     // if (state.userReducer.tokenObject != null&&
     //     state.userReducer.tokenObject != "") {

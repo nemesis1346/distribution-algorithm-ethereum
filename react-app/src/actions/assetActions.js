@@ -1,13 +1,16 @@
-import { GET_DIAGRAM_DATA_SUCCESS, ERROR_MIDDLEWARE } from "../constants/types";
+import { CREATE_ASSET_SUCCESS } from "../constants/actions";
+import {ERROR_MIDDLEWARE} from '../constants/errors';
 import httpApi from "../api/httpApi";
 import { parseResponse } from "../utils/Utils";
 
-export const createAsset = traderModel => {
+export const createAsset = assetData => {
+  console.log('REQUEST CREATE ASSET ACTIONS');
+
   return dispatch => {
     httpApi.assets
-      .createAsset(isrc)
+      .createAsset(assetData)
       .then(res => {
-        dispatch(getDiagramDataSuccess(finalResult));
+      //  dispatch(getDiagramDataSuccess(finalResult));
       })
       .catch(err => {
         console.log(err);
@@ -17,10 +20,9 @@ export const createAsset = traderModel => {
 };
 
 
-const getDiagramDataSuccess = diagramData => {
+const createAssetSuccess = () => {
   return {
-    type: GET_DIAGRAM_DATA_SUCCESS,
-    diagramData: diagramData
+    type: CREATE_ASSET_SUCCESS,
   };
 };
 

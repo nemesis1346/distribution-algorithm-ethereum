@@ -10,7 +10,7 @@ const Web3 = require("web3");
 const web3Provider = new Web3(
     new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT)
 );
-const trackEndpoint = require("./trackEndpoint");
+const assetController = require("./assetController");
 const traderEndpoint = require("./traderEndpoint");
 const agreementEndpoint = require("./agreementEndpoint");
 const tokenAccountEndpoint = require('./tokenAccountEndpoint');
@@ -49,7 +49,7 @@ async function distribution(requestDistribution) {
         let fromAddress = requestDistribution.fromAddress;
         let gasLimit = requestDistribution.gasLimit;
 
-        let track = await trackEndpoint.getTrack(trackId, fromAddress, gasLimit);
+        let track = await assetController.getTrack(trackId, fromAddress, gasLimit);
 
         let evaluateReceiversFirstTimeRequest = new EvaluateReceiversRequest(
             trackId,

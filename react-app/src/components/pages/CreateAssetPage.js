@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import '../../styles/CreateAssetPage.css';
 import '../../styles/MainPage.css';
 import { Form, Button } from 'react-bootstrap';
+import { createAsset } from '../../actions/assetActions';
 
 class CreateAssetPage extends React.Component {
 
@@ -16,25 +17,38 @@ class CreateAssetPage extends React.Component {
         this.setState({ isrc: e.target.value });
 
     }
+    onSubmit = e => {
+        e.preventDefault();
+        const assetName = e.target.elements.assetName.value;
+        const assetValue = e.target.elements.assetValue.value;
+
+        let createAssetRequest = {
+            "name": assetName,
+            "value": assetValue
+        }
+
+        this.props.createAsset(createAssetRequest);
+    }
+
     render() {
         console.log("PROPS");
         console.log(this.props);
         const { diagramData } = this.props;
         return (
             <div className="main-container-page">
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
+                <Form onSubmit={this.onSubmit}>
+                    <Form.Group controlId="assetName">
                         <Form.Label>Asset Name</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control type="text" placeholder="Enter Asset Name" />
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Value</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                    <Form.Group controlId="assetValue">
+                        <Form.Label>Asset Value</Form.Label>
+                        <Form.Control type="number" placeholder="Enter Asset Value" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
-                        Submit
+                        Create Asset
                      </Button>
                 </Form>
             </div>
@@ -43,11 +57,14 @@ class CreateAssetPage extends React.Component {
 }
 
 const mapStateToPropsCreateAssetPage = state => {
-    //In this case objects is gonna be applied to the props of the component
     return {
         diagramData: state.diagramReducer.diagramData,
     };
 };
 
+const mapDispatchToPropsCreateAssetPage = {
+    createAsset: createAsset,
 
-export default connect(mapStateToPropsCreateAssetPage, null)(CreateAssetPage);
+}
+
+export default connect(mapStateToPropsCreateAssetPage, mapDispatchToPropsCreateAssetPage)(CreateAssetPage);

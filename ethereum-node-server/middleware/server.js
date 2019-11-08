@@ -52,7 +52,7 @@ const handler = async (request, response) => {
 }
 
 app.post('/createTrader', handler);
-app.post('/createTrack', handler);
+app.post('/createAsset', handler);
 app.post('/createAgreement', handler);
 app.post('/getAgreementDetail', handler);
 app.post('/createNewTokenAccount', handler);
