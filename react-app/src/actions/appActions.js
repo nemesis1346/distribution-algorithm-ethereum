@@ -3,8 +3,6 @@ import {
     CLOSE_HAMBURGER_MENU,
     HANDLE_STATE_CHANGE_HAMBURGER_BURGER
 } from "../constants/actions";
-import httpApi from "../api/httpApi";
-import { parseResponse } from "../utils/Utils";
 
 
 export const toggleHamburgerMenu = () => {
