@@ -18,21 +18,22 @@ instanceWithInterceptors.interceptors.response.use(
     (response) => {
         console.log('RESPONSE IN INTERCEPTORS');
         console.log(response);
-        let result = parseResponse(response);
-        console.log(result);
+       // let result = parseResponse(response);
+        //console.log(result);
 
         // if (result.tokenObject != null && result.tokenObject != "") {
         //     console.log('NEW TOKENS IN INTERCEPTORS');
         //     console.log(result.tokenObject);
         //     //store.dispatch(saveTokenObject(result.tokenObject));
         // }
-        return result;
+        //return result;
     },
     (error) => {
         let state = store.getState();
 
         console.log('ERRORS IN RESPONSE USING INTERCEPTORS IN LOGIN');
-       // store.dispatch(logout(state.userReducer.userSession));
+       console.log(error);
+        // store.dispatch(logout(state.userReducer.userSession));
 
         return Promise.reject(error);
     });

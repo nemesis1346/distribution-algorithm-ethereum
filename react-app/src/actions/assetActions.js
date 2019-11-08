@@ -6,7 +6,8 @@ import { parseResponse } from "../utils/Utils";
 export const createAsset = assetData => {
   console.log('REQUEST CREATE ASSET ACTIONS');
 
-  return dispatch => {
+  return (dispatch, getState) => {
+
     httpApi.assets
       .createAsset(assetData)
       .then(res => {

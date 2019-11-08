@@ -22,7 +22,6 @@ const handler = async (request, response) => {
         console.log(bufferContent);
 
         //Set response
-        response.statusCode = 200;
         response.setHeader('Content-Type', 'application/json');
         response.setHeader('Access-Control-Allow-Origin', '*');
         response.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -35,7 +34,7 @@ const handler = async (request, response) => {
                 console.log('On Message');
                 console.log(body);
                 const responseBody = { headers, method, url, body };
-                response.statusCode = 200;
+                response.status(200);
                 response.write(JSON.stringify(responseBody));
                 response.end();
             })
@@ -43,7 +42,8 @@ const handler = async (request, response) => {
                 console.log('On Error');
                 console.log(error);
                 const responseBody = { headers, method, url, error };
-                response.statusCode = 300;
+                response.status(500);
+                response.statusMessage = error;
                 response.write(JSON.stringify(responseBody));
                 response.end();
             })

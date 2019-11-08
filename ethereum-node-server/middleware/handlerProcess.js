@@ -9,9 +9,11 @@ const tokenAccountEndpoint = require('../controllers/tokenAccountEndpoint.js');
 
 async function stop() {
     console.log('Shutting down...')
-    if (process.env.DEBUG) console.log(process._getActiveHandles()){
-        process.exit(0)
+
+    if (process.env.DEBUG) {
+        console.log(process._getActiveHandles())
     }
+    process.exit(0)
 }
 process.on('SIGTERM', async () => {
     console.log('Received SIGTERM')
@@ -23,8 +25,6 @@ process.on('SIGINT', async () => {
     await stop()
 })
 process.on('message', async function (input) {
-    //Call method
-    //TODO: must change the way the methods are called: setting correct responses. From the beginning. 
     //TODO: Tokenized systems for the reatapp and mobiles. 
     console.log('LISTENING MESSAGE');
     console.log(input);
@@ -106,49 +106,27 @@ process.on('message', async function (input) {
                 break;
 
             default:
-                dataModel.message = "Method not found";
-                dataModel.status = "404";
-                let body = JSON.stringify(dataModel);
+               // dataModel.message = "Method not found";
                 console.log("STATUS 404: ");
                 console.log("Method not found");
-                // process.send(body);
+                process.send("Method not found");
                 process.status(404).end();
                 break;
         }
 
         //Executing the promise , maybe need POST and GET
         if (result != null) {
-            //console.log(result);
-            //This is status 200 , everything ok
-            if (result) {
-                if (result.status == "200") {
-                    dataModel.data = result;
-                    dataModel.status = "200";
-                } else {
-                    // console.log(dataModel);
-                    dataModel.message = result;
-                    dataModel.status = "300";
-                }
-            } else {
-                console.log("Something went wrong");
-                console.log(result);
-            }
-            let body = JSON.stringify(dataModel);
-            console.log("STATUS 200: ");
-            console.log(body);
-            process.send(body);
+          //  dataModel.data = result;
+           // let body = JSON.stringify(dataModel);
+            console.log("STATUS 200 RESPONSE: ");
+            console.log(result);
+            process.send(result);
         }
-        //STILL NOT WORKING 
-        //process.exit(0)
 
     } catch (error) {
-        console.log("ERROR IN HANDLER PROCESS");
-        dataModel.message = error.message.toString();
-        dataModel.status = "400";
-        let body = JSON.stringify(dataModel);
-        console.log("ERROR 400:");
-        console.log(dataModel);
-        process.send(body);
+        console.log("ERROR 404 IN HANDLER PROCESS ");
+        console.log(error.message.toString());
+        process.send(error.message.toString());
     }
 });
 

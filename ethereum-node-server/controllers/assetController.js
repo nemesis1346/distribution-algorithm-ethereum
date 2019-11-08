@@ -1,58 +1,36 @@
 require("regenerator-runtime/runtime");
-
-//Truffle Configuration
-const truffleConfiguration = require('../truffle.js');
-const PORT = truffleConfiguration.networks.development.port;
-const HOST = truffleConfiguration.networks.development.host;
-
-//Libraries
-const contractTruffle = require('truffle-contract');
-const Web3 = require('web3');
-const web3Provider = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
-//Artifacts
-const tracks_artifact = require('../build/contracts/Tracks.json');
-//Contract
-const TracksContract = contractTruffle(tracks_artifact);
-//Setting Providers
-TracksContract.setProvider(web3Provider.currentProvider);
-//Getting the interface of the deployed contract
+//Import connectors and apis
+const assetConnector = require('../ethereumcom/assetConnector');
 
 //Models
 const DataModel = require("../models/dataModel");
 const TrackModel = require('../models/trackModel');
 
-async function createTrack(request) {
+//THIS STRUCTURE IS READY FOR SAVING DATABASE OF TRANSACTIONS AND ALSO INTERACT WITH ETHEREUM
+
+async function createAsset(request) {
   let dataModel = new DataModel(null, null, null);
   console.log('************************************');
   console.log('Request Create Track in trackEndpoint.js: ');
+  console.log(request);
   try {
 
-    let trackModel = new TrackModel(
-      request.trackId,
-      request.isrc,
-      request.title, //this is the asset name
-      request.revenue,
-      request.fromAddress
-    );
+    // let trackModel = new TrackModel(
+    //   request.trackId,
+    //   request.isrc,
+    //   request.title, //this is the asset name
+    //   request.revenue,
+    //   request.fromAddress
+    // );
 
-    const tracksInterface = await TracksContract.deployed();
+  
+    // dataModel.data = JSON.stringify(trackModel);
+    // dataModel.status = '200';
 
-    await tracksInterface.createTrack(
-      request.trackId,
-      request.isrc,
-      request.title,
-      request.revenue,
-      {
-        from: request.fromAddress,
-        gasLimit: request.gasLimit
-      });
-    console.log('Track added succesfully in Chaincode: ');
-    console.log(request.isrc);
+    // return dataModel;
 
-    dataModel.data = JSON.stringify(trackModel);
-    dataModel.status = '200';
+    return 'test message';
 
-    return dataModel;
 
   } catch (error) {
     console.log('ERROR IN CREATE TRACK IN TRACK ENDPOINT');
@@ -62,7 +40,7 @@ async function createTrack(request) {
     return dataModel;
   }
 }
-module.exports.createTrack = createTrack;
+module.exports.createAsset = createAsset;
 
 async function getTrack(trackId, fromAddress, gasLimit) {
   let dataModel = new DataModel(null, null, null);
