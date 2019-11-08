@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { store } from '../index';
+import { store } from '../reactapp';
 import { parseResponse } from '../utils/Utils'; //must be changed
-//import {saveTokenObject, logout} from '../actions/authActions'; 
-//import * as CONFIG from '../constants/config';
+import {saveTokenObject, logout} from '../actions/authActions'; 
+import * as CONFIG from '../constants/config';
 
 //INSTANCE OF AXIOS FOR LARAVEL
 
@@ -25,7 +25,7 @@ instanceWithInterceptors.interceptors.response.use(
         if (result.tokenObject != null && result.tokenObject != "") {
             console.log('NEW TOKENS IN INTERCEPTORS');
             console.log(result.tokenObject);
-            //store.dispatch(saveTokenObject(result.tokenObject));
+            store.dispatch(saveTokenObject(result.tokenObject));
         }
         return result;
     },
@@ -52,11 +52,11 @@ instanceWithInterceptors.interceptors.request.use(function (config) {
         let access_token = state.userReducer.tokenObject.access_token;
         let refresh_token = state.userReducer.tokenObject.refresh_token;
         config.headers.Authorization = 'Bearer ' + access_token;
-        // config.params = {
-        //     refresh_token: refresh_token, //be careful with this. THIS IS THE IDEAL BUT FOR THE MOMENT IS NOT NECESARY
-        //     client_id: CONFIG.CLIENT_ID,
-        //     client_secret: CONFIG.CLIENT_SECRET,
-        // }
+        config.params = {
+            refresh_token: refresh_token, //be careful with this. THIS IS THE IDEAL BUT FOR THE MOMENT IS NOT NECESARY
+            client_id: CONFIG.CLIENT_ID,
+            client_secret: CONFIG.CLIENT_SECRET,
+        }
         console.log(JSON.stringify(config));
     }
     return config;

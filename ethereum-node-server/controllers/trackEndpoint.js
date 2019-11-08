@@ -30,7 +30,7 @@ async function createTrack(request) {
     let trackModel = new TrackModel(
       request.trackId,
       request.isrc,
-      request.title,
+      request.title, //this is the asset name
       request.revenue,
       request.fromAddress
     );

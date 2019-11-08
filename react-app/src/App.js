@@ -56,7 +56,7 @@ class App extends Component {
       menuOpen
     } = this.props;
     return (
-      <div class=''>
+      <div>
         <BrowserRouter>
           <div>
 

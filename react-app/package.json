@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
     "d3": "^5.8.0",
     "expo": "^25.0.0",
     "mdbreact": "^4.22.0",

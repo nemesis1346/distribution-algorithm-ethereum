@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../../styles/CreateAssetPage.css';
 import '../../styles/MainPage.css';
+import { Form, Button } from 'react-bootstrap';
 
 class CreateAssetPage extends React.Component {
 
@@ -20,8 +21,22 @@ class CreateAssetPage extends React.Component {
         console.log(this.props);
         const { diagramData } = this.props;
         return (
-            <div className="main-container-create-page">
-              Create Asset Page
+            <div className="main-container-page">
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Asset Name</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Value</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+
+                    <Button variant="primary" type="submit">
+                        Submit
+                     </Button>
+                </Form>
             </div>
         );
     }

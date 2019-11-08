@@ -18,6 +18,22 @@ class DiagramPage extends React.Component {
         this.setState({ isrc: e.target.value });
 
     }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.resize.bind(this));
+        this.resize();
+    }
+    
+    resize() {
+        console.log('RESIZE EXECUTED');
+        // this.setState({hideNav: window.innerWidth <= 760});
+        let currentHideNav = (window.innerWidth <= 760);
+        if (currentHideNav !== this.state.hideNav) {
+            this.setState({hideNav: currentHideNav});
+        }
+    }
+    //this is for the conditional of web or mobile
+    // className={"btn-group pull-right " + (this.props.showBulkActions ? 'show' : 'hidden')}
     render() {
         console.log("PROPS");
         console.log(this.props);
