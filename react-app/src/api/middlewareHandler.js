@@ -18,8 +18,9 @@ instanceWithInterceptors.interceptors.response.use(
     (response) => {
         console.log('RESPONSE IN INTERCEPTORS');
         console.log(response);
-       // let result = parseResponse(response);
-        //console.log(result);
+        let result = parseResponse(response);
+        console.log('RESPONSE AFTER PARSING');
+        console.log(result);
 
         // if (result.tokenObject != null && result.tokenObject != "") {
         //     console.log('NEW TOKENS IN INTERCEPTORS');
